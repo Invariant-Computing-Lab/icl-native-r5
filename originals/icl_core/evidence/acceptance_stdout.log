@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "test_protocol": "ICL_ACCEPTANCE_v0.1",
+  "tolerance_fixed_before_run": {
+    "atol": 1e-10,
+    "rtol": 1e-10
+  },
+  "seed": 29475038,
+  "handwritten": {
+    "total": 77,
+    "passed": 77,
+    "failed": 0,
+    "families": {
+      "scalar": 1,
+      "arithmetic": 3,
+      "boolean": 6,
+      "float": 2,
+      "string": 2,
+      "scope": 5,
+      "branch": 4,
+      "loop": 3,
+      "function": 4,
+      "list": 2,
+      "tuple": 1,
+      "record": 3,
+      "name": 2,
+      "type": 7,
+      "numeric": 3,
+      "bounds": 1,
+      "parse": 1,
+      "lex": 1,
+      "module": 1,
+      "option": 2,
+      "result": 2,
+      "observer": 7,
+      "recovery": 4,
+      "effect": 3,
+      "tensor": 4,
+      "approx": 1,
+      "identifiability": 2
+    },
+    "failures": []
+  },
+  "generated": {
+    "total": 1008,
+    "passed": 1008,
+    "failed": 0,
+    "families": {
+      "integer_expression": 85,
+      "conditional_parameter": 85,
+      "bounded_loop": 85,
+      "function_composition": 85,
+      "list_index_length": 85,
+      "record_projection": 85,
+      "tuple_projection": 85,
+      "boolean_precedence": 85,
+      "float_division": 85,
+      "branch_mutation": 85,
+      "recursive_function": 73,
+      "mixed_record_call": 85
+    },
+    "failures": []
+  },
+  "adversarial": {
+    "total": 39,
+    "passed": 39,
+    "failed": 0,
+    "families": {
+      "type": 4,
+      "authority": 3,
+      "provenance": 1,
+      "observer": 4,
+      "recovery": 3,
+      "domain": 2,
+      "numeric": 3,
+      "bounds": 2,
+      "resource": 7,
+      "shape": 2,
+      "lexer": 2,
+      "parser": 1,
+      "isolation": 2,
+      "import": 3
+    },
+    "failures": []
+  },
+  "numpy_graphs": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "families": {
+      "numpy_forward": 8
+    },
+    "failures": []
+  },
+  "contracts": {
+    "total": 30,
+    "passed": 30,
+    "failed": 0,
+    "families": {
+      "replay": 4,
+      "adversarial": 17,
+      "serialization": 4,
+      "authority": 1,
+      "trace": 2,
+      "recovery": 1,
+      "diagnostics": 1
+    },
+    "failures": []
+  },
+  "cli": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "families": {
+      "cli": 19
+    },
+    "failures": []
+  },
+  "elapsed_seconds": 9.030537843704224,
+  "execution_engines": "independent tree control flow and bytecode VM; shared scalar/builtin primitives are documented",
+  "source_changed_during_run": [],
+  "unique_generated_source_argument_cases": 1008
+}

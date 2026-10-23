@@ -1,0 +1,247 @@
+F.....F.....F...............FFF                                          [100%]
+=================================== FAILURES ===================================
+_ test_positive[tree-type State = Record{value:Int64}; fn f(x:State)->State{return {value:x.value+1};} fn main()->Int64{return f({value:4}).value;}-5] _
+
+source = 'type State = Record{value:Int64}; fn f(x:State)->State{return {value:x.value+1};} fn main()->Int64{return f({value:4}).value;}'
+expected = 5, engine = 'tree'
+
+    @pytest.mark.parametrize('source,expected',SOURCES)
+    @pytest.mark.parametrize('engine',['tree','vm'])
+>   def test_positive(source,expected,engine):assert run_source('module ext;'+source,engine=engine)['value']==expected
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_core_extensions.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+source/icl_core/icl/api.py:132: in run_source
+    return run_ocir(compile_source(source,module_map,limits,entry),args,engine,entry,policy,limits,checkpoint,stop_after)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:52: in compile_source
+    p,graph=load_program(source,module_map);c=check(p);ctx=RuntimeContext(limits)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:20: in load_program
+    root=parse(source)
+         ^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:174: in parse
+    try:return Parser(source).parse()
+               ^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:83: in parse
+    self.take(')'); self.take('->'); ret=self.typ(); funcs.append({'name':name,'params':params,'return_type':ret,'body':self.block(),'span':sp})
+                                         ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <icl.frontend.Parser object at 0x7fd4cf7c5be0>
+
+    def typ(self):
+        name=self.ident()
+        if name in self.aliases:
+            if self.peek('[') or self.peek('{'):
+>               raise ICLError('TYPE','type alias cannot take arguments')
+E               icl.runtime.ICLError: TYPE: type alias cannot take arguments
+
+source/icl_core/icl/frontend.py:42: ICLError
+_ test_positive[vm-type State = Record{value:Int64}; fn f(x:State)->State{return {value:x.value+1};} fn main()->Int64{return f({value:4}).value;}-5] _
+
+source = 'type State = Record{value:Int64}; fn f(x:State)->State{return {value:x.value+1};} fn main()->Int64{return f({value:4}).value;}'
+expected = 5, engine = 'vm'
+
+    @pytest.mark.parametrize('source,expected',SOURCES)
+    @pytest.mark.parametrize('engine',['tree','vm'])
+>   def test_positive(source,expected,engine):assert run_source('module ext;'+source,engine=engine)['value']==expected
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_core_extensions.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+source/icl_core/icl/api.py:132: in run_source
+    return run_ocir(compile_source(source,module_map,limits,entry),args,engine,entry,policy,limits,checkpoint,stop_after)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:52: in compile_source
+    p,graph=load_program(source,module_map);c=check(p);ctx=RuntimeContext(limits)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:20: in load_program
+    root=parse(source)
+         ^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:174: in parse
+    try:return Parser(source).parse()
+               ^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:83: in parse
+    self.take(')'); self.take('->'); ret=self.typ(); funcs.append({'name':name,'params':params,'return_type':ret,'body':self.block(),'span':sp})
+                                         ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <icl.frontend.Parser object at 0x7fd4cec5b460>
+
+    def typ(self):
+        name=self.ident()
+        if name in self.aliases:
+            if self.peek('[') or self.peek('{'):
+>               raise ICLError('TYPE','type alias cannot take arguments')
+E               icl.runtime.ICLError: TYPE: type alias cannot take arguments
+
+source/icl_core/icl/frontend.py:42: ICLError
+_ test_roundtrip[type State = Record{value:Int64}; fn f(x:State)->State{return {value:x.value+1};} fn main()->Int64{return f({value:4}).value;}-5] _
+
+source = 'type State = Record{value:Int64}; fn f(x:State)->State{return {value:x.value+1};} fn main()->Int64{return f({value:4}).value;}'
+expected = 5
+
+    @pytest.mark.parametrize('source,expected',SOURCES)
+    def test_roundtrip(source,expected):
+>    o=compile_source('module ext;'+source);assert loads_ocir(dumps_ocir(o))==o
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_core_extensions.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+source/icl_core/icl/api.py:52: in compile_source
+    p,graph=load_program(source,module_map);c=check(p);ctx=RuntimeContext(limits)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:20: in load_program
+    root=parse(source)
+         ^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:174: in parse
+    try:return Parser(source).parse()
+               ^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:83: in parse
+    self.take(')'); self.take('->'); ret=self.typ(); funcs.append({'name':name,'params':params,'return_type':ret,'body':self.block(),'span':sp})
+                                         ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <icl.frontend.Parser object at 0x7fd4cf6d4210>
+
+    def typ(self):
+        name=self.ident()
+        if name in self.aliases:
+            if self.peek('[') or self.peek('{'):
+>               raise ICLError('TYPE','type alias cannot take arguments')
+E               icl.runtime.ICLError: TYPE: type alias cannot take arguments
+
+source/icl_core/icl/frontend.py:42: ICLError
+______________________________ test_cross_module _______________________________
+
+    def test_cross_module():
+     lib='module lib;type S=Record{a:Int64};fn inc(s:S)->S{return {a:s.a+1};}'
+     src='module main;import lib;fn main()->Int64{return lib.inc({a:3}).a;}'
+>    assert run_source(src,module_map={'lib':lib})['value']==4
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_core_extensions.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+source/icl_core/icl/api.py:132: in run_source
+    return run_ocir(compile_source(source,module_map,limits,entry),args,engine,entry,policy,limits,checkpoint,stop_after)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:52: in compile_source
+    p,graph=load_program(source,module_map);c=check(p);ctx=RuntimeContext(limits)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:48: in load_program
+    visit(root,source,True)
+source/icl_core/icl/api.py:29: in visit
+    sub=parse(modules[name])
+        ^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:174: in parse
+    try:return Parser(source).parse()
+               ^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:83: in parse
+    self.take(')'); self.take('->'); ret=self.typ(); funcs.append({'name':name,'params':params,'return_type':ret,'body':self.block(),'span':sp})
+                                         ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <icl.frontend.Parser object at 0x7fd4cf6978d0>
+
+    def typ(self):
+        name=self.ident()
+        if name in self.aliases:
+            if self.peek('[') or self.peek('{'):
+>               raise ICLError('TYPE','type alias cannot take arguments')
+E               icl.runtime.ICLError: TYPE: type alias cannot take arguments
+
+source/icl_core/icl/frontend.py:42: ICLError
+___________________________ test_frame_inverse[tree] ___________________________
+
+engine = 'tree'
+
+    @pytest.mark.parametrize('engine',['tree','vm'])
+    def test_frame_inverse(engine):
+     lib=(R/'source/stdlib/frames.icl').read_text()
+     s='module main; import frames; fn main()->Bool{let p={x:2.5,y:-7.0};return frames.rotate270(frames.rotate90(p))==p;}'
+>    assert run_source(s,engine=engine,module_map={'frames':lib})['value'] is True
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_core_extensions.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+source/icl_core/icl/api.py:132: in run_source
+    return run_ocir(compile_source(source,module_map,limits,entry),args,engine,entry,policy,limits,checkpoint,stop_after)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:52: in compile_source
+    p,graph=load_program(source,module_map);c=check(p);ctx=RuntimeContext(limits)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:48: in load_program
+    visit(root,source,True)
+source/icl_core/icl/api.py:29: in visit
+    sub=parse(modules[name])
+        ^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:174: in parse
+    try:return Parser(source).parse()
+               ^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:83: in parse
+    self.take(')'); self.take('->'); ret=self.typ(); funcs.append({'name':name,'params':params,'return_type':ret,'body':self.block(),'span':sp})
+                                         ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <icl.frontend.Parser object at 0x7fd4cf6d1bd0>
+
+    def typ(self):
+        name=self.ident()
+        if name in self.aliases:
+            if self.peek('[') or self.peek('{'):
+>               raise ICLError('TYPE','type alias cannot take arguments')
+E               icl.runtime.ICLError: TYPE: type alias cannot take arguments
+
+source/icl_core/icl/frontend.py:42: ICLError
+____________________________ test_frame_inverse[vm] ____________________________
+
+engine = 'vm'
+
+    @pytest.mark.parametrize('engine',['tree','vm'])
+    def test_frame_inverse(engine):
+     lib=(R/'source/stdlib/frames.icl').read_text()
+     s='module main; import frames; fn main()->Bool{let p={x:2.5,y:-7.0};return frames.rotate270(frames.rotate90(p))==p;}'
+>    assert run_source(s,engine=engine,module_map={'frames':lib})['value'] is True
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_core_extensions.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+source/icl_core/icl/api.py:132: in run_source
+    return run_ocir(compile_source(source,module_map,limits,entry),args,engine,entry,policy,limits,checkpoint,stop_after)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:52: in compile_source
+    p,graph=load_program(source,module_map);c=check(p);ctx=RuntimeContext(limits)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/api.py:48: in load_program
+    visit(root,source,True)
+source/icl_core/icl/api.py:29: in visit
+    sub=parse(modules[name])
+        ^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:174: in parse
+    try:return Parser(source).parse()
+               ^^^^^^^^^^^^^^^^^^^^^^
+source/icl_core/icl/frontend.py:83: in parse
+    self.take(')'); self.take('->'); ret=self.typ(); funcs.append({'name':name,'params':params,'return_type':ret,'body':self.block(),'span':sp})
+                                         ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <icl.frontend.Parser object at 0x7fd4cee652d0>
+
+    def typ(self):
+        name=self.ident()
+        if name in self.aliases:
+            if self.peek('[') or self.peek('{'):
+>               raise ICLError('TYPE','type alias cannot take arguments')
+E               icl.runtime.ICLError: TYPE: type alias cannot take arguments
+
+source/icl_core/icl/frontend.py:42: ICLError
+=========================== short test summary info ============================
+FAILED tests/test_core_extensions.py::test_positive[tree-type State = Record{value:Int64}; fn f(x:State)->State{return {value:x.value+1};} fn main()->Int64{return f({value:4}).value;}-5] - icl.runtime.ICLError: TYPE: type alias cannot take arguments
+FAILED tests/test_core_extensions.py::test_positive[vm-type State = Record{value:Int64}; fn f(x:State)->State{return {value:x.value+1};} fn main()->Int64{return f({value:4}).value;}-5] - icl.runtime.ICLError: TYPE: type alias cannot take arguments
+FAILED tests/test_core_extensions.py::test_roundtrip[type State = Record{value:Int64}; fn f(x:State)->State{return {value:x.value+1};} fn main()->Int64{return f({value:4}).value;}-5] - icl.runtime.ICLError: TYPE: type alias cannot take arguments
+FAILED tests/test_core_extensions.py::test_cross_module - icl.runtime.ICLError: TYPE: type alias cannot take arguments
+FAILED tests/test_core_extensions.py::test_frame_inverse[tree] - icl.runtime.ICLError: TYPE: type alias cannot take arguments
+FAILED tests/test_core_extensions.py::test_frame_inverse[vm] - icl.runtime.ICLError: TYPE: type alias cannot take arguments
+6 failed, 25 passed in 0.29s

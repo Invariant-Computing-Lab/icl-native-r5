@@ -1,0 +1,36 @@
+{
+  "schema": "ICL_R5_OFFLINE_BUNDLE/1",
+  "files": {
+    "weights.json": {
+      "bytes": 75290,
+      "sha256": "f4385f7237787a2486eaa1f69551e113d4c356c184877bc69422cb2f6297d2c6"
+    },
+    "compiled_model.ocir": {
+      "bytes": 4920,
+      "sha256": "65913fa9b4ff565aaaf5ce88eecaf069a64113cb51a45d72f957a3925b6ce31d"
+    },
+    "model.icl": {
+      "bytes": 262,
+      "sha256": "d6b00095f8850cc1a8dc5f1d7fd0838e5c30faa98a8943c17aa4c95efa974574"
+    },
+    "model_config.json": {
+      "bytes": 1543,
+      "sha256": "0a8faf7c094a4d983ba908fbd96144a8b5bbbcda29b298086e4435ced90f0a69"
+    }
+  },
+  "runtime_file_hashes": {
+    "__init__.py": "f73f293d01ef19c8f813a446bdcff125994f4237a9beded8eebde17a31a28807",
+    "__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "api.py": "a0037de6a1f7eb3a69a64ce3b85f8e916a9fadea89e5a4acfba47054b23c499b",
+    "checker.py": "41339273bfed74b4f4c28cb7948b1ff8b06fb347908ff04dde0a68a46de3b4e4",
+    "cli.py": "2384aea45b82c887d4e46cab69421d41cb6d60c690b75685ab263d57b1c7a848",
+    "frontend.py": "54f77a11fddfe631756506a9dd64af91a8fedf49951b2fbe982e8e66118bb98f",
+    "interpreter.py": "6a03904e82bcfaff33e44c658de84e1b34445d7b7f567244cd4388391ea34a34",
+    "legacy_afc.py": "20abd74e06a61d96c829446d1faf584418affc9a4e098d405a54c87ecdf99742",
+    "runtime.py": "23b3bcfc7264e1ba24111d067a35676cf7171d72891522253475c9d78dd97ded",
+    "vm.py": "9fa1f8a257a5cb4873cb3689bbf81886456074d3ad1b8c1e7a8db7938ba462b8",
+    "OCIR_SCHEMA.json": "0dd381cb61f65f3346c07918aae587c42c583f8b4449583fdd4dca1afdcee60c",
+    "TOKEN_VOCAB.json": "2a8d6cd58182ad668b9dd73c1287126490b21ca45fe083cee87132e5da147224"
+  },
+  "security": "Hash detects accidental/tampered-content mismatch, not publisher authentication or OS sandbox certification."
+}

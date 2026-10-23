@@ -1,0 +1,63 @@
+[
+  {
+    "id": "checkpoint_is_paused",
+    "family": "replay",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "checkpoint_prng_trace_result_exact",
+    "family": "replay",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "checkpoint_fresh_process_restart",
+    "family": "replay",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "checkpoint_checksum_corruption",
+    "family": "adversarial",
+    "expected_error": "CHECKPOINT_CORRUPT",
+    "error": {
+      "code": "CHECKPOINT_CORRUPT",
+      "message": "CHECKPOINT_CORRUPT: Checkpoint integrity or bytecode identity mismatch",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "checkpoint_wrong_program",
+    "family": "adversarial",
+    "expected_error": "CHECKPOINT_CORRUPT",
+    "error": {
+      "code": "CHECKPOINT_CORRUPT",
+      "message": "CHECKPOINT_CORRUPT: Checkpoint integrity or bytecode identity mismatch",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "forged_checkpoint_policy_not_authority",
+    "family": "adversarial",
+    "expected_error": "CHECKPOINT_CORRUPT",
+    "error": {
+      "code": "CHECKPOINT_CORRUPT",
+      "message": "CHECKPOINT_CORRUPT: Replay requires an independently supplied identical host policy",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "record_effect_checkpoint_canonical_ocir_replay",
+    "family": "replay",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  }
+]

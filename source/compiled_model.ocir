@@ -1,0 +1,467 @@
+{
+  "schema_version": "0.2.1",
+  "schema_sha256": "0dd381cb61f65f3346c07918aae587c42c583f8b4449583fdd4dca1afdcee60c",
+  "feature_set": [
+    "functions",
+    "modules",
+    "lexical_scope",
+    "checked_int64",
+    "finite_float64",
+    "bounded_loop",
+    "list",
+    "record",
+    "tuple",
+    "option",
+    "result",
+    "tensor",
+    "observer",
+    "recovery",
+    "policy_effect",
+    "checkpoint",
+    "record_annotations",
+    "type_aliases",
+    "contextual_empty_lists"
+  ],
+  "program_id": "f30a68d253716d362ab399dc0cd016cf2cdcf2cad60560651f4fd4d15d4c1307",
+  "source_sha256": "d6b00095f8850cc1a8dc5f1d7fd0838e5c30faa98a8943c17aa4c95efa974574",
+  "module_graph": [
+    {
+      "module": "model_graph",
+      "imports": [],
+      "source_sha256": "d6b00095f8850cc1a8dc5f1d7fd0838e5c30faa98a8943c17aa4c95efa974574"
+    }
+  ],
+  "typed_blocks": [
+    {
+      "name": "main",
+      "params": [
+        [
+          "x",
+          "Tensor[1,30]"
+        ],
+        [
+          "w1",
+          "Tensor[30,32]"
+        ],
+        [
+          "b1",
+          "Tensor[1,32]"
+        ],
+        [
+          "w2",
+          "Tensor[32,32]"
+        ],
+        [
+          "b2",
+          "Tensor[1,32]"
+        ],
+        [
+          "wo",
+          "Tensor[32,22]"
+        ],
+        [
+          "bo",
+          "Tensor[1,22]"
+        ]
+      ],
+      "return_type": "Tensor[1,22]",
+      "body": [
+        {
+          "kind": "let",
+          "name": "h1",
+          "type": null,
+          "mutable": false,
+          "expr": {
+            "kind": "call",
+            "name": "tanh",
+            "args": [
+              {
+                "kind": "call",
+                "name": "add",
+                "args": [
+                  {
+                    "kind": "call",
+                    "name": "matmul",
+                    "args": [
+                      {
+                        "kind": "var",
+                        "name": "x",
+                        "span": {
+                          "line": 3,
+                          "column": 24,
+                          "offset": 182
+                        },
+                        "inferred_type": "Tensor[1,30]"
+                      },
+                      {
+                        "kind": "var",
+                        "name": "w1",
+                        "span": {
+                          "line": 3,
+                          "column": 26,
+                          "offset": 184
+                        },
+                        "inferred_type": "Tensor[30,32]"
+                      }
+                    ],
+                    "span": {
+                      "line": 3,
+                      "column": 17,
+                      "offset": 175
+                    },
+                    "inferred_type": "Tensor[1,32]"
+                  },
+                  {
+                    "kind": "var",
+                    "name": "b1",
+                    "span": {
+                      "line": 3,
+                      "column": 30,
+                      "offset": 188
+                    },
+                    "inferred_type": "Tensor[1,32]"
+                  }
+                ],
+                "span": {
+                  "line": 3,
+                  "column": 13,
+                  "offset": 171
+                },
+                "inferred_type": "Tensor[1,32]"
+              }
+            ],
+            "span": {
+              "line": 3,
+              "column": 8,
+              "offset": 166
+            },
+            "inferred_type": "Tensor[1,32]"
+          },
+          "span": {
+            "line": 3,
+            "column": 1,
+            "offset": 159
+          },
+          "inferred_type": "Tensor[1,32]"
+        },
+        {
+          "kind": "let",
+          "name": "h2",
+          "type": null,
+          "mutable": false,
+          "expr": {
+            "kind": "call",
+            "name": "tanh",
+            "args": [
+              {
+                "kind": "call",
+                "name": "add",
+                "args": [
+                  {
+                    "kind": "call",
+                    "name": "matmul",
+                    "args": [
+                      {
+                        "kind": "var",
+                        "name": "h1",
+                        "span": {
+                          "line": 4,
+                          "column": 24,
+                          "offset": 217
+                        },
+                        "inferred_type": "Tensor[1,32]"
+                      },
+                      {
+                        "kind": "var",
+                        "name": "w2",
+                        "span": {
+                          "line": 4,
+                          "column": 27,
+                          "offset": 220
+                        },
+                        "inferred_type": "Tensor[32,32]"
+                      }
+                    ],
+                    "span": {
+                      "line": 4,
+                      "column": 17,
+                      "offset": 210
+                    },
+                    "inferred_type": "Tensor[1,32]"
+                  },
+                  {
+                    "kind": "var",
+                    "name": "b2",
+                    "span": {
+                      "line": 4,
+                      "column": 31,
+                      "offset": 224
+                    },
+                    "inferred_type": "Tensor[1,32]"
+                  }
+                ],
+                "span": {
+                  "line": 4,
+                  "column": 13,
+                  "offset": 206
+                },
+                "inferred_type": "Tensor[1,32]"
+              }
+            ],
+            "span": {
+              "line": 4,
+              "column": 8,
+              "offset": 201
+            },
+            "inferred_type": "Tensor[1,32]"
+          },
+          "span": {
+            "line": 4,
+            "column": 1,
+            "offset": 194
+          },
+          "inferred_type": "Tensor[1,32]"
+        },
+        {
+          "kind": "return",
+          "expr": {
+            "kind": "call",
+            "name": "add",
+            "args": [
+              {
+                "kind": "call",
+                "name": "matmul",
+                "args": [
+                  {
+                    "kind": "var",
+                    "name": "h2",
+                    "span": {
+                      "line": 5,
+                      "column": 19,
+                      "offset": 248
+                    },
+                    "inferred_type": "Tensor[1,32]"
+                  },
+                  {
+                    "kind": "var",
+                    "name": "wo",
+                    "span": {
+                      "line": 5,
+                      "column": 22,
+                      "offset": 251
+                    },
+                    "inferred_type": "Tensor[32,22]"
+                  }
+                ],
+                "span": {
+                  "line": 5,
+                  "column": 12,
+                  "offset": 241
+                },
+                "inferred_type": "Tensor[1,22]"
+              },
+              {
+                "kind": "var",
+                "name": "bo",
+                "span": {
+                  "line": 5,
+                  "column": 26,
+                  "offset": 255
+                },
+                "inferred_type": "Tensor[1,22]"
+              }
+            ],
+            "span": {
+              "line": 5,
+              "column": 8,
+              "offset": 237
+            },
+            "inferred_type": "Tensor[1,22]"
+          },
+          "span": {
+            "line": 5,
+            "column": 1,
+            "offset": 230
+          }
+        }
+      ],
+      "span": {
+        "line": 2,
+        "column": 1,
+        "offset": 20
+      }
+    }
+  ],
+  "ops": [
+    {
+      "name": "matmul",
+      "operand_types": [
+        "Tensor[1,30]",
+        "Tensor[30,32]"
+      ],
+      "result_type": "Tensor[1,32]"
+    },
+    {
+      "name": "add",
+      "operand_types": [
+        "Tensor[1,32]",
+        "Tensor[1,32]"
+      ],
+      "result_type": "Tensor[1,32]"
+    },
+    {
+      "name": "tanh",
+      "operand_types": [
+        "Tensor[1,32]"
+      ],
+      "result_type": "Tensor[1,32]"
+    },
+    {
+      "name": "matmul",
+      "operand_types": [
+        "Tensor[1,32]",
+        "Tensor[32,32]"
+      ],
+      "result_type": "Tensor[1,32]"
+    },
+    {
+      "name": "add",
+      "operand_types": [
+        "Tensor[1,32]",
+        "Tensor[1,32]"
+      ],
+      "result_type": "Tensor[1,32]"
+    },
+    {
+      "name": "tanh",
+      "operand_types": [
+        "Tensor[1,32]"
+      ],
+      "result_type": "Tensor[1,32]"
+    },
+    {
+      "name": "matmul",
+      "operand_types": [
+        "Tensor[1,32]",
+        "Tensor[32,22]"
+      ],
+      "result_type": "Tensor[1,22]"
+    },
+    {
+      "name": "add",
+      "operand_types": [
+        "Tensor[1,22]",
+        "Tensor[1,22]"
+      ],
+      "result_type": "Tensor[1,22]"
+    }
+  ],
+  "operand_types": [
+    [
+      "Tensor[1,30]",
+      "Tensor[30,32]"
+    ],
+    [
+      "Tensor[1,32]",
+      "Tensor[1,32]"
+    ],
+    [
+      "Tensor[1,32]"
+    ],
+    [
+      "Tensor[1,32]",
+      "Tensor[32,32]"
+    ],
+    [
+      "Tensor[1,32]",
+      "Tensor[1,32]"
+    ],
+    [
+      "Tensor[1,32]"
+    ],
+    [
+      "Tensor[1,32]",
+      "Tensor[32,22]"
+    ],
+    [
+      "Tensor[1,22]",
+      "Tensor[1,22]"
+    ]
+  ],
+  "shape_constraints": [
+    {
+      "op": "matmul",
+      "left": [
+        1,
+        30
+      ],
+      "right": [
+        30,
+        32
+      ],
+      "output": [
+        1,
+        32
+      ]
+    },
+    {
+      "op": "matmul",
+      "left": [
+        1,
+        32
+      ],
+      "right": [
+        32,
+        32
+      ],
+      "output": [
+        1,
+        32
+      ]
+    },
+    {
+      "op": "matmul",
+      "left": [
+        1,
+        32
+      ],
+      "right": [
+        32,
+        22
+      ],
+      "output": [
+        1,
+        22
+      ]
+    }
+  ],
+  "observer_context": {
+    "mode": "explicit_metadata",
+    "implicit_conversion": false
+  },
+  "provenance_refs": [
+    {
+      "source_sha256": "d6b00095f8850cc1a8dc5f1d7fd0838e5c30faa98a8943c17aa4c95efa974574",
+      "module": "model_graph",
+      "status": "COMPILED_LOCAL_SOURCE"
+    }
+  ],
+  "required_effects": [],
+  "limits": {
+    "max_steps": 100000,
+    "max_stack": 128,
+    "max_items": 100000,
+    "max_output": 1000000,
+    "max_tensor": 4096
+  },
+  "numeric_policy": {
+    "int64": "checked_signed",
+    "integer_division": "truncate_toward_zero",
+    "float64": "finite_only",
+    "atol": 1e-06,
+    "rtol": 1e-05,
+    "normalize_epsilon": 1e-05
+  },
+  "entrypoint": "main",
+  "integrity_sha256": "1525e4acb1403f1907fb5446ba66642ab793ac5a6052ba082f28a5aa2529ac4e"
+}

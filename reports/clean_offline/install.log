@@ -1,0 +1,4 @@
+Processing /mnt/data/ICL_R5_20261013/source/icl_core/dist/invariant_cognition_language-0.2.1-py3-none-any.whl
+Installing collected packages: invariant-cognition-language
+Successfully installed invariant-cognition-language-0.2.1
+WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.

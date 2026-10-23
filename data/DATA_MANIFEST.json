@@ -1,0 +1,35 @@
+{
+  "dataset_id": "ICL_R5_FRESH_FACTORIAL_20261013",
+  "generator_sha256": "1102a7d5265b23e26eefc2855394a3bc985c555b57237b585e93378bff1dbefc",
+  "split_lock_sha256": "457d5b4261a3bce55cd9adcaae8ea9ea63ed864eb501c9fb6cbe32bbea282bc9",
+  "files": [
+    {
+      "file": "train.jsonl.gz",
+      "bytes": 7170365,
+      "sha256": "bc060e612c615b7a13455f565d6e5738679c0bb242dc91441c2649f76d19581a"
+    },
+    {
+      "file": "validation.jsonl.gz",
+      "bytes": 718977,
+      "sha256": "9f65a69c083757e838a416a6e8b551b86f0a257223038ca6662b85574d866ab4"
+    },
+    {
+      "file": "id.jsonl.gz",
+      "bytes": 718002,
+      "sha256": "9125b45ffb79909ac7367f6364bec83a321683dabeea48eb1b9a41c2176d0a06"
+    },
+    {
+      "file": "long.jsonl.gz",
+      "bytes": 1265081,
+      "sha256": "0ecb050ba6831ae6621a637ecf4f9e84f2f259c1dd66be23b4a10609af443e11"
+    },
+    {
+      "file": "counterfactual.jsonl.gz",
+      "bytes": 1107541,
+      "sha256": "6808cc6f92e57e38dfa94d37440a3ceefb68579a00be92bb54c1231846295df6"
+    }
+  ],
+  "new_not_recovered_R4": true,
+  "semantics": "bounded structured-intent to opcode plans; syntax emitter and execution oracle external to learned model",
+  "elapsed_seconds": 111.2132203578949
+}

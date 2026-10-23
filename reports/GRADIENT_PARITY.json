@@ -1,0 +1,6 @@
+{
+  "passed_coordinates": 12,
+  "max_abs_error": 1.7141621455607492e-11,
+  "method": "central finite differences of actual ICL interpreter forward vs host autograd, float64",
+  "epsilon": 1e-05
+}

@@ -1,0 +1,569 @@
+{
+  "title": "OCIL / Invariant OS — mevcut belgelerden yapılacak işler",
+  "date": "2026-10-12",
+  "scope": [
+    "OCIL-LANG-01 / ICL-Core",
+    "IOS-ICL-01 / Invariant Cognition Language / ICL-Native"
+  ],
+  "assessment_only": true,
+  "new_model_training_this_turn": false,
+  "new_core_tests_this_turn": false,
+  "drive_writes_this_turn": false,
+  "baseline_core_commit": "400c91ac635c12f135d762dea6d6de16f3bd1291",
+  "sources": {
+    "catalogue": {
+      "kind": "user_source_index",
+      "file": "Invariant_Tum_Ciktilar_RARI_GOP_Zenodo_156_v3(4).docx",
+      "scope": "80 G / 10 M / 24 D / 16 S / 156 historical works; source locators, not automatic completed releases"
+    },
+    "core_handoff": {
+      "drive_id": "1ArcLPR5Yp6mUJAAwLGSKp-5MaKm1wBWG",
+      "file": "LANGUAGE_HANDOFF.json"
+    },
+    "core_contract": {
+      "drive_id": "1rRrbJycOD2Zdxd5khDRfIntHilhY2Ac8",
+      "file": "ICL_CORE_TEKNIK_SOZLESME.md"
+    },
+    "model_command": {
+      "drive_id": "12y1teow_01Xvqi-4suxSWDCoax1iGVEH",
+      "file": "ASTRA_02_INVARIANT_OS_ICL_NATIVE_AI.md"
+    },
+    "model_protocol": {
+      "drive_id": "1NID3STxkZ9jR4to3dUSpfhuxSnrBOXv_",
+      "file": "ICL_NATIVE_MODEL_EGITIM_PROTOKOLU.md"
+    },
+    "original_gates": {
+      "drive_id": "1OG-BiWHuoe9vCVfPbft3BDrEDKDovjl0",
+      "file": "ACCEPTANCE_GATES.json"
+    },
+    "recovery_gates": {
+      "drive_id": "1ifIQdv6Xr7QUqfbluNDt8hwKv5W2csfY",
+      "file": "RECOVERY_ACCEPTANCE_GATES.json"
+    },
+    "recovery_resume": {
+      "drive_id": "192V7KjRsFMXkm3fIJ9rtfts6N2aLlxq-",
+      "file": "RESUME_RECOVERY.json"
+    },
+    "source_map": {
+      "drive_id": "1fx1f_XxQNbKsW8rKa1TV6_wr6Au9K_JB",
+      "file": "SOURCE_MAP.json"
+    },
+    "core_archive": {
+      "file": "ICL_RECOVERY_VERIFIED_20261010_R1.zip",
+      "sha256": "038dc66c3e4e9e8f99468a7a51b44f82919a22007e06658df24bda3b9dace492",
+      "origin": "mounted conversation attachment"
+    }
+  },
+  "tasks": [
+    {
+      "id": "T01",
+      "priority": "P0",
+      "component": "Ortak",
+      "title": "Katalog ile güncel teslimleri uzlaştır",
+      "basis": "Kaynak katalogları 9 Ekim tarihli snapshot; dil ve model yürütme/devir kayıtları 10 Ekim tarihli. Ayrı klasör veya arşiv üyesi, başka isim altında kaynak taşıyabilir.",
+      "planned_action": "İki hesap ve ilgili araştırma/ürün/release kökleri için mevcut katalogdaki drive_id, archive_member, source SHA, model_icl ve run kimliklerini güncel manifestlerle ilişkilendir. Paketleri hash ve içerikle tekilleştir. Dosya adı araması veya birkaç boş klasörle global yokluk kararı verme. Özgün model continuation ve yeni contract-compatible run ayrımını açık kaydet.",
+      "deliverables": [
+        "CURRENT_ARTIFACT_MAP.json",
+        "SOURCE_CONFLICTS.md",
+        "NATIVE_LINEAGE_DECISION.json"
+      ],
+      "acceptance": "Her model/dil bileşeni için gerçek konum, artifact türü, read status ve kullanım kararı; inceleme kapsamı ve tarih görünür.",
+      "depends_on": [],
+      "gate_ids": [],
+      "source_refs": [
+        "catalogue",
+        "source_map",
+        "recovery_resume",
+        "model_command"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T02",
+      "priority": "P0",
+      "component": "OCIL",
+      "title": "ICL-Core 0.1.0 temelini koru ve tek sözleşme seç",
+      "basis": "LANGUAGE_HANDOFF CONFORMANCE_PASSED; recovery L01-L08 PASS_BOUNDED_REVERIFIED.",
+      "planned_action": "Commit 400c91ac635c12f135d762dea6d6de16f3bd1291 ve schema/vocab/source hashlerini değişmez baseline yap. İki uyumsuz dil yaratma. Gerekli özellik değişikliklerini yeni dal/sürüm ve migration olarak ayır; orijinal handoff üzerindeki başarılı kayıtları bozma.",
+      "deliverables": [
+        "BASELINE_LOCK.json",
+        "CONTRACT_COMPATIBILITY.json"
+      ],
+      "acceptance": "Seçilen çekirdek ile modelin schema/vocab/opcode/entrypoint ilişkisi tekil; eski test ve sonuçlar korunmuş. Her semantik değişiklik sonrası ilgili regresyonlar.",
+      "depends_on": [
+        "T01"
+      ],
+      "gate_ids": [
+        "L01",
+        "L03",
+        "L05",
+        "L08"
+      ],
+      "source_refs": [
+        "core_handoff",
+        "recovery_gates",
+        "core_contract"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T03",
+      "priority": "P0",
+      "component": "Ortak",
+      "title": "Araştırma kaynağını kod ve testle eşle",
+      "basis": "SCIENCE_TO_CODE_TRACE içinde gerçek AFC helper reuse, OCIL tasarım aktarımı ve diğer programların kavramsal/test tasarımı katkıları birbirinden ayrılmış.",
+      "planned_action": "G11-G18, RARI, AFC, SACRA, IEVF, GOP ve dil temelli tarihsel metinlerde protokol/uygulama/negatif örnekleri inceleyerek kaynak→sembol→test eşlemesini genişlet. Komut belgesini özgün deney yerine kaynak gösteren ilişkileri gerçek çalışma ile tamamla veya CONCEPT_ONLY bırak. Z042 ve Z074-Z085 başlıkları için içerik incelemeden dil ilkeli kesinlik iddiası kurma.",
+      "deliverables": [
+        "SCIENCE_TO_CODE_TRACE_vNext.json",
+        "THEORY_TO_IMPLEMENTATION.md"
+      ],
+      "acceptance": "DIRECT_REUSE / ADAPTED / CONCEPT_ONLY / NOT_APPLICABLE ayrımı; her güçlü iddia özgün kaynak ve testle bağlı.",
+      "depends_on": [
+        "T01"
+      ],
+      "gate_ids": [
+        "L01",
+        "L06",
+        "M01"
+      ],
+      "source_refs": [
+        "catalogue",
+        "source_map",
+        "core_archive"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T04",
+      "priority": "P1",
+      "component": "OCIL",
+      "title": "Yeniden kullanılabilir tipli program arayüzlerini genişlet",
+      "basis": "Teslim LANGUAGE_SPEC: record yalnız yerel çıkarımla; source-level record parametre/return anotasyonu ve kullanıcı tanımlı type aliases/generics/ADT yok; boş liste tipi çıkarılmıyor.",
+      "planned_action": "Model ve durum programlarının somut ihtiyaçları üzerinden önce adlandırılmış record/tip arayüzü ve yeterli list/Result kullanımını tasarla. Gerekli olmayan tam generics veya self-hosting hedefini ilk modele önkoşul yapma. Açık module_map ve paket manifestini tutarlı hale getir.",
+      "deliverables": [
+        "TYPE_API_GAP_MATRIX.md",
+        "sürümlü grammar/checker değişiklikleri",
+        "module_and_record_regression/"
+      ],
+      "acceptance": "Yeni veri tipi fonksiyon/modül sınırını geçiyor; hata satırı ve type mismatch doğru; eski 0.1 örnekleri korunuyor veya belgelenmiş migration var.",
+      "depends_on": [
+        "T02"
+      ],
+      "gate_ids": [
+        "L01",
+        "L02",
+        "L03",
+        "L05"
+      ],
+      "source_refs": [
+        "core_archive",
+        "core_contract"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T05",
+      "priority": "P1",
+      "component": "OCIL",
+      "title": "Observer ve temsil dönüşümlerini gerçek görevlerle genişlet",
+      "basis": "SEMANTICS: observer/frame/unit eşitliği runtime metadata kontrolü; kayıtlı dönüşüm affine_translation_v1. Genel alignment veya fiziksel kalibrasyon değil.",
+      "planned_action": "OCIL-VB1..4 ve G12-G18 için görev bazlı kapsama matrisi kur. Gözlemci hizalama, frame dönüşümü, sembolik belge/ajan durumu ve kayıplı temsil örneklerini kayıtlı dönüşüm sözleşmesiyle ekle. Gözlenmeyen bileşene exact etiketi verme; task-equivalence ile byte round-trip ayrımını koru.",
+      "deliverables": [
+        "REPRESENTATION_COVERAGE.json",
+        "transform_registry/",
+        "observer_negative_fixtures/"
+      ],
+      "acceptance": "Her dönüşüm için domain, units, invertibility/equivalence sınırı ve positive/negative test; yanlış observer/frame reddi.",
+      "depends_on": [
+        "T02",
+        "T03"
+      ],
+      "gate_ids": [
+        "L02",
+        "L04",
+        "L05",
+        "L06"
+      ],
+      "source_refs": [
+        "core_archive",
+        "core_contract",
+        "catalogue"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T06",
+      "priority": "P0",
+      "component": "OCIL + Invariant OS",
+      "title": "Gerçek model grafiği için dil→backend köprüsü",
+      "basis": "Handoff numeric graph ABI var; sekiz forward graph testi eğitim/gradient zincirinin kendisini doğrulamaz.",
+      "planned_action": "model.icl tanımını aynı OCIR üzerinden trainable backend ile yürüt. Forward ve gerçek gradient kontrollerini yap; registry/dtype/shape/normalization ve kaynak limitlerini incele. 4096 eleman/rank 1-3 sınırını sessizce kaldırma. Host autograd/optimizer sınırını ve hangi katmanların hostta kaldığını kaydet.",
+      "deliverables": [
+        "model.icl",
+        "compiled_model.ocir",
+        "LANGUAGE_DEPENDENCY.json",
+        "graph_and_gradient_parity.json"
+      ],
+      "acceptance": "Çalışan model sözleşme hashlerini tüketiyor; forward referansla uyumlu; gradient gerçek; shape/schema uyuşmazlığında loader reddi.",
+      "depends_on": [
+        "T02"
+      ],
+      "gate_ids": [
+        "L07",
+        "M02",
+        "M04"
+      ],
+      "source_refs": [
+        "core_handoff",
+        "core_archive",
+        "model_protocol",
+        "core_contract"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T07",
+      "priority": "P0",
+      "component": "Ortak",
+      "title": "Modeli yetki sınırına ve sınırlı yürütmeye bağla",
+      "basis": "SECURITY_BOUNDARY: yalnız local in-memory journal; dış adapter yok; host flag insan onay arayüzü değil; checksum authentication değil; OS sandbox kurulmamış.",
+      "planned_action": "İlk model demosunda mevcut default-deny politikayı koru. Model proposal ile verifier/host policy kararını ayrı tut. Paylaşılan veya untrusted kullanım için bağımsız işlem bellek/süre/ağ sınırlarını ve kurulum davranışını test et. Gerçek araç/kalıcı bellek gerekiyorsa izinli dar adapter ve onay akışını ayrı kapsamla tasarla.",
+      "deliverables": [
+        "authority_e2e.json",
+        "HOST_EXECUTION_BOUNDARY.md",
+        "isolation_and_restart_tests/"
+      ],
+      "acceptance": "Yetkisiz actual execution=0; attempt/deny/allow ayrı; model çıktısı ve checkpoint grant değil. İzolasyon testinin gerçek sınırı doğru etiketli.",
+      "depends_on": [
+        "T02",
+        "T06"
+      ],
+      "gate_ids": [
+        "L04",
+        "L06",
+        "L08",
+        "M08"
+      ],
+      "source_refs": [
+        "core_handoff",
+        "core_archive",
+        "model_protocol"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T08",
+      "priority": "P0",
+      "component": "Invariant OS",
+      "title": "Kataloğun 10 model ailesini gerçek kullanıma ayır",
+      "basis": "Katalog M01-M10 kaynak adayları; source-map locator ve ağırlık aynı varlık değil.",
+      "planned_action": "Her aday için loader, config, ağırlık/parametre, preprocess, hash, rights ve uyumluluk oku. M01-M02 observer oracle/baseline; M03 finite comparator; M04-M07 izinli domain adapter/baseline; M08 policy semantics; M09-M10 routing/yardımcı offline frontend. Uygunsuzları birleştirme veya native diye adlandırma.",
+      "deliverables": [
+        "MODEL_LINEAGE.json",
+        "MODEL_REUSE_DECISIONS.json"
+      ],
+      "acceptance": "10 ayrı kaynak-karar kaydı ve artifact türü. Native çekirdek üçüncü taraf adapterden ayrı. Adayın adı gerçek ağırlık doğrulaması değil.",
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "gate_ids": [
+        "M01"
+      ],
+      "source_refs": [
+        "catalogue",
+        "source_map",
+        "model_command"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T09",
+      "priority": "P0",
+      "component": "Invariant OS",
+      "title": "Native modelin öğrenilen kapsamını belirle ve uygula",
+      "basis": "Protokol typed node/op, observer/context, state memory, program/action decoder ve ambiguity bileşenlerini önerir; mevcut 810-parametre raporu bunların tümünü göstermez.",
+      "planned_action": "Kurtarılan native kaynak varsa öğrenilen kararı deterministic serializer/verifier katkısından ayır. Yoksa frozen contractla açıkça NEW_RUN/NEW_IMPLEMENTATION olarak yeni sürümlü native hat kur; eski runı ikame edilmiş gösterme. Program üretme/tamamlama/onarma, durum tahmini, observer transfer, abstention ve bellek için capability matrisi üret. Mimari büyüklüğünü ihtiyaç ve kaynakla gerekçelendir.",
+      "deliverables": [
+        "CAPABILITY_COVERAGE.json",
+        "MODEL_CARD.md",
+        "modeling/",
+        "native_run_manifest.json"
+      ],
+      "acceptance": "Görev başına hangi kararın ağırlıklardan, hangisinin deterministik bileşenden geldiği belli. Host modelinin yalnız ICL adını taşıması kabul edilmez.",
+      "depends_on": [
+        "T01",
+        "T06",
+        "T08"
+      ],
+      "gate_ids": [
+        "M02",
+        "M04",
+        "M06",
+        "M07"
+      ],
+      "source_refs": [
+        "model_command",
+        "model_protocol",
+        "core_handoff"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T10",
+      "priority": "P0",
+      "component": "Invariant OS",
+      "title": "Program ve dünya grupları ayrık eğitim korpusu",
+      "basis": "D22 temel; D23/D24 görevleri; RARI D04/D05/D07/D09, AFC D12, GOP D11 kaynaklı uygun sentetik üreticiler.",
+      "planned_action": "Compiler ve reference interpreter ile program/AST/OCIR/input/context/output/trace/error örnekleri üret. Canonical/semantic/world/observer-orbit ilişkilerini connected grouping ile tek splitte tut. Kaynak frozen test bankalarını traininge alma. 20k/2k/2k/2k RESEARCH hedefini ancak benzersiz anlamlı gruplarla karşıla; smoke ile researchı ayır.",
+      "deliverables": [
+        "DATA_MANIFEST.json",
+        "split_audit.json",
+        "generator_registry.json",
+        "datasets/"
+      ],
+      "acceptance": "Splitler arası canonical/orbit/world overlap=0; şema ve üretici hashleri sabit; en az 8 anlamlı alt aile research hedefi, kopyayla satır doldurma yok.",
+      "depends_on": [
+        "T02",
+        "T03",
+        "T09"
+      ],
+      "gate_ids": [
+        "M03"
+      ],
+      "source_refs": [
+        "model_protocol",
+        "model_command",
+        "catalogue"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T11",
+      "priority": "P0",
+      "component": "Invariant OS",
+      "title": "Eğitim döngüsü ve açık lineage",
+      "basis": "Gerçek optimizer güncellemesi ile pipeline doğrulaması, görev yeterliliğinden ayrıdır.",
+      "planned_action": "Mevcut orijinal checkpoint uygunsa aynı run üzerinde açık continuation; aksi halde farklı run ID ve veri lineage ile random initialization. Program/state/trace/invariance/negative/abstention kayıplarını ölçülebilir uygulayıp validation seçimini kaydet. Üç native seed ve eşlenmiş baseline; optimizer/RNG/scheduler/step/sampler durumu tutulur.",
+      "deliverables": [
+        "training_log.jsonl",
+        "configs/",
+        "checkpoints/",
+        "TRAINING_REPORT.md"
+      ],
+      "acceptance": "Finite loss/gradient, değişen ağırlık hashleri ve gerçek öğrenilmiş parametre; restart testinde optimizer/RNG/step tutarlılığı. Eski olumsuz koşu korunur.",
+      "depends_on": [
+        "T06",
+        "T09",
+        "T10"
+      ],
+      "gate_ids": [
+        "M04",
+        "M09"
+      ],
+      "source_refs": [
+        "model_protocol",
+        "model_command"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T12",
+      "priority": "P0",
+      "component": "Invariant OS",
+      "title": "%79,69 kaydını koru, hata türlerine göre düzelt",
+      "basis": "Önceki günlük ID %79,69 ve pilotun geçmediğini bildiriyor; raw metrikler rapordan ayrı.",
+      "planned_action": "Önce gerçek eski raw kayıt erişimine göre sonucu yeniden hesapla veya transcript-only bırak. Syntax/type/shape/semantic/observer/ambiguity/memory hata dağılımını train-validationda çıkar. Düzeltme veya kapasite seçimini eski test sonucuna ayarlama; değişen model için yeni sürümlü önceden ayrılmış confirmatory test kullan.",
+      "deliverables": [
+        "NEGATIVE_FINDINGS.md",
+        "ERROR_TAXONOMY.json",
+        "validation_decisions.json",
+        "fresh_evaluation_protocol.json"
+      ],
+      "acceptance": "Eski %79,69 sonucu değişmez; %80 eşiği düşürülmez veya yuvarlanmaz. Başarı tüm girişler üstündeki raw pass@1; serializer/search katkısı ayrı.",
+      "depends_on": [
+        "T01",
+        "T09",
+        "T10"
+      ],
+      "gate_ids": [
+        "M06",
+        "M07"
+      ],
+      "source_refs": [
+        "recovery_gates",
+        "model_protocol",
+        "model_command"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T13",
+      "priority": "P0",
+      "component": "Invariant OS",
+      "title": "Pilot değerlendirme ve yetkili yürütme",
+      "basis": "Önceden belirlenmiş ham syntax %95, ham ID pass@1 %80, kabul edilenlerde type/effect %100 ve yetkisiz gerçek eylem 0.",
+      "planned_action": "Her seed ve aile için raw model, serializer, verifier, search/retry ve composed system skorlarını ayrı hesapla. Acceptance coverage, tüm giriş başarı oranı, hata nedenleri, kalibrasyon/abstention ve maliyeti raporla. Pilot yeterliliğini baseline üstünlüğüne karıştırma.",
+      "deliverables": [
+        "raw_predictions.jsonl",
+        "EVAL_REPORT.md",
+        "authority_e2e.json"
+      ],
+      "acceptance": "Protokolün M06-M08 kapıları raw denominators korunarak değerlendirildi; geçmeyen kapı açık.",
+      "depends_on": [
+        "T07",
+        "T11",
+        "T12"
+      ],
+      "gate_ids": [
+        "M06",
+        "M07",
+        "M08"
+      ],
+      "source_refs": [
+        "original_gates",
+        "model_protocol"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T14",
+      "priority": "P0",
+      "component": "Invariant OS",
+      "title": "Eşlenmiş baseline ve ablation",
+      "basis": "Aynı corpus/3 seed, parametre ve compute ±%10; yoksa exploratory. OOD üstünlük ayrı bilimsel kapı.",
+      "planned_action": "Flat-token ve majority/lookup karşılaştırıcılarını kur. Observer/context, typed graph, invariance objective, memory ve witness katkılarını eşlenmiş çıkarma deneyleriyle ölç. Semantik grup/aile bootstrap güven aralıkları, subgroup ve worst-family raporları oluştur.",
+      "deliverables": [
+        "baseline_runs.json",
+        "ABLATIONS.json",
+        "primary_comparison.json"
+      ],
+      "acceptance": "Karşılaştırma/ablation raporu sonuç olumsuz olsa da tamamlanabilir. M10 üstünlük yalnız önceden seçilen ana farkın %95 grouped CI alt sınırı >0 ise.",
+      "depends_on": [
+        "T10",
+        "T11"
+      ],
+      "gate_ids": [
+        "M09",
+        "M10"
+      ],
+      "source_refs": [
+        "model_protocol",
+        "original_gates"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T15",
+      "priority": "P0",
+      "component": "Invariant OS",
+      "title": "Modeli yeni süreçte ağsız aç ve hatalı artifacti reddet",
+      "basis": "Dil checkpoint replay başarısı neural checkpoint loader başarısı değil.",
+      "planned_action": "Gerçek config/vocab/schema+parametre paketini temiz süreçte yükle. Sabit fixture logits/output parity ve held-out inference, corrupt weights/schema mismatch reddi, optimizer resume ve ağsız inference yap. Eksik modelde MODEL_NOT_LOADED; statik yanıt yok.",
+      "deliverables": [
+        "reload_test.json",
+        "offline_test.json",
+        "model_integrity_negative_tests.json",
+        "REPRODUCE.md"
+      ],
+      "acceptance": "Yeni süreçte gerçek model yükleniyor; gizli notebook/training nesnesi veya API fallback yok; bozuk/uyumsuz artifact açık hata.",
+      "depends_on": [
+        "T11"
+      ],
+      "gate_ids": [
+        "M05",
+        "M08",
+        "M11"
+      ],
+      "source_refs": [
+        "model_command",
+        "model_protocol"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T16",
+      "priority": "P0",
+      "component": "Invariant OS",
+      "title": "Çalışan model + doğrulayıcı + Runtime Console ürün akışı",
+      "basis": "G51 runtime/provenance/replay destekleyici hat; mevcut demosu native modeli ikame etmez. G52-G53 ayrı korunmuş işler.",
+      "planned_action": "Tipli istek→native program önerisi→ICL check→trusted policy→VM→sonuç/trace→checkpoint/replay akışını bağla. Terminal veya küçük UI ile model/sürüm, kaynak, reddetme nedenleri, belirsizlik ve kayıt göster. İlk ürün yerel ve finite olabilir; gerçek OS kernel/FPGA işi önkoşul değil.",
+      "deliverables": [
+        "invariant_cognition_product/",
+        "END_TO_END_DEMO.md",
+        "product_e2e_results.json"
+      ],
+      "acceptance": "Kullanıcı aynı arayüzden gerçek modeli yükleyip yeni görevde sonuç alıyor; tüm görünür sonuç gerçek inference/execution; model ve verifier katkıları ayrı.",
+      "depends_on": [
+        "T07",
+        "T13",
+        "T15"
+      ],
+      "gate_ids": [
+        "L08",
+        "M05",
+        "M08",
+        "M11"
+      ],
+      "source_refs": [
+        "model_command",
+        "core_handoff"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T17",
+      "priority": "P0",
+      "component": "Ortak",
+      "title": "Kalıcı sürümlü teslim ve güncel kabul sicili",
+      "basis": "Kurtarma notlarında yerel ve uzak farklı artifact/revision kayıtları var; güncel durum tek tek dosya kimliği ve hash ile gösterilmeli.",
+      "planned_action": "OCIL kaynaklarını, OS model/code/data lineage/loglarını ve ortak coverage/gap kaydını mevcut kanonik köklerin yeni sürümlü altına yerleştir. Eski NOT_RUN emirlerini geçmiş metin olarak koru; güncel CURRENT_STATUS manifesti ayrı olsun. Gerçek upload/readback/hash durumunu belge bazında doğrula; web/Drive public izinlerini değiştirme.",
+      "deliverables": [
+        "CURRENT_STATUS.json",
+        "MANIFEST.json",
+        "DELIVERY_RECEIPTS.json",
+        "RESUME.json",
+        "NEXT_ACTION.md"
+      ],
+      "acceptance": "Her artifact için dosya ID, parent, byte, SHA ve uzak readback; tüm L/M statüleri gerçek kanıttan türetilmiş; model başarısı olmadan AI tamam etiketi yok.",
+      "depends_on": [
+        "T13",
+        "T14",
+        "T15",
+        "T16"
+      ],
+      "gate_ids": [
+        "M11"
+      ],
+      "source_refs": [
+        "original_gates",
+        "recovery_resume",
+        "model_command"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    },
+    {
+      "id": "T18",
+      "priority": "P2",
+      "component": "Destekleyici hatlar",
+      "title": "ISC16 ve alan adapterlerini ayrı yol haritasında koru",
+      "basis": "G52/G53, M04-M07 biyomedikal/timeseries ve üçüncü taraf büyük model/adapterler ilk native coreun zorunlu önkoşulu değil.",
+      "planned_action": "ISC16 ISA/RTL regresyonlarını ve varsa native backend taşınmasını ayrı kapsamla sürdür. Klinik data adapterleri, public HF/GitHub deployment, ileri generic/self-hosting veya kapsamlı formal ispatı ayrı kaynak/izin ve kabulyle planla.",
+      "deliverables": [
+        "DEFERRED_TRACKS.md"
+      ],
+      "acceptance": "Ana hedefin yerine destekleyici demo geçmiyor; scope creep nedeniyle core/model tamamlanması ertelenmiyor; eski kod ve negatif sonuçlar korunuyor.",
+      "depends_on": [
+        "T02"
+      ],
+      "gate_ids": [],
+      "source_refs": [
+        "model_command",
+        "catalogue",
+        "core_archive"
+      ],
+      "status": "PLANNED_NOT_EXECUTED_THIS_TURN"
+    }
+  ],
+  "main_decision": "Korunmuş dil çekirdeğinden model/veri/öğrenme/değerlendirme/ürün teslimine ilerle; tek bir checkpointin bulunmasını bütün işin önkoşulu yapma. Original continuation ve yeni run kesinlikle ayrı."
+}

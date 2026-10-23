@@ -1,0 +1,11 @@
+test_authorized_policy_must_be_independently_supplied_on_replay (test_vm_replay.VMReplayTests.test_authorized_policy_must_be_independently_supplied_on_replay) ... ok
+test_bad_opcodes_and_operators_fail_closed (test_vm_replay.VMReplayTests.test_bad_opcodes_and_operators_fail_closed) ... ok
+test_call_stack_limit_does_not_limit_lexical_scopes (test_vm_replay.VMReplayTests.test_call_stack_limit_does_not_limit_lexical_scopes) ... ok
+test_every_instruction_boundary_replays_with_identical_state_trace (test_vm_replay.VMReplayTests.test_every_instruction_boundary_replays_with_identical_state_trace) ... ok
+test_operand_types_are_checked_without_host_exception (test_vm_replay.VMReplayTests.test_operand_types_are_checked_without_host_exception) ... ok
+test_recomputed_checkpoint_checksum_cannot_supply_authority (test_vm_replay.VMReplayTests.test_recomputed_checkpoint_checksum_cannot_supply_authority) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.009s
+
+OK

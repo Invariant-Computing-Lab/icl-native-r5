@@ -1,0 +1,10 @@
+{
+  "archive_sha256": "949453a16c50643d7c5ee470288ee1bb9f096c5f1c5ec3d12313f61d0629d4c2",
+  "archive_bytes": 434913,
+  "manifest_verified_entries": 197,
+  "original_member_count": 199,
+  "origin": "Drive persisted original ICL-Core 0.1.0",
+  "original_commit": "400c91ac635c12f135d762dea6d6de16f3bd1291",
+  "unchanged_originals": true,
+  "R4_original_model_recovered": false
+}

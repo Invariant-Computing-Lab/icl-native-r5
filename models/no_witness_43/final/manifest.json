@@ -1,0 +1,17 @@
+{
+  "schema": "ICL_R5_CHECKPOINT/1",
+  "files": {
+    "weights.safetensors": {
+      "sha256": "027882f72162c9ec949045bab3b51aceb199baa616fd91d36d78bf17ff9501e2",
+      "bytes": 11480
+    },
+    "optimizer.npz": {
+      "sha256": "501ef173199ea8c4291458e00527e9d607cbd525daa6011dd8be30f47f24102d",
+      "bytes": 23805
+    },
+    "state.json": {
+      "sha256": "b39553bc6f6b3cc56a2ac06c8567f3d23a5d3d724970a9fad732676adfd40544",
+      "bytes": 80486
+    }
+  }
+}

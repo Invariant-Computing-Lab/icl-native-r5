@@ -1,0 +1,70 @@
+{
+  "release_id": "ICL_R5_20261013",
+  "language_version": "0.2.1",
+  "origin": "NEW_IMPLEMENTATION_AND_NEW_TRAINING_ON_RECOVERED_CORE",
+  "status": "LOCAL_RESEARCH_PROTOTYPE_VERIFIED_WITH_OPEN_BROAD_GATES",
+  "all_18_tasks_complete": false,
+  "full_general_AI_MVP_complete": false,
+  "native_parameters": 2774,
+  "flat_parameters": 2758,
+  "trained_runs": 18,
+  "selected_deployment_seed": 17,
+  "declaration_of_seed_selection": "fixed first seed, not best held-out seed",
+  "data_examples": 30000,
+  "input_task_groups": 28000,
+  "mean_raw_semantic_prefix_accuracy": {
+    "native": {
+      "id": 1.0,
+      "long": 1.0,
+      "counterfactual": 1.0
+    },
+    "flat": {
+      "id": 0.9985,
+      "long": 0.996,
+      "counterfactual": 0.99825
+    },
+    "no_context": {
+      "id": 0.7271666666666666,
+      "long": 0.4978333333333333,
+      "counterfactual": 0.6266666666666666
+    },
+    "no_witness": {
+      "id": 0.917,
+      "long": 0.8695,
+      "counterfactual": 0.86625
+    },
+    "no_memory": {
+      "id": 0.947,
+      "long": 0.9395,
+      "counterfactual": 0.94
+    },
+    "no_invariance": {
+      "id": 1.0,
+      "long": 1.0,
+      "counterfactual": 1.0
+    }
+  },
+  "core_acceptance_passed": 1181,
+  "additional_pytest_passed": 72,
+  "replay_unittest_methods": 6,
+  "clean_venv_process_checks": 8,
+  "console_http_restart_checks": 10,
+  "actual_candidate_vm_programs_checked": 2304,
+  "same_inputs_reference_execution_methods": 2,
+  "not_independent_60000_programs": true,
+  "bool_grid_cases_per_native_seed": 602112,
+  "grid_wrong_counts": {
+    "17": 0,
+    "29": 0,
+    "43": 0
+  },
+  "raw_free_form_syntax_accuracy": null,
+  "model_state_prediction": "exact arithmetic and memory handled by deterministic runtime, not neural prediction",
+  "superiority_claim": "NOT_ESTABLISHED",
+  "drive_upload": "NOT_PERFORMED_NO_EXPOSED_WRITE_ACTION",
+  "public_release": false,
+  "live_background_jobs": null,
+  "browser_live_e2e": "BLOCKED_BY_ADMINISTRATOR_NETWORK_POLICY",
+  "browser_offline_preview": "RENDERED_RECORDED_CLI_RESULT_ONLY",
+  "client_javascript_syntax": "PASS_NODE_CHECK"
+}

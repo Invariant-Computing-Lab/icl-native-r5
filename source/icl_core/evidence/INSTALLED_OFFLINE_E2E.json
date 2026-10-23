@@ -1,0 +1,351 @@
+{
+  "passed": true,
+  "tests": [
+    {
+      "name": "network_guard",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-c",
+        "import socket\ntry: socket.create_connection(('example.com',443)); raise AssertionError('network allowed')\nexcept RuntimeError as e: assert str(e)=='OFFLINE_TEST_NETWORK_DENIED'\nprint('NETWORK_DENIED')"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "NETWORK_DENIED\n",
+      "stderr": "",
+      "seconds": 0.05850097199436277,
+      "passed": true
+    },
+    {
+      "name": "version",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "0.1.0\n",
+      "stderr": "",
+      "seconds": 0.07128234000265365,
+      "passed": true
+    },
+    {
+      "name": "check_help",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "check",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "usage: icl check [-h] [--module-map MODULE_MAP] [--entry ENTRY] [--json]\n                 [--max-steps MAX_STEPS]\n                 source\n\npositional arguments:\n  source\n\noptions:\n  -h, --help            show this help message and exit\n  --module-map MODULE_MAP\n                        JSON file mapping module names to source text\n  --entry ENTRY\n  --json                JSON is also the default output\n  --max-steps MAX_STEPS\n",
+      "stderr": "",
+      "seconds": 0.08759848499903455,
+      "passed": true
+    },
+    {
+      "name": "run_help",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "run",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "usage: icl run [-h] [--module-map MODULE_MAP] [--entry ENTRY] [--json]\n               [--max-steps MAX_STEPS] [--args ARGS] [--engine {vm,tree}]\n               [--policy POLICY] [--trace] [--stop-after STOP_AFTER]\n               [--checkpoint-out CHECKPOINT_OUT]\n               source\n\npositional arguments:\n  source\n\noptions:\n  -h, --help            show this help message and exit\n  --module-map MODULE_MAP\n                        JSON file mapping module names to source text\n  --entry ENTRY\n  --json                JSON is also the default output\n  --max-steps MAX_STEPS\n  --args ARGS           JSON argument array\n  --engine {vm,tree}\n  --policy POLICY       Separate trusted host policy JSON file\n  --trace\n  --stop-after STOP_AFTER\n  --checkpoint-out CHECKPOINT_OUT\n",
+      "stderr": "",
+      "seconds": 0.27257973000087077,
+      "passed": true
+    },
+    {
+      "name": "compile_help",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "compile",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "usage: icl compile [-h] [--module-map MODULE_MAP] [--entry ENTRY] [--json]\n                   [--max-steps MAX_STEPS] -o OUTPUT\n                   source\n\npositional arguments:\n  source\n\noptions:\n  -h, --help            show this help message and exit\n  --module-map MODULE_MAP\n                        JSON file mapping module names to source text\n  --entry ENTRY\n  --json                JSON is also the default output\n  --max-steps MAX_STEPS\n  -o OUTPUT, --output OUTPUT\n",
+      "stderr": "",
+      "seconds": 0.07073958399996627,
+      "passed": true
+    },
+    {
+      "name": "inspect_help",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "inspect",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "usage: icl inspect [-h] [--json] ocir\n\npositional arguments:\n  ocir\n\noptions:\n  -h, --help  show this help message and exit\n  --json\n",
+      "stderr": "",
+      "seconds": 0.1262176090021967,
+      "passed": true
+    },
+    {
+      "name": "replay_help",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "replay",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "usage: icl replay [-h] [--args ARGS] [--policy POLICY] [--json] [--trace]\n                  ocir checkpoint\n\npositional arguments:\n  ocir\n  checkpoint\n\noptions:\n  -h, --help       show this help message and exit\n  --args ARGS\n  --policy POLICY\n  --json\n  --trace\n",
+      "stderr": "",
+      "seconds": 0.09052521100238664,
+      "passed": true
+    },
+    {
+      "name": "test_help",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "test",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "usage: icl test [-h] [--json]\n\noptions:\n  -h, --help  show this help message and exit\n  --json\n",
+      "stderr": "",
+      "seconds": 0.06987099099933403,
+      "passed": true
+    },
+    {
+      "name": "check",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "check",
+        "/tmp/icl_cli_hedo88cq/flow.icl",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "{\"program_id\": \"4a75ed93ec4daf45074fde74676197535bd0f908cae63a22ff856d85e7e571e2\", \"required_effects\": [], \"schema_sha256\": \"69bc2772fe80df1aafdd98f2c2095b3232c5257aa727041a40ba24a0838d06b1\", \"status\": \"PASS\"}\n",
+      "stderr": "",
+      "seconds": 0.09197947200300405,
+      "passed": true
+    },
+    {
+      "name": "zero_fuel_policy",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "run",
+        "/tmp/icl_cli_hedo88cq/flow.icl",
+        "--max-steps",
+        "0",
+        "--json"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2,
+      "stdout": "",
+      "stderr": "{\"status\": \"ERROR\", \"diagnostic\": {\"code\": \"RESOURCE_POLICY\", \"message\": \"limits may only reduce defaults\", \"span\": null}}\n",
+      "seconds": 0.17559762499877252,
+      "passed": true
+    },
+    {
+      "name": "run_tree",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "run",
+        "/tmp/icl_cli_hedo88cq/flow.icl",
+        "--engine",
+        "tree",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "{\"effects\": [], \"status\": \"PASS\", \"steps\": 95, \"trace_events\": 95, \"trace_sha256\": \"239e1bfd404f9fa98eabc32036e3130771cd9d064137a2b2a29b9c17ff0720a2\", \"value\": 30}\n",
+      "stderr": "",
+      "seconds": 0.0789697620057268,
+      "passed": true
+    },
+    {
+      "name": "run_vm",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "run",
+        "/tmp/icl_cli_hedo88cq/flow.icl",
+        "--engine",
+        "vm",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "{\"effects\": [], \"halted\": true, \"status\": \"PASS\", \"steps\": 129, \"trace_events\": 129, \"trace_sha256\": \"42f2de1fef3267510c76acba6d82704edf99e15a7da450c0c647350dcb03be9a\", \"value\": 30}\n",
+      "stderr": "",
+      "seconds": 0.1387837229995057,
+      "passed": true
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "compile",
+        "/tmp/icl_cli_hedo88cq/flow.icl",
+        "-o",
+        "/tmp/icl_cli_hedo88cq/flow.ocir",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "{\"output\": \"/tmp/icl_cli_hedo88cq/flow.ocir\", \"sha256\": \"6136b5bfd550bb1bfa832c2198fd7709cc701784e3b79f486961731861e733f3\", \"status\": \"PASS\"}\n",
+      "stderr": "",
+      "seconds": 0.0964562150038546,
+      "passed": true
+    },
+    {
+      "name": "inspect",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "inspect",
+        "/tmp/icl_cli_hedo88cq/flow.ocir",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "{\"entrypoint\": \"main\", \"functions\": [\"twice\", \"main\"], \"integrity\": \"PASS\", \"limits\": {\"max_items\": 100000, \"max_output\": 1000000, \"max_stack\": 128, \"max_steps\": 100000, \"max_tensor\": 4096}, \"program_id\": \"4a75ed93ec4daf45074fde74676197535bd0f908cae63a22ff856d85e7e571e2\", \"required_effects\": [], \"schema_sha256\": \"69bc2772fe80df1aafdd98f2c2095b3232c5257aa727041a40ba24a0838d06b1\", \"schema_version\": \"0.1.0\"}\n",
+      "stderr": "",
+      "seconds": 0.08657441899413243,
+      "passed": true
+    },
+    {
+      "name": "checkpoint",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "run",
+        "/tmp/icl_cli_hedo88cq/flow.icl",
+        "--stop-after",
+        "8",
+        "--checkpoint-out",
+        "/tmp/icl_cli_hedo88cq/checkpoint.json",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "{\"checkpoint\": {\"bytecode_hash\": \"0816a0197f7c1dfb46658c04bf5c6f6cd9fc4baadaa716555fa9c64816803df7\", \"effects\": [], \"frames\": [{\"function\": \"main\", \"loops\": {\"1\": 0}, \"pc\": 8, \"scopes\": [{\"locals\": {}, \"mutable\": {}}, {\"locals\": {\"a\": 0, \"i\": 0}, \"mutable\": {\"a\": true, \"i\": true}}], \"stack\": [0, 6]}], \"integrity\": \"5586ec525e4112540187be6067138cfed6b19e8b4df604ccfd306b6b41ab2a19\", \"limits\": {\"max_items\": 100000, \"max_output\": 1000000, \"max_stack\": 128, \"max_steps\": 100000, \"max_tensor\": 4096}, \"policy\": {}, \"prng\": 1, \"schema\": \"icl-vm-checkpoint/1\", \"steps\": 8, \"trace\": [{\"clock_mode\": \"logical\", \"effect_decision\": null, \"effect_request\": null, \"error_code\": null, \"input_hash\": \"5d87ea7fe63fe095e3776ddc3ff27a367336ea19487a932a612b98eb89817ac8\", \"op_id\": \"BC:ENTER_SCOPE\", \"output_hash\": \"3a45cbde90cca9e74c7a2253129d90773fc7f2e82fb605bd65c991e2851104d9\", \"recovery_ref\": null, \"run_id\": \"deterministic\", \"state_ref\": \"3a45cbde90cca9e74c7a2253129d90773fc7f2e82fb605bd65c991e2851104d9\", \"step\": 1}, {\"clock_mode\": \"logical\", \"effect_decision\": null, \"effect_request\": null, \"error_code\": null, \"input_hash\": \"3a45cbde90cca9e74c7a2253129d90773fc7f2e82fb605bd65c991e2851104d9\", \"op_id\": \"BC:PUSH\", \"output_hash\": \"084d53b9b3b8d5fae53bfbb4ed21763f5e41da2b6903c2bbeeba2374dfa0e369\", \"recovery_ref\": null, \"run_id\": \"deterministic\", \"state_ref\": \"084d53b9b3b8d5fae53bfbb4ed21763f5e41da2b6903c2bbeeba2374dfa0e369\", \"step\": 2}, {\"clock_mode\": \"logical\", \"effect_decision\": null, \"effect_request\": null, \"error_code\": null, \"input_hash\": \"084d53b9b3b8d5fae53bfbb4ed21763f5e41da2b6903c2bbeeba2374dfa0e369\", \"op_id\": \"BC:LET\", \"output_hash\": \"260af8c994365200325751913bdc2b471aa171fcabed52c7c7ba6ab383d08226\", \"recovery_ref\": null, \"run_id\": \"deterministic\", \"state_ref\": \"260af8c994365200325751913bdc2b471aa171fcabed52c7c7ba6ab383d08226\", \"step\": 3}, {\"clock_mode\": \"logical\", \"effect_decision\": null, \"effect_request\": null, \"error_code\": null, \"input_hash\": \"260af8c994365200325751913bdc2b471aa171fcabed52c7c7ba6ab383d08226\", \"op_id\": \"BC:PUSH\", \"output_hash\": \"fe154e5a4552f80a0841d3f0c25b6527840f4b3f60c4c7a66115fd27dd702674\", \"recovery_ref\": null, \"run_id\": \"deterministic\", \"state_ref\": \"fe154e5a4552f80a0841d3f0c25b6527840f4b3f60c4c7a66115fd27dd702674\", \"step\": 4}, {\"clock_mode\": \"logical\", \"effect_decision\": null, \"effect_request\": null, \"error_code\": null, \"input_hash\": \"fe154e5a4552f80a0841d3f0c25b6527840f4b3f60c4c7a66115fd27dd702674\", \"op_id\": \"BC:LET\", \"output_hash\": \"876165e6eadd0e7d9d732b8a603b55b47fc2b0a96231d39207054d648cc1bd18\", \"recovery_ref\": null, \"run_id\": \"deterministic\", \"state_ref\": \"876165e6eadd0e7d9d732b8a603b55b47fc2b0a96231d39207054d648cc1bd18\", \"step\": 5}, {\"clock_mode\": \"logical\", \"effect_decision\": null, \"effect_request\": null, \"error_code\": null, \"input_hash\": \"876165e6eadd0e7d9d732b8a603b55b47fc2b0a96231d39207054d648cc1bd18\", \"op_id\": \"BC:LOOP_RESET\", \"output_hash\": \"9768a583a0e6c5afe124f786222d51ad2ec0a378b7823feb16520135116456a5\", \"recovery_ref\": null, \"run_id\": \"deterministic\", \"state_ref\": \"9768a583a0e6c5afe124f786222d51ad2ec0a378b7823feb16520135116456a5\", \"step\": 6}, {\"clock_mode\": \"logical\", \"effect_decision\": null, \"effect_request\": null, \"error_code\": null, \"input_hash\": \"9768a583a0e6c5afe124f786222d51ad2ec0a378b7823feb16520135116456a5\", \"op_id\": \"BC:LOAD\", \"output_hash\": \"aad47f41d7406f658ecffec8e60d1254fbcbf4d731b24c2827d33b160f1121c3\", \"recovery_ref\": null, \"run_id\": \"deterministic\", \"state_ref\": \"aad47f41d7406f658ecffec8e60d1254fbcbf4d731b24c2827d33b160f1121c3\", \"step\": 7}, {\"clock_mode\": \"logical\", \"effect_decision\": null, \"effect_request\": null, \"error_code\": null, \"input_hash\": \"aad47f41d7406f658ecffec8e60d1254fbcbf4d731b24c2827d33b160f1121c3\", \"op_id\": \"BC:PUSH\", \"output_hash\": \"78d64b02def82aa3300cb7d71ed1c0770ca075ca6b085ce718e108a576b3c309\", \"recovery_ref\": null, \"run_id\": \"deterministic\", \"state_ref\": \"78d64b02def82aa3300cb7d71ed1c0770ca075ca6b085ce718e108a576b3c309\", \"step\": 8}]}, \"effects\": [], \"halted\": false, \"status\": \"PAUSED\", \"steps\": 8, \"trace_events\": 8, \"trace_sha256\": \"831177ef3ce14d3ee066c85782c47a4c5756e65fe6994ee9cde02ad0c7bdb23b\", \"value\": null}\n",
+      "stderr": "",
+      "seconds": 0.0758800350013189,
+      "passed": true
+    },
+    {
+      "name": "replay",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "replay",
+        "/tmp/icl_cli_hedo88cq/flow.ocir",
+        "/tmp/icl_cli_hedo88cq/checkpoint.json",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "{\"effects\": [], \"halted\": true, \"status\": \"PASS\", \"steps\": 129, \"trace_events\": 129, \"trace_sha256\": \"42f2de1fef3267510c76acba6d82704edf99e15a7da450c0c647350dcb03be9a\", \"value\": 30}\n",
+      "stderr": "",
+      "seconds": 0.06936770000174874,
+      "passed": true
+    },
+    {
+      "name": "diagnostic",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "check",
+        "/tmp/icl_cli_hedo88cq/bad.icl",
+        "--json"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2,
+      "stdout": "",
+      "stderr": "{\"status\": \"ERROR\", \"diagnostic\": {\"code\": \"TYPE\", \"message\": \"Bool incompatible with Int64\", \"span\": {\"line\": 1, \"column\": 30, \"offset\": 29}}}\n",
+      "seconds": 0.05228192800132092,
+      "passed": true
+    },
+    {
+      "name": "authority_deny",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "run",
+        "/tmp/icl_cli_hedo88cq/effect.icl",
+        "--json"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2,
+      "stdout": "",
+      "stderr": "{\"status\": \"ERROR\", \"diagnostic\": {\"code\": \"EFFECT_DENIED\", \"message\": \"trusted host policy denied action\", \"span\": null}}\n",
+      "seconds": 0.050600868999026716,
+      "passed": true
+    },
+    {
+      "name": "authority_boolean_type",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "run",
+        "/tmp/icl_cli_hedo88cq/effect.icl",
+        "--policy",
+        "/tmp/icl_cli_hedo88cq/policy.json",
+        "--json"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2,
+      "stdout": "",
+      "stderr": "{\"status\": \"ERROR\", \"diagnostic\": {\"code\": \"RESOURCE_POLICY\", \"message\": \"policy flags require strict booleans\", \"span\": null}}\n",
+      "seconds": 0.05406116400263272,
+      "passed": true
+    },
+    {
+      "name": "installed_test",
+      "argv": [
+        "/workspace/scratch/0d6a1dced55b/work/offline_venv/bin/python",
+        "-m",
+        "icl",
+        "test",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "{\"status\": \"PASS\", \"tests\": [{\"name\": \"arithmetic\", \"passed\": true}, {\"name\": \"branch\", \"passed\": true}, {\"name\": \"function\", \"passed\": true}]}\n",
+      "stderr": "",
+      "seconds": 0.07713188199704746,
+      "passed": true
+    }
+  ],
+  "package_source": "installed clean venv wheel, no source-path import",
+  "offline_scope": "Python socket guard plus no-index local-wheel install; OS network namespace unavailable",
+  "timestamp_utc": "2026-10-10T19:25:03.987780+00:00"
+}

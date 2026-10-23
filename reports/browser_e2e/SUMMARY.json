@@ -1,0 +1,9 @@
+{
+  "live_browser_e2e": "BLOCKED_BY_ADMINISTRATOR_NETWORK_POLICY",
+  "original_error": "Page.goto net::ERR_BLOCKED_BY_ADMINISTRATOR at local server",
+  "policy_not_bypassed": true,
+  "offline_render": "PASS",
+  "client_javascript_syntax": "PASS_NODE_CHECK",
+  "preview_source": "reports/DEMO_RESULT.json, previously executed CLI result; no new browser inference",
+  "separate_live_HTTP_tests": "reports/console_e2e/SUMMARY.json"
+}

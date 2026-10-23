@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "invariant-cognition-language"
+version = "0.1.0"
+description = "Finite ICL-Core language and typed OCIR interpreter/VM"
+requires-python = ">=3.11"
+dependencies = []
+[project.scripts]
+icl = "icl.cli:main"
+[tool.setuptools]
+packages = ["icl"]
+[tool.setuptools.package-data]
+icl = ["OCIR_SCHEMA.json", "TOKEN_VOCAB.json"]

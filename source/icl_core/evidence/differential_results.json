@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "total": 1008,
+    "passed": 1008,
+    "failed": 0,
+    "families": {
+      "integer_expression": 85,
+      "conditional_parameter": 85,
+      "bounded_loop": 85,
+      "function_composition": 85,
+      "list_index_length": 85,
+      "record_projection": 85,
+      "tuple_projection": 85,
+      "boolean_precedence": 85,
+      "float_division": 85,
+      "branch_mutation": 85,
+      "recursive_function": 73,
+      "mixed_record_call": 85
+    },
+    "failures": []
+  },
+  "unique_source_argument_cases": 1008,
+  "records": "DIFFERENTIAL_CASES.jsonl",
+  "records_sha256": "aa8f611a9df2812540e3f07a268a538cdc45d0bd7aa837c9e5f7cabf1e2a2c38",
+  "exact_domain_disagreements": 0,
+  "float_tolerance": {
+    "atol": 1e-10,
+    "rtol": 1e-10
+  }
+}

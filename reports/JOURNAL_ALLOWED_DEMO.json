@@ -1,0 +1,514 @@
+{
+  "schema": "ICL_R5_PRODUCT_RESULT/1",
+  "model_seed": 17,
+  "proposal": {
+    "actions": [
+      "JOURNAL"
+    ],
+    "confidence": 0.9983425668398523,
+    "composed_result": {
+      "tag": "Ok",
+      "value": 5
+    },
+    "guard_rejection": null,
+    "journal_attempts": 1,
+    "journal_allow_decisions": 1,
+    "execution_scope": "host simulation until vm_verify executes the candidate"
+  },
+  "verification": {
+    "executed": true,
+    "source_program": "module native_plan;\ntype Pair = Record{delta:Int64,value:Int64};\nfn record_sum(p:Pair)->Int64 {return p.value+p.delta;}\nfn main(initial:Int64, initial_memory:Int64)->Result[Int64] {\nvar x = initial; var memo = initial_memory;\n\nlet permitted0=request_effect(\"journal\",\"step_0\");\nreturn ok(x); }\n",
+    "ocir": {
+      "schema_version": "0.2.1",
+      "schema_sha256": "0dd381cb61f65f3346c07918aae587c42c583f8b4449583fdd4dca1afdcee60c",
+      "feature_set": [
+        "functions",
+        "modules",
+        "lexical_scope",
+        "checked_int64",
+        "finite_float64",
+        "bounded_loop",
+        "list",
+        "record",
+        "tuple",
+        "option",
+        "result",
+        "tensor",
+        "observer",
+        "recovery",
+        "policy_effect",
+        "checkpoint",
+        "record_annotations",
+        "type_aliases",
+        "contextual_empty_lists"
+      ],
+      "program_id": "0952d5434367666db662a01e43748fc01a3f00c23dc8eca02982aafbe63262c8",
+      "source_sha256": "ef8970593bfa8eccc4af67f1aff56aa61de2eae99fc416a1957a964caf4cd670",
+      "module_graph": [
+        {
+          "module": "native_plan",
+          "imports": [],
+          "source_sha256": "ef8970593bfa8eccc4af67f1aff56aa61de2eae99fc416a1957a964caf4cd670"
+        }
+      ],
+      "typed_blocks": [
+        {
+          "name": "record_sum",
+          "params": [
+            [
+              "p",
+              "Record{delta:Int64,value:Int64}"
+            ]
+          ],
+          "return_type": "Int64",
+          "body": [
+            {
+              "kind": "return",
+              "expr": {
+                "kind": "binary",
+                "op": "+",
+                "left": {
+                  "kind": "field",
+                  "target": {
+                    "kind": "var",
+                    "name": "p",
+                    "span": {
+                      "line": 3,
+                      "column": 38,
+                      "offset": 102
+                    },
+                    "inferred_type": "Record{delta:Int64,value:Int64}"
+                  },
+                  "name": "value",
+                  "span": {
+                    "line": 3,
+                    "column": 38,
+                    "offset": 102
+                  },
+                  "inferred_type": "Int64"
+                },
+                "right": {
+                  "kind": "field",
+                  "target": {
+                    "kind": "var",
+                    "name": "p",
+                    "span": {
+                      "line": 3,
+                      "column": 46,
+                      "offset": 110
+                    },
+                    "inferred_type": "Record{delta:Int64,value:Int64}"
+                  },
+                  "name": "delta",
+                  "span": {
+                    "line": 3,
+                    "column": 46,
+                    "offset": 110
+                  },
+                  "inferred_type": "Int64"
+                },
+                "span": {
+                  "line": 3,
+                  "column": 38,
+                  "offset": 102
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 3,
+                "column": 31,
+                "offset": 95
+              }
+            }
+          ],
+          "span": {
+            "line": 3,
+            "column": 1,
+            "offset": 65
+          }
+        },
+        {
+          "name": "main",
+          "params": [
+            [
+              "initial",
+              "Int64"
+            ],
+            [
+              "initial_memory",
+              "Int64"
+            ]
+          ],
+          "return_type": "Result[Int64]",
+          "body": [
+            {
+              "kind": "let",
+              "name": "x",
+              "type": null,
+              "mutable": true,
+              "expr": {
+                "kind": "var",
+                "name": "initial",
+                "span": {
+                  "line": 5,
+                  "column": 9,
+                  "offset": 190
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 5,
+                "column": 1,
+                "offset": 182
+              },
+              "inferred_type": "Int64"
+            },
+            {
+              "kind": "let",
+              "name": "memo",
+              "type": null,
+              "mutable": true,
+              "expr": {
+                "kind": "var",
+                "name": "initial_memory",
+                "span": {
+                  "line": 5,
+                  "column": 29,
+                  "offset": 210
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 5,
+                "column": 18,
+                "offset": 199
+              },
+              "inferred_type": "Int64"
+            },
+            {
+              "kind": "let",
+              "name": "permitted0",
+              "type": null,
+              "mutable": false,
+              "expr": {
+                "kind": "call",
+                "name": "request_effect",
+                "args": [
+                  {
+                    "kind": "literal",
+                    "value": "journal",
+                    "span": {
+                      "line": 7,
+                      "column": 31,
+                      "offset": 257
+                    },
+                    "inferred_type": "String"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": "step_0",
+                    "span": {
+                      "line": 7,
+                      "column": 41,
+                      "offset": 267
+                    },
+                    "inferred_type": "String"
+                  }
+                ],
+                "span": {
+                  "line": 7,
+                  "column": 16,
+                  "offset": 242
+                },
+                "inferred_type": "Bool"
+              },
+              "span": {
+                "line": 7,
+                "column": 1,
+                "offset": 227
+              },
+              "inferred_type": "Bool"
+            },
+            {
+              "kind": "return",
+              "expr": {
+                "kind": "call",
+                "name": "ok",
+                "args": [
+                  {
+                    "kind": "var",
+                    "name": "x",
+                    "span": {
+                      "line": 8,
+                      "column": 11,
+                      "offset": 288
+                    },
+                    "inferred_type": "Int64"
+                  }
+                ],
+                "span": {
+                  "line": 8,
+                  "column": 8,
+                  "offset": 285
+                },
+                "inferred_type": "Result[Int64]"
+              },
+              "span": {
+                "line": 8,
+                "column": 1,
+                "offset": 278
+              }
+            }
+          ],
+          "span": {
+            "line": 4,
+            "column": 1,
+            "offset": 120
+          }
+        }
+      ],
+      "ops": [
+        {
+          "name": "request_effect",
+          "operand_types": [
+            "String",
+            "String"
+          ],
+          "result_type": "Bool"
+        },
+        {
+          "name": "ok",
+          "operand_types": [
+            "Int64"
+          ],
+          "result_type": "Result[Int64]"
+        }
+      ],
+      "operand_types": [
+        [
+          "String",
+          "String"
+        ],
+        [
+          "Int64"
+        ]
+      ],
+      "shape_constraints": [],
+      "observer_context": {
+        "mode": "explicit_metadata",
+        "implicit_conversion": false
+      },
+      "provenance_refs": [
+        {
+          "source_sha256": "ef8970593bfa8eccc4af67f1aff56aa61de2eae99fc416a1957a964caf4cd670",
+          "module": "native_plan",
+          "status": "COMPILED_LOCAL_SOURCE"
+        }
+      ],
+      "required_effects": [
+        "policy_request"
+      ],
+      "limits": {
+        "max_steps": 100000,
+        "max_stack": 128,
+        "max_items": 100000,
+        "max_output": 1000000,
+        "max_tensor": 4096
+      },
+      "numeric_policy": {
+        "int64": "checked_signed",
+        "integer_division": "truncate_toward_zero",
+        "float64": "finite_only",
+        "atol": 1e-06,
+        "rtol": 1e-05,
+        "normalize_epsilon": 1e-05
+      },
+      "entrypoint": "main",
+      "integrity_sha256": "516fdad1de81ace1fefaa75c40b6f9160238e21a22f284b7a3f9de2a255c7478"
+    },
+    "result": {
+      "value": {
+        "tag": "Ok",
+        "value": 5
+      },
+      "trace": [
+        {
+          "run_id": "deterministic",
+          "step": 1,
+          "op_id": "BC:ENTER_SCOPE",
+          "input_hash": "165d6c49cb11b4a4bd4ffdf872bdae8ca1eab08ba478ef2f8356b60f440f43d1",
+          "output_hash": "d5f68f2893ab889afffb88052ff5a359c577bc48d76cdb82bf5bcca61faa2652",
+          "state_ref": "d5f68f2893ab889afffb88052ff5a359c577bc48d76cdb82bf5bcca61faa2652",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 2,
+          "op_id": "BC:LOAD",
+          "input_hash": "d5f68f2893ab889afffb88052ff5a359c577bc48d76cdb82bf5bcca61faa2652",
+          "output_hash": "63386403efdfe10726af76c9efb39073ce16ac2d16c173f692ed2a937e2a85b7",
+          "state_ref": "63386403efdfe10726af76c9efb39073ce16ac2d16c173f692ed2a937e2a85b7",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 3,
+          "op_id": "BC:LET",
+          "input_hash": "63386403efdfe10726af76c9efb39073ce16ac2d16c173f692ed2a937e2a85b7",
+          "output_hash": "f34c0a1fe709a89044b068b73a78e7572fac844b9fc38b8bb540232135d1b2ad",
+          "state_ref": "f34c0a1fe709a89044b068b73a78e7572fac844b9fc38b8bb540232135d1b2ad",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 4,
+          "op_id": "BC:LOAD",
+          "input_hash": "f34c0a1fe709a89044b068b73a78e7572fac844b9fc38b8bb540232135d1b2ad",
+          "output_hash": "f0a745683692c70c22d4c4809c0e7c8bd11b5bfc5f9d5dcd097e1928ddea2203",
+          "state_ref": "f0a745683692c70c22d4c4809c0e7c8bd11b5bfc5f9d5dcd097e1928ddea2203",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 5,
+          "op_id": "BC:LET",
+          "input_hash": "f0a745683692c70c22d4c4809c0e7c8bd11b5bfc5f9d5dcd097e1928ddea2203",
+          "output_hash": "133db1530008e1aeff3ac002934e02a2aba50ad6b37cad9fd4ceed50a2a71ec5",
+          "state_ref": "133db1530008e1aeff3ac002934e02a2aba50ad6b37cad9fd4ceed50a2a71ec5",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 6,
+          "op_id": "BC:PUSH",
+          "input_hash": "133db1530008e1aeff3ac002934e02a2aba50ad6b37cad9fd4ceed50a2a71ec5",
+          "output_hash": "ed8551cee88ec4f1d7ae705ba65be865f4e09a3b32a3f22596a0847c3ba69fd8",
+          "state_ref": "ed8551cee88ec4f1d7ae705ba65be865f4e09a3b32a3f22596a0847c3ba69fd8",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 7,
+          "op_id": "BC:PUSH",
+          "input_hash": "ed8551cee88ec4f1d7ae705ba65be865f4e09a3b32a3f22596a0847c3ba69fd8",
+          "output_hash": "d57ecb277276e5412ebd2b9063e2a548aa5f896390cd36b7617ffe520e7c4a0b",
+          "state_ref": "d57ecb277276e5412ebd2b9063e2a548aa5f896390cd36b7617ffe520e7c4a0b",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 8,
+          "op_id": "BC:CALL",
+          "input_hash": "d57ecb277276e5412ebd2b9063e2a548aa5f896390cd36b7617ffe520e7c4a0b",
+          "output_hash": "71e16599aac9086bfea45be8212f12eb8ec668ffedd62fe82011c60497b98e12",
+          "state_ref": "71e16599aac9086bfea45be8212f12eb8ec668ffedd62fe82011c60497b98e12",
+          "effect_request": {
+            "action": "journal",
+            "payload_hash": "6d353a075a8152bf315778ad3075ab4dfddaf30c1d008a634c8ee1c92f267297"
+          },
+          "effect_decision": "ALLOWED_LOCAL_JOURNAL",
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 9,
+          "op_id": "BC:LET",
+          "input_hash": "71e16599aac9086bfea45be8212f12eb8ec668ffedd62fe82011c60497b98e12",
+          "output_hash": "aa894b855dba7494b3f3ee25f26c608db6c6c8370c0caa79260cce9181f71a87",
+          "state_ref": "aa894b855dba7494b3f3ee25f26c608db6c6c8370c0caa79260cce9181f71a87",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 10,
+          "op_id": "BC:LOAD",
+          "input_hash": "aa894b855dba7494b3f3ee25f26c608db6c6c8370c0caa79260cce9181f71a87",
+          "output_hash": "311ecc9d363ade895d110dc3f3d51dde09110146c92ce7f14141586b1070c63f",
+          "state_ref": "311ecc9d363ade895d110dc3f3d51dde09110146c92ce7f14141586b1070c63f",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 11,
+          "op_id": "BC:CALL",
+          "input_hash": "311ecc9d363ade895d110dc3f3d51dde09110146c92ce7f14141586b1070c63f",
+          "output_hash": "5444579dded0659694fffe5d35d506ff3744a134bd37f46f5eae79502ae19116",
+          "state_ref": "5444579dded0659694fffe5d35d506ff3744a134bd37f46f5eae79502ae19116",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 12,
+          "op_id": "BC:RETURN",
+          "input_hash": "5444579dded0659694fffe5d35d506ff3744a134bd37f46f5eae79502ae19116",
+          "output_hash": "a425add845399cff38a210ad9dcbe512ae47a3ce418157ccb4329b5d3d6133aa",
+          "state_ref": "a425add845399cff38a210ad9dcbe512ae47a3ce418157ccb4329b5d3d6133aa",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        }
+      ],
+      "effects": [
+        {
+          "action": "journal",
+          "payload_hash": "6d353a075a8152bf315778ad3075ab4dfddaf30c1d008a634c8ee1c92f267297",
+          "decision": "ALLOWED_LOCAL_JOURNAL",
+          "external_executed": false
+        }
+      ],
+      "steps": 12,
+      "halted": true
+    },
+    "runtime_consistency": true
+  },
+  "scope": "finite structured intent -> learned opcode -> deterministic ICL code and VM",
+  "learned": "opcode and finite error-class decision",
+  "not_learned": "source syntax, composition control, exact arithmetic, authoritative permission, persistent memory",
+  "confidence_is_uncalibrated": true,
+  "tensor_backend": "ICL VM pure Python float64",
+  "third_party_weights_used": false
+}

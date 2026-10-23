@@ -1,0 +1,1459 @@
+[
+  {
+    "example_id": "long_000000",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "6c797a2aaeb6a8136cf7a469ec3ede7a8e144e219812f52bc0b3e03455b5c612",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "425c14c7328d452cb2b3783e1e838d9f2b763d5a6e979e0a83e6b898b2f1e862",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000001",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "425c14c7328d452cb2b3783e1e838d9f2b763d5a6e979e0a83e6b898b2f1e862",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000002",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "e9840a922ab3fe6fa1e2d50d670d4de3b0452966ec902bddc278ebe5ca7590bb",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000003",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000004",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000005",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "0406c1d90804ca046b37abfaba42658a830e457be1afa9a1ca3fc9eb5d5cc2d3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000006",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000007",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "7c7807097f10cb838d4a08dd5621929ba2e23f2568979313b81b50df6a8c3043",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "4e859927a0a5a85974fd03c8df1852f600ce18f2746256ab50c16013cbe821ba",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000008",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000009",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4af4a6f9ffdca39c9ee2a44f7c6f03ce3e5319b30051558e39a7dce115cdf6c3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000010",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000011",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "d917ae6c9075a8247a87f89ef1501f97ed1ecbeea05ad366a2aa5e3b37a11b87",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000012",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000013",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "6c797a2aaeb6a8136cf7a469ec3ede7a8e144e219812f52bc0b3e03455b5c612",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000014",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000015",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "6c797a2aaeb6a8136cf7a469ec3ede7a8e144e219812f52bc0b3e03455b5c612",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "ad3560edbf8fe3b0ec199ea8b4490c27d3c6f6edc98b5701bd4b69aef9c0a603",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000016",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000017",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000018",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "ad3560edbf8fe3b0ec199ea8b4490c27d3c6f6edc98b5701bd4b69aef9c0a603",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000019",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000020",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4af4a6f9ffdca39c9ee2a44f7c6f03ce3e5319b30051558e39a7dce115cdf6c3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000021",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4af4a6f9ffdca39c9ee2a44f7c6f03ce3e5319b30051558e39a7dce115cdf6c3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000022",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000023",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000024",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000025",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000026",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000027",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "7c7807097f10cb838d4a08dd5621929ba2e23f2568979313b81b50df6a8c3043",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "4e859927a0a5a85974fd03c8df1852f600ce18f2746256ab50c16013cbe821ba",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000028",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000029",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000030",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4af4a6f9ffdca39c9ee2a44f7c6f03ce3e5319b30051558e39a7dce115cdf6c3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "7c7807097f10cb838d4a08dd5621929ba2e23f2568979313b81b50df6a8c3043",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000031",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000032",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000033",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000034",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "e9840a922ab3fe6fa1e2d50d670d4de3b0452966ec902bddc278ebe5ca7590bb",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "7c7807097f10cb838d4a08dd5621929ba2e23f2568979313b81b50df6a8c3043",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000035",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "6d353a075a8152bf315778ad3075ab4dfddaf30c1d008a634c8ee1c92f267297",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "7c7807097f10cb838d4a08dd5621929ba2e23f2568979313b81b50df6a8c3043",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000036",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000037",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "425c14c7328d452cb2b3783e1e838d9f2b763d5a6e979e0a83e6b898b2f1e862",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000038",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000039",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4af4a6f9ffdca39c9ee2a44f7c6f03ce3e5319b30051558e39a7dce115cdf6c3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "d797b51dc3b324729e694eeca3ae1270b81fb995d998a96e05040fb404f73be8",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "f0b7ade1f1a43bc1af82f61bf0a6a89784e49997a00ab5f9d87b365c98947350",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000040",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000041",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000042",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "e9840a922ab3fe6fa1e2d50d670d4de3b0452966ec902bddc278ebe5ca7590bb",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "6c797a2aaeb6a8136cf7a469ec3ede7a8e144e219812f52bc0b3e03455b5c612",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "ad3560edbf8fe3b0ec199ea8b4490c27d3c6f6edc98b5701bd4b69aef9c0a603",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000043",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000044",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000045",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4f3a1cfdc393963c6830b3f194bc7e12b392ff2c85b7255ed334abaf18f0df95",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "738f96236b6a3ed0ac6aa3d418fcc98904a37b587e911fa18282360f1627e819",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000046",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4af4a6f9ffdca39c9ee2a44f7c6f03ce3e5319b30051558e39a7dce115cdf6c3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000047",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "0406c1d90804ca046b37abfaba42658a830e457be1afa9a1ca3fc9eb5d5cc2d3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000048",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000049",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000050",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "7c7807097f10cb838d4a08dd5621929ba2e23f2568979313b81b50df6a8c3043",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000051",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000052",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "738f96236b6a3ed0ac6aa3d418fcc98904a37b587e911fa18282360f1627e819",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "85c9dc44199528997467e12934b007747af0661cbfcdbb77415fb3971ae1f83b",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "c755af55c14dd98f2469a428d2b2fd3b10fd5c26d68a47c09607c3eb73fb8411",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000053",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4f3a1cfdc393963c6830b3f194bc7e12b392ff2c85b7255ed334abaf18f0df95",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "e16dd0266631e8643f20fc6b53429f0aab8e467438f91c8792afbb9e6306e340",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000054",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000055",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "425c14c7328d452cb2b3783e1e838d9f2b763d5a6e979e0a83e6b898b2f1e862",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000056",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000057",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000058",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000059",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000060",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "85c9dc44199528997467e12934b007747af0661cbfcdbb77415fb3971ae1f83b",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000061",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000062",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000063",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000064",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "85c9dc44199528997467e12934b007747af0661cbfcdbb77415fb3971ae1f83b",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "d698ef49245e0fbd939c913688e377d1d54d0abfb6f05747dfc4cc41a8b691cc",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000065",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000066",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4f3a1cfdc393963c6830b3f194bc7e12b392ff2c85b7255ed334abaf18f0df95",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "6c7c5eee18ca1f15b60f871dfc9c21d26c1ec5cb2c46d689a0a79cc7bfbbb57d",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "d797b51dc3b324729e694eeca3ae1270b81fb995d998a96e05040fb404f73be8",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000067",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "e9840a922ab3fe6fa1e2d50d670d4de3b0452966ec902bddc278ebe5ca7590bb",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000068",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000069",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "6d353a075a8152bf315778ad3075ab4dfddaf30c1d008a634c8ee1c92f267297",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000070",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000071",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000072",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "d917ae6c9075a8247a87f89ef1501f97ed1ecbeea05ad366a2aa5e3b37a11b87",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000073",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "ad3560edbf8fe3b0ec199ea8b4490c27d3c6f6edc98b5701bd4b69aef9c0a603",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000074",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "738f96236b6a3ed0ac6aa3d418fcc98904a37b587e911fa18282360f1627e819",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000075",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "6c7c5eee18ca1f15b60f871dfc9c21d26c1ec5cb2c46d689a0a79cc7bfbbb57d",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000076",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "0406c1d90804ca046b37abfaba42658a830e457be1afa9a1ca3fc9eb5d5cc2d3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "c755af55c14dd98f2469a428d2b2fd3b10fd5c26d68a47c09607c3eb73fb8411",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000077",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000078",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000079",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4af4a6f9ffdca39c9ee2a44f7c6f03ce3e5319b30051558e39a7dce115cdf6c3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "0406c1d90804ca046b37abfaba42658a830e457be1afa9a1ca3fc9eb5d5cc2d3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "4f3a1cfdc393963c6830b3f194bc7e12b392ff2c85b7255ed334abaf18f0df95",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000080",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000081",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "d917ae6c9075a8247a87f89ef1501f97ed1ecbeea05ad366a2aa5e3b37a11b87",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000082",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "6d353a075a8152bf315778ad3075ab4dfddaf30c1d008a634c8ee1c92f267297",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000083",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000084",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000085",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000086",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000087",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000088",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000089",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "ad3560edbf8fe3b0ec199ea8b4490c27d3c6f6edc98b5701bd4b69aef9c0a603",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000090",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000091",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000092",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4e859927a0a5a85974fd03c8df1852f600ce18f2746256ab50c16013cbe821ba",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000093",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000094",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4e859927a0a5a85974fd03c8df1852f600ce18f2746256ab50c16013cbe821ba",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000095",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "738f96236b6a3ed0ac6aa3d418fcc98904a37b587e911fa18282360f1627e819",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000096",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000097",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "0406c1d90804ca046b37abfaba42658a830e457be1afa9a1ca3fc9eb5d5cc2d3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000098",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "e9840a922ab3fe6fa1e2d50d670d4de3b0452966ec902bddc278ebe5ca7590bb",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000099",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000100",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "85c9dc44199528997467e12934b007747af0661cbfcdbb77415fb3971ae1f83b",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000101",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000102",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "425c14c7328d452cb2b3783e1e838d9f2b763d5a6e979e0a83e6b898b2f1e862",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "d797b51dc3b324729e694eeca3ae1270b81fb995d998a96e05040fb404f73be8",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "0adc74850bd5dd53625e477e2d821154804b22630c208bca1a30eb3c7f34494b",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000103",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000104",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "6c7c5eee18ca1f15b60f871dfc9c21d26c1ec5cb2c46d689a0a79cc7bfbbb57d",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000105",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "ad3560edbf8fe3b0ec199ea8b4490c27d3c6f6edc98b5701bd4b69aef9c0a603",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "85c9dc44199528997467e12934b007747af0661cbfcdbb77415fb3971ae1f83b",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "0adc74850bd5dd53625e477e2d821154804b22630c208bca1a30eb3c7f34494b",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000106",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000107",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000108",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000109",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000110",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "c755af55c14dd98f2469a428d2b2fd3b10fd5c26d68a47c09607c3eb73fb8411",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000111",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "6c7c5eee18ca1f15b60f871dfc9c21d26c1ec5cb2c46d689a0a79cc7bfbbb57d",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000112",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000113",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4f3a1cfdc393963c6830b3f194bc7e12b392ff2c85b7255ed334abaf18f0df95",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000114",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000115",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "4af4a6f9ffdca39c9ee2a44f7c6f03ce3e5319b30051558e39a7dce115cdf6c3",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "ad3560edbf8fe3b0ec199ea8b4490c27d3c6f6edc98b5701bd4b69aef9c0a603",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000116",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000117",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000118",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "ad3560edbf8fe3b0ec199ea8b4490c27d3c6f6edc98b5701bd4b69aef9c0a603",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      },
+      {
+        "action": "journal",
+        "payload_hash": "738f96236b6a3ed0ac6aa3d418fcc98904a37b587e911fa18282360f1627e819",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000119",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "f0b7ade1f1a43bc1af82f61bf0a6a89784e49997a00ab5f9d87b365c98947350",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000120",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "d917ae6c9075a8247a87f89ef1501f97ed1ecbeea05ad366a2aa5e3b37a11b87",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000121",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000122",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000123",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000124",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000125",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  },
+  {
+    "example_id": "long_000126",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": [
+      {
+        "action": "journal",
+        "payload_hash": "6c797a2aaeb6a8136cf7a469ec3ede7a8e144e219812f52bc0b3e03455b5c612",
+        "decision": "ALLOWED_LOCAL_JOURNAL",
+        "external_executed": false
+      }
+    ]
+  },
+  {
+    "example_id": "long_000127",
+    "executed": true,
+    "same": true,
+    "guard_rejected": false,
+    "actual_vm_effects": []
+  }
+]

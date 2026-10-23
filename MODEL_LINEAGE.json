@@ -1,0 +1,109 @@
+{
+  "R5_origin": "NEW_FROM_SCRATCH_NOT_R4_CONTINUATION",
+  "base_model": null,
+  "recovered_language": "ICL-Core0.1.0 -> modified0.2.1",
+  "catalogue_candidate_dispositions": [
+    {
+      "id": "M01",
+      "name": "RARI NeuroBrain estimators",
+      "source_locator": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "planned_role": "ORACLE_OR_BASELINE",
+      "source_map_statement": "Source map, estimator parameters/loader not verified this turn",
+      "R5_weight_use": "NOT_USED",
+      "R5_loader_or_rights_verification": "NOT_REPEATED; locator disposition only",
+      "reason": "New native kernel trained from random initialization; these domain artifacts are not interchangeable generic language-model weights."
+    },
+    {
+      "id": "M02",
+      "name": "RARI observer/filter models",
+      "source_locator": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "planned_role": "OBSERVER_BASELINE",
+      "source_map_statement": "Source map, estimator parameters/loader not verified this turn",
+      "R5_weight_use": "NOT_USED",
+      "R5_loader_or_rights_verification": "NOT_REPEATED; locator disposition only",
+      "reason": "New native kernel trained from random initialization; these domain artifacts are not interchangeable generic language-model weights."
+    },
+    {
+      "id": "M03",
+      "name": "GOP G6 finite comparator",
+      "source_locator": "https://drive.google.com/file/d/1H2c_ssij0kXkbAVFfhRJ8Wb59pC-ZpQl/view",
+      "planned_role": "FINITE_COMPARATOR",
+      "source_map_statement": "Archive link only this turn; limited finite scope",
+      "R5_weight_use": "NOT_USED",
+      "R5_loader_or_rights_verification": "NOT_REPEATED; locator disposition only",
+      "reason": "New native kernel trained from random initialization; these domain artifacts are not interchangeable generic language-model weights."
+    },
+    {
+      "id": "M04",
+      "name": "Prometheus MRI checkpoint",
+      "source_locator": "https://drive.google.com/file/d/11_x0BT2apjFYz__dQkhb2POo4ihj--gN/view",
+      "planned_role": "OPTIONAL_DOMAIN_ADAPTER",
+      "source_map_statement": "Same locator as M05; distinct model weights not established",
+      "R5_weight_use": "NOT_USED",
+      "R5_loader_or_rights_verification": "NOT_REPEATED; locator disposition only",
+      "reason": "New native kernel trained from random initialization; these domain artifacts are not interchangeable generic language-model weights."
+    },
+    {
+      "id": "M05",
+      "name": "HuReT MRI research model",
+      "source_locator": "https://drive.google.com/file/d/11_x0BT2apjFYz__dQkhb2POo4ihj--gN/view",
+      "planned_role": "OPTIONAL_DOMAIN_ADAPTER",
+      "source_map_statement": "Same locator as M04; distinct model weights not established",
+      "R5_weight_use": "NOT_USED",
+      "R5_loader_or_rights_verification": "NOT_REPEATED; locator disposition only",
+      "reason": "New native kernel trained from random initialization; these domain artifacts are not interchangeable generic language-model weights."
+    },
+    {
+      "id": "M06",
+      "name": "RhythmWalk predictors",
+      "source_locator": "https://drive.google.com/file/d/1YylwcOdH6f02hhipfVqOsCV5eAgr3tZz/view",
+      "planned_role": "OPTIONAL_TEMPORAL_ADAPTER",
+      "source_map_statement": "V3 product/source locator; model weights not established",
+      "R5_weight_use": "NOT_USED",
+      "R5_loader_or_rights_verification": "NOT_REPEATED; locator disposition only",
+      "reason": "New native kernel trained from random initialization; these domain artifacts are not interchangeable generic language-model weights."
+    },
+    {
+      "id": "M07",
+      "name": "NCL predictive models",
+      "source_locator": "https://drive.google.com/file/d/1XNh9as3LWt7fCcQ1m95fMPMfhuDkYP9u/view",
+      "planned_role": "SYNTHETIC_DATA_NOT_WEIGHTS",
+      "source_map_statement": "Resolved and sampled ncl_synthetic_dataset.csv; not a neural checkpoint",
+      "R5_weight_use": "NOT_USED",
+      "R5_loader_or_rights_verification": "NOT_REPEATED; locator disposition only",
+      "reason": "New native kernel trained from random initialization; these domain artifacts are not interchangeable generic language-model weights."
+    },
+    {
+      "id": "M08",
+      "name": "Humanization bounded policy",
+      "source_locator": "https://drive.google.com/drive/folders/1wKiCAKnpVhBffRjfCCuINxN2dJsVqQ4N",
+      "planned_role": "POLICY_SOURCE_CANDIDATE",
+      "source_map_statement": "Programme folder, not a verified model loader; enforce authority outside neural model",
+      "R5_weight_use": "NOT_USED",
+      "R5_loader_or_rights_verification": "NOT_REPEATED; locator disposition only",
+      "reason": "New native kernel trained from random initialization; these domain artifacts are not interchangeable generic language-model weights."
+    },
+    {
+      "id": "M09",
+      "name": "RouterKey / MoE adapters",
+      "source_locator": "https://drive.google.com/file/d/1yhiYJktJKxFMqco5Dp8RwT18j9jZSrJd/view",
+      "planned_role": "ROUTER_CODEC_NOT_WEIGHTS",
+      "source_map_statement": "Full key-only report read; no full model forward; shares locator M10",
+      "R5_weight_use": "NOT_USED",
+      "R5_loader_or_rights_verification": "NOT_REPEATED; locator disposition only",
+      "reason": "New native kernel trained from random initialization; these domain artifacts are not interchangeable generic language-model weights."
+    },
+    {
+      "id": "M10",
+      "name": "Offline GLM adapters",
+      "source_locator": "https://drive.google.com/file/d/1yhiYJktJKxFMqco5Dp8RwT18j9jZSrJd/view",
+      "planned_role": "OFFLINE_RUNTIME_CANDIDATE",
+      "source_map_statement": "Same key-only report as M09; no loaded GLM model verified",
+      "R5_weight_use": "NOT_USED",
+      "R5_loader_or_rights_verification": "NOT_REPEATED; locator disposition only",
+      "reason": "New native kernel trained from random initialization; these domain artifacts are not interchangeable generic language-model weights."
+    }
+  ],
+  "complete_10_family_content_audit": false,
+  "legacy_patients_or_closed_tests_used": false
+}

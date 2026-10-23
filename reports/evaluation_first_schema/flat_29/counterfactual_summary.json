@@ -1,0 +1,54 @@
+{
+  "n": 4000,
+  "raw_semantic_prefix_match": 0.99925,
+  "composed_output_match": 0.99925,
+  "positive_n": 2165,
+  "positive_raw_match": 1.0,
+  "negative_raw_match": 0.9983651226158038,
+  "guard_reasons": {
+    "none": 4000
+  },
+  "per_first_intent": {
+    "increase": 1.0,
+    "decrease": 1.0,
+    "scale": 1.0,
+    "floor": 0.9961832061068703,
+    "ceiling": 1.0,
+    "magnitude": 1.0,
+    "repeat": 1.0,
+    "translate": 1.0,
+    "restore": 1.0,
+    "remember": 1.0,
+    "recall": 1.0,
+    "journal": 1.0,
+    "conditional": 0.9961538461538462,
+    "record_add": 0.996,
+    "list_add": 1.0,
+    "axis_reverse": 1.0
+  },
+  "uncalibrated_selective_risk": {
+    "0": {
+      "coverage": 1.0,
+      "raw_accuracy": 0.99925
+    },
+    "0.5": {
+      "coverage": 0.99925,
+      "raw_accuracy": 0.9997498123592694
+    },
+    "0.8": {
+      "coverage": 0.98275,
+      "raw_accuracy": 1.0
+    },
+    "0.95": {
+      "coverage": 0.88775,
+      "raw_accuracy": 1.0
+    },
+    "0.99": {
+      "coverage": 0.46225,
+      "raw_accuracy": 1.0
+    }
+  },
+  "original_general_M06_M07_closed": false,
+  "candidate_icl_vm_parity_checks": 128,
+  "candidate_icl_vm_parity_pass": true
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "fixture_rows": 16,
+  "logits_per_row": 22,
+  "max_abs_error": 2.4208472577669227e-06,
+  "atol": 1e-05,
+  "rtol": 1e-05,
+  "same_argmax": true,
+  "boundary": "trained float32 Torch checkpoint vs exported weights executed by installed ICL Float64 VM in a new standard-library-only process",
+  "new_process_without_torch_numpy": true,
+  "checkpoint_sha256": "46b25e6559918e769eb730da61719828fd6c88409cf1a1e4d5651c624bc3118f"
+}

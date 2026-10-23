@@ -1,0 +1,56 @@
+{
+  "n": 4000,
+  "raw_semantic_prefix_match": 0.9975,
+  "composed_output_match": 0.998,
+  "positive_n": 2165,
+  "positive_raw_match": 1.0,
+  "negative_raw_match": 0.9945504087193461,
+  "guard_reasons": {
+    "none": 3998,
+    "UNIT_MISMATCH": 2
+  },
+  "per_first_intent": {
+    "increase": 0.9963503649635036,
+    "decrease": 0.9961240310077519,
+    "scale": 1.0,
+    "floor": 1.0,
+    "ceiling": 0.9961538461538462,
+    "magnitude": 0.9890510948905109,
+    "repeat": 0.992,
+    "translate": 1.0,
+    "restore": 1.0,
+    "remember": 0.9951923076923077,
+    "recall": 1.0,
+    "journal": 1.0,
+    "conditional": 1.0,
+    "record_add": 1.0,
+    "list_add": 0.9954954954954955,
+    "axis_reverse": 1.0
+  },
+  "uncalibrated_selective_risk": {
+    "0": {
+      "coverage": 1.0,
+      "raw_accuracy": 0.9975
+    },
+    "0.5": {
+      "coverage": 0.991,
+      "raw_accuracy": 0.9989909182643795
+    },
+    "0.8": {
+      "coverage": 0.97,
+      "raw_accuracy": 1.0
+    },
+    "0.95": {
+      "coverage": 0.868,
+      "raw_accuracy": 1.0
+    },
+    "0.99": {
+      "coverage": 0.387,
+      "raw_accuracy": 1.0
+    }
+  },
+  "original_general_M06_M07_closed": false,
+  "candidate_icl_vm_parity_checks": 128,
+  "actual_candidate_programs_executed": 128,
+  "candidate_icl_vm_parity_pass": true
+}

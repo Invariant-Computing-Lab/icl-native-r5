@@ -1,0 +1,6 @@
+train {'programs_reexecuted': 20000, 'distinct_task_ast_groups': 20000, 'declared_intent_plan_groups': 20000, 'distinct_specialized_candidate_target_texts': 17317} 145.49619889259338
+validation {'programs_reexecuted': 2000, 'distinct_task_ast_groups': 2000, 'declared_intent_plan_groups': 2000, 'distinct_specialized_candidate_target_texts': 1797} 159.70407962799072
+id {'programs_reexecuted': 2000, 'distinct_task_ast_groups': 2000, 'declared_intent_plan_groups': 2000, 'distinct_specialized_candidate_target_texts': 1815} 173.56908321380615
+long {'programs_reexecuted': 2000, 'distinct_task_ast_groups': 2000, 'declared_intent_plan_groups': 2000, 'distinct_specialized_candidate_target_texts': 1822} 218.61851239204407
+counterfactual {'programs_reexecuted': 4000, 'distinct_task_ast_groups': 2000, 'declared_intent_plan_groups': 2000, 'distinct_specialized_candidate_target_texts': 2812} 244.9884316921234
+PASS

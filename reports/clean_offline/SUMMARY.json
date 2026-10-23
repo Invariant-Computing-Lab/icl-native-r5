@@ -1,0 +1,172 @@
+{
+  "checks": [
+    {
+      "name": "demo",
+      "command": [
+        "/tmp/icl-r5-venv-yvu1_lu7/bin/python",
+        "-I",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/launcher.py",
+        "/mnt/data/ICL_R5_20261013",
+        "/mnt/data/ICL_R5_20261013/examples/demo.json",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/demo.json",
+        "no"
+      ],
+      "exit_code": 0,
+      "expected_result": {
+        "tag": "Ok",
+        "value": -4
+      },
+      "actual_result": {
+        "tag": "Ok",
+        "value": -4
+      },
+      "actual_effect_events": [],
+      "elapsed_seconds": 0.6670219898223877,
+      "status": "PASS"
+    },
+    {
+      "name": "denied_journal",
+      "command": [
+        "/tmp/icl-r5-venv-yvu1_lu7/bin/python",
+        "-I",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/launcher.py",
+        "/mnt/data/ICL_R5_20261013",
+        "/mnt/data/ICL_R5_20261013/examples/denied_journal.json",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/denied_journal.json",
+        "no"
+      ],
+      "exit_code": 0,
+      "expected_result": {
+        "tag": "Err",
+        "error": "EFFECT_DENIED"
+      },
+      "actual_result": {
+        "tag": "Err",
+        "error": "EFFECT_DENIED"
+      },
+      "actual_effect_events": [],
+      "elapsed_seconds": 0.09694719314575195,
+      "status": "PASS"
+    },
+    {
+      "name": "denied_journal_permit",
+      "command": [
+        "/tmp/icl-r5-venv-yvu1_lu7/bin/python",
+        "-I",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/launcher.py",
+        "/mnt/data/ICL_R5_20261013",
+        "/mnt/data/ICL_R5_20261013/examples/denied_journal.json",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/denied_journal_permit.json",
+        "yes"
+      ],
+      "exit_code": 0,
+      "expected_result": {
+        "tag": "Ok",
+        "value": 5
+      },
+      "actual_result": {
+        "tag": "Ok",
+        "value": 5
+      },
+      "actual_effect_events": [
+        {
+          "action": "journal",
+          "payload_hash": "6d353a075a8152bf315778ad3075ab4dfddaf30c1d008a634c8ee1c92f267297",
+          "decision": "ALLOWED_LOCAL_JOURNAL",
+          "external_executed": false
+        }
+      ],
+      "elapsed_seconds": 0.12014317512512207,
+      "status": "PASS"
+    },
+    {
+      "name": "missing_witness",
+      "command": [
+        "/tmp/icl-r5-venv-yvu1_lu7/bin/python",
+        "-I",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/launcher.py",
+        "/mnt/data/ICL_R5_20261013",
+        "/mnt/data/ICL_R5_20261013/examples/missing_witness.json",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/missing_witness.json",
+        "no"
+      ],
+      "exit_code": 0,
+      "expected_result": {
+        "tag": "Err",
+        "error": "NON_IDENTIFIABLE"
+      },
+      "actual_result": {
+        "tag": "Err",
+        "error": "NON_IDENTIFIABLE"
+      },
+      "actual_effect_events": [],
+      "elapsed_seconds": 0.09921550750732422,
+      "status": "PASS"
+    },
+    {
+      "name": "wrong_observer",
+      "command": [
+        "/tmp/icl-r5-venv-yvu1_lu7/bin/python",
+        "-I",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/launcher.py",
+        "/mnt/data/ICL_R5_20261013",
+        "/mnt/data/ICL_R5_20261013/examples/wrong_observer.json",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/wrong_observer.json",
+        "no"
+      ],
+      "exit_code": 0,
+      "expected_result": {
+        "tag": "Err",
+        "error": "OBSERVER_MISMATCH"
+      },
+      "actual_result": {
+        "tag": "Err",
+        "error": "OBSERVER_MISMATCH"
+      },
+      "actual_effect_events": [],
+      "elapsed_seconds": 0.12325692176818848,
+      "status": "PASS"
+    },
+    {
+      "name": "missing_memory",
+      "command": [
+        "/tmp/icl-r5-venv-yvu1_lu7/bin/python",
+        "-I",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/launcher.py",
+        "/mnt/data/ICL_R5_20261013",
+        "/mnt/data/ICL_R5_20261013/examples/missing_memory.json",
+        "/mnt/data/ICL_R5_20261013/reports/clean_offline/missing_memory.json",
+        "no"
+      ],
+      "exit_code": 0,
+      "expected_result": {
+        "tag": "Err",
+        "error": "MEMORY_MISSING"
+      },
+      "actual_result": {
+        "tag": "Err",
+        "error": "MEMORY_MISSING"
+      },
+      "actual_effect_events": [],
+      "elapsed_seconds": 0.10964441299438477,
+      "status": "PASS"
+    },
+    {
+      "name": "installed_core_checkpoint_save",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "installed_core_checkpoint_load",
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  ],
+  "passed": 8,
+  "wheel_sha256": "49d4e4e17bc61f054e59d9c7130eef40f574e6a3bba3369bb11f62dcedcfae60",
+  "runtime_dependencies": "Python standard library and installed ICL wheel only; no numpy or torch discoverable",
+  "model_weights": "actual selected seed17 exported weights, not static answers",
+  "network_control": "Python audit-hook rejection tested; no OS network namespace claim",
+  "fresh_process_per_example": true,
+  "note": "Local journal is an in-memory simulator, no external operation is installed."
+}

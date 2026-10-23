@@ -1,0 +1,17 @@
+{
+ "run_id":"ICL_R5_FRESH_20261013",
+ "origin":"NEW_IMPLEMENTATION_AND_NEW_DATA_ON_VERIFIED_CORE_NOT_R4_CONTINUATION",
+ "scope":"Finite structured-intent to opcode compilation with independent guard flags; not unrestricted text-to-code or general language modeling",
+ "seeds":[17,29,43],"epochs":20,"batch_nodes":2048,"optimizer":"Adam","learning_rate":0.003,"weight_decay":0.0,
+ "model_selection":"Best validation CE. Training reads train/validation only. No hyperparameter tuning after test.",
+ "native_loss":"CE(original)+CE(numeric_nuisance_augmented)+0.15*mean_squared_probability_difference",
+ "flat_baseline_loss":"CE(original)+CE(numeric_nuisance_augmented)",
+ "ablations":["no_context","no_witness","no_memory","no_invariance"],
+ "primary_comparison":"native-minus-flat semantic opcode prefix exact match on long split; group bootstrap95%; three seeds; no superiority claim if compute unmatched",
+ "pilot_thresholds_preserved":{"raw_syntax":0.95,"raw_execution":0.80,"accepted_type_effect_conformance":1.0,"unauthorized_execution":0},
+ "denominator":"All plans, positive and negative separately. Syntax emitter, gate and exact executor receive no neural credit. This semantic task alone does not close broad program-generation gates.",
+ "factorization":"2000 independent groups and guard-flipped twins, identical numbers; no parity-derived guards",
+ "long_test":"2000 new sequences length12-20, train4-7; compositional control is deterministic, not learned autoregressive memory",
+ "external_effects":"No network/shell/clinical/public/paid effects; local journal simulation only",
+ "previous_results":"79.69/99.38/29.83 remain prior transcript-only, not recomputed R4 data"
+}

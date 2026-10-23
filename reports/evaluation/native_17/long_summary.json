@@ -1,0 +1,55 @@
+{
+  "n": 2000,
+  "raw_semantic_prefix_match": 1.0,
+  "composed_output_match": 1.0,
+  "positive_n": 1086,
+  "positive_raw_match": 1.0,
+  "negative_raw_match": 1.0,
+  "guard_reasons": {
+    "none": 2000
+  },
+  "per_first_intent": {
+    "increase": 1.0,
+    "decrease": 1.0,
+    "scale": 1.0,
+    "floor": 1.0,
+    "ceiling": 1.0,
+    "magnitude": 1.0,
+    "repeat": 1.0,
+    "translate": 1.0,
+    "restore": 1.0,
+    "remember": 1.0,
+    "recall": 1.0,
+    "journal": 1.0,
+    "conditional": 1.0,
+    "record_add": 1.0,
+    "list_add": 1.0,
+    "axis_reverse": 1.0
+  },
+  "uncalibrated_selective_risk": {
+    "0": {
+      "coverage": 1.0,
+      "raw_accuracy": 1.0
+    },
+    "0.5": {
+      "coverage": 1.0,
+      "raw_accuracy": 1.0
+    },
+    "0.8": {
+      "coverage": 1.0,
+      "raw_accuracy": 1.0
+    },
+    "0.95": {
+      "coverage": 0.993,
+      "raw_accuracy": 1.0
+    },
+    "0.99": {
+      "coverage": 0.864,
+      "raw_accuracy": 1.0
+    }
+  },
+  "original_general_M06_M07_closed": false,
+  "candidate_icl_vm_parity_checks": 128,
+  "actual_candidate_programs_executed": 128,
+  "candidate_icl_vm_parity_pass": true
+}

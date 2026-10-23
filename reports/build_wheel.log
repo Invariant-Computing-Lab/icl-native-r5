@@ -1,0 +1,10 @@
+WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing /mnt/data/ICL_R5_20261013/source/icl_core
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: invariant-cognition-language
+  Building wheel for invariant-cognition-language (pyproject.toml): started
+  Building wheel for invariant-cognition-language (pyproject.toml): finished with status 'done'
+  Created wheel for invariant-cognition-language: filename=invariant_cognition_language-0.2.1-py3-none-any.whl size=31417 sha256=49d4e4e17bc61f054e59d9c7130eef40f574e6a3bba3369bb11f62dcedcfae60
+  Stored in directory: /tmp/pip-ephem-wheel-cache-omykb7ig/wheels/6b/63/c8/be4b9151c033162aa5f557ba615f0db2cebd6602be552397bd
+Successfully built invariant-cognition-language

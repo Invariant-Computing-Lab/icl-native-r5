@@ -1,0 +1,10 @@
+{
+  "archive": "ICL_NIHAI_TESLIM_20261013.zip",
+  "sha256": "3d8c4204bf0b78df2101ac375ef52382de7b3f62004bbb4e12294a943ec9a343",
+  "bytes": 1630,
+  "zip_crc": "PASS",
+  "payload_hashes_verified": 0,
+  "has_r4_payload": false,
+  "drive_upload": "NOT_PERFORMED",
+  "new_training": "NOT_RUN_IN_CLOSURE"
+}

@@ -1,0 +1,57 @@
+{
+  "n": 4000,
+  "raw_semantic_prefix_match": 0.86625,
+  "composed_output_match": 1.0,
+  "positive_n": 2165,
+  "positive_raw_match": 1.0,
+  "negative_raw_match": 0.7084468664850136,
+  "guard_reasons": {
+    "none": 3465,
+    "NON_IDENTIFIABLE": 438,
+    "WITNESS_CORRUPT": 97
+  },
+  "per_first_intent": {
+    "increase": 0.8540145985401459,
+    "decrease": 0.9069767441860465,
+    "scale": 0.8571428571428571,
+    "floor": 0.8854961832061069,
+    "ceiling": 0.9,
+    "magnitude": 0.8905109489051095,
+    "repeat": 0.896,
+    "translate": 0.9915966386554622,
+    "restore": 0.36065573770491804,
+    "remember": 0.8846153846153846,
+    "recall": 0.9130434782608695,
+    "journal": 0.98046875,
+    "conditional": 0.8692307692307693,
+    "record_add": 0.88,
+    "list_add": 0.8648648648648649,
+    "axis_reverse": 0.916030534351145
+  },
+  "uncalibrated_selective_risk": {
+    "0": {
+      "coverage": 1.0,
+      "raw_accuracy": 0.86625
+    },
+    "0.5": {
+      "coverage": 1.0,
+      "raw_accuracy": 0.86625
+    },
+    "0.8": {
+      "coverage": 0.769,
+      "raw_accuracy": 1.0
+    },
+    "0.95": {
+      "coverage": 0.76725,
+      "raw_accuracy": 1.0
+    },
+    "0.99": {
+      "coverage": 0.7155,
+      "raw_accuracy": 1.0
+    }
+  },
+  "original_general_M06_M07_closed": false,
+  "candidate_icl_vm_parity_checks": 0,
+  "actual_candidate_programs_executed": 0,
+  "candidate_icl_vm_parity_pass": true
+}

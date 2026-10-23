@@ -1,0 +1,2364 @@
+[
+  {
+    "id": "int_identity",
+    "index": 0,
+    "family": "scalar",
+    "source": "module fixture;\nfn main(x: Int64) -> Int64 { return x; }",
+    "source_sha256": "4525d36b69a607409f8149f3621e680d111ec48edff242bea4ed37fa0f5a64d3",
+    "arguments": [
+      17
+    ],
+    "expected": 17,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 17,
+        "effects": [],
+        "steps": 2,
+        "trace_events": 2
+      },
+      "vm": {
+        "value": 17,
+        "effects": [],
+        "steps": 3,
+        "trace_events": 3
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "integer_precedence",
+    "index": 1,
+    "family": "arithmetic",
+    "source": "module fixture;\nfn main() -> Int64 { return 2 + 3 * 4; }",
+    "source_sha256": "ebbca9c99af13a86378a981e9a4e8b37cd37079b31d80829b33b89bdc934b44a",
+    "arguments": [],
+    "expected": 14,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 14,
+        "effects": [],
+        "steps": 6,
+        "trace_events": 6
+      },
+      "vm": {
+        "value": 14,
+        "effects": [],
+        "steps": 7,
+        "trace_events": 7
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "integer_parentheses",
+    "index": 2,
+    "family": "arithmetic",
+    "source": "module fixture;\nfn main() -> Int64 { return (2 + 3) * 4; }",
+    "source_sha256": "716a6207ef65c91972cd4500d9985edeb2dbc1a5d6f938bcab01984a08163379",
+    "arguments": [],
+    "expected": 20,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 20,
+        "effects": [],
+        "steps": 6,
+        "trace_events": 6
+      },
+      "vm": {
+        "value": 20,
+        "effects": [],
+        "steps": 7,
+        "trace_events": 7
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "negative_integer",
+    "index": 3,
+    "family": "arithmetic",
+    "source": "module fixture;\nfn main() -> Int64 { return -8 + 3; }",
+    "source_sha256": "0dac900f9eb50883c828908a92b84cadc01b9c5a7193716b70c4b9d1902e8b56",
+    "arguments": [],
+    "expected": -5,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": -5,
+        "effects": [],
+        "steps": 5,
+        "trace_events": 5
+      },
+      "vm": {
+        "value": -5,
+        "effects": [],
+        "steps": 6,
+        "trace_events": 6
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "integer_comparison",
+    "index": 4,
+    "family": "boolean",
+    "source": "module fixture;\nfn main() -> Bool { return 9 >= 9; }",
+    "source_sha256": "c88d6821cca871922f39b0ace4c620403bc94287ec0a997d855446e8369f707b",
+    "arguments": [],
+    "expected": true,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": true,
+        "effects": [],
+        "steps": 4,
+        "trace_events": 4
+      },
+      "vm": {
+        "value": true,
+        "effects": [],
+        "steps": 5,
+        "trace_events": 5
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "boolean_negation",
+    "index": 5,
+    "family": "boolean",
+    "source": "module fixture;\nfn main() -> Bool { return !false; }",
+    "source_sha256": "6ddfebbbc151bb39710310816f5174bd65e436ca5effdd31f21651749bc421a5",
+    "arguments": [],
+    "expected": true,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": true,
+        "effects": [],
+        "steps": 3,
+        "trace_events": 3
+      },
+      "vm": {
+        "value": true,
+        "effects": [],
+        "steps": 4,
+        "trace_events": 4
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "boolean_conjunction",
+    "index": 6,
+    "family": "boolean",
+    "source": "module fixture;\nfn main() -> Bool { return true && false; }",
+    "source_sha256": "c9137e1df1533d867e20d36c9d4dc80def1a1f60688b59a93c8071468adfd0af",
+    "arguments": [],
+    "expected": false,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": false,
+        "effects": [],
+        "steps": 4,
+        "trace_events": 4
+      },
+      "vm": {
+        "value": false,
+        "effects": [],
+        "steps": 6,
+        "trace_events": 6
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "boolean_disjunction",
+    "index": 7,
+    "family": "boolean",
+    "source": "module fixture;\nfn main() -> Bool { return false || true; }",
+    "source_sha256": "dd651a77c809774923867f352414b1e4c56b18efed39354045cdd915c83ca224",
+    "arguments": [],
+    "expected": true,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": true,
+        "effects": [],
+        "steps": 4,
+        "trace_events": 4
+      },
+      "vm": {
+        "value": true,
+        "effects": [],
+        "steps": 5,
+        "trace_events": 5
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "float_arithmetic",
+    "index": 8,
+    "family": "float",
+    "source": "module fixture;\nfn main() -> Float64 { return 0.5 + 1.25; }",
+    "source_sha256": "35e8294bf73abb3f7e37782c1dc20e55068bdd6f9338fe57a0cc3d6f22152ea9",
+    "arguments": [],
+    "expected": 1.75,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 1.75,
+        "effects": [],
+        "steps": 4,
+        "trace_events": 4
+      },
+      "vm": {
+        "value": 1.75,
+        "effects": [],
+        "steps": 5,
+        "trace_events": 5
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "float_division",
+    "index": 9,
+    "family": "float",
+    "source": "module fixture;\nfn main() -> Float64 { return 7.5 / 2.5; }",
+    "source_sha256": "eeb4555e804bcba4d33cec265a92388bdfe81f2fbef47b5801fd1674e71c7b01",
+    "arguments": [],
+    "expected": 3.0,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 3.0,
+        "effects": [],
+        "steps": 4,
+        "trace_events": 4
+      },
+      "vm": {
+        "value": 3.0,
+        "effects": [],
+        "steps": 5,
+        "trace_events": 5
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "string_identity",
+    "index": 10,
+    "family": "string",
+    "source": "module fixture;\nfn main() -> String { return \"OCIL\"; }",
+    "source_sha256": "c7c794bf40440741b7f50aff4f1addac6746f9772921f173774610610989c2cd",
+    "arguments": [],
+    "expected": "OCIL",
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": "OCIL",
+        "effects": [],
+        "steps": 2,
+        "trace_events": 2
+      },
+      "vm": {
+        "value": "OCIL",
+        "effects": [],
+        "steps": 3,
+        "trace_events": 3
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "string_unicode_value",
+    "index": 11,
+    "family": "string",
+    "source": "module fixture;\nfn main() -> String { return \"gözlemci λ\"; }",
+    "source_sha256": "8b51267c1f816b67366542e0dd75c7225ec1ac65d6e4f14d2b42badf9cf3a2a2",
+    "arguments": [],
+    "expected": "gözlemci λ",
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": "gözlemci λ",
+        "effects": [],
+        "steps": 2,
+        "trace_events": 2
+      },
+      "vm": {
+        "value": "gözlemci λ",
+        "effects": [],
+        "steps": 3,
+        "trace_events": 3
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "lexical_binding",
+    "index": 12,
+    "family": "scope",
+    "source": "module fixture;\nfn main() -> Int64 { let x = 12; let y = x + 7; return y; }",
+    "source_sha256": "dfefed37bb9cd622b4a241cde87d69d438176dbd22f82255a85848c39fe4e203",
+    "arguments": [],
+    "expected": 19,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 19,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      },
+      "vm": {
+        "value": 19,
+        "effects": [],
+        "steps": 9,
+        "trace_events": 9
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "mutable_update",
+    "index": 13,
+    "family": "scope",
+    "source": "module fixture;\nfn main() -> Int64 { var x: Int64 = 2; x = x * 3; return x; }",
+    "source_sha256": "10564edee1fcdaf624101d28b767c1289b0fbb309a80952cf093178f493313d0",
+    "arguments": [],
+    "expected": 6,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 6,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      },
+      "vm": {
+        "value": 6,
+        "effects": [],
+        "steps": 9,
+        "trace_events": 9
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "branch_true",
+    "index": 14,
+    "family": "branch",
+    "source": "module fixture;\nfn main() -> Int64 { if 2 < 3 { return 11; } else { return 22; } }",
+    "source_sha256": "463279b71427ed482a554e21c098dca87600dfe01929d93d2d401d8fb6ae7370",
+    "arguments": [],
+    "expected": 11,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 11,
+        "effects": [],
+        "steps": 6,
+        "trace_events": 6
+      },
+      "vm": {
+        "value": 11,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "branch_false",
+    "index": 15,
+    "family": "branch",
+    "source": "module fixture;\nfn main() -> Int64 { if 2 > 3 { return 11; } else { return 22; } }",
+    "source_sha256": "5028ca093eef2cfe4bae615c9832c9f80c139091e00679c00eff2e3ea47a5c67",
+    "arguments": [],
+    "expected": 22,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 22,
+        "effects": [],
+        "steps": 6,
+        "trace_events": 6
+      },
+      "vm": {
+        "value": 22,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "branch_mutation",
+    "index": 16,
+    "family": "branch",
+    "source": "module fixture;\nfn main() -> Int64 { var x: Int64 = 0; if true { x = 6; } else { x = 9; } return x; }",
+    "source_sha256": "7fbf9b3eef75330ea32b65d521ec0cad3f571a70f3abaf24592ff1551585502b",
+    "arguments": [],
+    "expected": 6,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 6,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      },
+      "vm": {
+        "value": 6,
+        "effects": [],
+        "steps": 12,
+        "trace_events": 12
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "nested_branch",
+    "index": 17,
+    "family": "branch",
+    "source": "module fixture;\nfn main() -> Int64 { if true { if false { return 1; } else { return 2; } } else { return 3; } }",
+    "source_sha256": "275daeddd1cba6c7d392a6eb3e51d72add2fdff4ae953b4ebf335cf206a769d8",
+    "arguments": [],
+    "expected": 2,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 2,
+        "effects": [],
+        "steps": 6,
+        "trace_events": 6
+      },
+      "vm": {
+        "value": 2,
+        "effects": [],
+        "steps": 9,
+        "trace_events": 9
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "loop_sum",
+    "index": 18,
+    "family": "loop",
+    "source": "module fixture;\nfn main() -> Int64 { var i: Int64 = 0; var n: Int64 = 0; while i < 5 limit 8 { n = n + i; i = i + 1; } return n; }",
+    "source_sha256": "9045112cff36535983a400c0541f5ff97e435dc75436a566462efc46634f6987",
+    "arguments": [],
+    "expected": 10,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 10,
+        "effects": [],
+        "steps": 65,
+        "trace_events": 65
+      },
+      "vm": {
+        "value": 10,
+        "effects": [],
+        "steps": 92,
+        "trace_events": 92
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "loop_zero_iterations",
+    "index": 19,
+    "family": "loop",
+    "source": "module fixture;\nfn main() -> Int64 { var n: Int64 = 7; while n < 0 limit 3 { n = n + 1; } return n; }",
+    "source_sha256": "f7f79bac1b34332df55f9bad5e12aae9e0a867735c09283f40b0522f11b4fff6",
+    "arguments": [],
+    "expected": 7,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 7,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      },
+      "vm": {
+        "value": 7,
+        "effects": [],
+        "steps": 10,
+        "trace_events": 10
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "loop_early_return",
+    "index": 20,
+    "family": "loop",
+    "source": "module fixture;\nfn main() -> Int64 { var i: Int64 = 0; while i < 10 limit 12 { if i == 4 { return i; } i = i + 1; } return 0; }",
+    "source_sha256": "8dbad170cbb4809a6eb5c9ae1f726e0a02aab2b779906580038e208f7c07dafa",
+    "arguments": [],
+    "expected": 4,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 4,
+        "effects": [],
+        "steps": 56,
+        "trace_events": 56
+      },
+      "vm": {
+        "value": 4,
+        "effects": [],
+        "steps": 89,
+        "trace_events": 89
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "function_call",
+    "index": 21,
+    "family": "function",
+    "source": "module fixture;\nfn twice(x: Int64) -> Int64 { return x * 2; } fn main() -> Int64 { return twice(9); }",
+    "source_sha256": "023e33a8f7a8907cf960162b4141610c75a8cbef1705f05629944f844422549e",
+    "arguments": [],
+    "expected": 18,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 18,
+        "effects": [],
+        "steps": 7,
+        "trace_events": 7
+      },
+      "vm": {
+        "value": 18,
+        "effects": [],
+        "steps": 9,
+        "trace_events": 9
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "function_composition",
+    "index": 22,
+    "family": "function",
+    "source": "module fixture;\nfn inc(x: Int64) -> Int64 { return x + 1; } fn main() -> Int64 { return inc(inc(3)); }",
+    "source_sha256": "f378a566528669bbb60d81bac8e0bcbd21f9075237b271f57851a62ab4b4c049",
+    "arguments": [],
+    "expected": 5,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 5,
+        "effects": [],
+        "steps": 12,
+        "trace_events": 12
+      },
+      "vm": {
+        "value": 5,
+        "effects": [],
+        "steps": 15,
+        "trace_events": 15
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "two_argument_function",
+    "index": 23,
+    "family": "function",
+    "source": "module fixture;\nfn diff(a: Int64, b: Int64) -> Int64 { return a - b; } fn main() -> Int64 { return diff(9, 2); }",
+    "source_sha256": "3c3fed355fb3152c07b366744d492bc8397b64c0b6455a25c3fbec1e36acde90",
+    "arguments": [],
+    "expected": 7,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 7,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      },
+      "vm": {
+        "value": 7,
+        "effects": [],
+        "steps": 10,
+        "trace_events": 10
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "bounded_recursion",
+    "index": 24,
+    "family": "function",
+    "source": "module fixture;\nfn f(n: Int64) -> Int64 { if n <= 1 { return 1; } else { return n * f(n - 1); } } fn main() -> Int64 { return f(5); }",
+    "source_sha256": "15588a2306e5e17771f131ec3a81ca2ab07d467412c1dcd2706eac59ae7b8368",
+    "arguments": [],
+    "expected": 120,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 120,
+        "effects": [],
+        "steps": 53,
+        "trace_events": 53
+      },
+      "vm": {
+        "value": 120,
+        "effects": [],
+        "steps": 64,
+        "trace_events": 64
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "list_index",
+    "index": 25,
+    "family": "list",
+    "source": "module fixture;\nfn main() -> Int64 { let xs = [2, 4, 6]; return xs[1]; }",
+    "source_sha256": "f1274a49a1857a735a74dc8d59b1c9ebc75f9925883be20e5a78046c43e9699e",
+    "arguments": [],
+    "expected": 4,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 4,
+        "effects": [],
+        "steps": 9,
+        "trace_events": 9
+      },
+      "vm": {
+        "value": 4,
+        "effects": [],
+        "steps": 10,
+        "trace_events": 10
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "list_length",
+    "index": 26,
+    "family": "list",
+    "source": "module fixture;\nfn main() -> Int64 { let xs = [2, 4, 6]; return len(xs); }",
+    "source_sha256": "f2158d949c8ec97b71bcfab2a7bd8d9f456b40fc2f79a17ad3ed66ddc510abc2",
+    "arguments": [],
+    "expected": 3,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 3,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      },
+      "vm": {
+        "value": 3,
+        "effects": [],
+        "steps": 9,
+        "trace_events": 9
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "tuple_index",
+    "index": 27,
+    "family": "tuple",
+    "source": "module fixture;\nfn main() -> Int64 { let p = (7, \"a\"); return p[0]; }",
+    "source_sha256": "b63e98c369fb44d0106487cf71ac7431230708a5ed0d5f03f3a4b5d1c5f85625",
+    "arguments": [],
+    "expected": 7,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 7,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      },
+      "vm": {
+        "value": 7,
+        "effects": [],
+        "steps": 9,
+        "trace_events": 9
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "record_field",
+    "index": 28,
+    "family": "record",
+    "source": "module fixture;\nfn main() -> Int64 { let r = {count: 7, label: \"ok\"}; return r.count; }",
+    "source_sha256": "c39a8385c7f852e1edd45343f623f35050be13c39ae58b60e85531e3ef8ff9dd",
+    "arguments": [],
+    "expected": 7,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 7,
+        "effects": [],
+        "steps": 7,
+        "trace_events": 7
+      },
+      "vm": {
+        "value": 7,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "record_nested",
+    "index": 29,
+    "family": "record",
+    "source": "module fixture;\nfn main() -> Int64 { let r = {inner: {count: 8}}; return r.inner.count; }",
+    "source_sha256": "144850a75a02cfad0a89f4b9ea8021a423f3cbff35d1ab789304c0a7ba1f9977",
+    "arguments": [],
+    "expected": 8,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 8,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      },
+      "vm": {
+        "value": 8,
+        "effects": [],
+        "steps": 9,
+        "trace_events": 9
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "undefined_name",
+    "index": 30,
+    "family": "name",
+    "source": "module fixture;\nfn main() -> Int64 { return missing; }",
+    "source_sha256": "42e2557fc607e22f51752fd2cf434fa3259505a4de2e3eb0dbca879744513a6c",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "NAME",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "NAME",
+          "message": "NAME: undefined name missing",
+          "span": {
+            "line": 2,
+            "column": 29,
+            "offset": 44
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "NAME",
+          "message": "NAME: undefined name missing",
+          "span": {
+            "line": 2,
+            "column": 29,
+            "offset": 44
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "undefined_function",
+    "index": 31,
+    "family": "name",
+    "source": "module fixture;\nfn main() -> Int64 { return missing(1); }",
+    "source_sha256": "c30af8002388eb8a7bcbd12afc0dbbddc8f59439128849aaac1938b62ceaceb4",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "NAME",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "NAME",
+          "message": "NAME: unknown function missing",
+          "span": {
+            "line": 2,
+            "column": 29,
+            "offset": 44
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "NAME",
+          "message": "NAME: unknown function missing",
+          "span": {
+            "line": 2,
+            "column": 29,
+            "offset": 44
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "wrong_return_type",
+    "index": 32,
+    "family": "type",
+    "source": "module fixture;\nfn main() -> Int64 { return true; }",
+    "source_sha256": "13f41d9e51ab0ab4b927d5b2705a1f60a137a8b365bccc9982a98a7388ddb4a5",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "TYPE",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "TYPE",
+          "message": "TYPE: Bool incompatible with Int64",
+          "span": {
+            "line": 2,
+            "column": 22,
+            "offset": 37
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "TYPE",
+          "message": "TYPE: Bool incompatible with Int64",
+          "span": {
+            "line": 2,
+            "column": 22,
+            "offset": 37
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "mixed_arithmetic",
+    "index": 33,
+    "family": "type",
+    "source": "module fixture;\nfn main() -> Int64 { return 1 + true; }",
+    "source_sha256": "12625043932c5f875e3a3c06a7a94d4aee49014be1cf623745b6fbed034f5c85",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "TYPE",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "TYPE",
+          "message": "TYPE: Int64 incompatible with Bool",
+          "span": {
+            "line": 2,
+            "column": 29,
+            "offset": 44
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "TYPE",
+          "message": "TYPE: Int64 incompatible with Bool",
+          "span": {
+            "line": 2,
+            "column": 29,
+            "offset": 44
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "wrong_call_arity",
+    "index": 34,
+    "family": "type",
+    "source": "module fixture;\nfn f(x: Int64) -> Int64 { return x; } fn main() -> Int64 { return f(1, 2); }",
+    "source_sha256": "503afcfc58123480f8b82a775c5494c9767a1918b26b2443e5f570c7ae9f537c",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "TYPE",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "TYPE",
+          "message": "TYPE: f arity mismatch",
+          "span": {
+            "line": 2,
+            "column": 67,
+            "offset": 82
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "TYPE",
+          "message": "TYPE: f arity mismatch",
+          "span": {
+            "line": 2,
+            "column": 67,
+            "offset": 82
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "condition_not_boolean",
+    "index": 35,
+    "family": "type",
+    "source": "module fixture;\nfn main() -> Int64 { if 1 { return 1; } else { return 2; } }",
+    "source_sha256": "f405d9ce108ecbb5dc70b2b0c9cb61231881bde8b881c158b0e086453336e41a",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "TYPE",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "TYPE",
+          "message": "TYPE: Int64 incompatible with Bool",
+          "span": {
+            "line": 2,
+            "column": 22,
+            "offset": 37
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "TYPE",
+          "message": "TYPE: Int64 incompatible with Bool",
+          "span": {
+            "line": 2,
+            "column": 22,
+            "offset": 37
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "immutable_assignment",
+    "index": 36,
+    "family": "type",
+    "source": "module fixture;\nfn main() -> Int64 { let x = 1; x = 2; return x; }",
+    "source_sha256": "ffaf4b9f03b85346769cc809e7b1981267ed9ab0b0bfe582dfe92e50df321c6b",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "IMMUTABLE",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "IMMUTABLE",
+          "message": "IMMUTABLE: cannot assign let/parameter",
+          "span": {
+            "line": 2,
+            "column": 33,
+            "offset": 48
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "IMMUTABLE",
+          "message": "IMMUTABLE: cannot assign let/parameter",
+          "span": {
+            "line": 2,
+            "column": 33,
+            "offset": 48
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "integer_overflow",
+    "index": 37,
+    "family": "numeric",
+    "source": "module fixture;\nfn main() -> Int64 { return 9223372036854775807 + 1; }",
+    "source_sha256": "7812c71164f9f8854d9320b349d1f19e378f0b237cfe72a741cc691729d8ccd5",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "OVERFLOW",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "OVERFLOW",
+          "message": "OVERFLOW: Int64 overflow",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "OVERFLOW",
+          "message": "OVERFLOW: Int64 overflow",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "zero_division",
+    "index": 38,
+    "family": "numeric",
+    "source": "module fixture;\nfn main() -> Float64 { return 1.0 / 0.0; }",
+    "source_sha256": "7d3905ff54e02c32475ff331ca6afe9faaad622a759a5001b3e715a96348fda4",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "DIVISION_BY_ZERO",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "DIVISION_BY_ZERO",
+          "message": "DIVISION_BY_ZERO: zero divisor",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "DIVISION_BY_ZERO",
+          "message": "DIVISION_BY_ZERO: zero divisor",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "list_out_of_bounds",
+    "index": 39,
+    "family": "bounds",
+    "source": "module fixture;\nfn main() -> Int64 { return [1, 2][5]; }",
+    "source_sha256": "06c72d9c8be1745bd4652b3ada7ebc59d33ae68b85e781ece33046de4b76fe61",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "BOUNDS",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "BOUNDS",
+          "message": "BOUNDS: index out of bounds",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "BOUNDS",
+          "message": "BOUNDS: Invalid or out-of-range index",
+          "span": {
+            "line": 2,
+            "column": 29,
+            "offset": 44
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "heterogeneous_list",
+    "index": 40,
+    "family": "type",
+    "source": "module fixture;\nfn main() -> Int64 { let xs = [1, true]; return 0; }",
+    "source_sha256": "d3c99d7f60ec2cf73437d3aea4ade54e62ec803e0ed5ace261886c974793a34c",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "TYPE",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "TYPE",
+          "message": "TYPE: Bool incompatible with Int64",
+          "span": {
+            "line": 2,
+            "column": 31,
+            "offset": 46
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "TYPE",
+          "message": "TYPE: Bool incompatible with Int64",
+          "span": {
+            "line": 2,
+            "column": 31,
+            "offset": 46
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "missing_record_field",
+    "index": 41,
+    "family": "type",
+    "source": "module fixture;\nfn main() -> Int64 { let r = {count: 1}; return r.missing; }",
+    "source_sha256": "5baf2104ef3edece952b87386526de8915c866bc0439a6efd0dd639a4b84e0b1",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "NAME",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "NAME",
+          "message": "NAME: no such record field",
+          "span": {
+            "line": 2,
+            "column": 49,
+            "offset": 64
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "NAME",
+          "message": "NAME: no such record field",
+          "span": {
+            "line": 2,
+            "column": 49,
+            "offset": 64
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "missing_semicolon",
+    "index": 42,
+    "family": "parse",
+    "source": "module fixture;\nfn main() -> Int64 { return 1 }",
+    "source_sha256": "c438ff78854aa91958c45e12e8aabfb79df7ac10a40048b6cca3c49a110d52cf",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "PARSE",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "PARSE",
+          "message": "PARSE: expected ;, got }",
+          "span": {
+            "line": 2,
+            "column": 31,
+            "offset": 46
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "PARSE",
+          "message": "PARSE: expected ;, got }",
+          "span": {
+            "line": 2,
+            "column": 31,
+            "offset": 46
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip_error": {
+      "code": "PARSE",
+      "message": "PARSE: expected ;, got }",
+      "span": {
+        "line": 2,
+        "column": 31,
+        "offset": 46
+      }
+    }
+  },
+  {
+    "id": "invalid_lexeme",
+    "index": 43,
+    "family": "lex",
+    "source": "module fixture;\nfn main() -> Int64 { return @; }",
+    "source_sha256": "1833cf53adc0ddfe1aec9d6eacd7699e96ece88c95736530ccb0516bd3586efe",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "LEX",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "LEX",
+          "message": "LEX: unexpected character '@'",
+          "span": {
+            "line": 2,
+            "column": 29,
+            "offset": 44
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "LEX",
+          "message": "LEX: unexpected character '@'",
+          "span": {
+            "line": 2,
+            "column": 29,
+            "offset": 44
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip_error": {
+      "code": "LEX",
+      "message": "LEX: unexpected character '@'",
+      "span": {
+        "line": 2,
+        "column": 29,
+        "offset": 44
+      }
+    }
+  },
+  {
+    "id": "module_import_call",
+    "index": 44,
+    "family": "module",
+    "source": "module fixture; import mathlib; fn main() -> Int64 { return mathlib.triple(5); }",
+    "source_sha256": "776267eeb5a33879c205c81df1f74f07c1af34b6ee15c758f25e0a26ef1bdeeb",
+    "arguments": [],
+    "expected": 15,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 15,
+        "effects": [],
+        "steps": 7,
+        "trace_events": 7
+      },
+      "vm": {
+        "value": 15,
+        "effects": [],
+        "steps": 9,
+        "trace_events": 9
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "option_some",
+    "index": 45,
+    "family": "option",
+    "source": "module fixture;\nfn main() -> Int64 { return unwrap(some(5)); }",
+    "source_sha256": "13d478f66145f8486e393f3c02f1c79b05470b2fb5e14e049e85e5a1bd6b612a",
+    "arguments": [],
+    "expected": 5,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 5,
+        "effects": [],
+        "steps": 4,
+        "trace_events": 4
+      },
+      "vm": {
+        "value": 5,
+        "effects": [],
+        "steps": 5,
+        "trace_events": 5
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "option_none",
+    "index": 46,
+    "family": "option",
+    "source": "module fixture;\nfn main() -> Bool { return is_some(none_int()); }",
+    "source_sha256": "8614f554c0d96d17fa7d4816eae087a07fdfe7fb017655dd6f31eff3e39bb9c0",
+    "arguments": [],
+    "expected": false,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": false,
+        "effects": [],
+        "steps": 3,
+        "trace_events": 3
+      },
+      "vm": {
+        "value": false,
+        "effects": [],
+        "steps": 4,
+        "trace_events": 4
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "result_ok",
+    "index": 47,
+    "family": "result",
+    "source": "module fixture;\nfn main() -> Int64 { return unwrap(ok(8)); }",
+    "source_sha256": "4333b8ff655e710f04ebc80f8f9a59bd1f449387db328f76439c5b709cefa349",
+    "arguments": [],
+    "expected": 8,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 8,
+        "effects": [],
+        "steps": 4,
+        "trace_events": 4
+      },
+      "vm": {
+        "value": 8,
+        "effects": [],
+        "steps": 5,
+        "trace_events": 5
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "result_error",
+    "index": 48,
+    "family": "result",
+    "source": "module fixture;\nfn main() -> Int64 { return unwrap(err_int(\"unavailable\")); }",
+    "source_sha256": "b8c641770eaab923db6355104dcd5a28001282daa59793f59c4a5c3efe2bfcc2",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "UNWRAP",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "UNWRAP",
+          "message": "UNWRAP: empty/Err cannot unwrap",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "UNWRAP",
+          "message": "UNWRAP: empty/Err cannot unwrap",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "observer_conditioned_value",
+    "index": 49,
+    "family": "observer",
+    "source": "module fixture;\nfn main() -> Int64 { return repr_value(represent(7, \"left\", \"world\", \"m\")); }",
+    "source_sha256": "3b32cc0db85b6f3581b48cf0bcf47074ac7c27bc55169ed654bf7646a2b9ce09",
+    "arguments": [],
+    "expected": 7,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 7,
+        "effects": [],
+        "steps": 7,
+        "trace_events": 7
+      },
+      "vm": {
+        "value": 7,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "observer_add_compatible",
+    "index": 50,
+    "family": "observer",
+    "source": "module fixture;\nfn main() -> Int64 { let a = represent(2, \"left\", \"world\", \"m\"); let b = represent(5, \"left\", \"world\", \"m\"); return repr_value(repr_add(a, b)); }",
+    "source_sha256": "79b9d07bfd62508279e320499f5b16a5bcc74430e29e0503424035dd73131cea",
+    "arguments": [],
+    "expected": 7,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 7,
+        "effects": [],
+        "steps": 17,
+        "trace_events": 17
+      },
+      "vm": {
+        "value": 7,
+        "effects": [],
+        "steps": 18,
+        "trace_events": 18
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "observer_mismatch",
+    "index": 51,
+    "family": "observer",
+    "source": "module fixture;\nfn main() -> Int64 { let a = represent(2, \"left\", \"world\", \"m\"); let b = represent(5, \"right\", \"world\", \"m\"); return repr_value(repr_add(a, b)); }",
+    "source_sha256": "73bc0c298a5683d976fbff4b97fc36675518947bc1f4cca07bc42a0f1af89813",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "OBSERVER_MISMATCH",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "OBSERVER_MISMATCH",
+          "message": "OBSERVER_MISMATCH: observer mismatch; explicit conversion required",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "OBSERVER_MISMATCH",
+          "message": "OBSERVER_MISMATCH: observer mismatch; explicit conversion required",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "frame_mismatch",
+    "index": 52,
+    "family": "observer",
+    "source": "module fixture;\nfn main() -> Int64 { let a = represent(2, \"left\", \"world\", \"m\"); let b = represent(5, \"left\", \"camera\", \"m\"); return repr_value(repr_add(a, b)); }",
+    "source_sha256": "f8ae253d1dd53aa1d6365fc8a31f4979d53bcd80992915cb9bd49df744883098",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "FRAME_MISMATCH",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "FRAME_MISMATCH",
+          "message": "FRAME_MISMATCH: frame mismatch; explicit conversion required",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "FRAME_MISMATCH",
+          "message": "FRAME_MISMATCH: frame mismatch; explicit conversion required",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "unit_mismatch",
+    "index": 53,
+    "family": "observer",
+    "source": "module fixture;\nfn main() -> Int64 { let a = represent(2, \"left\", \"world\", \"m\"); let b = represent(5, \"left\", \"world\", \"cm\"); return repr_value(repr_add(a, b)); }",
+    "source_sha256": "2cca7d199be14270dd220fe57e8bb6a8670165a380b7a8c3f0e4bf031832ccdc",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "UNIT_MISMATCH",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "UNIT_MISMATCH",
+          "message": "UNIT_MISMATCH: unit mismatch; explicit conversion required",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "UNIT_MISMATCH",
+          "message": "UNIT_MISMATCH: unit mismatch; explicit conversion required",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "explicit_frame_conversion",
+    "index": 54,
+    "family": "observer",
+    "source": "module fixture;\nfn main() -> Int64 { let a = represent(2, \"left\", \"world\", \"m\"); return repr_value(convert_frame(a, \"camera\", 3, \"affine_translation_v1\")); }",
+    "source_sha256": "cc475c7806ec2c1ff42224f9dd37685f32cbc6314a78601fecd08c0f2d985140",
+    "arguments": [],
+    "expected": 5,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 5,
+        "effects": [],
+        "steps": 13,
+        "trace_events": 13
+      },
+      "vm": {
+        "value": 5,
+        "effects": [],
+        "steps": 14,
+        "trace_events": 14
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "out_of_family_transform",
+    "index": 55,
+    "family": "observer",
+    "source": "module fixture;\nfn main() -> Int64 { let a = represent(2, \"left\", \"world\", \"m\"); return repr_value(convert_frame(a, \"camera\", 3, \"nonlinear_unregistered\")); }",
+    "source_sha256": "500abbd3111ee0a3dff972157a98acf0296f1349dd72ee0fb0dc952a7ab3444a",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "NEEDS_EVIDENCE",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "NEEDS_EVIDENCE",
+          "message": "NEEDS_EVIDENCE: unregistered transform protocol",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "NEEDS_EVIDENCE",
+          "message": "NEEDS_EVIDENCE: unregistered transform protocol",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "lossy_collision",
+    "index": 56,
+    "family": "recovery",
+    "source": "module fixture;\nfn main() -> Bool { return repr_value(observe_mod(1, 256, \"mod_sensor\")) == repr_value(observe_mod(257, 256, \"mod_sensor\")); }",
+    "source_sha256": "5c7300f7c0d95feeb0d9abfd0bb5a94ce23ffbf54de872a767a54c59b455b76f",
+    "arguments": [],
+    "expected": true,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": true,
+        "effects": [],
+        "steps": 12,
+        "trace_events": 12
+      },
+      "vm": {
+        "value": true,
+        "effects": [],
+        "steps": 13,
+        "trace_events": 13
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "recovery_with_sideinfo",
+    "index": 57,
+    "family": "recovery",
+    "source": "module fixture;\nfn main() -> Int64 { let y = observe_mod(257, 256, \"mod_sensor\"); let w = make_witness(257, 256); return exact_value(recover(y, w)); }",
+    "source_sha256": "340e90c2afdb924d07ee29c6e41c530032e75373fda0e45c167300b47f11f68f",
+    "arguments": [],
+    "expected": 257,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 257,
+        "effects": [],
+        "steps": 14,
+        "trace_events": 14
+      },
+      "vm": {
+        "value": 257,
+        "effects": [],
+        "steps": 15,
+        "trace_events": 15
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "non_identifiable_without_witness",
+    "index": 58,
+    "family": "recovery",
+    "source": "module fixture;\nfn main() -> Int64 { let y = observe_mod(257, 256, \"mod_sensor\"); return exact_value(recover_without_witness(y)); }",
+    "source_sha256": "34a93b9f5ac7226425076e844bf3a02f3fe15fbe432fb7903f00c24c98ecd50f",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "NON_IDENTIFIABLE",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "NON_IDENTIFIABLE",
+          "message": "NON_IDENTIFIABLE: measurement has multiple compatible sources",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "NON_IDENTIFIABLE",
+          "message": "NON_IDENTIFIABLE: measurement has multiple compatible sources",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "wrong_pairing_witness",
+    "index": 59,
+    "family": "recovery",
+    "source": "module fixture;\nfn main() -> Int64 { let y = observe_mod(257, 256, \"mod_sensor\"); let w = make_witness(258, 256); return exact_value(recover(y, w)); }",
+    "source_sha256": "26c80194689624f264550d2b2f0d2ea7b13971657f7c7724a56c42738e9313bb",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "WITNESS_CORRUPT",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "WITNESS_CORRUPT",
+          "message": "WITNESS_CORRUPT: witness measurement mismatch",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "WITNESS_CORRUPT",
+          "message": "WITNESS_CORRUPT: witness measurement mismatch",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "denied_effect",
+    "index": 60,
+    "family": "effect",
+    "source": "module fixture;\nfn main() -> Bool { return request_effect(\"journal\", \"entry\"); }",
+    "source_sha256": "431116c1b7142fbf235e0c1692369c0ad1838f2817adc2a93640196f10d94637",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "EFFECT_DENIED",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "EFFECT_DENIED",
+          "message": "EFFECT_DENIED: trusted host policy denied action",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "EFFECT_DENIED",
+          "message": "EFFECT_DENIED: trusted host policy denied action",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "allowed_local_journal",
+    "index": 61,
+    "family": "effect",
+    "source": "module fixture;\nfn main() -> Bool { return request_effect(\"journal\", \"entry\"); }",
+    "source_sha256": "431116c1b7142fbf235e0c1692369c0ad1838f2817adc2a93640196f10d94637",
+    "arguments": [],
+    "expected": true,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": true,
+        "effects": [
+          {
+            "action": "journal",
+            "payload_hash": "db6756584c1fcde31d8b2f1ab0521184df7613a3852eb043300be55821fd9983",
+            "decision": "ALLOWED_LOCAL_JOURNAL",
+            "external_executed": false
+          }
+        ],
+        "steps": 4,
+        "trace_events": 4
+      },
+      "vm": {
+        "value": true,
+        "effects": [
+          {
+            "action": "journal",
+            "payload_hash": "db6756584c1fcde31d8b2f1ab0521184df7613a3852eb043300be55821fd9983",
+            "decision": "ALLOWED_LOCAL_JOURNAL",
+            "external_executed": false
+          }
+        ],
+        "steps": 5,
+        "trace_events": 5
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "human_approval_required",
+    "index": 62,
+    "family": "effect",
+    "source": "module fixture;\nfn main() -> Bool { return request_effect(\"journal\", \"entry\"); }",
+    "source_sha256": "431116c1b7142fbf235e0c1692369c0ad1838f2817adc2a93640196f10d94637",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "HUMAN_APPROVAL_REQUIRED",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "HUMAN_APPROVAL_REQUIRED",
+          "message": "HUMAN_APPROVAL_REQUIRED: trusted host policy denied action",
+          "span": null
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "HUMAN_APPROVAL_REQUIRED",
+          "message": "HUMAN_APPROVAL_REQUIRED: trusted host policy denied action",
+          "span": null
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "tensor_matmul",
+    "index": 63,
+    "family": "tensor",
+    "source": "module fixture;\nfn main() -> Tensor[1,1] { return matmul(tensor([1.0, 2.0], [1,2]), tensor([3.0, 4.0], [2,1])); }",
+    "source_sha256": "fa2c1a02e2ad9af496aa47ffa6f97d3256597c8cfb70219f4b7c2f47ce673bf1",
+    "arguments": [],
+    "expected": {
+      "shape": [
+        1,
+        1
+      ],
+      "data": [
+        11.0
+      ]
+    },
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": {
+          "shape": [
+            1,
+            1
+          ],
+          "data": [
+            11.0
+          ]
+        },
+        "effects": [],
+        "steps": 16,
+        "trace_events": 16
+      },
+      "vm": {
+        "value": {
+          "shape": [
+            1,
+            1
+          ],
+          "data": [
+            11.0
+          ]
+        },
+        "effects": [],
+        "steps": 17,
+        "trace_events": 17
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "tensor_relu",
+    "index": 64,
+    "family": "tensor",
+    "source": "module fixture;\nfn main() -> Tensor[3] { return relu(tensor([-1.0, 0.0, 2.0], [3])); }",
+    "source_sha256": "9677ca8380f52b7a1f12bb6421169e4b96818bfa81739dedb6f1747ebf9c8ff2",
+    "arguments": [],
+    "expected": {
+      "shape": [
+        3
+      ],
+      "data": [
+        0.0,
+        0.0,
+        2.0
+      ]
+    },
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": {
+          "shape": [
+            3
+          ],
+          "data": [
+            0.0,
+            0.0,
+            2.0
+          ]
+        },
+        "effects": [],
+        "steps": 10,
+        "trace_events": 10
+      },
+      "vm": {
+        "value": {
+          "shape": [
+            3
+          ],
+          "data": [
+            0.0,
+            0.0,
+            2.0
+          ]
+        },
+        "effects": [],
+        "steps": 11,
+        "trace_events": 11
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "tensor_reshape",
+    "index": 65,
+    "family": "tensor",
+    "source": "module fixture;\nfn main() -> Tensor[2,2] { return reshape(tensor([1.0, 2.0, 3.0, 4.0], [4]), [2,2]); }",
+    "source_sha256": "87327fe9e530d58af87be03c18c37cdbc46cb78542f8073644250f2399c0c5b6",
+    "arguments": [],
+    "expected": {
+      "shape": [
+        2,
+        2
+      ],
+      "data": [
+        1.0,
+        2.0,
+        3.0,
+        4.0
+      ]
+    },
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": {
+          "shape": [
+            2,
+            2
+          ],
+          "data": [
+            1.0,
+            2.0,
+            3.0,
+            4.0
+          ]
+        },
+        "effects": [],
+        "steps": 13,
+        "trace_events": 13
+      },
+      "vm": {
+        "value": {
+          "shape": [
+            2,
+            2
+          ],
+          "data": [
+            1.0,
+            2.0,
+            3.0,
+            4.0
+          ]
+        },
+        "effects": [],
+        "steps": 14,
+        "trace_events": 14
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "tensor_shape_invalid",
+    "index": 66,
+    "family": "tensor",
+    "source": "module fixture;\nfn main() -> Tensor[2] { return tensor([1.0], [2]); }",
+    "source_sha256": "10f70a41fd4eb23ee08bfdeac805064835d394a5e82d7e43fdcf96f0c0dcba34",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "SHAPE",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "SHAPE",
+          "message": "SHAPE: tensor literal data length",
+          "span": {
+            "line": 2,
+            "column": 33,
+            "offset": 48
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "SHAPE",
+          "message": "SHAPE: tensor literal data length",
+          "span": {
+            "line": 2,
+            "column": 33,
+            "offset": 48
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "approximation_explicit",
+    "index": 67,
+    "family": "approx",
+    "source": "module fixture;\nfn main() -> Float64 { return approx_value(approx(0.5, 0.1)); }",
+    "source_sha256": "5289566745606a5d367fb859b908fad9224bc54da4afc44f91e43be93a658aa8",
+    "arguments": [],
+    "expected": 0.5,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 0.5,
+        "effects": [],
+        "steps": 5,
+        "trace_events": 5
+      },
+      "vm": {
+        "value": 0.5,
+        "effects": [],
+        "steps": 6,
+        "trace_events": 6
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "int64_minimum",
+    "index": 68,
+    "family": "numeric",
+    "source": "module fixture;\nfn main() -> Int64 { return -9223372036854775808; }",
+    "source_sha256": "789a324854ee19231dad18f62f109350c41b1f430e2d3f78ad499c28683a5347",
+    "arguments": [],
+    "expected": -9223372036854775808,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": -9223372036854775808,
+        "effects": [],
+        "steps": 2,
+        "trace_events": 2
+      },
+      "vm": {
+        "value": -9223372036854775808,
+        "effects": [],
+        "steps": 3,
+        "trace_events": 3
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "short_circuit_and",
+    "index": 69,
+    "family": "boolean",
+    "source": "module fixture;\nfn main() -> Bool { return false && (1 / 0 == 1); }",
+    "source_sha256": "68b480589fe11acb016b10be145174ef0366b410d41e556cbd6d5834c8942ce9",
+    "arguments": [],
+    "expected": false,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": false,
+        "effects": [],
+        "steps": 3,
+        "trace_events": 3
+      },
+      "vm": {
+        "value": false,
+        "effects": [],
+        "steps": 5,
+        "trace_events": 5
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "short_circuit_or",
+    "index": 70,
+    "family": "boolean",
+    "source": "module fixture;\nfn main() -> Bool { return true || (1 / 0 == 1); }",
+    "source_sha256": "953f863211ab783ad632813ace613db6773d294697173892ad9d4ce3e6ef3817",
+    "arguments": [],
+    "expected": true,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": true,
+        "effects": [],
+        "steps": 3,
+        "trace_events": 3
+      },
+      "vm": {
+        "value": true,
+        "effects": [],
+        "steps": 6,
+        "trace_events": 6
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "branch_scope_shadow",
+    "index": 71,
+    "family": "scope",
+    "source": "module fixture;\nfn main() -> Int64 { let x = 7; if true { let x = 8; } return x; }",
+    "source_sha256": "3c0fb0e225dd9fcc9f2cad94f8e30938d5d0affd3e666ec37d35da86697862ca",
+    "arguments": [],
+    "expected": 7,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 7,
+        "effects": [],
+        "steps": 8,
+        "trace_events": 8
+      },
+      "vm": {
+        "value": 7,
+        "effects": [],
+        "steps": 12,
+        "trace_events": 12
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "branch_scope_does_not_escape",
+    "index": 72,
+    "family": "scope",
+    "source": "module fixture;\nfn main() -> Int64 { if true { let x = 8; } return x; }",
+    "source_sha256": "c9d43544610469aaa4320f9296b337d7396a05d073fde6b867f3050f8ab134e7",
+    "arguments": [],
+    "expected": null,
+    "expected_error": "NAME",
+    "seed": null,
+    "engines": {
+      "tree": {
+        "error": {
+          "code": "NAME",
+          "message": "NAME: undefined name x",
+          "span": {
+            "line": 2,
+            "column": 52,
+            "offset": 67
+          }
+        }
+      },
+      "vm": {
+        "error": {
+          "code": "NAME",
+          "message": "NAME: undefined name x",
+          "span": {
+            "line": 2,
+            "column": 52,
+            "offset": 67
+          }
+        }
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "rank_deficient_projection_collision",
+    "index": 73,
+    "family": "identifiability",
+    "source": "module fixture;\nfn main() -> Bool { let h = tensor([1.0, 0.0], [2,1]); let a = tensor([2.0, 7.0], [1,2]); let b = tensor([2.0, 9.0], [1,2]); return matmul(a, h) == matmul(b, h); }",
+    "source_sha256": "85decc9473da0983219a38d0be7afcf2ecda2edb4ea457490214f1229bd665e4",
+    "arguments": [],
+    "expected": true,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": true,
+        "effects": [],
+        "steps": 32,
+        "trace_events": 32
+      },
+      "vm": {
+        "value": true,
+        "effects": [],
+        "steps": 33,
+        "trace_events": 33
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "second_observer_resolves_projection",
+    "index": 74,
+    "family": "identifiability",
+    "source": "module fixture;\nfn main() -> Bool { let h = tensor([0.0, 1.0], [2,1]); let a = tensor([2.0, 7.0], [1,2]); let b = tensor([2.0, 9.0], [1,2]); return matmul(a, h) != matmul(b, h); }",
+    "source_sha256": "f94c4c9d93131a9d596769f7453dd35a2833415b4b105e1997078825f78d584b",
+    "arguments": [],
+    "expected": true,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": true,
+        "effects": [],
+        "steps": 32,
+        "trace_events": 32
+      },
+      "vm": {
+        "value": true,
+        "effects": [],
+        "steps": 33,
+        "trace_events": 33
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "parameter_shadow_in_body",
+    "index": 75,
+    "family": "scope",
+    "source": "module fixture;\nfn f(x: Int64) -> Int64 { let x = 3; return x; } fn main() -> Int64 { return f(9); }",
+    "source_sha256": "216ec4e692ce3f041ebe064a693ff3e18573238ecd6a3c762256c3088ed44c3c",
+    "arguments": [],
+    "expected": 3,
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": 3,
+        "effects": [],
+        "steps": 7,
+        "trace_events": 7
+      },
+      "vm": {
+        "value": 3,
+        "effects": [],
+        "steps": 9,
+        "trace_events": 9
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  },
+  {
+    "id": "record_lexicographic_effect_order",
+    "index": 76,
+    "family": "record",
+    "source": "module fixture;\nfn main() -> List[Int64] { let r = {z: random_int(100), a: random_int(100)}; return [r.z,r.a]; }",
+    "source_sha256": "0877d6f8190b961af748de7e406a85b54b80ebd85a472909aa83e6ea11f6e5dc",
+    "arguments": [],
+    "expected": [
+      75,
+      90
+    ],
+    "expected_error": null,
+    "seed": null,
+    "engines": {
+      "tree": {
+        "value": [
+          75,
+          90
+        ],
+        "effects": [],
+        "steps": 12,
+        "trace_events": 12
+      },
+      "vm": {
+        "value": [
+          75,
+          90
+        ],
+        "effects": [],
+        "steps": 13,
+        "trace_events": 13
+      }
+    },
+    "passed": true,
+    "ast_roundtrip": true
+  }
+]

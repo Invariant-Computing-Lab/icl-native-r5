@@ -1,0 +1,84 @@
+(* ICL-Core 0.1, NEW_IMPLEMENTATION.
+   Concrete parser grammar; static restrictions follow below.
+   {x} means zero-or-more; [x] means optional; quoted strings are terminals.
+   Whitespace and // line comments may separate tokens. *)
+
+program        = "module", identifier, ";", { import_decl }, function_decl,
+                 { function_decl }, EOF ;
+import_decl    = "import", identifier, ";" ;
+function_decl  = "fn", identifier, "(", [ parameters ], ")", "->", type_syntax, block ;
+parameters     = parameter, { ",", parameter } ;
+parameter      = identifier, ":", type_syntax ;
+type_syntax    = identifier, [ "[", [ type_argument, { ",", type_argument } ], "]" ] ;
+type_argument  = unsigned_integer | type_syntax ;
+
+block          = "{", { statement }, "}" ;
+statement      = binding | assignment | return_stmt | if_stmt | while_stmt | expression_stmt ;
+binding        = ( "let" | "var" ), identifier, [ ":", type_syntax ], "=", expression, ";" ;
+assignment     = identifier, "=", expression, ";" ;
+return_stmt    = "return", expression, ";" ;
+if_stmt        = "if", expression, block, [ "else", block ] ;
+while_stmt     = "while", expression, "limit", unsigned_integer, block ;
+expression_stmt = expression, ";" ;
+
+expression     = disjunction ;
+disjunction    = conjunction, { "||", conjunction } ;
+conjunction    = equality, { "&&", equality } ;
+equality       = ordering, { ( "==" | "!=" ), ordering } ;
+ordering       = additive, { ( "<" | "<=" | ">" | ">=" ), additive } ;
+additive       = multiplicative, { ( "+" | "-" ), multiplicative } ;
+multiplicative = unary, { ( "*" | "/" | "%" ), unary } ;
+unary          = ( "!" | "-" ), unary | postfix ;
+postfix        = primary, { suffix } ;
+suffix         = "[", expression, "]" | ".", identifier | "(", [ arguments ], ")" ;
+arguments      = expression, { ",", expression } ;
+primary        = literal | identifier | list_literal | record_literal
+               | "(", expression, ")"
+               | "(", expression, ",", expression, { ",", expression }, ")" ;
+list_literal   = "[", [ expression, { ",", expression } ], "]" ;
+record_literal = "{", [ field, { ",", field } ], "}" ;
+field          = identifier, ":", expression ;
+literal        = unsigned_integer | float_literal | string_literal | "true" | "false" ;
+
+identifier     = ascii_letter_or_underscore, { ascii_letter_or_underscore | ascii_digit } ;
+unsigned_integer = decimal_digit, { decimal_digit } ;
+float_literal  = unsigned_integer, ".", unsigned_integer, [ exponent ]
+               | unsigned_integer, exponent ;
+exponent       = ( "e" | "E" ), [ "+" | "-" ], unsigned_integer ;
+string_literal = '"', { json_unescaped_character | json_escape }, '"' ;
+json_escape    = '\\', ( '"' | '\\' | "/" | "b" | "f" | "n" | "r" | "t"
+                      | "u", hex_digit, hex_digit, hex_digit, hex_digit ) ;
+line_comment   = "//", { character_except_line_feed } ;
+
+(* Lexical definitions:
+   ascii_letter_or_underscore = [A-Za-z_]
+   ascii_digit = [0-9]
+   decimal_digit = Python regular-expression \d (Unicode decimal digits)
+   hex_digit = [0-9a-fA-F]
+   json_unescaped_character excludes quote, backslash, and raw JSON controls.
+   Keywords cannot be identifiers. Tokens use maximal match under the lexer.
+   No block comments, single-quoted strings, hexadecimal integers, numeric
+   separators, trailing commas, dot-leading floats (.5), or dot-trailing
+   floats (1.) are implemented. *)
+
+(* Parser/static restrictions beyond the EBNF:
+   - Call suffix target must reduce to a variable name or a field whose target
+     is a variable: f(...) or module.f(...). A returned value is not callable;
+     a.b.c(...) is rejected. Parenthesized equivalent names remain names.
+   - Decimal minus is a unary operator; minimum Int64 magnitude receives the
+     explicit lexer/parser exception needed for -9223372036854775808.
+   - while limit must be a literal integer in 0..100000.
+   - Tensor shape/type dimensions must be concrete positive literals, rank1..3.
+   - Empty lists parse but are rejected by the finite type checker.
+   - Tuple syntax requires at least two elements; tuple index must be literal.
+   - Types are restricted by checker.valid_type to the finite built-in registry;
+     grammar-level type applications do not implement user-defined generics.
+   - Record annotations, function types, type aliases, and first-class functions
+     are unsupported. Record literal field names must be unique.
+   - Record field expressions evaluate in lexicographic field-name order;
+     written field order is not evaluation order.
+   - Functions require explicit supported parameter/return types and a
+     conservative all-path return. Conditions must have type Bool.
+   - Raw forbidden control/format/surrogate characters, decoded unpaired
+     surrogate strings, oversized source/tokens, and unsupported numeric
+     values are rejected independently of the context-free grammar. *)

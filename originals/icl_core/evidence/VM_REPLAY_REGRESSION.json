@@ -1,0 +1,9 @@
+{
+  "command": "PYTHONPATH=work/icl_core python -m unittest discover -s work/icl_core/tests -p test_vm_replay.py -v",
+  "exit_code": 0,
+  "test_methods": 6,
+  "elapsed_seconds": 1.741,
+  "status": "PASS",
+  "scope": "Every instruction boundary replay across 10 programs plus integrity/authority/operand/scope regressions",
+  "runner_sha256": "22e6765c42aa751fb11ccd76be7d01fa977399b53143d9a9bb4411e1b0988df9"
+}

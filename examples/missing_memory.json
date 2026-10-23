@@ -1,0 +1,21 @@
+{
+  "initial": 5,
+  "memory": null,
+  "steps": [
+    {
+      "intent": "recall",
+      "arg": 2,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+[
+  {
+    "name": "01_observer_context.icl",
+    "source_sha256": "7e7886b3f7b1ac79e756a3bfde4e5acc29dd4f382c15f4e6ac2fc7ff9677f30e",
+    "runs": {
+      "tree": {
+        "value": 19,
+        "effects": [],
+        "steps": 17,
+        "trace_sha256": "4d337e168fff8510eaa6d69754d4c78a1da2897ef7b4cae3695f44cbbb95d654"
+      },
+      "vm": {
+        "value": 19,
+        "effects": [],
+        "steps": 18,
+        "trace_sha256": "e7f78028092e225c53208f800982adba9e5d533c566919594307a523d8020467"
+      }
+    },
+    "parity": true
+  },
+  {
+    "name": "02_collision_sideinfo.icl",
+    "source_sha256": "d5c3db52409ad1b14426e8e3fec73feb5f188836e5c6eb819611dd37c2afacfa",
+    "runs": {
+      "tree": {
+        "value": 257,
+        "effects": [],
+        "steps": 23,
+        "trace_sha256": "d884355949d1c7a8cdf3047851a9d8819f5ddf25aad1781a7874536608e48acc"
+      },
+      "vm": {
+        "value": 257,
+        "effects": [],
+        "steps": 25,
+        "trace_sha256": "8dfbdd2aeb3e0239b8bc2c0d6f6e08e8c8b9eefb494324bfd4d7feee33b3a55a"
+      }
+    },
+    "parity": true
+  },
+  {
+    "name": "03_frame_conversion.icl",
+    "source_sha256": "14d074a4bed29790f85c08ac1b47d578764318a45a4f84023390348b15b4b9fc",
+    "runs": {
+      "tree": {
+        "value": 13.5,
+        "effects": [],
+        "steps": 15,
+        "trace_sha256": "c8a7d618f6a788185d8d056930963cdf00710313bbcb0fb6eb7a0c106d705014"
+      },
+      "vm": {
+        "value": 13.5,
+        "effects": [],
+        "steps": 16,
+        "trace_sha256": "8bbe99a3d14c0e56d5b14c452d152b32f7bf575f31fa733f72e933506b7407ad"
+      }
+    },
+    "parity": true
+  },
+  {
+    "name": "04_authority_conflict.icl",
+    "source_sha256": "c2389df20543b709481de08da5895d91ce76bc80e5bcd0f8a8992dd33dda2626",
+    "runs": {
+      "tree": {
+        "expected_error": "EFFECT_DENIED"
+      },
+      "vm": {
+        "expected_error": "EFFECT_DENIED"
+      }
+    },
+    "parity": true
+  },
+  {
+    "name": "05_checkpoint_prng.icl",
+    "source_sha256": "37a0d0469ba9aaf3241393385e896192bbd17bcad660acb752f5b8846ebeb0cf",
+    "runs": {
+      "tree": {
+        "value": 640,
+        "effects": [],
+        "steps": 106,
+        "trace_sha256": "f0feb0c79b8bb70ee93450c58b603ea07e46f217504da2adc552c2ef5684c0db"
+      },
+      "vm": {
+        "value": 640,
+        "effects": [],
+        "steps": 148,
+        "trace_sha256": "c4b0d17f0b843ec3ecbc82193fd3ecfda9e220225991accf9b8fe66b17dc932d"
+      }
+    },
+    "parity": true,
+    "checkpoint_replay_full_parity": true
+  },
+  {
+    "name": "06_model_forward.icl",
+    "source_sha256": "cf5e7e4bb70ba831e3f453619f9b9f3cff50474e2bcadb593250c6cdf4d4ec56",
+    "runs": {
+      "tree": {
+        "value": {
+          "shape": [
+            1,
+            2
+          ],
+          "data": [
+            0.7100610131262037,
+            0.2899389868737963
+          ]
+        },
+        "effects": [],
+        "steps": 36,
+        "trace_sha256": "0e0e925a8fb085a1cd686c82c685cdff94ca6f61b92092dccb1a0b9bee80b010"
+      },
+      "vm": {
+        "value": {
+          "shape": [
+            1,
+            2
+          ],
+          "data": [
+            0.7100610131262037,
+            0.2899389868737963
+          ]
+        },
+        "effects": [],
+        "steps": 37,
+        "trace_sha256": "bc3eac5e22754474301c72c823a2349e5a69faa0683fbddfc8f3c0ee4b41706d"
+      }
+    },
+    "parity": true
+  },
+  {
+    "name": "07_rank_deficient.icl",
+    "source_sha256": "16df3b40d257856d545fbca46df2b7719f9849844bf6368d405327d5fac080a6",
+    "runs": {
+      "tree": {
+        "value": true,
+        "effects": [],
+        "steps": 34,
+        "trace_sha256": "08c86cac0b762fd96ee26759c732ec425666d696b6507f625b8afde81d420f30"
+      },
+      "vm": {
+        "value": true,
+        "effects": [],
+        "steps": 35,
+        "trace_sha256": "86f6c10cb80f547e5f81e4e06fcf564946be2dbe4b7089ea46740df0e197ef09"
+      }
+    },
+    "parity": true
+  },
+  {
+    "name": "08_module_main.icl",
+    "source_sha256": "3606df69954bcaa10b4aa8ffd297cafd60f750d0c7cd4b3c2f74c46b34bbc77e",
+    "runs": {
+      "tree": {
+        "value": 81,
+        "effects": [],
+        "steps": 7,
+        "trace_sha256": "523f9019c1898e3ccdabf3bbb84447dc0a4e022b9f461e618f2ebb322a0ac85e"
+      },
+      "vm": {
+        "value": 81,
+        "effects": [],
+        "steps": 9,
+        "trace_sha256": "304f380981b2e66813ce9a82de4907f9ddc9388601dbb5ee8f6c8dc76f490490"
+      }
+    },
+    "parity": true
+  }
+]

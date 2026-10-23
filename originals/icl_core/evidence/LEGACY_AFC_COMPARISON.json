@@ -1,0 +1,181 @@
+{
+  "status": "PASS",
+  "kind": "NEW_ENGINEERING_COMPARISON",
+  "legacy_module_sha256": "20abd74e06a61d96c829446d1faf584418affc9a4e098d405a54c87ecdf99742",
+  "cases": [
+    {
+      "bits": 2,
+      "states": 4,
+      "passed": true,
+      "source_report": {
+        "bits": 2,
+        "states": 4,
+        "permutation_inverse_exact": true,
+        "retained_bits": 1,
+        "lost_bits": 1,
+        "best_uniform_exact_recovery_probability_without_side_information": 0.5,
+        "collision_witness": [
+          0,
+          2
+        ],
+        "side_information_bits_needed_for_full_uniform_recovery": 1,
+        "recovery_with_quotient_side_information_exact": true
+      }
+    },
+    {
+      "bits": 3,
+      "states": 8,
+      "passed": true,
+      "source_report": {
+        "bits": 3,
+        "states": 8,
+        "permutation_inverse_exact": true,
+        "retained_bits": 1,
+        "lost_bits": 2,
+        "best_uniform_exact_recovery_probability_without_side_information": 0.25,
+        "collision_witness": [
+          0,
+          2
+        ],
+        "side_information_bits_needed_for_full_uniform_recovery": 2,
+        "recovery_with_quotient_side_information_exact": true
+      }
+    },
+    {
+      "bits": 4,
+      "states": 16,
+      "passed": true,
+      "source_report": {
+        "bits": 4,
+        "states": 16,
+        "permutation_inverse_exact": true,
+        "retained_bits": 2,
+        "lost_bits": 2,
+        "best_uniform_exact_recovery_probability_without_side_information": 0.25,
+        "collision_witness": [
+          0,
+          4
+        ],
+        "side_information_bits_needed_for_full_uniform_recovery": 2,
+        "recovery_with_quotient_side_information_exact": true
+      }
+    },
+    {
+      "bits": 5,
+      "states": 32,
+      "passed": true,
+      "source_report": {
+        "bits": 5,
+        "states": 32,
+        "permutation_inverse_exact": true,
+        "retained_bits": 2,
+        "lost_bits": 3,
+        "best_uniform_exact_recovery_probability_without_side_information": 0.125,
+        "collision_witness": [
+          0,
+          4
+        ],
+        "side_information_bits_needed_for_full_uniform_recovery": 3,
+        "recovery_with_quotient_side_information_exact": true
+      }
+    },
+    {
+      "bits": 6,
+      "states": 64,
+      "passed": true,
+      "source_report": {
+        "bits": 6,
+        "states": 64,
+        "permutation_inverse_exact": true,
+        "retained_bits": 3,
+        "lost_bits": 3,
+        "best_uniform_exact_recovery_probability_without_side_information": 0.125,
+        "collision_witness": [
+          0,
+          8
+        ],
+        "side_information_bits_needed_for_full_uniform_recovery": 3,
+        "recovery_with_quotient_side_information_exact": true
+      }
+    },
+    {
+      "bits": 7,
+      "states": 128,
+      "passed": true,
+      "source_report": {
+        "bits": 7,
+        "states": 128,
+        "permutation_inverse_exact": true,
+        "retained_bits": 3,
+        "lost_bits": 4,
+        "best_uniform_exact_recovery_probability_without_side_information": 0.0625,
+        "collision_witness": [
+          0,
+          8
+        ],
+        "side_information_bits_needed_for_full_uniform_recovery": 4,
+        "recovery_with_quotient_side_information_exact": true
+      }
+    },
+    {
+      "bits": 8,
+      "states": 256,
+      "passed": true,
+      "source_report": {
+        "bits": 8,
+        "states": 256,
+        "permutation_inverse_exact": true,
+        "retained_bits": 4,
+        "lost_bits": 4,
+        "best_uniform_exact_recovery_probability_without_side_information": 0.0625,
+        "collision_witness": [
+          0,
+          16
+        ],
+        "side_information_bits_needed_for_full_uniform_recovery": 4,
+        "recovery_with_quotient_side_information_exact": true
+      }
+    },
+    {
+      "bits": 9,
+      "states": 512,
+      "passed": true,
+      "source_report": {
+        "bits": 9,
+        "states": 512,
+        "permutation_inverse_exact": true,
+        "retained_bits": 4,
+        "lost_bits": 5,
+        "best_uniform_exact_recovery_probability_without_side_information": 0.03125,
+        "collision_witness": [
+          0,
+          16
+        ],
+        "side_information_bits_needed_for_full_uniform_recovery": 5,
+        "recovery_with_quotient_side_information_exact": true
+      }
+    },
+    {
+      "bits": 10,
+      "states": 1024,
+      "passed": true,
+      "source_report": {
+        "bits": 10,
+        "states": 1024,
+        "permutation_inverse_exact": true,
+        "retained_bits": 5,
+        "lost_bits": 5,
+        "best_uniform_exact_recovery_probability_without_side_information": 0.03125,
+        "collision_witness": [
+          0,
+          32
+        ],
+        "side_information_bits_needed_for_full_uniform_recovery": 5,
+        "recovery_with_quotient_side_information_exact": true
+      }
+    }
+  ],
+  "total_states": 2044,
+  "original_frozen_experiment_rerun": false,
+  "claim": "finite integer quotient plus explicit witness only"
+}

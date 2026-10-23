@@ -1,0 +1,599 @@
+{
+  "status": "PASS",
+  "total": 54,
+  "passed": 54,
+  "failed": [],
+  "tests": [
+    {
+      "id": "min_int64_tree",
+      "expected_value": -9223372036854775808,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": -9223372036854775808,
+      "passed": true
+    },
+    {
+      "id": "negative_remainder_tree",
+      "expected_value": -1,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": -1,
+      "passed": true
+    },
+    {
+      "id": "short_circuit_tree",
+      "expected_value": false,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": false,
+      "passed": true
+    },
+    {
+      "id": "parameter_shadow_tree",
+      "expected_value": 3,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": 3,
+      "passed": true
+    },
+    {
+      "id": "index_oob_tree",
+      "expected_value": null,
+      "expected_error_codes": [
+        "BOUNDS"
+      ],
+      "observed": "ICLError",
+      "code": "BOUNDS",
+      "message": "BOUNDS: index out of bounds",
+      "passed": true
+    },
+    {
+      "id": "wrong_host_arg_tree",
+      "expected_value": null,
+      "expected_error_codes": [
+        "TYPE"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: input does not match Int64",
+      "passed": true
+    },
+    {
+      "id": "wrapper_host_arg_tree",
+      "expected_value": null,
+      "expected_error_codes": [
+        "TYPE"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: input does not match Exact[Int64]",
+      "passed": true
+    },
+    {
+      "id": "host_policy_default_tree",
+      "expected_value": null,
+      "expected_error_codes": [
+        "EFFECT_DENIED"
+      ],
+      "observed": "ICLError",
+      "code": "EFFECT_DENIED",
+      "message": "EFFECT_DENIED: trusted host policy denied action",
+      "passed": true
+    },
+    {
+      "id": "host_policy_unapproved_tree",
+      "expected_value": null,
+      "expected_error_codes": [
+        "HUMAN_APPROVAL_REQUIRED"
+      ],
+      "observed": "ICLError",
+      "code": "HUMAN_APPROVAL_REQUIRED",
+      "message": "HUMAN_APPROVAL_REQUIRED: trusted host policy denied action",
+      "passed": true
+    },
+    {
+      "id": "external_effect_denied_tree",
+      "expected_value": null,
+      "expected_error_codes": [
+        "EFFECT_DENIED"
+      ],
+      "observed": "ICLError",
+      "code": "EFFECT_DENIED",
+      "message": "EFFECT_DENIED: trusted host policy denied action",
+      "passed": true
+    },
+    {
+      "id": "finite_numeric_tree",
+      "expected_value": null,
+      "expected_error_codes": [
+        "NONFINITE",
+        "OVERFLOW"
+      ],
+      "observed": "ICLError",
+      "code": "NONFINITE",
+      "message": "NONFINITE: numeric primitive overflow or undefined finite result",
+      "passed": true
+    },
+    {
+      "id": "min_int64_vm",
+      "expected_value": -9223372036854775808,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": -9223372036854775808,
+      "passed": true
+    },
+    {
+      "id": "negative_remainder_vm",
+      "expected_value": -1,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": -1,
+      "passed": true
+    },
+    {
+      "id": "short_circuit_vm",
+      "expected_value": false,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": false,
+      "passed": true
+    },
+    {
+      "id": "parameter_shadow_vm",
+      "expected_value": 3,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": 3,
+      "passed": true
+    },
+    {
+      "id": "index_oob_vm",
+      "expected_value": null,
+      "expected_error_codes": [
+        "BOUNDS"
+      ],
+      "observed": "ICLError",
+      "code": "BOUNDS",
+      "message": "BOUNDS: Invalid or out-of-range index",
+      "passed": true
+    },
+    {
+      "id": "wrong_host_arg_vm",
+      "expected_value": null,
+      "expected_error_codes": [
+        "TYPE"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: input does not match Int64",
+      "passed": true
+    },
+    {
+      "id": "wrapper_host_arg_vm",
+      "expected_value": null,
+      "expected_error_codes": [
+        "TYPE"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: input does not match Exact[Int64]",
+      "passed": true
+    },
+    {
+      "id": "host_policy_default_vm",
+      "expected_value": null,
+      "expected_error_codes": [
+        "EFFECT_DENIED"
+      ],
+      "observed": "ICLError",
+      "code": "EFFECT_DENIED",
+      "message": "EFFECT_DENIED: trusted host policy denied action",
+      "passed": true
+    },
+    {
+      "id": "host_policy_unapproved_vm",
+      "expected_value": null,
+      "expected_error_codes": [
+        "HUMAN_APPROVAL_REQUIRED"
+      ],
+      "observed": "ICLError",
+      "code": "HUMAN_APPROVAL_REQUIRED",
+      "message": "HUMAN_APPROVAL_REQUIRED: trusted host policy denied action",
+      "passed": true
+    },
+    {
+      "id": "external_effect_denied_vm",
+      "expected_value": null,
+      "expected_error_codes": [
+        "EFFECT_DENIED"
+      ],
+      "observed": "ICLError",
+      "code": "EFFECT_DENIED",
+      "message": "EFFECT_DENIED: trusted host policy denied action",
+      "passed": true
+    },
+    {
+      "id": "finite_numeric_vm",
+      "expected_value": null,
+      "expected_error_codes": [
+        "NONFINITE",
+        "OVERFLOW"
+      ],
+      "observed": "ICLError",
+      "code": "NONFINITE",
+      "message": "NONFINITE: numeric primitive overflow or undefined finite result",
+      "passed": true
+    },
+    {
+      "id": "malformed_source_0",
+      "expected_value": null,
+      "expected_error_codes": [
+        "PARSE",
+        "NUMBER_LIMIT"
+      ],
+      "observed": "ICLError",
+      "code": "PARSE",
+      "message": "PARSE: unexpected end of source",
+      "passed": true
+    },
+    {
+      "id": "malformed_source_6",
+      "expected_value": null,
+      "expected_error_codes": [
+        "PARSE",
+        "NUMBER_LIMIT"
+      ],
+      "observed": "ICLError",
+      "code": "PARSE",
+      "message": "PARSE: unexpected end of source",
+      "passed": true
+    },
+    {
+      "id": "malformed_source_32",
+      "expected_value": null,
+      "expected_error_codes": [
+        "PARSE",
+        "NUMBER_LIMIT"
+      ],
+      "observed": "ICLError",
+      "code": "PARSE",
+      "message": "PARSE: unexpected end of source",
+      "passed": true
+    },
+    {
+      "id": "malformed_source_5035",
+      "expected_value": null,
+      "expected_error_codes": [
+        "PARSE",
+        "NUMBER_LIMIT"
+      ],
+      "observed": "ICLError",
+      "code": "NUMBER_LIMIT",
+      "message": "NUMBER_LIMIT: numeric token exceeds 128 characters",
+      "passed": true
+    },
+    {
+      "id": "escaped_surrogate",
+      "expected_value": null,
+      "expected_error_codes": [
+        "LEX",
+        "TYPE"
+      ],
+      "observed": "ICLError",
+      "code": "LEX",
+      "message": "LEX: unpaired Unicode surrogate forbidden",
+      "passed": true
+    },
+    {
+      "id": "loads_surrogate",
+      "expected_value": null,
+      "expected_error_codes": [
+        "OCIR_CORRUPT"
+      ],
+      "observed": "ICLError",
+      "code": "OCIR_CORRUPT",
+      "message": "OCIR_CORRUPT: invalid Unicode",
+      "passed": true
+    },
+    {
+      "id": "loads_duplicate_key",
+      "expected_value": null,
+      "expected_error_codes": [
+        "OCIR_CORRUPT"
+      ],
+      "observed": "ICLError",
+      "code": "OCIR_CORRUPT",
+      "message": "OCIR_CORRUPT: duplicate key",
+      "passed": true
+    },
+    {
+      "id": "loads_nonfinite_json",
+      "expected_value": null,
+      "expected_error_codes": [
+        "NONFINITE"
+      ],
+      "observed": "ICLError",
+      "code": "NONFINITE",
+      "message": "NONFINITE: JSON nonfinite",
+      "passed": true
+    },
+    {
+      "id": "compile_cap_preserved",
+      "expected_value": null,
+      "expected_error_codes": [
+        "FUEL_EXHAUSTED"
+      ],
+      "observed": "ICLError",
+      "code": "FUEL_EXHAUSTED",
+      "message": "FUEL_EXHAUSTED: step budget exceeded",
+      "passed": true
+    },
+    {
+      "id": "stale_program_identity",
+      "expected_value": null,
+      "expected_error_codes": [
+        "OCIR_CORRUPT",
+        "CHECKSUM"
+      ],
+      "observed": "ICLError",
+      "code": "OCIR_CORRUPT",
+      "message": "OCIR_CORRUPT: program identity inconsistent",
+      "passed": true
+    },
+    {
+      "id": "unknown_schema",
+      "expected_value": null,
+      "expected_error_codes": [
+        "SCHEMA_INCOMPATIBLE"
+      ],
+      "observed": "ICLError",
+      "code": "SCHEMA_INCOMPATIBLE",
+      "message": "SCHEMA_INCOMPATIBLE: OCIR schema/hash differs",
+      "passed": true
+    },
+    {
+      "id": "unknown_ocir_operator",
+      "expected_value": null,
+      "expected_error_codes": [
+        "UNSUPPORTED_OP"
+      ],
+      "observed": "ICLError",
+      "code": "UNSUPPORTED_OP",
+      "message": "UNSUPPORTED_OP: binary opcode",
+      "passed": true
+    },
+    {
+      "id": "numeric_policy_reject",
+      "expected_value": null,
+      "expected_error_codes": [
+        "SCHEMA_INCOMPATIBLE"
+      ],
+      "observed": "ICLError",
+      "code": "SCHEMA_INCOMPATIBLE",
+      "message": "SCHEMA_INCOMPATIBLE: numeric/feature policy differs",
+      "passed": true
+    },
+    {
+      "id": "numeric_global_not_mutated",
+      "expected_value": "checked_signed",
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": "checked_signed",
+      "passed": true
+    },
+    {
+      "id": "nominal_Option[Int64]",
+      "expected_value": null,
+      "expected_error_codes": [
+        "TYPE",
+        "DOMAIN"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: input does not match Int64",
+      "passed": true
+    },
+    {
+      "id": "nominal_Result[Int64]",
+      "expected_value": null,
+      "expected_error_codes": [
+        "TYPE",
+        "DOMAIN"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: input does not match Int64",
+      "passed": true
+    },
+    {
+      "id": "nominal_Representation[Int64]",
+      "expected_value": null,
+      "expected_error_codes": [
+        "TYPE",
+        "DOMAIN"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: input does not match Representation[Int64]",
+      "passed": true
+    },
+    {
+      "id": "nominal_RecoveryWitness",
+      "expected_value": null,
+      "expected_error_codes": [
+        "TYPE",
+        "DOMAIN"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: input does not match RecoveryWitness",
+      "passed": true
+    },
+    {
+      "id": "nominal_Approx[Float64]",
+      "expected_value": null,
+      "expected_error_codes": [
+        "TYPE",
+        "DOMAIN"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: input does not match Approx[Float64]",
+      "passed": true
+    },
+    {
+      "id": "nominal_Exact[Int64]",
+      "expected_value": null,
+      "expected_error_codes": [
+        "TYPE",
+        "DOMAIN"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: input does not match Exact[Int64]",
+      "passed": true
+    },
+    {
+      "id": "bytecode_opcode_list",
+      "expected_value": null,
+      "expected_error_codes": [
+        "BYTECODE_CORRUPT"
+      ],
+      "observed": "ICLError",
+      "code": "BYTECODE_CORRUPT",
+      "message": "BYTECODE_CORRUPT: Unknown or malformed opcode",
+      "passed": true
+    },
+    {
+      "id": "bytecode_unknown_op",
+      "expected_value": null,
+      "expected_error_codes": [
+        "BYTECODE_CORRUPT"
+      ],
+      "observed": "ICLError",
+      "code": "BYTECODE_CORRUPT",
+      "message": "BYTECODE_CORRUPT: Unknown or malformed opcode",
+      "passed": true
+    },
+    {
+      "id": "bytecode_missing_value",
+      "expected_value": null,
+      "expected_error_codes": [
+        "BYTECODE_CORRUPT"
+      ],
+      "observed": "ICLError",
+      "code": "BYTECODE_CORRUPT",
+      "message": "BYTECODE_CORRUPT: Missing literal operand",
+      "passed": true
+    },
+    {
+      "id": "bytecode_bad_return_type",
+      "expected_value": null,
+      "expected_error_codes": [
+        "BYTECODE_CORRUPT"
+      ],
+      "observed": "ICLError",
+      "code": "BYTECODE_CORRUPT",
+      "message": "BYTECODE_CORRUPT: Invalid function type signature",
+      "passed": true
+    },
+    {
+      "id": "checkpoint_authority_forgery",
+      "expected_value": null,
+      "expected_error_codes": [
+        "CHECKPOINT_CORRUPT",
+        "EFFECT_DENIED"
+      ],
+      "observed": "ICLError",
+      "code": "CHECKPOINT_CORRUPT",
+      "message": "CHECKPOINT_CORRUPT: Replay requires an independently supplied identical host policy",
+      "passed": true
+    },
+    {
+      "id": "checkpoint_malformed_function",
+      "expected_value": null,
+      "expected_error_codes": [
+        "CHECKPOINT_CORRUPT",
+        "TYPE"
+      ],
+      "observed": "ICLError",
+      "code": "TYPE",
+      "message": "TYPE: Malformed bytecode operand or primitive argument: TypeError",
+      "passed": true
+    },
+    {
+      "id": "ocir_roundtrip",
+      "expected_value": true,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": true,
+      "passed": true
+    },
+    {
+      "id": "record_serialization_effect_order_tree",
+      "expected_value": true,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": true,
+      "passed": true
+    },
+    {
+      "id": "record_serialization_effect_order_vm",
+      "expected_value": true,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": true,
+      "passed": true
+    },
+    {
+      "id": "record_checkpoint_serialized_replay",
+      "expected_value": true,
+      "expected_error_codes": null,
+      "observed": "RETURN",
+      "value": true,
+      "passed": true
+    },
+    {
+      "id": "human_approval_string_false_tree",
+      "expected_value": null,
+      "expected_error_codes": [
+        "HUMAN_APPROVAL_REQUIRED",
+        "RESOURCE_POLICY",
+        "POLICY",
+        "TYPE"
+      ],
+      "observed": "ICLError",
+      "code": "RESOURCE_POLICY",
+      "message": "RESOURCE_POLICY: policy flags require strict booleans",
+      "passed": true
+    },
+    {
+      "id": "human_approval_string_false_vm",
+      "expected_value": null,
+      "expected_error_codes": [
+        "HUMAN_APPROVAL_REQUIRED",
+        "RESOURCE_POLICY",
+        "POLICY",
+        "TYPE"
+      ],
+      "observed": "ICLError",
+      "code": "RESOURCE_POLICY",
+      "message": "RESOURCE_POLICY: policy flags require strict booleans",
+      "passed": true
+    }
+  ],
+  "reviewer": "independent_review",
+  "scope": "Boundary regression review only; not a proof of semantic correctness or sandbox security",
+  "source_hashes": {
+    "work/icl_core/icl/interpreter.py": "6a03904e82bcfaff33e44c658de84e1b34445d7b7f567244cd4388391ea34a34",
+    "work/icl_core/icl/vm.py": "9fa1f8a257a5cb4873cb3689bbf81886456074d3ad1b8c1e7a8db7938ba462b8",
+    "work/icl_core/icl/frontend.py": "fba8625012e328fb7c620ceccd1b096d4897f6ac457717f45a31fa5ae9d267b1",
+    "work/icl_core/icl/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "work/icl_core/icl/__init__.py": "eeb342c6178134a008ffdab3e8c35ca467d697d4aeff154605e3e3283e623ddf",
+    "work/icl_core/icl/cli.py": "2384aea45b82c887d4e46cab69421d41cb6d60c690b75685ab263d57b1c7a848",
+    "work/icl_core/icl/legacy_afc.py": "20abd74e06a61d96c829446d1faf584418affc9a4e098d405a54c87ecdf99742",
+    "work/icl_core/icl/checker.py": "261c89340a21f40bfd67ee3f19fc204357abdeb5ec74e1376e5e839cdbce4a41",
+    "work/icl_core/icl/api.py": "cab492d3cdd669416e08989a46c84f0715018726ac686645b619d4217318c05c",
+    "work/icl_core/icl/runtime.py": "23b3bcfc7264e1ba24111d067a35676cf7171d72891522253475c9d78dd97ded"
+  }
+}

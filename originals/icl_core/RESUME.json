@@ -1,0 +1,31 @@
+{
+  "version": "ICL-Core0.1.0",
+  "status": "CONFORMANCE_PASSED",
+  "implementation_frozen": true,
+  "code_commit": "400c91ac635c12f135d762dea6d6de16f3bd1291",
+  "language_handoff": "LANGUAGE_HANDOFF.json",
+  "last_successful_commands": [
+    "python tests/run_acceptance.py",
+    "python -m unittest discover -s tests -p test_vm_replay.py -v",
+    "python tests/run_demos.py",
+    "python tests/legacy_afc_comparison.py"
+  ],
+  "last_successful_results": {
+    "handwritten": 77,
+    "generated_unique": 1008,
+    "adversarial": 39,
+    "numpy_graphs": 8,
+    "contract": 30,
+    "cli_source": 19,
+    "cli_clean_installed": 20,
+    "independent_review": 54,
+    "legacy_finite_states": 2044
+  },
+  "model_training": "Separate work/icl_native agent; authorized to begin only after this frozen handoff. See its actual logs, not this language record.",
+  "next_steps": [
+    "Root delivery uploads this version to specified Drive specification/test/source folders and verifies every uploaded payload hash",
+    "If any language semantics changes, create new contract/version and regenerate/re-evaluate native dataset/checkpoint lineage"
+  ],
+  "preserved": "Original source archives, ISC16, runtime, frozen studies and negative results unchanged",
+  "publication_authorized": false
+}

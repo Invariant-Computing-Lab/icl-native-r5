@@ -1,0 +1,1133 @@
+{
+  "release": "OCIL-ICL-FOUNDATION-20261010-v1",
+  "status": "DESIGN_AND_SOURCE_MAPPING_NOT_MODEL_RELEASE",
+  "attachment": {
+    "name": "Invariant_Tum_Ciktilar_RARI_GOP_Zenodo_156_v3(4).docx",
+    "sha256": "c402160b198eb5f11ad89ed4beeb94c8efd872fab19163c71358da42b5dc27ff",
+    "source_semantics": "Source locations, not published GitHub/HF repositories"
+  },
+  "github_candidates": [
+    {
+      "id": "G01",
+      "label": "rari-neurobrain-v7",
+      "url": "https://drive.google.com/drive/folders/1n6XjDc6FpztkRJAi9IJWph8PEKU5EsIb",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "RARI: observer/identifiability/negative-control algorithms and benchmarks; source inspection required",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G02",
+      "label": "rari-omega-experiments",
+      "url": "https://drive.google.com/drive/folders/1n6XjDc6FpztkRJAi9IJWph8PEKU5EsIb",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "RARI: observer/identifiability/negative-control algorithms and benchmarks; source inspection required",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G03",
+      "label": "rari-active-passive-controls",
+      "url": "https://drive.google.com/drive/folders/1n6XjDc6FpztkRJAi9IJWph8PEKU5EsIb",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "RARI: observer/identifiability/negative-control algorithms and benchmarks; source inspection required",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G04",
+      "label": "rari-filter-reconstruction",
+      "url": "https://drive.google.com/drive/folders/1n6XjDc6FpztkRJAi9IJWph8PEKU5EsIb",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "RARI: observer/identifiability/negative-control algorithms and benchmarks; source inspection required",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G05",
+      "label": "rari-common-observable-space",
+      "url": "https://drive.google.com/drive/folders/1n6XjDc6FpztkRJAi9IJWph8PEKU5EsIb",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "RARI: observer/identifiability/negative-control algorithms and benchmarks; source inspection required",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G06",
+      "label": "rari-identifiability-audit",
+      "url": "https://drive.google.com/drive/folders/1n6XjDc6FpztkRJAi9IJWph8PEKU5EsIb",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "RARI: observer/identifiability/negative-control algorithms and benchmarks; source inspection required",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G07",
+      "label": "rari-calibration-toolkit",
+      "url": "https://drive.google.com/drive/folders/1n6XjDc6FpztkRJAi9IJWph8PEKU5EsIb",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "RARI: observer/identifiability/negative-control algorithms and benchmarks; source inspection required",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G08",
+      "label": "rari-null-adversarial-suite",
+      "url": "https://drive.google.com/drive/folders/1n6XjDc6FpztkRJAi9IJWph8PEKU5EsIb",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "RARI: observer/identifiability/negative-control algorithms and benchmarks; source inspection required",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G09",
+      "label": "rari-perturbation-cartography",
+      "url": "https://drive.google.com/drive/folders/1n6XjDc6FpztkRJAi9IJWph8PEKU5EsIb",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "RARI: observer/identifiability/negative-control algorithms and benchmarks; source inspection required",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G10",
+      "label": "rari-distributed-inference-bench",
+      "url": "https://drive.google.com/drive/folders/1n6XjDc6FpztkRJAi9IJWph8PEKU5EsIb",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "RARI: observer/identifiability/negative-control algorithms and benchmarks; source inspection required",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G11",
+      "label": "ocil-ir-spec",
+      "url": "https://drive.google.com/drive/folders/1u3oRtQEpZTinzPtmuSkw8F7z86QLN9QS",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "ICL-Core language/OCIR/toolchain modules; preserve historical package identity",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G12",
+      "label": "ocil-roundtrip-codecs",
+      "url": "https://drive.google.com/drive/folders/1u3oRtQEpZTinzPtmuSkw8F7z86QLN9QS",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "ICL-Core language/OCIR/toolchain modules; preserve historical package identity",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G13",
+      "label": "ocil-observer-alignment",
+      "url": "https://drive.google.com/drive/folders/1u3oRtQEpZTinzPtmuSkw8F7z86QLN9QS",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "ICL-Core language/OCIR/toolchain modules; preserve historical package identity",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G14",
+      "label": "ocil-multimodal-fidelity",
+      "url": "https://drive.google.com/drive/folders/1u3oRtQEpZTinzPtmuSkw8F7z86QLN9QS",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "ICL-Core language/OCIR/toolchain modules; preserve historical package identity",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G15",
+      "label": "ocil-spatial-world-ir",
+      "url": "https://drive.google.com/drive/folders/1u3oRtQEpZTinzPtmuSkw8F7z86QLN9QS",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "ICL-Core language/OCIR/toolchain modules; preserve historical package identity",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G16",
+      "label": "ocil-symbolic-agent-ir",
+      "url": "https://drive.google.com/drive/folders/1u3oRtQEpZTinzPtmuSkw8F7z86QLN9QS",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "ICL-Core language/OCIR/toolchain modules; preserve historical package identity",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G17",
+      "label": "ocil-equivalence-checker",
+      "url": "https://drive.google.com/drive/folders/1u3oRtQEpZTinzPtmuSkw8F7z86QLN9QS",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "ICL-Core language/OCIR/toolchain modules; preserve historical package identity",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G18",
+      "label": "ocil-representation-bench",
+      "url": "https://drive.google.com/drive/folders/1u3oRtQEpZTinzPtmuSkw8F7z86QLN9QS",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "ICL-Core language/OCIR/toolchain modules; preserve historical package identity",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G19",
+      "label": "afc-finite-recoverability",
+      "url": "https://drive.google.com/drive/folders/1Bev3WTrSHYKebXQcNIhgfA4x2hgNTYLP",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "AFC: recoverability, witness, replay and failure tests; finite scope",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G20",
+      "label": "afc-side-information-limits",
+      "url": "https://drive.google.com/drive/folders/1Bev3WTrSHYKebXQcNIhgfA4x2hgNTYLP",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "AFC: recoverability, witness, replay and failure tests; finite scope",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G21",
+      "label": "afc-checkpoint-replay",
+      "url": "https://drive.google.com/drive/folders/1Bev3WTrSHYKebXQcNIhgfA4x2hgNTYLP",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "AFC: recoverability, witness, replay and failure tests; finite scope",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G22",
+      "label": "afc-exact-fallback",
+      "url": "https://drive.google.com/drive/folders/1Bev3WTrSHYKebXQcNIhgfA4x2hgNTYLP",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "AFC: recoverability, witness, replay and failure tests; finite scope",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G23",
+      "label": "afc-fault-injection",
+      "url": "https://drive.google.com/drive/folders/1Bev3WTrSHYKebXQcNIhgfA4x2hgNTYLP",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "AFC: recoverability, witness, replay and failure tests; finite scope",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G24",
+      "label": "afc-distributed-recovery",
+      "url": "https://drive.google.com/drive/folders/1Bev3WTrSHYKebXQcNIhgfA4x2hgNTYLP",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "AFC: recoverability, witness, replay and failure tests; finite scope",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G25",
+      "label": "afc-artifact-nondestruction",
+      "url": "https://drive.google.com/drive/folders/1Bev3WTrSHYKebXQcNIhgfA4x2hgNTYLP",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "AFC: recoverability, witness, replay and failure tests; finite scope",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G26",
+      "label": "afc-reference-oracles",
+      "url": "https://drive.google.com/drive/folders/1Bev3WTrSHYKebXQcNIhgfA4x2hgNTYLP",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "AFC: recoverability, witness, replay and failure tests; finite scope",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G27",
+      "label": "sacra-authority-graph",
+      "url": "https://drive.google.com/drive/folders/1_1IBP04KOs0X5R29N3Gur8OWSEl-j2gV",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "SACRA: authority/effects/provenance and conflict fixtures; trusted enforcement separate from model",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G28",
+      "label": "sacra-role-delegation",
+      "url": "https://drive.google.com/drive/folders/1_1IBP04KOs0X5R29N3Gur8OWSEl-j2gV",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "SACRA: authority/effects/provenance and conflict fixtures; trusted enforcement separate from model",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G29",
+      "label": "sacra-provenance-engine",
+      "url": "https://drive.google.com/drive/folders/1_1IBP04KOs0X5R29N3Gur8OWSEl-j2gV",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "SACRA: authority/effects/provenance and conflict fixtures; trusted enforcement separate from model",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G30",
+      "label": "sacra-conflict-resolution",
+      "url": "https://drive.google.com/drive/folders/1_1IBP04KOs0X5R29N3Gur8OWSEl-j2gV",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "SACRA: authority/effects/provenance and conflict fixtures; trusted enforcement separate from model",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G31",
+      "label": "sacra-human-approval-gate",
+      "url": "https://drive.google.com/drive/folders/1_1IBP04KOs0X5R29N3Gur8OWSEl-j2gV",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "SACRA: authority/effects/provenance and conflict fixtures; trusted enforcement separate from model",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G32",
+      "label": "sacra-multiagent-policy-tests",
+      "url": "https://drive.google.com/drive/folders/1_1IBP04KOs0X5R29N3Gur8OWSEl-j2gV",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "SACRA: authority/effects/provenance and conflict fixtures; trusted enforcement separate from model",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G33",
+      "label": "sacra-narrative-continuity",
+      "url": "https://drive.google.com/drive/folders/1_1IBP04KOs0X5R29N3Gur8OWSEl-j2gV",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "SACRA: authority/effects/provenance and conflict fixtures; trusted enforcement separate from model",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G34",
+      "label": "sacra-editorial-integrity",
+      "url": "https://drive.google.com/drive/folders/1_1IBP04KOs0X5R29N3Gur8OWSEl-j2gV",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "SACRA: authority/effects/provenance and conflict fixtures; trusted enforcement separate from model",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G35",
+      "label": "gop-frozen-dynamics",
+      "url": "https://drive.google.com/drive/folders/1hxQfUWGyA_CVO_CSCmr-W7IR1y0BoVUX",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "GOP: counterexample/scope/memory tests; no universal physics inference",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G36",
+      "label": "gop-auxiliary-lifts",
+      "url": "https://drive.google.com/drive/folders/1hxQfUWGyA_CVO_CSCmr-W7IR1y0BoVUX",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "GOP: counterexample/scope/memory tests; no universal physics inference",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G37",
+      "label": "gop-stochastic-convergence",
+      "url": "https://drive.google.com/drive/folders/1hxQfUWGyA_CVO_CSCmr-W7IR1y0BoVUX",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "GOP: counterexample/scope/memory tests; no universal physics inference",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G38",
+      "label": "gop-sensor-gauge-audit",
+      "url": "https://drive.google.com/drive/folders/1hxQfUWGyA_CVO_CSCmr-W7IR1y0BoVUX",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "GOP: counterexample/scope/memory tests; no universal physics inference",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G39",
+      "label": "gop-inverse-square-limits",
+      "url": "https://drive.google.com/drive/folders/1hxQfUWGyA_CVO_CSCmr-W7IR1y0BoVUX",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "GOP: counterexample/scope/memory tests; no universal physics inference",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G40",
+      "label": "gop-saturation-tanh-limits",
+      "url": "https://drive.google.com/drive/folders/1hxQfUWGyA_CVO_CSCmr-W7IR1y0BoVUX",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "GOP: counterexample/scope/memory tests; no universal physics inference",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G41",
+      "label": "gop-finite-channel-comparator",
+      "url": "https://drive.google.com/drive/folders/1hxQfUWGyA_CVO_CSCmr-W7IR1y0BoVUX",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "GOP: counterexample/scope/memory tests; no universal physics inference",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G42",
+      "label": "gop-reduced-memory-witness",
+      "url": "https://drive.google.com/drive/folders/1hxQfUWGyA_CVO_CSCmr-W7IR1y0BoVUX",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "GOP: counterexample/scope/memory tests; no universal physics inference",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G43",
+      "label": "ievf-evidence-schema",
+      "url": "https://drive.google.com/drive/folders/1JTLPHbjIoiGPJeWX_xPwZOK7Ilk4TH4w",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "IEVF: evidence/claim-gate/acceptance lineage; not scientific validity by itself",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G44",
+      "label": "ievf-evidence-registry",
+      "url": "https://drive.google.com/drive/folders/1JTLPHbjIoiGPJeWX_xPwZOK7Ilk4TH4w",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "IEVF: evidence/claim-gate/acceptance lineage; not scientific validity by itself",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G45",
+      "label": "ievf-claim-gate",
+      "url": "https://drive.google.com/drive/folders/1JTLPHbjIoiGPJeWX_xPwZOK7Ilk4TH4w",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "IEVF: evidence/claim-gate/acceptance lineage; not scientific validity by itself",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G46",
+      "label": "ievf-itf-benchmark",
+      "url": "https://drive.google.com/drive/folders/1JTLPHbjIoiGPJeWX_xPwZOK7Ilk4TH4w",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "IEVF: evidence/claim-gate/acceptance lineage; not scientific validity by itself",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G47",
+      "label": "ievf-ori-benchmark",
+      "url": "https://drive.google.com/drive/folders/1JTLPHbjIoiGPJeWX_xPwZOK7Ilk4TH4w",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "IEVF: evidence/claim-gate/acceptance lineage; not scientific validity by itself",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G48",
+      "label": "ievf-rrn-aiba-suite",
+      "url": "https://drive.google.com/drive/folders/1JTLPHbjIoiGPJeWX_xPwZOK7Ilk4TH4w",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "IEVF: evidence/claim-gate/acceptance lineage; not scientific validity by itself",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G49",
+      "label": "ievf-sapi-magh-suite",
+      "url": "https://drive.google.com/drive/folders/1JTLPHbjIoiGPJeWX_xPwZOK7Ilk4TH4w",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "IEVF: evidence/claim-gate/acceptance lineage; not scientific validity by itself",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G50",
+      "label": "ievf-cross-domain-transfer",
+      "url": "https://drive.google.com/drive/folders/1JTLPHbjIoiGPJeWX_xPwZOK7Ilk4TH4w",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "IEVF: evidence/claim-gate/acceptance lineage; not scientific validity by itself",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G51",
+      "label": "Invariant Runtime Console",
+      "url": "https://drive.google.com/file/d/13R6B7Xpz62Xx4DkLCAERJRyKXp-EIm4R/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Invariant OS preserved supporting track; not flagship ICL completion evidence",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G52",
+      "label": "ISC16 Developer Workbench",
+      "url": "https://drive.google.com/file/d/1Cb9ci-8uneteLa9rGVfSx2rrsq4DQ5qA/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Invariant OS preserved supporting track; not flagship ICL completion evidence",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G53",
+      "label": "ISC16 RTL Verification Kit",
+      "url": "https://drive.google.com/file/d/1oVOT1fsrNBR4aXLXAsNUQZDj1TXSHd9G/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Invariant OS preserved supporting track; not flagship ICL completion evidence",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G54",
+      "label": "Geometrodynamic Model Studio",
+      "url": "https://drive.google.com/file/d/1SdeqgyoAS1TmwkQIqXvdUfY-2Detk0MG/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G55",
+      "label": "Geometrodynamic Frame Lab",
+      "url": "https://drive.google.com/file/d/1XXuDj40ejY7NULqTcv-p40G-qCiaCeen/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G56",
+      "label": "Continuity",
+      "url": "https://drive.google.com/file/d/1v-xSaT-Zi24xml-BnS-725YKTtUoaCV8/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G57",
+      "label": "RhythmWalk",
+      "url": "https://drive.google.com/file/d/1YylwcOdH6f02hhipfVqOsCV5eAgr3tZz/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G58",
+      "label": "Prometheus MRI",
+      "url": "https://drive.google.com/file/d/1xa4e_T8eLfDSmhPKPo4ebGB3lj4hrPcI/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G59",
+      "label": "RouterKey / Offline Runtime",
+      "url": "https://drive.google.com/file/d/1J0Y-JGOK1PxDppq5kN8UdgU0e7vyZhUb/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G60",
+      "label": "NCL Research Workbench",
+      "url": "https://drive.google.com/file/d/19d78S9iV-y_y9AuL0xc7j0zhnW-PAWQr/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G61",
+      "label": "Prometheus One World",
+      "url": "https://drive.google.com/file/d/1TYGziOhNuKQsRNTaxlIuq-jDcDWpoHm2/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G62",
+      "label": "ATM ER Operations",
+      "url": "https://drive.google.com/file/d/1mZzZ6vpLkAGBcj6R1MYAEK2460bwNB6G/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G63",
+      "label": "Aurelis Mission Workbench",
+      "url": "https://drive.google.com/file/d/1QvovhJTxg-10FZ1vif4fL15NYYpErJsY/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G64",
+      "label": "Aurelis Spacecraft CAD",
+      "url": "https://drive.google.com/file/d/1ZcdAXbAb5Hd2IT0_FgGmfFTisyofsxdA/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G65",
+      "label": "Lutetia Retreat Planner",
+      "url": "https://drive.google.com/file/d/1nOgyIy9cJ38VDC7C8_r3SjAjitk53cwr/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G66",
+      "label": "Lutetia Retreat Ledger",
+      "url": "https://drive.google.com/file/d/1jCKHTPjEanmMOov_ZIdJAQ954dSS3L7x/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G67",
+      "label": "Vectaris Mobility Network Lab",
+      "url": "https://drive.google.com/file/d/1Q01D4gaRW_174bu_dkbccbNsjIat90G0/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G68",
+      "label": "Vectaris Vehicle Assembly Studio",
+      "url": "https://drive.google.com/file/d/1djZh9Vlm_xQfc8mAlsvsLRuBVeLhyX7N/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G69",
+      "label": "Hoshi Narrative Studio",
+      "url": "https://drive.google.com/file/d/1cJtdp34BoaE9syPC8fHivf4QjhtwBbrg/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G70",
+      "label": "Purpura Editorial Desk",
+      "url": "https://drive.google.com/file/d/1Ol08-UMdF0idNRfCU9zcmxnWzPCyKdGc/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G71",
+      "label": "Purpura Production Desk",
+      "url": "https://drive.google.com/file/d/1svYeFkyGzxcC8__OQSjo5_tYllLeTaJy/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Other venture: optional typed domain adapter/test only after applicability+rights review; no forced weight merge",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G72",
+      "label": "invariant-source-catalog",
+      "url": "https://drive.google.com/drive/folders/1bqqO0bCVvN2JWjjnibvVpB_vfK0X5lDY",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Shared infrastructure: catalogue, dedupe, reproducibility, privacy, split and release tooling",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G73",
+      "label": "invariant-archive-indexer",
+      "url": "https://drive.google.com/drive/folders/1bqqO0bCVvN2JWjjnibvVpB_vfK0X5lDY",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Shared infrastructure: catalogue, dedupe, reproducibility, privacy, split and release tooling",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G74",
+      "label": "invariant-provenance-deduper",
+      "url": "https://drive.google.com/drive/folders/1bqqO0bCVvN2JWjjnibvVpB_vfK0X5lDY",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Shared infrastructure: catalogue, dedupe, reproducibility, privacy, split and release tooling",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G75",
+      "label": "invariant-reproducibility-cli",
+      "url": "https://drive.google.com/drive/folders/1bqqO0bCVvN2JWjjnibvVpB_vfK0X5lDY",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Shared infrastructure: catalogue, dedupe, reproducibility, privacy, split and release tooling",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G76",
+      "label": "invariant-ci-acceptance",
+      "url": "https://drive.google.com/drive/folders/1bqqO0bCVvN2JWjjnibvVpB_vfK0X5lDY",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Shared infrastructure: catalogue, dedupe, reproducibility, privacy, split and release tooling",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G77",
+      "label": "invariant-rights-privacy-audit",
+      "url": "https://drive.google.com/drive/folders/1bqqO0bCVvN2JWjjnibvVpB_vfK0X5lDY",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Shared infrastructure: catalogue, dedupe, reproducibility, privacy, split and release tooling",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G78",
+      "label": "invariant-dataset-split-audit",
+      "url": "https://drive.google.com/drive/folders/1bqqO0bCVvN2JWjjnibvVpB_vfK0X5lDY",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Shared infrastructure: catalogue, dedupe, reproducibility, privacy, split and release tooling",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G79",
+      "label": "invariant-hf-card-generator",
+      "url": "https://drive.google.com/drive/folders/1bqqO0bCVvN2JWjjnibvVpB_vfK0X5lDY",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Shared infrastructure: catalogue, dedupe, reproducibility, privacy, split and release tooling",
+      "integration_status": "NOT_RUN"
+    },
+    {
+      "id": "G80",
+      "label": "invariant-release-registry",
+      "url": "https://drive.google.com/drive/folders/1bqqO0bCVvN2JWjjnibvVpB_vfK0X5lDY",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "proposed_role": "Shared infrastructure: catalogue, dedupe, reproducibility, privacy, split and release tooling",
+      "integration_status": "NOT_RUN"
+    }
+  ],
+  "hf_candidates": [
+    {
+      "id": "M01",
+      "label": "RARI NeuroBrain estimators",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "proposed_role": "ORACLE_OR_BASELINE",
+      "verified_scope_this_turn": "Source map, estimator parameters/loader not verified this turn",
+      "weights_verified": false,
+      "inference_run": false
+    },
+    {
+      "id": "M02",
+      "label": "RARI observer/filter models",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "proposed_role": "OBSERVER_BASELINE",
+      "verified_scope_this_turn": "Source map, estimator parameters/loader not verified this turn",
+      "weights_verified": false,
+      "inference_run": false
+    },
+    {
+      "id": "M03",
+      "label": "GOP G6 finite comparator",
+      "url": "https://drive.google.com/file/d/1H2c_ssij0kXkbAVFfhRJ8Wb59pC-ZpQl/view",
+      "proposed_role": "FINITE_COMPARATOR",
+      "verified_scope_this_turn": "Archive link only this turn; limited finite scope",
+      "weights_verified": false,
+      "inference_run": false
+    },
+    {
+      "id": "M04",
+      "label": "Prometheus MRI checkpoint",
+      "url": "https://drive.google.com/file/d/11_x0BT2apjFYz__dQkhb2POo4ihj--gN/view",
+      "proposed_role": "OPTIONAL_DOMAIN_ADAPTER",
+      "verified_scope_this_turn": "Same locator as M05; distinct model weights not established",
+      "weights_verified": false,
+      "inference_run": false
+    },
+    {
+      "id": "M05",
+      "label": "HuReT MRI research model",
+      "url": "https://drive.google.com/file/d/11_x0BT2apjFYz__dQkhb2POo4ihj--gN/view",
+      "proposed_role": "OPTIONAL_DOMAIN_ADAPTER",
+      "verified_scope_this_turn": "Same locator as M04; distinct model weights not established",
+      "weights_verified": false,
+      "inference_run": false
+    },
+    {
+      "id": "M06",
+      "label": "RhythmWalk predictors",
+      "url": "https://drive.google.com/file/d/1YylwcOdH6f02hhipfVqOsCV5eAgr3tZz/view",
+      "proposed_role": "OPTIONAL_TEMPORAL_ADAPTER",
+      "verified_scope_this_turn": "V3 product/source locator; model weights not established",
+      "weights_verified": false,
+      "inference_run": false
+    },
+    {
+      "id": "M07",
+      "label": "NCL predictive models",
+      "url": "https://drive.google.com/file/d/1XNh9as3LWt7fCcQ1m95fMPMfhuDkYP9u/view",
+      "proposed_role": "SYNTHETIC_DATA_NOT_WEIGHTS",
+      "verified_scope_this_turn": "Resolved and sampled ncl_synthetic_dataset.csv; not a neural checkpoint",
+      "weights_verified": false,
+      "inference_run": false
+    },
+    {
+      "id": "M08",
+      "label": "Humanization bounded policy",
+      "url": "https://drive.google.com/drive/folders/1wKiCAKnpVhBffRjfCCuINxN2dJsVqQ4N",
+      "proposed_role": "POLICY_SOURCE_CANDIDATE",
+      "verified_scope_this_turn": "Programme folder, not a verified model loader; enforce authority outside neural model",
+      "weights_verified": false,
+      "inference_run": false
+    },
+    {
+      "id": "M09",
+      "label": "RouterKey / MoE adapters",
+      "url": "https://drive.google.com/file/d/1yhiYJktJKxFMqco5Dp8RwT18j9jZSrJd/view",
+      "proposed_role": "ROUTER_CODEC_NOT_WEIGHTS",
+      "verified_scope_this_turn": "Full key-only report read; no full model forward; shares locator M10",
+      "weights_verified": false,
+      "inference_run": false
+    },
+    {
+      "id": "M10",
+      "label": "Offline GLM adapters",
+      "url": "https://drive.google.com/file/d/1yhiYJktJKxFMqco5Dp8RwT18j9jZSrJd/view",
+      "proposed_role": "OFFLINE_RUNTIME_CANDIDATE",
+      "verified_scope_this_turn": "Same key-only report as M09; no loaded GLM model verified",
+      "weights_verified": false,
+      "inference_run": false
+    }
+  ],
+  "dataset_candidates": [
+    {
+      "id": "D01",
+      "label": "NeuroBrain Primary Results",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D02",
+      "label": "NeuroBrain Closed / Repeat",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": false,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D03",
+      "label": "NeuroBrain Calibration",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D04",
+      "label": "NeuroBrain Cross-Observer",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D05",
+      "label": "NeuroBrain Identifiability",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D06",
+      "label": "NeuroBrain Null Battery",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D07",
+      "label": "NeuroBrain Representation",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D08",
+      "label": "NeuroBrain Cartography",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D09",
+      "label": "RARI OMEGA Synthetic",
+      "url": "https://drive.google.com/file/d/1H2c_ssij0kXkbAVFfhRJ8Wb59pC-ZpQl/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D10",
+      "label": "RARI RealBio Status",
+      "url": "https://drive.google.com/file/d/1H2c_ssij0kXkbAVFfhRJ8Wb59pC-ZpQl/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": false,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D11",
+      "label": "GOP G1–G7",
+      "url": "https://drive.google.com/file/d/1H2c_ssij0kXkbAVFfhRJ8Wb59pC-ZpQl/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D12",
+      "label": "AFC Finite States",
+      "url": "https://drive.google.com/file/d/1f02GoHVvQ-7qhg8gNZED27upwkvqfwYn/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D13",
+      "label": "Phase-I Rank Controls",
+      "url": "https://drive.google.com/file/d/1f02GoHVvQ-7qhg8gNZED27upwkvqfwYn/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D14",
+      "label": "GaitNDD Evaluation",
+      "url": "https://drive.google.com/file/d/1f02GoHVvQ-7qhg8gNZED27upwkvqfwYn/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": false,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D15",
+      "label": "GaitPDB Paired Evaluation",
+      "url": "https://drive.google.com/file/d/1f02GoHVvQ-7qhg8gNZED27upwkvqfwYn/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": false,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D16",
+      "label": "RAS Replay",
+      "url": "https://drive.google.com/file/d/1f02GoHVvQ-7qhg8gNZED27upwkvqfwYn/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": false,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D17",
+      "label": "MRI Locked Evaluation",
+      "url": "https://drive.google.com/file/d/1f02GoHVvQ-7qhg8gNZED27upwkvqfwYn/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": false,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D18",
+      "label": "MRI Dual Campaign",
+      "url": "https://drive.google.com/file/d/11_x0BT2apjFYz__dQkhb2POo4ihj--gN/view",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": false,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D19",
+      "label": "RouterKey Evaluation",
+      "url": "https://drive.google.com/file/d/1yhiYJktJKxFMqco5Dp8RwT18j9jZSrJd/view",
+      "read_status": "REPORT_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D20",
+      "label": "NCL Synthetic Simulation",
+      "url": "https://drive.google.com/file/d/1XNh9as3LWt7fCcQ1m95fMPMfhuDkYP9u/view",
+      "read_status": "HEADER_AND_SAMPLE_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D21",
+      "label": "RARI / Kimi Runtime",
+      "url": "https://docs.google.com/document/d/1gvoSnkRk2k2MS1ifZGHC0_ZzF0csH5Sa-eDdDyeAn7E/edit",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D22",
+      "label": "OCIL Representation Pairs",
+      "url": "https://drive.google.com/drive/folders/1u3oRtQEpZTinzPtmuSkw8F7z86QLN9QS",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D23",
+      "label": "SACRA Authority Conflicts",
+      "url": "https://drive.google.com/drive/folders/1_1IBP04KOs0X5R29N3Gur8OWSEl-j2gV",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    },
+    {
+      "id": "D24",
+      "label": "IEVF Claim Gate",
+      "url": "https://drive.google.com/drive/folders/1JTLPHbjIoiGPJeWX_xPwZOK7Ilk4TH4w",
+      "read_status": "ATTACHMENT_LOCATOR_READ",
+      "training_authorized": null,
+      "note": "Rights/split/semantic-family review before use; locator alone is not permission"
+    }
+  ],
+  "space_candidates": [
+    {
+      "id": "S01",
+      "label": "NeuroBrain Explorer",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S02",
+      "label": "Active / Passive Lab",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S03",
+      "label": "Observer Reconstruction",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S04",
+      "label": "Calibration Explorer",
+      "url": "https://docs.google.com/document/d/1RBT36aPWYAkKcSGxaElZPFqBqVerRJrrPqq-MC3A3LM/edit",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S05",
+      "label": "AFC Recovery Lab",
+      "url": "https://drive.google.com/drive/folders/1Bev3WTrSHYKebXQcNIhgfA4x2hgNTYLP",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S06",
+      "label": "GOP Counterexamples",
+      "url": "https://drive.google.com/drive/folders/1hxQfUWGyA_CVO_CSCmr-W7IR1y0BoVUX",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S07",
+      "label": "OCIL IR Playground",
+      "url": "https://drive.google.com/drive/folders/1u3oRtQEpZTinzPtmuSkw8F7z86QLN9QS",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S08",
+      "label": "SACRA Authority Sandbox",
+      "url": "https://drive.google.com/drive/folders/1_1IBP04KOs0X5R29N3Gur8OWSEl-j2gV",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S09",
+      "label": "IEVF Evidence Explorer",
+      "url": "https://drive.google.com/drive/folders/1JTLPHbjIoiGPJeWX_xPwZOK7Ilk4TH4w",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S10",
+      "label": "NCL Synthetic Lab",
+      "url": "https://drive.google.com/file/d/1XNh9as3LWt7fCcQ1m95fMPMfhuDkYP9u/view",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S11",
+      "label": "MRI Synthetic QC",
+      "url": "https://drive.google.com/file/d/11_x0BT2apjFYz__dQkhb2POo4ihj--gN/view",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S12",
+      "label": "RhythmWalk QC",
+      "url": "https://drive.google.com/file/d/1YylwcOdH6f02hhipfVqOsCV5eAgr3tZz/view",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S13",
+      "label": "RouterKey Rate / Fidelity",
+      "url": "https://drive.google.com/file/d/1yhiYJktJKxFMqco5Dp8RwT18j9jZSrJd/view",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S14",
+      "label": "Geometrodynamic Viewer",
+      "url": "https://drive.google.com/drive/folders/1STF4NnyP-Qek0gZg6f7eeWx8p3ZZ7ny4",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S15",
+      "label": "Aurelis Mission Explorer",
+      "url": "https://drive.google.com/drive/folders/1oNNbro7tpRd6akfV0vicztw8-q4QNuzU",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    },
+    {
+      "id": "S16",
+      "label": "Vectaris Network Simulator",
+      "url": "https://drive.google.com/drive/folders/1OKv_bKyziwduTOzMgBNz5ym0I7Y0lNQe",
+      "deployment_verified": false,
+      "role": "Optional demo target, not evidence of inference"
+    }
+  ],
+  "new_targets": [
+    {
+      "id": "OCIL-LANG-01",
+      "name": "ICL-Core",
+      "owner": "OCIL_OCIR",
+      "status": "IMPLEMENTATION_NOT_RUN"
+    },
+    {
+      "id": "IOS-ICL-01",
+      "name": "Invariant Cognition Language",
+      "owner": "Invariant_OS",
+      "status": "MODEL_TRAINING_NOT_RUN"
+    },
+    {
+      "id": "HF-ICL-NATIVE-01",
+      "name": "ICL-Native",
+      "status": "FUTURE_PRIVATE_MODEL_ARTEFACT",
+      "public_release_authorized": false
+    }
+  ],
+  "foundational_source_documents": [
+    {
+      "id": "MLGT_MAIN",
+      "url": "https://drive.google.com/file/d/16NHI_NwjcxiHuOyOGrclBcmqqai8U48-/view",
+      "read_status": "PARSED_TEXT_READ",
+      "scope": "Language/AI theoretical proposal; not implemented grammar/weights; garbled symbols not reconstructed"
+    },
+    {
+      "id": "MLGT_PROOFS",
+      "url": "https://drive.google.com/file/d/1dIoC0hr0lCml4LDQKrq1MrP6fQx3F9Kr/view",
+      "read_status": "PARSED_TEXT_READ",
+      "scope": "Assertions of proof not independently validated"
+    },
+    {
+      "id": "GPNT_PROOFS",
+      "url": "https://drive.google.com/file/d/1CQ0ynAOPkl-okGQHUqF4vIMomyLySQ4L/view",
+      "read_status": "PARSED_TEXT_READ",
+      "scope": "Candidate codec/geometric module; no imported arithmetic validity claim"
+    },
+    {
+      "id": "DCT",
+      "url": "https://drive.google.com/file/d/1nlcPpfvstvU3Egof8-n2Ngwp9K1SXixU/view",
+      "read_status": "PARSED_TEXT_READ",
+      "scope": "Theoretical coordinate/phonetic proposal; malformed glyphs not guessed"
+    },
+    {
+      "id": "SFT",
+      "url": "https://drive.google.com/file/d/1TdORlvstbjq5kn6myBaCleLLoGr0Sy2g/view",
+      "read_status": "PARSED_TEXT_READ",
+      "scope": "Reported mapping/cognitive claims not independently reproduced"
+    },
+    {
+      "id": "V404_HANDOFF",
+      "url": "https://drive.google.com/file/d/15lBgpNm7UTCCMji7xIZlmDsrz1CRMx4C/view",
+      "read_status": "CONTENT_READ",
+      "scope": "Partial verified previous development, not new training"
+    }
+  ],
+  "catalogue_scope": "Full row streaming of two historical CSV catalogues; selected text review only. Not full scientific review of all sources.",
+  "conflicts": [
+    {
+      "ids": [
+        "M04",
+        "M05"
+      ],
+      "type": "SHARED_LOCATOR_DISTINCT_WEIGHTS_UNVERIFIED"
+    },
+    {
+      "ids": [
+        "M09",
+        "M10"
+      ],
+      "type": "SHARED_KEY_ONLY_REPORT_NO_FULL_FORWARD"
+    },
+    {
+      "ids": [
+        "M07",
+        "D20"
+      ],
+      "type": "MODEL_LABEL_POINTS_TO_DATASET"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "python": "3.13.5",
+  "implementation": "CPython",
+  "training_dependencies": {
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5",
+    "safetensors": "0.7.0"
+  },
+  "test_dependencies": {
+    "pytest": "9.0.2"
+  },
+  "build_dependencies": {
+    "setuptools": "82.0.1",
+    "wheel": "bdist_wheel supplied by setuptools; no standalone wheel distribution metadata"
+  },
+  "language_and_offline_model_runtime_dependencies": [],
+  "scope": "Observed versions; clean-venv runtime checks recorded separately."
+}

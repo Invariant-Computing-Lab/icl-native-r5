@@ -1,0 +1,152 @@
+--- 0.1.0/icl/__init__.py
++++ 0.2.1/icl/__init__.py
+@@ -1,2 +1,2 @@
+-"""Invariant Cognition Language v0.1.0 — NEW_IMPLEMENTATION."""
+-__version__='0.1.0'
++"""Invariant Cognition Language v0.2.1 — NEW_IMPLEMENTATION."""
++__version__='0.2.1'
+--- 0.1.0/icl/frontend.py
++++ 0.2.1/icl/frontend.py
+@@ -2,13 +2,13 @@
+ import bisect, json, re, unicodedata
+ from .runtime import ICLError
+ 
+-KEYWORDS={'module','import','fn','let','var','if','else','while','limit','return','true','false'}
++KEYWORDS={'module','import','fn','let','var','if','else','while','limit','return','true','false','type'}
+ class Parser:
+     def __init__(self,source):
+         if not isinstance(source,str) or len(source.encode())>1000000: raise ICLError('SOURCE_LIMIT','source must be UTF-8 text <= 1MB')
+         for c in source:
+             if unicodedata.category(c) in ('Cf','Cs') or (ord(c)<32 and c not in '\n\r\t'): raise ICLError('LEX','invisible/control character forbidden')
+-        self.source=source; self.tokens=[]; self.i=0; self.depth=0
++        self.source=source; self.tokens=[]; self.i=0; self.depth=0; self.aliases={}
+         self.newlines=[-1]+[i for i,c in enumerate(source) if c=='\n']
+         pattern=re.compile(r'(?P<space>\s+)|(?P<comment>//[^\n]*)|(?P<string>"(?:[^"\\\n]|\\["\\/bfnrt]|\\u[0-9a-fA-F]{4})*")|(?P<float>\d+\.\d+(?:[eE][+-]?\d+)?|\d+[eE][+-]?\d+)|(?P<int>\d+)|(?P<id>[A-Za-z_][A-Za-z_0-9]*)|(?P<op>->|==|!=|<=|>=|&&|\|\||[{}()\[\],;:.+*/%<>=!\-])')
+         p=0
+@@ -37,6 +37,21 @@
+         return t[1]
+     def typ(self):
+         name=self.ident()
++        if name in self.aliases:
++            if self.peek('['):
++                raise ICLError('TYPE','type alias cannot take arguments')
++            return self.aliases[name]
++        if name=='Record' and self.peek('{'):
++            self.take('{'); fields={}
++            if self.peek('}'):raise ICLError('TYPE','empty record annotation is unsupported')
++            while True:
++                field=self.ident()
++                if field in fields:raise ICLError('TYPE','duplicate record type field')
++                self.take(':'); fields[field]=self.typ()
++                if not self.peek(','):break
++                self.take(',')
++            self.take('}')
++            return 'Record{'+','.join(k+':'+v for k,v in sorted(fields.items()))+'}'
+         if self.peek('['):
+             self.take(); args=[]
+             if not self.peek(']'):
+@@ -50,6 +65,14 @@
+         self.take('module'); module=self.ident(); self.take(';'); imports=[]; funcs=[]
+         while self.peek('import'):
+             self.take(); imports.append(self.ident()); self.take(';')
++        while self.peek('type'):
++            self.take('type'); alias=self.ident()
++            if alias in self.aliases or alias in {'Int64','Float64','Bool','String','Record','Tensor','List','Result','Option','Observer','Context','ProvenanceRef','RecoveryWitness','Capability','Tuple','Exact','Approx','Representation'}:
++                raise ICLError('TYPE','duplicate or reserved type alias')
++            self.take('='); target=self.typ(); self.take(';')
++            from .checker import valid_type
++            if not valid_type(target):raise ICLError('TYPE','alias must resolve to an already defined type')
++            self.aliases[alias]=target
+         while not self.peek('<eof>'):
+             sp=self.take('fn')[2]; name=self.ident(); self.take('('); params=[]
+             if not self.peek(')'):
+--- 0.1.0/icl/api.py
++++ 0.2.1/icl/api.py
+@@ -6,11 +6,11 @@
+ from .runtime import ICLError,RuntimeContext,canonical,digest,DEFAULT_LIMITS
+ from .interpreter import execute_tree
+ from .vm import compile_bytecode,execute_bytecode
+-SCHEMA_VERSION='0.1.0'
++SCHEMA_VERSION='0.2.1'
+ SCHEMA_PATH=Path(__file__).with_name('OCIR_SCHEMA.json')
+ if not SCHEMA_PATH.exists():SCHEMA_PATH=Path(__file__).parent.parent/'OCIR_SCHEMA.json'
+ SCHEMA_SHA256=hashlib.sha256(SCHEMA_PATH.read_bytes()).hexdigest()
+-FEATURES=['functions','modules','lexical_scope','checked_int64','finite_float64','bounded_loop','list','record','tuple','option','result','tensor','observer','recovery','policy_effect','checkpoint']
++FEATURES=['functions','modules','lexical_scope','checked_int64','finite_float64','bounded_loop','list','record','tuple','option','result','tensor','observer','recovery','policy_effect','checkpoint','record_annotations','type_aliases','contextual_empty_lists']
+ NUMERIC={'int64':'checked_signed','integer_division':'truncate_toward_zero','float64':'finite_only','atol':1e-6,'rtol':1e-5,'normalize_epsilon':1e-5}
+ 
+ def load_program(source,module_map=None):
+--- 0.1.0/icl/checker.py
++++ 0.2.1/icl/checker.py
+@@ -11,7 +11,15 @@
+     out.append(s[start:]);return out
+ 
+ def valid_type(t):
++    if not isinstance(t,str) or len(t)>8192:return False
+     if t in BASIC:return True
++    if t.startswith('Record{') and t.endswith('}'):
++        try:
++            pairs=[x.split(':',1) for x in split_types(t[7:-1])]
++            if not pairs or any(len(x)!=2 for x in pairs):return False
++            names=[x[0] for x in pairs]
++            return len(set(names))==len(names) and names==sorted(names) and all(re.fullmatch(r'[A-Za-z_][A-Za-z_0-9]*',k) and valid_type(v) for k,v in pairs)
++        except (ValueError,RecursionError):return False
+     if t.startswith('Tensor['):
+         try:d=[int(x) for x in t[7:-1].split(',')];return t.endswith(']') and 1<=len(d)<=3 and all(x>0 for x in d) and math.prod(d)<=4096
+         except ValueError:return False
+@@ -36,7 +44,7 @@
+         fs[f['name']]=f
+     def same(a,b,span=None):
+         if a!=b:raise ICLError('TYPE',f'{a} incompatible with {b}',span)
+-    def ex(x,env):
++    def ex(x,env,expected=None):
+         k=x['kind'];sp=x.get('span')
+         if k=='literal':
+             v=x['value'];t='Bool' if type(v)==bool else 'Int64' if type(v)==int else 'Float64' if type(v)==float else 'String'
+@@ -64,8 +72,13 @@
+                 if a not in ('Int64','Float64') and not(op=='+' and a=='String'):raise ICLError('TYPE','numeric arithmetic only',sp)
+                 t=a
+         elif k in ('list','tuple'):
+-            ts=[ex(y,env) for y in x['items']]
+-            if not ts:raise ICLError('TYPE','empty literal needs unsupported explicit type; use nonempty literals',sp)
++            inner=expected[5:-1] if k=='list' and isinstance(expected,str) and expected.startswith('List[') and valid_type(expected) else None
++            ts=[ex(y,env,inner) for y in x['items']]
++            if not ts:
++                if k=='list' and inner is not None:
++                    x['inferred_type']=expected
++                    return expected
++                raise ICLError('TYPE','empty list requires a contextual List type',sp)
+             if k=='list':
+                 for a in ts:same(a,ts[0],sp)
+                 t='List['+ts[0]+']'
+@@ -89,7 +102,9 @@
+                 t=ts[i]
+             else:raise ICLError('TYPE','indexable value required',sp)
+         elif k=='call':
+-            nm=x['name'];args=x['args'];ts=[ex(y,env) for y in args]
++            nm=x['name'];args=x['args']
++            expected_args=[t for _,t in fs[nm]['params']] if nm in fs else []
++            ts=[ex(y,env,expected_args[i] if i<len(expected_args) else None) for i,y in enumerate(args)]
+             def sig(types,ret):
+                 if len(ts)!=len(types):raise ICLError('TYPE',nm+' arity mismatch',sp)
+                 for a,b in zip(ts,types):same(a,b,sp)
+@@ -173,7 +188,7 @@
+             k=s['kind'];sp=s.get('span')
+             if k=='let':
+                 if s['name'] in local:raise ICLError('NAME','duplicate local binding',sp)
+-                t=ex(s['expr'],env)
++                t=ex(s['expr'],env,s.get('type'))
+                 if s.get('type'):
+                     if not valid_type(s['type']):raise ICLError('TYPE','invalid local type',sp)
+                     same(t,s['type'],sp)
+@@ -182,8 +197,8 @@
+                 if s['name'] not in env:raise ICLError('NAME','undefined assignment',sp)
+                 t,mut=env[s['name']]
+                 if not mut:raise ICLError('IMMUTABLE','cannot assign let/parameter',sp)
+-                same(ex(s['expr'],env),t,sp)
+-            elif k=='return':same(ex(s['expr'],env),ret,sp);always=True
++                same(ex(s['expr'],env,t),t,sp)
++            elif k=='return':same(ex(s['expr'],env,ret),ret,sp);always=True
+             elif k=='expr':ex(s['expr'],env)
+             elif k=='if':
+                 same(ex(s['cond'],env),'Bool',sp);a=body(s['then'],env,ret);b=body(s['else'],env,ret);always=always or (a and b)

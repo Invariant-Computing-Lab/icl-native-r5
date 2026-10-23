@@ -1,0 +1,17 @@
+{
+  "language_runtime": {
+    "python": "3.12.14",
+    "implementation": "CPython",
+    "dependencies": []
+  },
+  "test_dependency": {
+    "numpy": "2.3.5",
+    "purpose": "independent graph oracle only"
+  },
+  "build_dependencies": {
+    "setuptools": "84.0.0",
+    "wheel": "0.48.0"
+  },
+  "network_required": false,
+  "lock_scope": "version pin and exact offline-wheel SHA256 recorded in root wheel manifest"
+}

@@ -1,0 +1,229 @@
+{
+  "schema": "ICL_R5_TASK_LEDGER/1",
+  "all_original_tasks_closed": false,
+  "tasks": [
+    {
+      "id": "T01",
+      "title": "Katalog ile güncel teslimleri uzlaştır",
+      "approved_scope": "İki hesap ve ilgili araştırma/ürün/release kökleri için mevcut katalogdaki drive_id, archive_member, source SHA, model_icl ve run kimliklerini güncel manifestlerle ilişkilendir. Paketleri hash ve içerikle tekilleştir. Dosya adı araması veya birkaç boş klasörle global yokluk kararı verme. Özgün model continuation ve yeni contract-compatible run ayrımını açık kaydet.",
+      "status": "PARTIAL",
+      "actual_scope": "Checked known Drive/control/model roots and actual mounted archives; R4 payload absent in prior final ZIP, no global absence claim.",
+      "gate_ids": [],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T02",
+      "title": "ICL-Core 0.1.0 temelini koru ve tek sözleşme seç",
+      "approved_scope": "Commit 400c91ac635c12f135d762dea6d6de16f3bd1291 ve schema/vocab/source hashlerini değişmez baseline yap. İki uyumsuz dil yaratma. Gerekli özellik değişikliklerini yeni dal/sürüm ve migration olarak ayır; orijinal handoff üzerindeki başarılı kayıtları bozma.",
+      "status": "DONE_BOUNDED",
+      "actual_scope": "Recovered 0.1.0 hashes preserved; source0.2.1 and new frozen handoff separate.",
+      "gate_ids": [
+        "L01",
+        "L03",
+        "L05",
+        "L08"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T03",
+      "title": "Araştırma kaynağını kod ve testle eşle",
+      "approved_scope": "G11-G18, RARI, AFC, SACRA, IEVF, GOP ve dil temelli tarihsel metinlerde protokol/uygulama/negatif örnekleri inceleyerek kaynak→sembol→test eşlemesini genişlet. Komut belgesini özgün deney yerine kaynak gösteren ilişkileri gerçek çalışma ile tamamla veya CONCEPT_ONLY bırak. Z042 ve Z074-Z085 başlıkları için içerik incelemeden dil ilkeli kesinlik iddiası kurma.",
+      "status": "PARTIAL",
+      "actual_scope": "Actual AFC reuse and source-contract mapping; full historical-content review not completed.",
+      "gate_ids": [
+        "L01",
+        "L06",
+        "M01"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T04",
+      "title": "Yeniden kullanılabilir tipli program arayüzlerini genişlet",
+      "approved_scope": "Model ve durum programlarının somut ihtiyaçları üzerinden önce adlandırılmış record/tip arayüzü ve yeterli list/Result kullanımını tasarla. Gerekli olmayan tam generics veya self-hosting hedefini ilk modele önkoşul yapma. Açık module_map ve paket manifestini tutarlı hale getir.",
+      "status": "DONE_BOUNDED",
+      "actual_scope": "Record parameter/return annotations, aliases and contextual empty lists; 31 new tests. Generics/ADT outside implemented scope.",
+      "gate_ids": [
+        "L01",
+        "L02",
+        "L03",
+        "L05"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T05",
+      "title": "Observer ve temsil dönüşümlerini gerçek görevlerle genişlet",
+      "approved_scope": "OCIL-VB1..4 ve G12-G18 için görev bazlı kapsama matrisi kur. Gözlemci hizalama, frame dönüşümü, sembolik belge/ajan durumu ve kayıplı temsil örneklerini kayıtlı dönüşüm sözleşmesiyle ekle. Gözlenmeyen bileşene exact etiketi verme; task-equivalence ile byte round-trip ayrımını koru.",
+      "status": "PARTIAL",
+      "actual_scope": "Finite frame arithmetic standard library and observer checks; not broad multimodal/world-state alignment.",
+      "gate_ids": [
+        "L02",
+        "L04",
+        "L05",
+        "L06"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T06",
+      "title": "Gerçek model grafiği için dil→backend köprüsü",
+      "approved_scope": "model.icl tanımını aynı OCIR üzerinden trainable backend ile yürüt. Forward ve gerçek gradient kontrollerini yap; registry/dtype/shape/normalization ve kaynak limitlerini incele. 4096 eleman/rank 1-3 sınırını sessizce kaldırma. Host autograd/optimizer sınırını ve hangi katmanların hostta kaldığını kaydet.",
+      "status": "DONE_BOUNDED",
+      "actual_scope": "Actual ICL model.icl -> typed graph -> trainable Torch backend; independent ICL forward and gradient checks.",
+      "gate_ids": [
+        "L07",
+        "M02",
+        "M04"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T07",
+      "title": "Modeli yetki sınırına ve sınırlı yürütmeye bağla",
+      "approved_scope": "İlk model demosunda mevcut default-deny politikayı koru. Model proposal ile verifier/host policy kararını ayrı tut. Paylaşılan veya untrusted kullanım için bağımsız işlem bellek/süre/ağ sınırlarını ve kurulum davranışını test et. Gerçek araç/kalıcı bellek gerekiyorsa izinli dar adapter ve onay akışını ayrı kapsamla tasarla.",
+      "status": "DONE_LOCAL_BOUNDARY",
+      "actual_scope": "Independent default-deny journal gate, actual console negative requests and replay; no external or OS sandbox certification.",
+      "gate_ids": [
+        "L04",
+        "L06",
+        "L08",
+        "M08"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T08",
+      "title": "Kataloğun 10 model ailesini gerçek kullanıma ayır",
+      "approved_scope": "Her aday için loader, config, ağırlık/parametre, preprocess, hash, rights ve uyumluluk oku. M01-M02 observer oracle/baseline; M03 finite comparator; M04-M07 izinli domain adapter/baseline; M08 policy semantics; M09-M10 routing/yardımcı offline frontend. Uygunsuzları birleştirme veya native diye adlandırma.",
+      "status": "PARTIAL",
+      "actual_scope": "10 catalogue disposition entries. Their weights/rights/loaders were not all opened and verified in R5.",
+      "gate_ids": [
+        "M01"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T09",
+      "title": "Native modelin öğrenilen kapsamını belirle ve uygula",
+      "approved_scope": "Kurtarılan native kaynak varsa öğrenilen kararı deterministic serializer/verifier katkısından ayır. Yoksa frozen contractla açıkça NEW_RUN/NEW_IMPLEMENTATION olarak yeni sürümlü native hat kur; eski runı ikame edilmiş gösterme. Program üretme/tamamlama/onarma, durum tahmini, observer transfer, abstention ve bellek için capability matrisi üret. Mimari büyüklüğünü ihtiyaç ve kaynakla gerekçelendir.",
+      "status": "PARTIAL_BOUNDED_KERNEL",
+      "actual_scope": "Real 2774-parameter opcode kernel. Full free-form generation/repair/learned state memory not implemented.",
+      "gate_ids": [
+        "M02",
+        "M04",
+        "M06",
+        "M07"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T10",
+      "title": "Program ve dünya grupları ayrık eğitim korpusu",
+      "approved_scope": "Compiler ve reference interpreter ile program/AST/OCIR/input/context/output/trace/error örnekleri üret. Canonical/semantic/world/observer-orbit ilişkilerini connected grouping ile tek splitte tut. Kaynak frozen test bankalarını traininge alma. 20k/2k/2k/2k RESEARCH hedefini ancak benzersiz anlamlı gruplarla karşıla; smoke ile researchı ayır.",
+      "status": "DONE_BOUNDED_CORPUS",
+      "actual_scope": "28000 input-task groups, 30000 examples; actual generic AST audit and world separation. Specialized error output duplicates disclosed.",
+      "gate_ids": [
+        "M03"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T11",
+      "title": "Eğitim döngüsü ve açık lineage",
+      "approved_scope": "Mevcut orijinal checkpoint uygunsa aynı run üzerinde açık continuation; aksi halde farklı run ID ve veri lineage ile random initialization. Program/state/trace/invariance/negative/abstention kayıplarını ölçülebilir uygulayıp validation seçimini kaydet. Üç native seed ve eşlenmiş baseline; optimizer/RNG/scheduler/step/sampler durumu tutulur.",
+      "status": "DONE_BOUNDED",
+      "actual_scope": "18 real runs, three native/baseline seeds and four three-seed ablations. Saved optimizer/RNG checkpoints and next-step parity.",
+      "gate_ids": [
+        "M04",
+        "M09"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T12",
+      "title": "%79,69 kaydını koru, hata türlerine göre düzelt",
+      "approved_scope": "Önce gerçek eski raw kayıt erişimine göre sonucu yeniden hesapla veya transcript-only bırak. Syntax/type/shape/semantic/observer/ambiguity/memory hata dağılımını train-validationda çıkar. Düzeltme veya kapasite seçimini eski test sonucuna ayarlama; değişen model için yeni sürümlü önceden ayrılmış confirmatory test kullan.",
+      "status": "DONE_NEW_RUN_NOT_HISTORICAL_REPAIR",
+      "actual_scope": "R5 factorized Boolean/numeric generation and counterfactual tests; previous reported R4 metrics unverified and unchanged.",
+      "gate_ids": [
+        "M06",
+        "M07"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T13",
+      "title": "Pilot değerlendirme ve yetkili yürütme",
+      "approved_scope": "Her seed ve aile için raw model, serializer, verifier, search/retry ve composed system skorlarını ayrı hesapla. Acceptance coverage, tüm giriş başarı oranı, hata nedenleri, kalibrasyon/abstention ve maliyeti raporla. Pilot yeterliliğini baseline üstünlüğüne karıştırma.",
+      "status": "PARTIAL_ORIGINAL_SCOPE",
+      "actual_scope": "Finite raw semantic opcode prefix tests completed. Emitted syntax and exact runtime do not close unrestricted source-generation gates.",
+      "gate_ids": [
+        "M06",
+        "M07",
+        "M08"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T14",
+      "title": "Eşlenmiş baseline ve ablation",
+      "approved_scope": "Flat-token ve majority/lookup karşılaştırıcılarını kur. Observer/context, typed graph, invariance objective, memory ve witness katkılarını eşlenmiş çıkarma deneyleriyle ölç. Semantik grup/aile bootstrap güven aralıkları, subgroup ve worst-family raporları oluştur.",
+      "status": "DONE_REPORTING_NO_SUPERIORITY",
+      "actual_scope": "Three-seed baseline/ablation reporting done; compute not within10%, no established superiority, no extra consistency-loss gain observed.",
+      "gate_ids": [
+        "M09",
+        "M10"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T15",
+      "title": "Modeli yeni süreçte ağsız aç ve hatalı artifacti reddet",
+      "approved_scope": "Gerçek config/vocab/schema+parametre paketini temiz süreçte yükle. Sabit fixture logits/output parity ve held-out inference, corrupt weights/schema mismatch reddi, optimizer resume ve ağsız inference yap. Eksik modelde MODEL_NOT_LOADED; statik yanıt yok.",
+      "status": "DONE_BOUNDED",
+      "actual_scope": "Safe weight reload, corrupt/schema tests, trained-logit parity and standard-library-only fresh process inference.",
+      "gate_ids": [
+        "M05",
+        "M08",
+        "M11"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T16",
+      "title": "Çalışan model + doğrulayıcı + Runtime Console ürün akışı",
+      "approved_scope": "Tipli istek→native program önerisi→ICL check→trusted policy→VM→sonuç/trace→checkpoint/replay akışını bağla. Terminal veya küçük UI ile model/sürüm, kaynak, reddetme nedenleri, belirsizlik ve kayıt göster. İlk ürün yerel ve finite olabilir; gerçek OS kernel/FPGA işi önkoşul değil.",
+      "status": "DONE_LOCAL_PROTOTYPE",
+      "actual_scope": "Actual CLI and local console with model -> proposal -> guard -> VM -> durable checkpoint/restart replay. Not legacy G51 rebase or public deployment.",
+      "gate_ids": [
+        "L08",
+        "M05",
+        "M08",
+        "M11"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T17",
+      "title": "Kalıcı sürümlü teslim ve güncel kabul sicili",
+      "approved_scope": "OCIL kaynaklarını, OS model/code/data lineage/loglarını ve ortak coverage/gap kaydını mevcut kanonik köklerin yeni sürümlü altına yerleştir. Eski NOT_RUN emirlerini geçmiş metin olarak koru; güncel CURRENT_STATUS manifesti ayrı olsun. Gerçek upload/readback/hash durumunu belge bazında doğrula; web/Drive public izinlerini değiştirme.",
+      "status": "LOCAL_COMPLETE_REMOTE_BLOCKED",
+      "actual_scope": "Local actual source/model/data/evidence bundle and verifier. Current connector exposes no upload/create action; no remote transfer receipt.",
+      "gate_ids": [
+        "M11"
+      ],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    },
+    {
+      "id": "T18",
+      "title": "ISC16 ve alan adapterlerini ayrı yol haritasında koru",
+      "approved_scope": "ISC16 ISA/RTL regresyonlarını ve varsa native backend taşınmasını ayrı kapsamla sürdür. Klinik data adapterleri, public HF/GitHub deployment, ileri generic/self-hosting veya kapsamlı formal ispatı ayrı kaynak/izin ve kabulyle planla.",
+      "status": "DEFERRED_AS_APPROVED",
+      "actual_scope": "ISC16/RTL, clinical adapters, generic/self-hosting/formal proof/public release remain separate.",
+      "gate_ids": [],
+      "source": "APPROVED_TASKS_ORIGINAL.json"
+    }
+  ]
+}

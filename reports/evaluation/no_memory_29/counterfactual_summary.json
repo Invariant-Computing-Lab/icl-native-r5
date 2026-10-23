@@ -1,0 +1,56 @@
+{
+  "n": 4000,
+  "raw_semantic_prefix_match": 0.94,
+  "composed_output_match": 1.0,
+  "positive_n": 2165,
+  "positive_raw_match": 1.0,
+  "negative_raw_match": 0.8692098092643051,
+  "guard_reasons": {
+    "none": 3760,
+    "MEMORY_MISSING": 240
+  },
+  "per_first_intent": {
+    "increase": 0.9343065693430657,
+    "decrease": 0.9224806201550387,
+    "scale": 0.9563492063492064,
+    "floor": 0.9618320610687023,
+    "ceiling": 0.95,
+    "magnitude": 0.9562043795620438,
+    "repeat": 0.952,
+    "translate": 0.9957983193277311,
+    "restore": 0.9795081967213115,
+    "remember": 1.0,
+    "recall": 0.6869565217391305,
+    "journal": 0.9765625,
+    "conditional": 0.9576923076923077,
+    "record_add": 0.912,
+    "list_add": 0.9504504504504504,
+    "axis_reverse": 0.9389312977099237
+  },
+  "uncalibrated_selective_risk": {
+    "0": {
+      "coverage": 1.0,
+      "raw_accuracy": 0.94
+    },
+    "0.5": {
+      "coverage": 1.0,
+      "raw_accuracy": 0.94
+    },
+    "0.8": {
+      "coverage": 0.7535,
+      "raw_accuracy": 0.9993364299933643
+    },
+    "0.95": {
+      "coverage": 0.752,
+      "raw_accuracy": 1.0
+    },
+    "0.99": {
+      "coverage": 0.66675,
+      "raw_accuracy": 1.0
+    }
+  },
+  "original_general_M06_M07_closed": false,
+  "candidate_icl_vm_parity_checks": 0,
+  "actual_candidate_programs_executed": 0,
+  "candidate_icl_vm_parity_pass": true
+}

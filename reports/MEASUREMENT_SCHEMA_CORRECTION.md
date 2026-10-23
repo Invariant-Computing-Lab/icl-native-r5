@@ -1,0 +1,2 @@
+# Measurement-schema correction (no retraining)
+The first R5 evaluator called simulated journal allow decisions executions and emitted a literal zero unauthorized-execution field. Those fields were removed/corrected before release. First outputs are retained only in evaluation_first_schema as superseded audit records, not final statistics. Actual VM execution and actual effect records are now counted separately. Data, model weights, model selection and scoring targets were not changed.

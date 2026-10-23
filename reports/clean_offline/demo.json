@@ -1,0 +1,3002 @@
+{
+  "schema": "ICL_R5_PRODUCT_RESULT/1",
+  "model_seed": 17,
+  "proposal": {
+    "actions": [
+      "ADD",
+      "REPEAT",
+      "TRANSLATE",
+      "STORE",
+      "MUL",
+      "RECALL",
+      "RESTORE",
+      "RECORD_ADD",
+      "NEGATE",
+      "LIST_ADD"
+    ],
+    "confidence": 0.9954168388756921,
+    "composed_result": {
+      "tag": "Ok",
+      "value": -4
+    },
+    "guard_rejection": null,
+    "journal_attempts": 0,
+    "journal_allow_decisions": 0,
+    "execution_scope": "host simulation until vm_verify executes the candidate"
+  },
+  "verification": {
+    "executed": true,
+    "source_program": "module native_plan;\ntype Pair = Record{delta:Int64,value:Int64};\nfn record_sum(p:Pair)->Int64 {return p.value+p.delta;}\nfn main(initial:Int64, initial_memory:Int64)->Result[Int64] {\nvar x = initial; var memo = initial_memory;\n\nx=x+(3);\nvar k1=0; while k1<3 limit 3 {x=x+(-1); k1=k1+1;}\nlet left2=represent(x,\"main\",\"scalar\",\"unit\"); let right2=represent((2),\"main\",\"scalar\",\"unit\"); x=repr_value(repr_add(left2,right2));\nmemo=x;\nx=x*(3);\nx=memo;\nlet r6=observe_mod(x,7,\"main\"); let w6=make_witness(x,7); x=exact_value(recover(r6,w6));\nx=record_sum({delta:(-2),value:x});\nx=-x;\nlet items9=[x,(1)]; x=items9[0]+items9[1];\nreturn ok(x); }\n",
+    "ocir": {
+      "schema_version": "0.2.1",
+      "schema_sha256": "0dd381cb61f65f3346c07918aae587c42c583f8b4449583fdd4dca1afdcee60c",
+      "feature_set": [
+        "functions",
+        "modules",
+        "lexical_scope",
+        "checked_int64",
+        "finite_float64",
+        "bounded_loop",
+        "list",
+        "record",
+        "tuple",
+        "option",
+        "result",
+        "tensor",
+        "observer",
+        "recovery",
+        "policy_effect",
+        "checkpoint",
+        "record_annotations",
+        "type_aliases",
+        "contextual_empty_lists"
+      ],
+      "program_id": "4e8696753eae3ec49abdc01e2c0b43926f82ad4ec0d71d3a3ed2ba1ccb27c048",
+      "source_sha256": "b4a9e2db2457f2cae3ace0f4e88db276078a2503b6839a03b7c64f04240cf53e",
+      "module_graph": [
+        {
+          "module": "native_plan",
+          "imports": [],
+          "source_sha256": "b4a9e2db2457f2cae3ace0f4e88db276078a2503b6839a03b7c64f04240cf53e"
+        }
+      ],
+      "typed_blocks": [
+        {
+          "name": "record_sum",
+          "params": [
+            [
+              "p",
+              "Record{delta:Int64,value:Int64}"
+            ]
+          ],
+          "return_type": "Int64",
+          "body": [
+            {
+              "kind": "return",
+              "expr": {
+                "kind": "binary",
+                "op": "+",
+                "left": {
+                  "kind": "field",
+                  "target": {
+                    "kind": "var",
+                    "name": "p",
+                    "span": {
+                      "line": 3,
+                      "column": 38,
+                      "offset": 102
+                    },
+                    "inferred_type": "Record{delta:Int64,value:Int64}"
+                  },
+                  "name": "value",
+                  "span": {
+                    "line": 3,
+                    "column": 38,
+                    "offset": 102
+                  },
+                  "inferred_type": "Int64"
+                },
+                "right": {
+                  "kind": "field",
+                  "target": {
+                    "kind": "var",
+                    "name": "p",
+                    "span": {
+                      "line": 3,
+                      "column": 46,
+                      "offset": 110
+                    },
+                    "inferred_type": "Record{delta:Int64,value:Int64}"
+                  },
+                  "name": "delta",
+                  "span": {
+                    "line": 3,
+                    "column": 46,
+                    "offset": 110
+                  },
+                  "inferred_type": "Int64"
+                },
+                "span": {
+                  "line": 3,
+                  "column": 38,
+                  "offset": 102
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 3,
+                "column": 31,
+                "offset": 95
+              }
+            }
+          ],
+          "span": {
+            "line": 3,
+            "column": 1,
+            "offset": 65
+          }
+        },
+        {
+          "name": "main",
+          "params": [
+            [
+              "initial",
+              "Int64"
+            ],
+            [
+              "initial_memory",
+              "Int64"
+            ]
+          ],
+          "return_type": "Result[Int64]",
+          "body": [
+            {
+              "kind": "let",
+              "name": "x",
+              "type": null,
+              "mutable": true,
+              "expr": {
+                "kind": "var",
+                "name": "initial",
+                "span": {
+                  "line": 5,
+                  "column": 9,
+                  "offset": 190
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 5,
+                "column": 1,
+                "offset": 182
+              },
+              "inferred_type": "Int64"
+            },
+            {
+              "kind": "let",
+              "name": "memo",
+              "type": null,
+              "mutable": true,
+              "expr": {
+                "kind": "var",
+                "name": "initial_memory",
+                "span": {
+                  "line": 5,
+                  "column": 29,
+                  "offset": 210
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 5,
+                "column": 18,
+                "offset": 199
+              },
+              "inferred_type": "Int64"
+            },
+            {
+              "kind": "assign",
+              "name": "x",
+              "expr": {
+                "kind": "binary",
+                "op": "+",
+                "left": {
+                  "kind": "var",
+                  "name": "x",
+                  "span": {
+                    "line": 7,
+                    "column": 3,
+                    "offset": 229
+                  },
+                  "inferred_type": "Int64"
+                },
+                "right": {
+                  "kind": "literal",
+                  "value": 3,
+                  "span": {
+                    "line": 7,
+                    "column": 6,
+                    "offset": 232
+                  },
+                  "inferred_type": "Int64"
+                },
+                "span": {
+                  "line": 7,
+                  "column": 3,
+                  "offset": 229
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 7,
+                "column": 1,
+                "offset": 227
+              }
+            },
+            {
+              "kind": "let",
+              "name": "k1",
+              "type": null,
+              "mutable": true,
+              "expr": {
+                "kind": "literal",
+                "value": 0,
+                "span": {
+                  "line": 8,
+                  "column": 8,
+                  "offset": 243
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 8,
+                "column": 1,
+                "offset": 236
+              },
+              "inferred_type": "Int64"
+            },
+            {
+              "kind": "while",
+              "cond": {
+                "kind": "binary",
+                "op": "<",
+                "left": {
+                  "kind": "var",
+                  "name": "k1",
+                  "span": {
+                    "line": 8,
+                    "column": 17,
+                    "offset": 252
+                  },
+                  "inferred_type": "Int64"
+                },
+                "right": {
+                  "kind": "literal",
+                  "value": 3,
+                  "span": {
+                    "line": 8,
+                    "column": 20,
+                    "offset": 255
+                  },
+                  "inferred_type": "Int64"
+                },
+                "span": {
+                  "line": 8,
+                  "column": 17,
+                  "offset": 252
+                },
+                "inferred_type": "Bool"
+              },
+              "limit": 3,
+              "body": [
+                {
+                  "kind": "assign",
+                  "name": "x",
+                  "expr": {
+                    "kind": "binary",
+                    "op": "+",
+                    "left": {
+                      "kind": "var",
+                      "name": "x",
+                      "span": {
+                        "line": 8,
+                        "column": 33,
+                        "offset": 268
+                      },
+                      "inferred_type": "Int64"
+                    },
+                    "right": {
+                      "kind": "unary",
+                      "op": "-",
+                      "expr": {
+                        "kind": "literal",
+                        "value": 1,
+                        "span": {
+                          "line": 8,
+                          "column": 37,
+                          "offset": 272
+                        },
+                        "inferred_type": "Int64"
+                      },
+                      "span": {
+                        "line": 8,
+                        "column": 36,
+                        "offset": 271
+                      },
+                      "inferred_type": "Int64"
+                    },
+                    "span": {
+                      "line": 8,
+                      "column": 33,
+                      "offset": 268
+                    },
+                    "inferred_type": "Int64"
+                  },
+                  "span": {
+                    "line": 8,
+                    "column": 31,
+                    "offset": 266
+                  }
+                },
+                {
+                  "kind": "assign",
+                  "name": "k1",
+                  "expr": {
+                    "kind": "binary",
+                    "op": "+",
+                    "left": {
+                      "kind": "var",
+                      "name": "k1",
+                      "span": {
+                        "line": 8,
+                        "column": 44,
+                        "offset": 279
+                      },
+                      "inferred_type": "Int64"
+                    },
+                    "right": {
+                      "kind": "literal",
+                      "value": 1,
+                      "span": {
+                        "line": 8,
+                        "column": 47,
+                        "offset": 282
+                      },
+                      "inferred_type": "Int64"
+                    },
+                    "span": {
+                      "line": 8,
+                      "column": 44,
+                      "offset": 279
+                    },
+                    "inferred_type": "Int64"
+                  },
+                  "span": {
+                    "line": 8,
+                    "column": 41,
+                    "offset": 276
+                  }
+                }
+              ],
+              "span": {
+                "line": 8,
+                "column": 11,
+                "offset": 246
+              }
+            },
+            {
+              "kind": "let",
+              "name": "left2",
+              "type": null,
+              "mutable": false,
+              "expr": {
+                "kind": "call",
+                "name": "represent",
+                "args": [
+                  {
+                    "kind": "var",
+                    "name": "x",
+                    "span": {
+                      "line": 9,
+                      "column": 21,
+                      "offset": 306
+                    },
+                    "inferred_type": "Int64"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": "main",
+                    "span": {
+                      "line": 9,
+                      "column": 23,
+                      "offset": 308
+                    },
+                    "inferred_type": "String"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": "scalar",
+                    "span": {
+                      "line": 9,
+                      "column": 30,
+                      "offset": 315
+                    },
+                    "inferred_type": "String"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": "unit",
+                    "span": {
+                      "line": 9,
+                      "column": 39,
+                      "offset": 324
+                    },
+                    "inferred_type": "String"
+                  }
+                ],
+                "span": {
+                  "line": 9,
+                  "column": 11,
+                  "offset": 296
+                },
+                "inferred_type": "Representation[Int64]"
+              },
+              "span": {
+                "line": 9,
+                "column": 1,
+                "offset": 286
+              },
+              "inferred_type": "Representation[Int64]"
+            },
+            {
+              "kind": "let",
+              "name": "right2",
+              "type": null,
+              "mutable": false,
+              "expr": {
+                "kind": "call",
+                "name": "represent",
+                "args": [
+                  {
+                    "kind": "literal",
+                    "value": 2,
+                    "span": {
+                      "line": 9,
+                      "column": 70,
+                      "offset": 355
+                    },
+                    "inferred_type": "Int64"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": "main",
+                    "span": {
+                      "line": 9,
+                      "column": 73,
+                      "offset": 358
+                    },
+                    "inferred_type": "String"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": "scalar",
+                    "span": {
+                      "line": 9,
+                      "column": 80,
+                      "offset": 365
+                    },
+                    "inferred_type": "String"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": "unit",
+                    "span": {
+                      "line": 9,
+                      "column": 89,
+                      "offset": 374
+                    },
+                    "inferred_type": "String"
+                  }
+                ],
+                "span": {
+                  "line": 9,
+                  "column": 59,
+                  "offset": 344
+                },
+                "inferred_type": "Representation[Int64]"
+              },
+              "span": {
+                "line": 9,
+                "column": 48,
+                "offset": 333
+              },
+              "inferred_type": "Representation[Int64]"
+            },
+            {
+              "kind": "assign",
+              "name": "x",
+              "expr": {
+                "kind": "call",
+                "name": "repr_value",
+                "args": [
+                  {
+                    "kind": "call",
+                    "name": "repr_add",
+                    "args": [
+                      {
+                        "kind": "var",
+                        "name": "left2",
+                        "span": {
+                          "line": 9,
+                          "column": 120,
+                          "offset": 405
+                        },
+                        "inferred_type": "Representation[Int64]"
+                      },
+                      {
+                        "kind": "var",
+                        "name": "right2",
+                        "span": {
+                          "line": 9,
+                          "column": 126,
+                          "offset": 411
+                        },
+                        "inferred_type": "Representation[Int64]"
+                      }
+                    ],
+                    "span": {
+                      "line": 9,
+                      "column": 111,
+                      "offset": 396
+                    },
+                    "inferred_type": "Representation[Int64]"
+                  }
+                ],
+                "span": {
+                  "line": 9,
+                  "column": 100,
+                  "offset": 385
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 9,
+                "column": 98,
+                "offset": 383
+              }
+            },
+            {
+              "kind": "assign",
+              "name": "memo",
+              "expr": {
+                "kind": "var",
+                "name": "x",
+                "span": {
+                  "line": 10,
+                  "column": 6,
+                  "offset": 426
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 10,
+                "column": 1,
+                "offset": 421
+              }
+            },
+            {
+              "kind": "assign",
+              "name": "x",
+              "expr": {
+                "kind": "binary",
+                "op": "*",
+                "left": {
+                  "kind": "var",
+                  "name": "x",
+                  "span": {
+                    "line": 11,
+                    "column": 3,
+                    "offset": 431
+                  },
+                  "inferred_type": "Int64"
+                },
+                "right": {
+                  "kind": "literal",
+                  "value": 3,
+                  "span": {
+                    "line": 11,
+                    "column": 6,
+                    "offset": 434
+                  },
+                  "inferred_type": "Int64"
+                },
+                "span": {
+                  "line": 11,
+                  "column": 3,
+                  "offset": 431
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 11,
+                "column": 1,
+                "offset": 429
+              }
+            },
+            {
+              "kind": "assign",
+              "name": "x",
+              "expr": {
+                "kind": "var",
+                "name": "memo",
+                "span": {
+                  "line": 12,
+                  "column": 3,
+                  "offset": 440
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 12,
+                "column": 1,
+                "offset": 438
+              }
+            },
+            {
+              "kind": "let",
+              "name": "r6",
+              "type": null,
+              "mutable": false,
+              "expr": {
+                "kind": "call",
+                "name": "observe_mod",
+                "args": [
+                  {
+                    "kind": "var",
+                    "name": "x",
+                    "span": {
+                      "line": 13,
+                      "column": 20,
+                      "offset": 465
+                    },
+                    "inferred_type": "Int64"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": 7,
+                    "span": {
+                      "line": 13,
+                      "column": 22,
+                      "offset": 467
+                    },
+                    "inferred_type": "Int64"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": "main",
+                    "span": {
+                      "line": 13,
+                      "column": 24,
+                      "offset": 469
+                    },
+                    "inferred_type": "String"
+                  }
+                ],
+                "span": {
+                  "line": 13,
+                  "column": 8,
+                  "offset": 453
+                },
+                "inferred_type": "Representation[Int64]"
+              },
+              "span": {
+                "line": 13,
+                "column": 1,
+                "offset": 446
+              },
+              "inferred_type": "Representation[Int64]"
+            },
+            {
+              "kind": "let",
+              "name": "w6",
+              "type": null,
+              "mutable": false,
+              "expr": {
+                "kind": "call",
+                "name": "make_witness",
+                "args": [
+                  {
+                    "kind": "var",
+                    "name": "x",
+                    "span": {
+                      "line": 13,
+                      "column": 53,
+                      "offset": 498
+                    },
+                    "inferred_type": "Int64"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": 7,
+                    "span": {
+                      "line": 13,
+                      "column": 55,
+                      "offset": 500
+                    },
+                    "inferred_type": "Int64"
+                  }
+                ],
+                "span": {
+                  "line": 13,
+                  "column": 40,
+                  "offset": 485
+                },
+                "inferred_type": "RecoveryWitness"
+              },
+              "span": {
+                "line": 13,
+                "column": 33,
+                "offset": 478
+              },
+              "inferred_type": "RecoveryWitness"
+            },
+            {
+              "kind": "assign",
+              "name": "x",
+              "expr": {
+                "kind": "call",
+                "name": "exact_value",
+                "args": [
+                  {
+                    "kind": "call",
+                    "name": "recover",
+                    "args": [
+                      {
+                        "kind": "var",
+                        "name": "r6",
+                        "span": {
+                          "line": 13,
+                          "column": 81,
+                          "offset": 526
+                        },
+                        "inferred_type": "Representation[Int64]"
+                      },
+                      {
+                        "kind": "var",
+                        "name": "w6",
+                        "span": {
+                          "line": 13,
+                          "column": 84,
+                          "offset": 529
+                        },
+                        "inferred_type": "RecoveryWitness"
+                      }
+                    ],
+                    "span": {
+                      "line": 13,
+                      "column": 73,
+                      "offset": 518
+                    },
+                    "inferred_type": "Exact[Int64]"
+                  }
+                ],
+                "span": {
+                  "line": 13,
+                  "column": 61,
+                  "offset": 506
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 13,
+                "column": 59,
+                "offset": 504
+              }
+            },
+            {
+              "kind": "assign",
+              "name": "x",
+              "expr": {
+                "kind": "call",
+                "name": "record_sum",
+                "args": [
+                  {
+                    "kind": "record",
+                    "fields": {
+                      "delta": {
+                        "kind": "unary",
+                        "op": "-",
+                        "expr": {
+                          "kind": "literal",
+                          "value": 2,
+                          "span": {
+                            "line": 14,
+                            "column": 23,
+                            "offset": 557
+                          },
+                          "inferred_type": "Int64"
+                        },
+                        "span": {
+                          "line": 14,
+                          "column": 22,
+                          "offset": 556
+                        },
+                        "inferred_type": "Int64"
+                      },
+                      "value": {
+                        "kind": "var",
+                        "name": "x",
+                        "span": {
+                          "line": 14,
+                          "column": 32,
+                          "offset": 566
+                        },
+                        "inferred_type": "Int64"
+                      }
+                    },
+                    "span": {
+                      "line": 14,
+                      "column": 14,
+                      "offset": 548
+                    },
+                    "inferred_type": "Record{delta:Int64,value:Int64}"
+                  }
+                ],
+                "span": {
+                  "line": 14,
+                  "column": 3,
+                  "offset": 537
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 14,
+                "column": 1,
+                "offset": 535
+              }
+            },
+            {
+              "kind": "assign",
+              "name": "x",
+              "expr": {
+                "kind": "unary",
+                "op": "-",
+                "expr": {
+                  "kind": "var",
+                  "name": "x",
+                  "span": {
+                    "line": 15,
+                    "column": 4,
+                    "offset": 574
+                  },
+                  "inferred_type": "Int64"
+                },
+                "span": {
+                  "line": 15,
+                  "column": 3,
+                  "offset": 573
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 15,
+                "column": 1,
+                "offset": 571
+              }
+            },
+            {
+              "kind": "let",
+              "name": "items9",
+              "type": null,
+              "mutable": false,
+              "expr": {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "var",
+                    "name": "x",
+                    "span": {
+                      "line": 16,
+                      "column": 13,
+                      "offset": 589
+                    },
+                    "inferred_type": "Int64"
+                  },
+                  {
+                    "kind": "literal",
+                    "value": 1,
+                    "span": {
+                      "line": 16,
+                      "column": 16,
+                      "offset": 592
+                    },
+                    "inferred_type": "Int64"
+                  }
+                ],
+                "span": {
+                  "line": 16,
+                  "column": 12,
+                  "offset": 588
+                },
+                "inferred_type": "List[Int64]"
+              },
+              "span": {
+                "line": 16,
+                "column": 1,
+                "offset": 577
+              },
+              "inferred_type": "List[Int64]"
+            },
+            {
+              "kind": "assign",
+              "name": "x",
+              "expr": {
+                "kind": "binary",
+                "op": "+",
+                "left": {
+                  "kind": "index",
+                  "target": {
+                    "kind": "var",
+                    "name": "items9",
+                    "span": {
+                      "line": 16,
+                      "column": 23,
+                      "offset": 599
+                    },
+                    "inferred_type": "List[Int64]"
+                  },
+                  "index": {
+                    "kind": "literal",
+                    "value": 0,
+                    "span": {
+                      "line": 16,
+                      "column": 30,
+                      "offset": 606
+                    },
+                    "inferred_type": "Int64"
+                  },
+                  "span": {
+                    "line": 16,
+                    "column": 23,
+                    "offset": 599
+                  },
+                  "inferred_type": "Int64"
+                },
+                "right": {
+                  "kind": "index",
+                  "target": {
+                    "kind": "var",
+                    "name": "items9",
+                    "span": {
+                      "line": 16,
+                      "column": 33,
+                      "offset": 609
+                    },
+                    "inferred_type": "List[Int64]"
+                  },
+                  "index": {
+                    "kind": "literal",
+                    "value": 1,
+                    "span": {
+                      "line": 16,
+                      "column": 40,
+                      "offset": 616
+                    },
+                    "inferred_type": "Int64"
+                  },
+                  "span": {
+                    "line": 16,
+                    "column": 33,
+                    "offset": 609
+                  },
+                  "inferred_type": "Int64"
+                },
+                "span": {
+                  "line": 16,
+                  "column": 23,
+                  "offset": 599
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 16,
+                "column": 21,
+                "offset": 597
+              }
+            },
+            {
+              "kind": "return",
+              "expr": {
+                "kind": "call",
+                "name": "ok",
+                "args": [
+                  {
+                    "kind": "var",
+                    "name": "x",
+                    "span": {
+                      "line": 17,
+                      "column": 11,
+                      "offset": 630
+                    },
+                    "inferred_type": "Int64"
+                  }
+                ],
+                "span": {
+                  "line": 17,
+                  "column": 8,
+                  "offset": 627
+                },
+                "inferred_type": "Result[Int64]"
+              },
+              "span": {
+                "line": 17,
+                "column": 1,
+                "offset": 620
+              }
+            }
+          ],
+          "span": {
+            "line": 4,
+            "column": 1,
+            "offset": 120
+          }
+        }
+      ],
+      "ops": [
+        {
+          "name": "represent",
+          "operand_types": [
+            "Int64",
+            "String",
+            "String",
+            "String"
+          ],
+          "result_type": "Representation[Int64]"
+        },
+        {
+          "name": "represent",
+          "operand_types": [
+            "Int64",
+            "String",
+            "String",
+            "String"
+          ],
+          "result_type": "Representation[Int64]"
+        },
+        {
+          "name": "repr_add",
+          "operand_types": [
+            "Representation[Int64]",
+            "Representation[Int64]"
+          ],
+          "result_type": "Representation[Int64]"
+        },
+        {
+          "name": "repr_value",
+          "operand_types": [
+            "Representation[Int64]"
+          ],
+          "result_type": "Int64"
+        },
+        {
+          "name": "observe_mod",
+          "operand_types": [
+            "Int64",
+            "Int64",
+            "String"
+          ],
+          "result_type": "Representation[Int64]"
+        },
+        {
+          "name": "make_witness",
+          "operand_types": [
+            "Int64",
+            "Int64"
+          ],
+          "result_type": "RecoveryWitness"
+        },
+        {
+          "name": "recover",
+          "operand_types": [
+            "Representation[Int64]",
+            "RecoveryWitness"
+          ],
+          "result_type": "Exact[Int64]"
+        },
+        {
+          "name": "exact_value",
+          "operand_types": [
+            "Exact[Int64]"
+          ],
+          "result_type": "Int64"
+        },
+        {
+          "name": "record_sum",
+          "operand_types": [
+            "Record{delta:Int64,value:Int64}"
+          ],
+          "result_type": "Int64"
+        },
+        {
+          "name": "ok",
+          "operand_types": [
+            "Int64"
+          ],
+          "result_type": "Result[Int64]"
+        }
+      ],
+      "operand_types": [
+        [
+          "Int64",
+          "String",
+          "String",
+          "String"
+        ],
+        [
+          "Int64",
+          "String",
+          "String",
+          "String"
+        ],
+        [
+          "Representation[Int64]",
+          "Representation[Int64]"
+        ],
+        [
+          "Representation[Int64]"
+        ],
+        [
+          "Int64",
+          "Int64",
+          "String"
+        ],
+        [
+          "Int64",
+          "Int64"
+        ],
+        [
+          "Representation[Int64]",
+          "RecoveryWitness"
+        ],
+        [
+          "Exact[Int64]"
+        ],
+        [
+          "Record{delta:Int64,value:Int64}"
+        ],
+        [
+          "Int64"
+        ]
+      ],
+      "shape_constraints": [],
+      "observer_context": {
+        "mode": "explicit_metadata",
+        "implicit_conversion": false
+      },
+      "provenance_refs": [
+        {
+          "source_sha256": "b4a9e2db2457f2cae3ace0f4e88db276078a2503b6839a03b7c64f04240cf53e",
+          "module": "native_plan",
+          "status": "COMPILED_LOCAL_SOURCE"
+        }
+      ],
+      "required_effects": [],
+      "limits": {
+        "max_steps": 100000,
+        "max_stack": 128,
+        "max_items": 100000,
+        "max_output": 1000000,
+        "max_tensor": 4096
+      },
+      "numeric_policy": {
+        "int64": "checked_signed",
+        "integer_division": "truncate_toward_zero",
+        "float64": "finite_only",
+        "atol": 1e-06,
+        "rtol": 1e-05,
+        "normalize_epsilon": 1e-05
+      },
+      "entrypoint": "main",
+      "integrity_sha256": "2d4047655a5422de48a0ce2df98fd6e41ab7e0850269c66417a94b8127987269"
+    },
+    "result": {
+      "value": {
+        "tag": "Ok",
+        "value": -4
+      },
+      "trace": [
+        {
+          "run_id": "deterministic",
+          "step": 1,
+          "op_id": "BC:ENTER_SCOPE",
+          "input_hash": "165d6c49cb11b4a4bd4ffdf872bdae8ca1eab08ba478ef2f8356b60f440f43d1",
+          "output_hash": "d5f68f2893ab889afffb88052ff5a359c577bc48d76cdb82bf5bcca61faa2652",
+          "state_ref": "d5f68f2893ab889afffb88052ff5a359c577bc48d76cdb82bf5bcca61faa2652",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 2,
+          "op_id": "BC:LOAD",
+          "input_hash": "d5f68f2893ab889afffb88052ff5a359c577bc48d76cdb82bf5bcca61faa2652",
+          "output_hash": "63386403efdfe10726af76c9efb39073ce16ac2d16c173f692ed2a937e2a85b7",
+          "state_ref": "63386403efdfe10726af76c9efb39073ce16ac2d16c173f692ed2a937e2a85b7",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 3,
+          "op_id": "BC:LET",
+          "input_hash": "63386403efdfe10726af76c9efb39073ce16ac2d16c173f692ed2a937e2a85b7",
+          "output_hash": "f34c0a1fe709a89044b068b73a78e7572fac844b9fc38b8bb540232135d1b2ad",
+          "state_ref": "f34c0a1fe709a89044b068b73a78e7572fac844b9fc38b8bb540232135d1b2ad",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 4,
+          "op_id": "BC:LOAD",
+          "input_hash": "f34c0a1fe709a89044b068b73a78e7572fac844b9fc38b8bb540232135d1b2ad",
+          "output_hash": "f0a745683692c70c22d4c4809c0e7c8bd11b5bfc5f9d5dcd097e1928ddea2203",
+          "state_ref": "f0a745683692c70c22d4c4809c0e7c8bd11b5bfc5f9d5dcd097e1928ddea2203",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 5,
+          "op_id": "BC:LET",
+          "input_hash": "f0a745683692c70c22d4c4809c0e7c8bd11b5bfc5f9d5dcd097e1928ddea2203",
+          "output_hash": "133db1530008e1aeff3ac002934e02a2aba50ad6b37cad9fd4ceed50a2a71ec5",
+          "state_ref": "133db1530008e1aeff3ac002934e02a2aba50ad6b37cad9fd4ceed50a2a71ec5",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 6,
+          "op_id": "BC:LOAD",
+          "input_hash": "133db1530008e1aeff3ac002934e02a2aba50ad6b37cad9fd4ceed50a2a71ec5",
+          "output_hash": "809bf55fb548104c1ecbb42769570fdac5feffbb3a45611e0095b8848096010f",
+          "state_ref": "809bf55fb548104c1ecbb42769570fdac5feffbb3a45611e0095b8848096010f",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 7,
+          "op_id": "BC:PUSH",
+          "input_hash": "809bf55fb548104c1ecbb42769570fdac5feffbb3a45611e0095b8848096010f",
+          "output_hash": "fdc2438a0f8f6f5163b5cbb3a84b93b85635185744ae3ba5f985b6fd615bb5e4",
+          "state_ref": "fdc2438a0f8f6f5163b5cbb3a84b93b85635185744ae3ba5f985b6fd615bb5e4",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 8,
+          "op_id": "BC:BINARY",
+          "input_hash": "fdc2438a0f8f6f5163b5cbb3a84b93b85635185744ae3ba5f985b6fd615bb5e4",
+          "output_hash": "68e6c07d80e94e0bd57f455fcc662890dd6c6b745706c283c02094379ae03c96",
+          "state_ref": "68e6c07d80e94e0bd57f455fcc662890dd6c6b745706c283c02094379ae03c96",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 9,
+          "op_id": "BC:STORE",
+          "input_hash": "68e6c07d80e94e0bd57f455fcc662890dd6c6b745706c283c02094379ae03c96",
+          "output_hash": "ea0637f07e25249ca0ccb5472716094dd3e28cc7ba88680ec9e66f4580683400",
+          "state_ref": "ea0637f07e25249ca0ccb5472716094dd3e28cc7ba88680ec9e66f4580683400",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 10,
+          "op_id": "BC:PUSH",
+          "input_hash": "ea0637f07e25249ca0ccb5472716094dd3e28cc7ba88680ec9e66f4580683400",
+          "output_hash": "4605f6feb2549a4b9cd2a68a7b78d8de521fde79f0e9aba20856d9ff0c460c7d",
+          "state_ref": "4605f6feb2549a4b9cd2a68a7b78d8de521fde79f0e9aba20856d9ff0c460c7d",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 11,
+          "op_id": "BC:LET",
+          "input_hash": "4605f6feb2549a4b9cd2a68a7b78d8de521fde79f0e9aba20856d9ff0c460c7d",
+          "output_hash": "3a6a3e98a3279cb62d83037c5a443cacaca21291bb10f7056a5870b4f2bbd00c",
+          "state_ref": "3a6a3e98a3279cb62d83037c5a443cacaca21291bb10f7056a5870b4f2bbd00c",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 12,
+          "op_id": "BC:LOOP_RESET",
+          "input_hash": "3a6a3e98a3279cb62d83037c5a443cacaca21291bb10f7056a5870b4f2bbd00c",
+          "output_hash": "962c36c1fdc74b28302d77ea7498ae21ae08e3e983a100c4b3c7cdd52e9e911d",
+          "state_ref": "962c36c1fdc74b28302d77ea7498ae21ae08e3e983a100c4b3c7cdd52e9e911d",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 13,
+          "op_id": "BC:LOAD",
+          "input_hash": "962c36c1fdc74b28302d77ea7498ae21ae08e3e983a100c4b3c7cdd52e9e911d",
+          "output_hash": "b2b0d5fa1eed034c67448e4b474f380215ac7186fd26bf0e80b4b713ea514fab",
+          "state_ref": "b2b0d5fa1eed034c67448e4b474f380215ac7186fd26bf0e80b4b713ea514fab",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 14,
+          "op_id": "BC:PUSH",
+          "input_hash": "b2b0d5fa1eed034c67448e4b474f380215ac7186fd26bf0e80b4b713ea514fab",
+          "output_hash": "635a9d3029b09e027007df55cd2072320fffcc8a72c0d2526676d1bbed9c6fc8",
+          "state_ref": "635a9d3029b09e027007df55cd2072320fffcc8a72c0d2526676d1bbed9c6fc8",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 15,
+          "op_id": "BC:BINARY",
+          "input_hash": "635a9d3029b09e027007df55cd2072320fffcc8a72c0d2526676d1bbed9c6fc8",
+          "output_hash": "f3489172c14d7f0ddbb84631a28d89e883d3b7c4385bca5a74b0fa2942208498",
+          "state_ref": "f3489172c14d7f0ddbb84631a28d89e883d3b7c4385bca5a74b0fa2942208498",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 16,
+          "op_id": "BC:JUMP_FALSE",
+          "input_hash": "f3489172c14d7f0ddbb84631a28d89e883d3b7c4385bca5a74b0fa2942208498",
+          "output_hash": "e6c1045189989796322df8ed66550804abe028b7258c6460446303789632cd6b",
+          "state_ref": "e6c1045189989796322df8ed66550804abe028b7258c6460446303789632cd6b",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 17,
+          "op_id": "BC:LOOP_GUARD",
+          "input_hash": "e6c1045189989796322df8ed66550804abe028b7258c6460446303789632cd6b",
+          "output_hash": "eaec58dcdd30d8de035c388eff8fc99e4ab38f7a68f31764af080a7da91c1baf",
+          "state_ref": "eaec58dcdd30d8de035c388eff8fc99e4ab38f7a68f31764af080a7da91c1baf",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 18,
+          "op_id": "BC:ENTER_SCOPE",
+          "input_hash": "eaec58dcdd30d8de035c388eff8fc99e4ab38f7a68f31764af080a7da91c1baf",
+          "output_hash": "313d8bc9168caeef11d7de222b15b7c5dd7d6d02dbc60433acb56c4512cbb45d",
+          "state_ref": "313d8bc9168caeef11d7de222b15b7c5dd7d6d02dbc60433acb56c4512cbb45d",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 19,
+          "op_id": "BC:LOAD",
+          "input_hash": "313d8bc9168caeef11d7de222b15b7c5dd7d6d02dbc60433acb56c4512cbb45d",
+          "output_hash": "2232279c86085428aba0f5c6c1773a44a1eab5076c57b4ad0eb28645331f1a00",
+          "state_ref": "2232279c86085428aba0f5c6c1773a44a1eab5076c57b4ad0eb28645331f1a00",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 20,
+          "op_id": "BC:PUSH",
+          "input_hash": "2232279c86085428aba0f5c6c1773a44a1eab5076c57b4ad0eb28645331f1a00",
+          "output_hash": "6396a02169182378757a3b7764e38230d0606545c23e447234f72830c4db440d",
+          "state_ref": "6396a02169182378757a3b7764e38230d0606545c23e447234f72830c4db440d",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 21,
+          "op_id": "BC:UNARY",
+          "input_hash": "6396a02169182378757a3b7764e38230d0606545c23e447234f72830c4db440d",
+          "output_hash": "d485b2a223b06c877c15c46297306a446b531452daf11ba8faadd02a014f6c38",
+          "state_ref": "d485b2a223b06c877c15c46297306a446b531452daf11ba8faadd02a014f6c38",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 22,
+          "op_id": "BC:BINARY",
+          "input_hash": "d485b2a223b06c877c15c46297306a446b531452daf11ba8faadd02a014f6c38",
+          "output_hash": "f8bd1c26ee78521fe9a1954716441493cdbf3332ae9723b08af186857f29f5e6",
+          "state_ref": "f8bd1c26ee78521fe9a1954716441493cdbf3332ae9723b08af186857f29f5e6",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 23,
+          "op_id": "BC:STORE",
+          "input_hash": "f8bd1c26ee78521fe9a1954716441493cdbf3332ae9723b08af186857f29f5e6",
+          "output_hash": "12a3d689ce554cc2772f7ddfa43d611d3ad921179a4c4ac9c9d5c70d52bb17f9",
+          "state_ref": "12a3d689ce554cc2772f7ddfa43d611d3ad921179a4c4ac9c9d5c70d52bb17f9",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 24,
+          "op_id": "BC:LOAD",
+          "input_hash": "12a3d689ce554cc2772f7ddfa43d611d3ad921179a4c4ac9c9d5c70d52bb17f9",
+          "output_hash": "1216015f33ee1f443bca3971871d466283b23a6ec33299d75e058a505f1f6c4a",
+          "state_ref": "1216015f33ee1f443bca3971871d466283b23a6ec33299d75e058a505f1f6c4a",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 25,
+          "op_id": "BC:PUSH",
+          "input_hash": "1216015f33ee1f443bca3971871d466283b23a6ec33299d75e058a505f1f6c4a",
+          "output_hash": "6a65bbcf086e7fce0476155b7f2ed8f8f2a675f64f45562d552834dbee084730",
+          "state_ref": "6a65bbcf086e7fce0476155b7f2ed8f8f2a675f64f45562d552834dbee084730",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 26,
+          "op_id": "BC:BINARY",
+          "input_hash": "6a65bbcf086e7fce0476155b7f2ed8f8f2a675f64f45562d552834dbee084730",
+          "output_hash": "6656e0430f6f6cecd5dc3f0051d9a3e6179e833b7e25d363f03d5701c2f4c7b5",
+          "state_ref": "6656e0430f6f6cecd5dc3f0051d9a3e6179e833b7e25d363f03d5701c2f4c7b5",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 27,
+          "op_id": "BC:STORE",
+          "input_hash": "6656e0430f6f6cecd5dc3f0051d9a3e6179e833b7e25d363f03d5701c2f4c7b5",
+          "output_hash": "9e4ef74210af4a9b30e176e23581354431bbbb2ec2fb85416761d0adede27265",
+          "state_ref": "9e4ef74210af4a9b30e176e23581354431bbbb2ec2fb85416761d0adede27265",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 28,
+          "op_id": "BC:EXIT_SCOPE",
+          "input_hash": "9e4ef74210af4a9b30e176e23581354431bbbb2ec2fb85416761d0adede27265",
+          "output_hash": "ebf5ca43aa607901a145676bfb0e63a7bb6724d243e3317ce3bec2240eb3ed7b",
+          "state_ref": "ebf5ca43aa607901a145676bfb0e63a7bb6724d243e3317ce3bec2240eb3ed7b",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 29,
+          "op_id": "BC:JUMP",
+          "input_hash": "ebf5ca43aa607901a145676bfb0e63a7bb6724d243e3317ce3bec2240eb3ed7b",
+          "output_hash": "9e7ff8d8b1623852ac16b04dfa080a36419330500b57ce2dc77b8ed5fb41d70a",
+          "state_ref": "9e7ff8d8b1623852ac16b04dfa080a36419330500b57ce2dc77b8ed5fb41d70a",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 30,
+          "op_id": "BC:LOAD",
+          "input_hash": "9e7ff8d8b1623852ac16b04dfa080a36419330500b57ce2dc77b8ed5fb41d70a",
+          "output_hash": "d69b9fe97b0020e3a243adf655834e2070738f801b31a937c0acfa2b7806440b",
+          "state_ref": "d69b9fe97b0020e3a243adf655834e2070738f801b31a937c0acfa2b7806440b",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 31,
+          "op_id": "BC:PUSH",
+          "input_hash": "d69b9fe97b0020e3a243adf655834e2070738f801b31a937c0acfa2b7806440b",
+          "output_hash": "1f6bc48231546176f3d70bfd46f9fa2d22a80c04edab887c6ea54b80d6aa74bb",
+          "state_ref": "1f6bc48231546176f3d70bfd46f9fa2d22a80c04edab887c6ea54b80d6aa74bb",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 32,
+          "op_id": "BC:BINARY",
+          "input_hash": "1f6bc48231546176f3d70bfd46f9fa2d22a80c04edab887c6ea54b80d6aa74bb",
+          "output_hash": "c7134a38939c677a81e4a9a4e49515b1e51c29b2de4c7afa010b76d89038e669",
+          "state_ref": "c7134a38939c677a81e4a9a4e49515b1e51c29b2de4c7afa010b76d89038e669",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 33,
+          "op_id": "BC:JUMP_FALSE",
+          "input_hash": "c7134a38939c677a81e4a9a4e49515b1e51c29b2de4c7afa010b76d89038e669",
+          "output_hash": "5e63e52660b721fb52dbc40028c010222f3915c4804073e76dc59ec837c8b26a",
+          "state_ref": "5e63e52660b721fb52dbc40028c010222f3915c4804073e76dc59ec837c8b26a",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 34,
+          "op_id": "BC:LOOP_GUARD",
+          "input_hash": "5e63e52660b721fb52dbc40028c010222f3915c4804073e76dc59ec837c8b26a",
+          "output_hash": "70c8e081522a07bf315afc63b0991f59f8d7b807d6c7c0633109bb234ebefe1b",
+          "state_ref": "70c8e081522a07bf315afc63b0991f59f8d7b807d6c7c0633109bb234ebefe1b",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 35,
+          "op_id": "BC:ENTER_SCOPE",
+          "input_hash": "70c8e081522a07bf315afc63b0991f59f8d7b807d6c7c0633109bb234ebefe1b",
+          "output_hash": "74b8143ad447e83e223d88c4b70692156bc564e001c9f63398079fcf9d4d6702",
+          "state_ref": "74b8143ad447e83e223d88c4b70692156bc564e001c9f63398079fcf9d4d6702",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 36,
+          "op_id": "BC:LOAD",
+          "input_hash": "74b8143ad447e83e223d88c4b70692156bc564e001c9f63398079fcf9d4d6702",
+          "output_hash": "79d4096eb5599f5d0cb706a07d075808d03f66e7a47a20ba4b720a11bc64f747",
+          "state_ref": "79d4096eb5599f5d0cb706a07d075808d03f66e7a47a20ba4b720a11bc64f747",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 37,
+          "op_id": "BC:PUSH",
+          "input_hash": "79d4096eb5599f5d0cb706a07d075808d03f66e7a47a20ba4b720a11bc64f747",
+          "output_hash": "040eda0bbea70639119d7b20b535d3d50cd2a89af864f9e026e4e76fbec8312a",
+          "state_ref": "040eda0bbea70639119d7b20b535d3d50cd2a89af864f9e026e4e76fbec8312a",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 38,
+          "op_id": "BC:UNARY",
+          "input_hash": "040eda0bbea70639119d7b20b535d3d50cd2a89af864f9e026e4e76fbec8312a",
+          "output_hash": "c542b5ecffc5b22e4663baa7c1736b20b19d017391fef3db066033401a2b6029",
+          "state_ref": "c542b5ecffc5b22e4663baa7c1736b20b19d017391fef3db066033401a2b6029",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 39,
+          "op_id": "BC:BINARY",
+          "input_hash": "c542b5ecffc5b22e4663baa7c1736b20b19d017391fef3db066033401a2b6029",
+          "output_hash": "565036a771a9706fe2b56f4fc897cfc49b091ff7b6682f1e013a488164f83a3a",
+          "state_ref": "565036a771a9706fe2b56f4fc897cfc49b091ff7b6682f1e013a488164f83a3a",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 40,
+          "op_id": "BC:STORE",
+          "input_hash": "565036a771a9706fe2b56f4fc897cfc49b091ff7b6682f1e013a488164f83a3a",
+          "output_hash": "44213ce09cd6d20d8cd0e6392edb5ee8ddc1a28b4c1e63bcba1964cefa229511",
+          "state_ref": "44213ce09cd6d20d8cd0e6392edb5ee8ddc1a28b4c1e63bcba1964cefa229511",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 41,
+          "op_id": "BC:LOAD",
+          "input_hash": "44213ce09cd6d20d8cd0e6392edb5ee8ddc1a28b4c1e63bcba1964cefa229511",
+          "output_hash": "4bf88a66ff70c9637a4c800afde77e06db9f441393d428c74d39db9defc7ffc5",
+          "state_ref": "4bf88a66ff70c9637a4c800afde77e06db9f441393d428c74d39db9defc7ffc5",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 42,
+          "op_id": "BC:PUSH",
+          "input_hash": "4bf88a66ff70c9637a4c800afde77e06db9f441393d428c74d39db9defc7ffc5",
+          "output_hash": "33ebb78237303c3e0d7c858ac88e3279226814e083a45c8039ffce037d9997b8",
+          "state_ref": "33ebb78237303c3e0d7c858ac88e3279226814e083a45c8039ffce037d9997b8",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 43,
+          "op_id": "BC:BINARY",
+          "input_hash": "33ebb78237303c3e0d7c858ac88e3279226814e083a45c8039ffce037d9997b8",
+          "output_hash": "bd6b60770065d1e0adc01ba444810a7025a52a6d361136e11e091afde2487230",
+          "state_ref": "bd6b60770065d1e0adc01ba444810a7025a52a6d361136e11e091afde2487230",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 44,
+          "op_id": "BC:STORE",
+          "input_hash": "bd6b60770065d1e0adc01ba444810a7025a52a6d361136e11e091afde2487230",
+          "output_hash": "af18b455c844c7ea612add95cdeb174846b8c14c35477bf9cc6cca028dbb662e",
+          "state_ref": "af18b455c844c7ea612add95cdeb174846b8c14c35477bf9cc6cca028dbb662e",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 45,
+          "op_id": "BC:EXIT_SCOPE",
+          "input_hash": "af18b455c844c7ea612add95cdeb174846b8c14c35477bf9cc6cca028dbb662e",
+          "output_hash": "ab8fa9ba448c2ea0a83de8952e30a1c807ef560b1d78c4637008dc35d3bd49c6",
+          "state_ref": "ab8fa9ba448c2ea0a83de8952e30a1c807ef560b1d78c4637008dc35d3bd49c6",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 46,
+          "op_id": "BC:JUMP",
+          "input_hash": "ab8fa9ba448c2ea0a83de8952e30a1c807ef560b1d78c4637008dc35d3bd49c6",
+          "output_hash": "1c4e55c537a2b5daac7be93be960fe69b589bc8dab3e986f0a8a5c68a04941a3",
+          "state_ref": "1c4e55c537a2b5daac7be93be960fe69b589bc8dab3e986f0a8a5c68a04941a3",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 47,
+          "op_id": "BC:LOAD",
+          "input_hash": "1c4e55c537a2b5daac7be93be960fe69b589bc8dab3e986f0a8a5c68a04941a3",
+          "output_hash": "4a3a59724000d1275b3706366886207b5f1b76a03d87f398bae7115908f8ae10",
+          "state_ref": "4a3a59724000d1275b3706366886207b5f1b76a03d87f398bae7115908f8ae10",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 48,
+          "op_id": "BC:PUSH",
+          "input_hash": "4a3a59724000d1275b3706366886207b5f1b76a03d87f398bae7115908f8ae10",
+          "output_hash": "b7fb9853a1cf64f640f8e8b5b9317c8b64b67a8907b733772910df6bff582540",
+          "state_ref": "b7fb9853a1cf64f640f8e8b5b9317c8b64b67a8907b733772910df6bff582540",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 49,
+          "op_id": "BC:BINARY",
+          "input_hash": "b7fb9853a1cf64f640f8e8b5b9317c8b64b67a8907b733772910df6bff582540",
+          "output_hash": "8eb0d42b3767b5aba70677e0a7dded6fb12211c1eab2529d1e0741a9e9d8df3c",
+          "state_ref": "8eb0d42b3767b5aba70677e0a7dded6fb12211c1eab2529d1e0741a9e9d8df3c",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 50,
+          "op_id": "BC:JUMP_FALSE",
+          "input_hash": "8eb0d42b3767b5aba70677e0a7dded6fb12211c1eab2529d1e0741a9e9d8df3c",
+          "output_hash": "6c4857b4e331c91b1916bc9e4e2bb12231b66816c3e10917c40e2a0ab60fa0f7",
+          "state_ref": "6c4857b4e331c91b1916bc9e4e2bb12231b66816c3e10917c40e2a0ab60fa0f7",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 51,
+          "op_id": "BC:LOOP_GUARD",
+          "input_hash": "6c4857b4e331c91b1916bc9e4e2bb12231b66816c3e10917c40e2a0ab60fa0f7",
+          "output_hash": "d5fd868605f670a7bb001dbbc52a04587b15f36c3553587925e54d8ea0bd4ce7",
+          "state_ref": "d5fd868605f670a7bb001dbbc52a04587b15f36c3553587925e54d8ea0bd4ce7",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 52,
+          "op_id": "BC:ENTER_SCOPE",
+          "input_hash": "d5fd868605f670a7bb001dbbc52a04587b15f36c3553587925e54d8ea0bd4ce7",
+          "output_hash": "c3e363088e5e03bed52a164657fe6a277fac1033175b5bacf3451c170892ef2e",
+          "state_ref": "c3e363088e5e03bed52a164657fe6a277fac1033175b5bacf3451c170892ef2e",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 53,
+          "op_id": "BC:LOAD",
+          "input_hash": "c3e363088e5e03bed52a164657fe6a277fac1033175b5bacf3451c170892ef2e",
+          "output_hash": "c2be56dac252cf870248dd2b80e7db983e55e8c79306f05abd8b47b3137cd7de",
+          "state_ref": "c2be56dac252cf870248dd2b80e7db983e55e8c79306f05abd8b47b3137cd7de",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 54,
+          "op_id": "BC:PUSH",
+          "input_hash": "c2be56dac252cf870248dd2b80e7db983e55e8c79306f05abd8b47b3137cd7de",
+          "output_hash": "9d0a98a51d725e58756519149039bfdd494d1325c799fe62c8338a08e8d66781",
+          "state_ref": "9d0a98a51d725e58756519149039bfdd494d1325c799fe62c8338a08e8d66781",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 55,
+          "op_id": "BC:UNARY",
+          "input_hash": "9d0a98a51d725e58756519149039bfdd494d1325c799fe62c8338a08e8d66781",
+          "output_hash": "a17ad72f8c7361b081c11cc83384f4b09dfa18f7b2026d51aba5b0f21396d144",
+          "state_ref": "a17ad72f8c7361b081c11cc83384f4b09dfa18f7b2026d51aba5b0f21396d144",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 56,
+          "op_id": "BC:BINARY",
+          "input_hash": "a17ad72f8c7361b081c11cc83384f4b09dfa18f7b2026d51aba5b0f21396d144",
+          "output_hash": "ee13983d85c7076f69dcfa06e0e0cddf077f24c09e21fe53ad26bf43330841bc",
+          "state_ref": "ee13983d85c7076f69dcfa06e0e0cddf077f24c09e21fe53ad26bf43330841bc",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 57,
+          "op_id": "BC:STORE",
+          "input_hash": "ee13983d85c7076f69dcfa06e0e0cddf077f24c09e21fe53ad26bf43330841bc",
+          "output_hash": "2fd67f32a84cbf1a61ee46814efde50ba6fff05e8f726ab3eb9441fb8339e936",
+          "state_ref": "2fd67f32a84cbf1a61ee46814efde50ba6fff05e8f726ab3eb9441fb8339e936",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 58,
+          "op_id": "BC:LOAD",
+          "input_hash": "2fd67f32a84cbf1a61ee46814efde50ba6fff05e8f726ab3eb9441fb8339e936",
+          "output_hash": "a37b3bc412a161daf8b699bf202462750fe757f03b46b9fd85e8b358ddbe0fe6",
+          "state_ref": "a37b3bc412a161daf8b699bf202462750fe757f03b46b9fd85e8b358ddbe0fe6",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 59,
+          "op_id": "BC:PUSH",
+          "input_hash": "a37b3bc412a161daf8b699bf202462750fe757f03b46b9fd85e8b358ddbe0fe6",
+          "output_hash": "f7c9db601f5d574e18797b630d7f2c51ed1c0a9af1c608cc44b730815c5fd04f",
+          "state_ref": "f7c9db601f5d574e18797b630d7f2c51ed1c0a9af1c608cc44b730815c5fd04f",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 60,
+          "op_id": "BC:BINARY",
+          "input_hash": "f7c9db601f5d574e18797b630d7f2c51ed1c0a9af1c608cc44b730815c5fd04f",
+          "output_hash": "985f92e9432431c346079d0649dde21ada20c11bc0e353b0957c49cc1ca65470",
+          "state_ref": "985f92e9432431c346079d0649dde21ada20c11bc0e353b0957c49cc1ca65470",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 61,
+          "op_id": "BC:STORE",
+          "input_hash": "985f92e9432431c346079d0649dde21ada20c11bc0e353b0957c49cc1ca65470",
+          "output_hash": "1c575dff004c1fd8336be5528fa702d3d7a3f502f62af0195c37978c15364b54",
+          "state_ref": "1c575dff004c1fd8336be5528fa702d3d7a3f502f62af0195c37978c15364b54",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 62,
+          "op_id": "BC:EXIT_SCOPE",
+          "input_hash": "1c575dff004c1fd8336be5528fa702d3d7a3f502f62af0195c37978c15364b54",
+          "output_hash": "0079104bce9d807d55fb1c25e224af6d45e81aa0ffe6cdc5451477b12cebb938",
+          "state_ref": "0079104bce9d807d55fb1c25e224af6d45e81aa0ffe6cdc5451477b12cebb938",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 63,
+          "op_id": "BC:JUMP",
+          "input_hash": "0079104bce9d807d55fb1c25e224af6d45e81aa0ffe6cdc5451477b12cebb938",
+          "output_hash": "7f2c524ff16e8625146827326f34a444c38bdefa03cd8b686ea7b2ed884dce4e",
+          "state_ref": "7f2c524ff16e8625146827326f34a444c38bdefa03cd8b686ea7b2ed884dce4e",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 64,
+          "op_id": "BC:LOAD",
+          "input_hash": "7f2c524ff16e8625146827326f34a444c38bdefa03cd8b686ea7b2ed884dce4e",
+          "output_hash": "9c05228e4af6f54835333e062d8fbfa47bc4c9c8bb463efc8190603a4a641244",
+          "state_ref": "9c05228e4af6f54835333e062d8fbfa47bc4c9c8bb463efc8190603a4a641244",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 65,
+          "op_id": "BC:PUSH",
+          "input_hash": "9c05228e4af6f54835333e062d8fbfa47bc4c9c8bb463efc8190603a4a641244",
+          "output_hash": "baa045d5a835629b7359258fd8563c49de1496d9556a505944663955d1c319c5",
+          "state_ref": "baa045d5a835629b7359258fd8563c49de1496d9556a505944663955d1c319c5",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 66,
+          "op_id": "BC:BINARY",
+          "input_hash": "baa045d5a835629b7359258fd8563c49de1496d9556a505944663955d1c319c5",
+          "output_hash": "87bcc92490e1e9010007395a7fddf96025f2a1d9fd2965b9d84889ea8c171b12",
+          "state_ref": "87bcc92490e1e9010007395a7fddf96025f2a1d9fd2965b9d84889ea8c171b12",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 67,
+          "op_id": "BC:JUMP_FALSE",
+          "input_hash": "87bcc92490e1e9010007395a7fddf96025f2a1d9fd2965b9d84889ea8c171b12",
+          "output_hash": "ff566042d4127542004e07ba4ecd8db8f89721e2580951d6c53d1fc8f7f166d5",
+          "state_ref": "ff566042d4127542004e07ba4ecd8db8f89721e2580951d6c53d1fc8f7f166d5",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 68,
+          "op_id": "BC:LOAD",
+          "input_hash": "ff566042d4127542004e07ba4ecd8db8f89721e2580951d6c53d1fc8f7f166d5",
+          "output_hash": "27a5601f20b48c619608e86403bf36fefc82cd90c4472306a54c2109106f847d",
+          "state_ref": "27a5601f20b48c619608e86403bf36fefc82cd90c4472306a54c2109106f847d",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 69,
+          "op_id": "BC:PUSH",
+          "input_hash": "27a5601f20b48c619608e86403bf36fefc82cd90c4472306a54c2109106f847d",
+          "output_hash": "885b2f6ad58f95865c190dd7ff95a81d6008d86c00d9a2704e3552bd8ef0d522",
+          "state_ref": "885b2f6ad58f95865c190dd7ff95a81d6008d86c00d9a2704e3552bd8ef0d522",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 70,
+          "op_id": "BC:PUSH",
+          "input_hash": "885b2f6ad58f95865c190dd7ff95a81d6008d86c00d9a2704e3552bd8ef0d522",
+          "output_hash": "6fdd8c36f5f32637e48a46e2a42fdd0064a9ea5abebc5e6074b543a6503c0f9f",
+          "state_ref": "6fdd8c36f5f32637e48a46e2a42fdd0064a9ea5abebc5e6074b543a6503c0f9f",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 71,
+          "op_id": "BC:PUSH",
+          "input_hash": "6fdd8c36f5f32637e48a46e2a42fdd0064a9ea5abebc5e6074b543a6503c0f9f",
+          "output_hash": "aa01f204ddb6270ce2f4c4f9d57fb7897f2e0574ab9f9b56279415c97827055b",
+          "state_ref": "aa01f204ddb6270ce2f4c4f9d57fb7897f2e0574ab9f9b56279415c97827055b",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 72,
+          "op_id": "BC:CALL",
+          "input_hash": "aa01f204ddb6270ce2f4c4f9d57fb7897f2e0574ab9f9b56279415c97827055b",
+          "output_hash": "c1750ad9c1be9242dfac61319499b3fecd277b54b70bbf5ebad5a1b44dc70086",
+          "state_ref": "c1750ad9c1be9242dfac61319499b3fecd277b54b70bbf5ebad5a1b44dc70086",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 73,
+          "op_id": "BC:LET",
+          "input_hash": "c1750ad9c1be9242dfac61319499b3fecd277b54b70bbf5ebad5a1b44dc70086",
+          "output_hash": "eb627b3bd07168c7986474a81d138fc56448051b50681105dee7772055c4cd66",
+          "state_ref": "eb627b3bd07168c7986474a81d138fc56448051b50681105dee7772055c4cd66",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 74,
+          "op_id": "BC:PUSH",
+          "input_hash": "eb627b3bd07168c7986474a81d138fc56448051b50681105dee7772055c4cd66",
+          "output_hash": "da1f138dfe1410a45d6458a5a8d3faecaaebb1be0a84b2968dd2a9d594068a67",
+          "state_ref": "da1f138dfe1410a45d6458a5a8d3faecaaebb1be0a84b2968dd2a9d594068a67",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 75,
+          "op_id": "BC:PUSH",
+          "input_hash": "da1f138dfe1410a45d6458a5a8d3faecaaebb1be0a84b2968dd2a9d594068a67",
+          "output_hash": "4c425b693625ddd6dfe0aad39b4fcf651c69663094597aec682302effa085ba5",
+          "state_ref": "4c425b693625ddd6dfe0aad39b4fcf651c69663094597aec682302effa085ba5",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 76,
+          "op_id": "BC:PUSH",
+          "input_hash": "4c425b693625ddd6dfe0aad39b4fcf651c69663094597aec682302effa085ba5",
+          "output_hash": "fc0ded1bc4df444f2af922fa091970d85c066d9b73950ad300e2e933fd346fcc",
+          "state_ref": "fc0ded1bc4df444f2af922fa091970d85c066d9b73950ad300e2e933fd346fcc",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 77,
+          "op_id": "BC:PUSH",
+          "input_hash": "fc0ded1bc4df444f2af922fa091970d85c066d9b73950ad300e2e933fd346fcc",
+          "output_hash": "a477dab968305e96e7c4e9dc27b77c5138ac82eeef1787758302c65f88d00cb5",
+          "state_ref": "a477dab968305e96e7c4e9dc27b77c5138ac82eeef1787758302c65f88d00cb5",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 78,
+          "op_id": "BC:CALL",
+          "input_hash": "a477dab968305e96e7c4e9dc27b77c5138ac82eeef1787758302c65f88d00cb5",
+          "output_hash": "a313225047d3286796ca1f83d1c31d309e8963be5583569c71933849c1de6103",
+          "state_ref": "a313225047d3286796ca1f83d1c31d309e8963be5583569c71933849c1de6103",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 79,
+          "op_id": "BC:LET",
+          "input_hash": "a313225047d3286796ca1f83d1c31d309e8963be5583569c71933849c1de6103",
+          "output_hash": "208eb1c1a1629425154d3ed01e559909ca16d2a287c21171180326e9a5b7137d",
+          "state_ref": "208eb1c1a1629425154d3ed01e559909ca16d2a287c21171180326e9a5b7137d",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 80,
+          "op_id": "BC:LOAD",
+          "input_hash": "208eb1c1a1629425154d3ed01e559909ca16d2a287c21171180326e9a5b7137d",
+          "output_hash": "26bb889d05815e39fe666c15c0b82f21cd8d90a2fd6c865b3ba5315331eeed4f",
+          "state_ref": "26bb889d05815e39fe666c15c0b82f21cd8d90a2fd6c865b3ba5315331eeed4f",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 81,
+          "op_id": "BC:LOAD",
+          "input_hash": "26bb889d05815e39fe666c15c0b82f21cd8d90a2fd6c865b3ba5315331eeed4f",
+          "output_hash": "9269394de7b8fc5ca916b0f20108358429f554c64f5be7a5d8f8048e1e9b0b22",
+          "state_ref": "9269394de7b8fc5ca916b0f20108358429f554c64f5be7a5d8f8048e1e9b0b22",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 82,
+          "op_id": "BC:CALL",
+          "input_hash": "9269394de7b8fc5ca916b0f20108358429f554c64f5be7a5d8f8048e1e9b0b22",
+          "output_hash": "3fcf7ab59a6f92a5bdb09b1d14315e118c51bf282ac8ffa7be97b88fa42a8935",
+          "state_ref": "3fcf7ab59a6f92a5bdb09b1d14315e118c51bf282ac8ffa7be97b88fa42a8935",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 83,
+          "op_id": "BC:CALL",
+          "input_hash": "3fcf7ab59a6f92a5bdb09b1d14315e118c51bf282ac8ffa7be97b88fa42a8935",
+          "output_hash": "de074f9a9dff743589e93b785efad230231aa3336ffaf49efc0fc1f450f15a1f",
+          "state_ref": "de074f9a9dff743589e93b785efad230231aa3336ffaf49efc0fc1f450f15a1f",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 84,
+          "op_id": "BC:STORE",
+          "input_hash": "de074f9a9dff743589e93b785efad230231aa3336ffaf49efc0fc1f450f15a1f",
+          "output_hash": "9f83059524af2dce743bb2c8d5bb043704cfedac95f94381d20ea3f38895f383",
+          "state_ref": "9f83059524af2dce743bb2c8d5bb043704cfedac95f94381d20ea3f38895f383",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 85,
+          "op_id": "BC:LOAD",
+          "input_hash": "9f83059524af2dce743bb2c8d5bb043704cfedac95f94381d20ea3f38895f383",
+          "output_hash": "81b8ac936b1248b48957f09b15aa4903ab2b2ead1f97edd29cb51954e1fb1157",
+          "state_ref": "81b8ac936b1248b48957f09b15aa4903ab2b2ead1f97edd29cb51954e1fb1157",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 86,
+          "op_id": "BC:STORE",
+          "input_hash": "81b8ac936b1248b48957f09b15aa4903ab2b2ead1f97edd29cb51954e1fb1157",
+          "output_hash": "8805eec1c8686bad97c20ba144a9d11d9a271f623769ab6e9477331c09044557",
+          "state_ref": "8805eec1c8686bad97c20ba144a9d11d9a271f623769ab6e9477331c09044557",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 87,
+          "op_id": "BC:LOAD",
+          "input_hash": "8805eec1c8686bad97c20ba144a9d11d9a271f623769ab6e9477331c09044557",
+          "output_hash": "5721c6e505c2e36bbcfdbe4b91f4b03ba227e4101741403320eebc5bc83f7845",
+          "state_ref": "5721c6e505c2e36bbcfdbe4b91f4b03ba227e4101741403320eebc5bc83f7845",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 88,
+          "op_id": "BC:PUSH",
+          "input_hash": "5721c6e505c2e36bbcfdbe4b91f4b03ba227e4101741403320eebc5bc83f7845",
+          "output_hash": "a8b866fcf863e207fd05bf2163d0c3cce52a7cadcff2ac2e2f5cf1e713762e21",
+          "state_ref": "a8b866fcf863e207fd05bf2163d0c3cce52a7cadcff2ac2e2f5cf1e713762e21",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 89,
+          "op_id": "BC:BINARY",
+          "input_hash": "a8b866fcf863e207fd05bf2163d0c3cce52a7cadcff2ac2e2f5cf1e713762e21",
+          "output_hash": "11c7430fdf0f885ce54f4894868ec66f5b662c7d14ea546c96916839f761939b",
+          "state_ref": "11c7430fdf0f885ce54f4894868ec66f5b662c7d14ea546c96916839f761939b",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 90,
+          "op_id": "BC:STORE",
+          "input_hash": "11c7430fdf0f885ce54f4894868ec66f5b662c7d14ea546c96916839f761939b",
+          "output_hash": "27babf834b01c40fc88dafdf16613cda530e5c15aac3e17b6c292231407592cb",
+          "state_ref": "27babf834b01c40fc88dafdf16613cda530e5c15aac3e17b6c292231407592cb",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 91,
+          "op_id": "BC:LOAD",
+          "input_hash": "27babf834b01c40fc88dafdf16613cda530e5c15aac3e17b6c292231407592cb",
+          "output_hash": "a63e545da9d6df08d6ba6fd277071062bc43e62218a7ea18cbf4cc2a0c7a937c",
+          "state_ref": "a63e545da9d6df08d6ba6fd277071062bc43e62218a7ea18cbf4cc2a0c7a937c",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 92,
+          "op_id": "BC:STORE",
+          "input_hash": "a63e545da9d6df08d6ba6fd277071062bc43e62218a7ea18cbf4cc2a0c7a937c",
+          "output_hash": "fa25684d4ebc043e547269b562a998e53363a1a13a5c7c3b3b66fb4618b1b41b",
+          "state_ref": "fa25684d4ebc043e547269b562a998e53363a1a13a5c7c3b3b66fb4618b1b41b",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 93,
+          "op_id": "BC:LOAD",
+          "input_hash": "fa25684d4ebc043e547269b562a998e53363a1a13a5c7c3b3b66fb4618b1b41b",
+          "output_hash": "4963c7317eaf66dff6055e4443288905d7a61d47802e7a55234124a63c761e0b",
+          "state_ref": "4963c7317eaf66dff6055e4443288905d7a61d47802e7a55234124a63c761e0b",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 94,
+          "op_id": "BC:PUSH",
+          "input_hash": "4963c7317eaf66dff6055e4443288905d7a61d47802e7a55234124a63c761e0b",
+          "output_hash": "0736cba83428956ee5110dfc4455e2e27ed345b42c77c72ea5a1bc4f0d3e2967",
+          "state_ref": "0736cba83428956ee5110dfc4455e2e27ed345b42c77c72ea5a1bc4f0d3e2967",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 95,
+          "op_id": "BC:PUSH",
+          "input_hash": "0736cba83428956ee5110dfc4455e2e27ed345b42c77c72ea5a1bc4f0d3e2967",
+          "output_hash": "8f245fe67cdaf12fe327b21d6bf1762c70a801296363dff8b3ec0735722ea478",
+          "state_ref": "8f245fe67cdaf12fe327b21d6bf1762c70a801296363dff8b3ec0735722ea478",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 96,
+          "op_id": "BC:CALL",
+          "input_hash": "8f245fe67cdaf12fe327b21d6bf1762c70a801296363dff8b3ec0735722ea478",
+          "output_hash": "fb3acd5c2cb467aa45b49b93afb5ed2a57c5d049e0842ca891b059549fc208cf",
+          "state_ref": "fb3acd5c2cb467aa45b49b93afb5ed2a57c5d049e0842ca891b059549fc208cf",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 97,
+          "op_id": "BC:LET",
+          "input_hash": "fb3acd5c2cb467aa45b49b93afb5ed2a57c5d049e0842ca891b059549fc208cf",
+          "output_hash": "64e0561c390a06ccec90984f0a210ed38dc6daafe4c30d2d580ebd628369df56",
+          "state_ref": "64e0561c390a06ccec90984f0a210ed38dc6daafe4c30d2d580ebd628369df56",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 98,
+          "op_id": "BC:LOAD",
+          "input_hash": "64e0561c390a06ccec90984f0a210ed38dc6daafe4c30d2d580ebd628369df56",
+          "output_hash": "b419149db2d64d34ce4670dcf367eda89b700b4571b8ae336f09ce70da7000e8",
+          "state_ref": "b419149db2d64d34ce4670dcf367eda89b700b4571b8ae336f09ce70da7000e8",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 99,
+          "op_id": "BC:PUSH",
+          "input_hash": "b419149db2d64d34ce4670dcf367eda89b700b4571b8ae336f09ce70da7000e8",
+          "output_hash": "59b04381515e9e7de5e77051f348ce44c33b6b04e9c54b155c940c1e066ada23",
+          "state_ref": "59b04381515e9e7de5e77051f348ce44c33b6b04e9c54b155c940c1e066ada23",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 100,
+          "op_id": "BC:CALL",
+          "input_hash": "59b04381515e9e7de5e77051f348ce44c33b6b04e9c54b155c940c1e066ada23",
+          "output_hash": "108ce189e7b96b750efd265fafb22d0c092253371f4d1f721232275eec5f5e71",
+          "state_ref": "108ce189e7b96b750efd265fafb22d0c092253371f4d1f721232275eec5f5e71",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 101,
+          "op_id": "BC:LET",
+          "input_hash": "108ce189e7b96b750efd265fafb22d0c092253371f4d1f721232275eec5f5e71",
+          "output_hash": "d8f1eb6e48167b996ffee14dc9ed558bdc8600f62ce23415c7478505160b96ca",
+          "state_ref": "d8f1eb6e48167b996ffee14dc9ed558bdc8600f62ce23415c7478505160b96ca",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 102,
+          "op_id": "BC:LOAD",
+          "input_hash": "d8f1eb6e48167b996ffee14dc9ed558bdc8600f62ce23415c7478505160b96ca",
+          "output_hash": "caa4b77f5c3a3f4dcf4324d20bc33c91903f227c567a3da1febfcf4097f90e57",
+          "state_ref": "caa4b77f5c3a3f4dcf4324d20bc33c91903f227c567a3da1febfcf4097f90e57",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 103,
+          "op_id": "BC:LOAD",
+          "input_hash": "caa4b77f5c3a3f4dcf4324d20bc33c91903f227c567a3da1febfcf4097f90e57",
+          "output_hash": "c43e5078844ef12342b162ee4530db62cb985de47ae1139b083c68b89857bd83",
+          "state_ref": "c43e5078844ef12342b162ee4530db62cb985de47ae1139b083c68b89857bd83",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 104,
+          "op_id": "BC:CALL",
+          "input_hash": "c43e5078844ef12342b162ee4530db62cb985de47ae1139b083c68b89857bd83",
+          "output_hash": "e6fb7b16f1848105578a7c66b1a896d5971b1e8487af2406a50aa19c973aad78",
+          "state_ref": "e6fb7b16f1848105578a7c66b1a896d5971b1e8487af2406a50aa19c973aad78",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 105,
+          "op_id": "BC:CALL",
+          "input_hash": "e6fb7b16f1848105578a7c66b1a896d5971b1e8487af2406a50aa19c973aad78",
+          "output_hash": "1ecde8d431a0ef1b2e208860cd6a0893d925b93c639e6c4541926ad36652385d",
+          "state_ref": "1ecde8d431a0ef1b2e208860cd6a0893d925b93c639e6c4541926ad36652385d",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 106,
+          "op_id": "BC:STORE",
+          "input_hash": "1ecde8d431a0ef1b2e208860cd6a0893d925b93c639e6c4541926ad36652385d",
+          "output_hash": "24909018400e11363cf3f4e169fa5566a401acfe09cc6e63694ffbfc3e4e7041",
+          "state_ref": "24909018400e11363cf3f4e169fa5566a401acfe09cc6e63694ffbfc3e4e7041",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 107,
+          "op_id": "BC:PUSH",
+          "input_hash": "24909018400e11363cf3f4e169fa5566a401acfe09cc6e63694ffbfc3e4e7041",
+          "output_hash": "58191bd8613d068301e8fc45baed14a335946c349cb8e223b38f0f37798bcde2",
+          "state_ref": "58191bd8613d068301e8fc45baed14a335946c349cb8e223b38f0f37798bcde2",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 108,
+          "op_id": "BC:UNARY",
+          "input_hash": "58191bd8613d068301e8fc45baed14a335946c349cb8e223b38f0f37798bcde2",
+          "output_hash": "aac3c2862c2eb138621c634fa082cc54722dc6678443b3c600ecf06bcca4f6e5",
+          "state_ref": "aac3c2862c2eb138621c634fa082cc54722dc6678443b3c600ecf06bcca4f6e5",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 109,
+          "op_id": "BC:LOAD",
+          "input_hash": "aac3c2862c2eb138621c634fa082cc54722dc6678443b3c600ecf06bcca4f6e5",
+          "output_hash": "4d88955fa66eaf21969195ce548c91c40f91763b5a0ba2c8e8ba308ba9f224e8",
+          "state_ref": "4d88955fa66eaf21969195ce548c91c40f91763b5a0ba2c8e8ba308ba9f224e8",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 110,
+          "op_id": "BC:RECORD",
+          "input_hash": "4d88955fa66eaf21969195ce548c91c40f91763b5a0ba2c8e8ba308ba9f224e8",
+          "output_hash": "09b50fd0dc3835c23cb6a67942ce60daebdd8fb2ee05b3df0dc87a9bf0e3bfad",
+          "state_ref": "09b50fd0dc3835c23cb6a67942ce60daebdd8fb2ee05b3df0dc87a9bf0e3bfad",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 111,
+          "op_id": "BC:CALL",
+          "input_hash": "09b50fd0dc3835c23cb6a67942ce60daebdd8fb2ee05b3df0dc87a9bf0e3bfad",
+          "output_hash": "7f33e9b3056a1e6bbc16218ae492148a632ceb654ac8d065c660be43f24a18c1",
+          "state_ref": "7f33e9b3056a1e6bbc16218ae492148a632ceb654ac8d065c660be43f24a18c1",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 112,
+          "op_id": "BC:ENTER_SCOPE",
+          "input_hash": "7f33e9b3056a1e6bbc16218ae492148a632ceb654ac8d065c660be43f24a18c1",
+          "output_hash": "304cd718cb88e62764e8f44959696f8583225153e395dfc5b78702d7a2b107a2",
+          "state_ref": "304cd718cb88e62764e8f44959696f8583225153e395dfc5b78702d7a2b107a2",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 113,
+          "op_id": "BC:LOAD",
+          "input_hash": "304cd718cb88e62764e8f44959696f8583225153e395dfc5b78702d7a2b107a2",
+          "output_hash": "8e683bb69a7f2885f3e82b53c5a5656a623a3bf844765a1fe5287df862258b39",
+          "state_ref": "8e683bb69a7f2885f3e82b53c5a5656a623a3bf844765a1fe5287df862258b39",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 114,
+          "op_id": "BC:FIELD",
+          "input_hash": "8e683bb69a7f2885f3e82b53c5a5656a623a3bf844765a1fe5287df862258b39",
+          "output_hash": "2e16a0aa4bb339751a9686d307075193f89d6cbb8cdd655e8368169ffeebf433",
+          "state_ref": "2e16a0aa4bb339751a9686d307075193f89d6cbb8cdd655e8368169ffeebf433",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 115,
+          "op_id": "BC:LOAD",
+          "input_hash": "2e16a0aa4bb339751a9686d307075193f89d6cbb8cdd655e8368169ffeebf433",
+          "output_hash": "c39472b2ad96864f59677936a9ced482a9d2ba459771b92f11980135df3c443c",
+          "state_ref": "c39472b2ad96864f59677936a9ced482a9d2ba459771b92f11980135df3c443c",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 116,
+          "op_id": "BC:FIELD",
+          "input_hash": "c39472b2ad96864f59677936a9ced482a9d2ba459771b92f11980135df3c443c",
+          "output_hash": "f40d45555ba52534660a7ada84a22b2ed8762acea904e01b57d8e244160c68c7",
+          "state_ref": "f40d45555ba52534660a7ada84a22b2ed8762acea904e01b57d8e244160c68c7",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 117,
+          "op_id": "BC:BINARY",
+          "input_hash": "f40d45555ba52534660a7ada84a22b2ed8762acea904e01b57d8e244160c68c7",
+          "output_hash": "6d8929b5d9f798ba990de14e3ee8b6d12afad696200deadb8ad250e7eb8e0f1e",
+          "state_ref": "6d8929b5d9f798ba990de14e3ee8b6d12afad696200deadb8ad250e7eb8e0f1e",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 118,
+          "op_id": "BC:RETURN",
+          "input_hash": "6d8929b5d9f798ba990de14e3ee8b6d12afad696200deadb8ad250e7eb8e0f1e",
+          "output_hash": "7dddbadb7f8d3f3504023f5a53e7af69e9f11940a26538acc17933e63f370ecb",
+          "state_ref": "7dddbadb7f8d3f3504023f5a53e7af69e9f11940a26538acc17933e63f370ecb",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 119,
+          "op_id": "BC:STORE",
+          "input_hash": "7dddbadb7f8d3f3504023f5a53e7af69e9f11940a26538acc17933e63f370ecb",
+          "output_hash": "002c8749366c83f6b87ab7aef74c678b7f83066c95f1ba9ceccac2facf172cc9",
+          "state_ref": "002c8749366c83f6b87ab7aef74c678b7f83066c95f1ba9ceccac2facf172cc9",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 120,
+          "op_id": "BC:LOAD",
+          "input_hash": "002c8749366c83f6b87ab7aef74c678b7f83066c95f1ba9ceccac2facf172cc9",
+          "output_hash": "f85e6ed6d22f793f050ce126543b87995514bd55c1788d7076846e09266f16cb",
+          "state_ref": "f85e6ed6d22f793f050ce126543b87995514bd55c1788d7076846e09266f16cb",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 121,
+          "op_id": "BC:UNARY",
+          "input_hash": "f85e6ed6d22f793f050ce126543b87995514bd55c1788d7076846e09266f16cb",
+          "output_hash": "f80ae0d7541672b9ef94615151b1f5dfe7d0e6dba92c3283e1b01ff39b598c5a",
+          "state_ref": "f80ae0d7541672b9ef94615151b1f5dfe7d0e6dba92c3283e1b01ff39b598c5a",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 122,
+          "op_id": "BC:STORE",
+          "input_hash": "f80ae0d7541672b9ef94615151b1f5dfe7d0e6dba92c3283e1b01ff39b598c5a",
+          "output_hash": "ab41b11488091ba8f3cd702c57ff1ce77e13e61d28e922e5d3866ef74fa255d2",
+          "state_ref": "ab41b11488091ba8f3cd702c57ff1ce77e13e61d28e922e5d3866ef74fa255d2",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 123,
+          "op_id": "BC:LOAD",
+          "input_hash": "ab41b11488091ba8f3cd702c57ff1ce77e13e61d28e922e5d3866ef74fa255d2",
+          "output_hash": "3796631a094ff75e3648b4997e5d4db47d778db4210c0d8d0f24ed87a4454aa3",
+          "state_ref": "3796631a094ff75e3648b4997e5d4db47d778db4210c0d8d0f24ed87a4454aa3",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 124,
+          "op_id": "BC:PUSH",
+          "input_hash": "3796631a094ff75e3648b4997e5d4db47d778db4210c0d8d0f24ed87a4454aa3",
+          "output_hash": "f803705e7335fd6c4c63410997b75671651558b88651b932fc037ac02696924d",
+          "state_ref": "f803705e7335fd6c4c63410997b75671651558b88651b932fc037ac02696924d",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 125,
+          "op_id": "BC:LIST",
+          "input_hash": "f803705e7335fd6c4c63410997b75671651558b88651b932fc037ac02696924d",
+          "output_hash": "556f13f14d95d147b5eb6d6d8b43983390c96111db50ec478bd5cb23c7c8ba9e",
+          "state_ref": "556f13f14d95d147b5eb6d6d8b43983390c96111db50ec478bd5cb23c7c8ba9e",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 126,
+          "op_id": "BC:LET",
+          "input_hash": "556f13f14d95d147b5eb6d6d8b43983390c96111db50ec478bd5cb23c7c8ba9e",
+          "output_hash": "ff30370aa6bab34ba5200e4cafc76bd5fb3a4c0d3fe6ec4f9701e2329a8844e8",
+          "state_ref": "ff30370aa6bab34ba5200e4cafc76bd5fb3a4c0d3fe6ec4f9701e2329a8844e8",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 127,
+          "op_id": "BC:LOAD",
+          "input_hash": "ff30370aa6bab34ba5200e4cafc76bd5fb3a4c0d3fe6ec4f9701e2329a8844e8",
+          "output_hash": "2ce3c2ca29b01112f2626f98eec95cd5dc1a2a0bb73104a38d6cf6017e4c9477",
+          "state_ref": "2ce3c2ca29b01112f2626f98eec95cd5dc1a2a0bb73104a38d6cf6017e4c9477",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 128,
+          "op_id": "BC:PUSH",
+          "input_hash": "2ce3c2ca29b01112f2626f98eec95cd5dc1a2a0bb73104a38d6cf6017e4c9477",
+          "output_hash": "8d3e2c33ee2c7dbad4afbb2c6f6ad9eae5c100777172b5cdbe981bbcd55b3eaf",
+          "state_ref": "8d3e2c33ee2c7dbad4afbb2c6f6ad9eae5c100777172b5cdbe981bbcd55b3eaf",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 129,
+          "op_id": "BC:INDEX",
+          "input_hash": "8d3e2c33ee2c7dbad4afbb2c6f6ad9eae5c100777172b5cdbe981bbcd55b3eaf",
+          "output_hash": "8f51ac96dca9e4bdab6a758d38ea59eb093857f0df0fc0dbc0b4a0a920131d8b",
+          "state_ref": "8f51ac96dca9e4bdab6a758d38ea59eb093857f0df0fc0dbc0b4a0a920131d8b",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 130,
+          "op_id": "BC:LOAD",
+          "input_hash": "8f51ac96dca9e4bdab6a758d38ea59eb093857f0df0fc0dbc0b4a0a920131d8b",
+          "output_hash": "ecde076f5793d812a7b3d9c8bc85a60d1f85d64a81534e34c838bbab171caa90",
+          "state_ref": "ecde076f5793d812a7b3d9c8bc85a60d1f85d64a81534e34c838bbab171caa90",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 131,
+          "op_id": "BC:PUSH",
+          "input_hash": "ecde076f5793d812a7b3d9c8bc85a60d1f85d64a81534e34c838bbab171caa90",
+          "output_hash": "12d1be80a33038e1b70be845eb1587fe9849508ba3d2f04ac4fa0b60b7ed2d3f",
+          "state_ref": "12d1be80a33038e1b70be845eb1587fe9849508ba3d2f04ac4fa0b60b7ed2d3f",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 132,
+          "op_id": "BC:INDEX",
+          "input_hash": "12d1be80a33038e1b70be845eb1587fe9849508ba3d2f04ac4fa0b60b7ed2d3f",
+          "output_hash": "9d81c7ba875189be9572eff4f41d65280a84e5db39b9bfc045d7c757eeee8177",
+          "state_ref": "9d81c7ba875189be9572eff4f41d65280a84e5db39b9bfc045d7c757eeee8177",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 133,
+          "op_id": "BC:BINARY",
+          "input_hash": "9d81c7ba875189be9572eff4f41d65280a84e5db39b9bfc045d7c757eeee8177",
+          "output_hash": "64677937f1398d16e09920fa3ce177c4d037349c72498aeff2cf8a6e6408013e",
+          "state_ref": "64677937f1398d16e09920fa3ce177c4d037349c72498aeff2cf8a6e6408013e",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 134,
+          "op_id": "BC:STORE",
+          "input_hash": "64677937f1398d16e09920fa3ce177c4d037349c72498aeff2cf8a6e6408013e",
+          "output_hash": "2d4ff599e4125edaceac6a0c056264d1738b5d805bda4c87a81503fe3ad37c63",
+          "state_ref": "2d4ff599e4125edaceac6a0c056264d1738b5d805bda4c87a81503fe3ad37c63",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 135,
+          "op_id": "BC:LOAD",
+          "input_hash": "2d4ff599e4125edaceac6a0c056264d1738b5d805bda4c87a81503fe3ad37c63",
+          "output_hash": "3f13374cb4a44d86b02ce72153882645b63dfc2f1f09b0a92099fd812aca45ce",
+          "state_ref": "3f13374cb4a44d86b02ce72153882645b63dfc2f1f09b0a92099fd812aca45ce",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 136,
+          "op_id": "BC:CALL",
+          "input_hash": "3f13374cb4a44d86b02ce72153882645b63dfc2f1f09b0a92099fd812aca45ce",
+          "output_hash": "3a568abac2b76fb1edb2a834c39e00559f708682d7f6480be575cd2785ea3b65",
+          "state_ref": "3a568abac2b76fb1edb2a834c39e00559f708682d7f6480be575cd2785ea3b65",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 137,
+          "op_id": "BC:RETURN",
+          "input_hash": "3a568abac2b76fb1edb2a834c39e00559f708682d7f6480be575cd2785ea3b65",
+          "output_hash": "0282fda2bb73993cc27f7a744dfb185a6bdd2563ac10080b4375482a12f0bce1",
+          "state_ref": "0282fda2bb73993cc27f7a744dfb185a6bdd2563ac10080b4375482a12f0bce1",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        }
+      ],
+      "effects": [],
+      "steps": 137,
+      "halted": true
+    },
+    "runtime_consistency": true
+  },
+  "scope": "finite structured intent -> learned opcode -> deterministic ICL code and VM",
+  "learned": "opcode and finite error-class decision",
+  "not_learned": "source syntax, composition control, exact arithmetic, authoritative permission, persistent memory",
+  "confidence_is_uncalibrated": true,
+  "tensor_backend": "ICL VM pure Python float64",
+  "third_party_weights_used": false
+}

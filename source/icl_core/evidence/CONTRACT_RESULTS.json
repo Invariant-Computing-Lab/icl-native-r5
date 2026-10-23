@@ -1,0 +1,276 @@
+[
+  {
+    "id": "checkpoint_is_paused",
+    "family": "replay",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "checkpoint_prng_trace_result_exact",
+    "family": "replay",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "checkpoint_fresh_process_restart",
+    "family": "replay",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "checkpoint_checksum_corruption",
+    "family": "adversarial",
+    "expected_error": "CHECKPOINT_CORRUPT",
+    "error": {
+      "code": "CHECKPOINT_CORRUPT",
+      "message": "CHECKPOINT_CORRUPT: Checkpoint integrity or bytecode identity mismatch",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "checkpoint_wrong_program",
+    "family": "adversarial",
+    "expected_error": "CHECKPOINT_CORRUPT",
+    "error": {
+      "code": "CHECKPOINT_CORRUPT",
+      "message": "CHECKPOINT_CORRUPT: Checkpoint integrity or bytecode identity mismatch",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "bytecode_future_schema",
+    "family": "adversarial",
+    "expected_error": "BYTECODE_CORRUPT",
+    "error": {
+      "code": "BYTECODE_CORRUPT",
+      "message": "BYTECODE_CORRUPT: Unsupported bytecode schema",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "unknown_bytecode_opcode",
+    "family": "adversarial",
+    "expected_error": "BYTECODE_CORRUPT",
+    "error": {
+      "code": "BYTECODE_CORRUPT",
+      "message": "BYTECODE_CORRUPT: Unknown or malformed opcode",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "bytecode_jump_outside_stream",
+    "family": "adversarial",
+    "expected_error": "BYTECODE_CORRUPT",
+    "error": {
+      "code": "BYTECODE_CORRUPT",
+      "message": "BYTECODE_CORRUPT: Jump target outside instruction stream",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "bytecode_negative_allocation",
+    "family": "adversarial",
+    "expected_error": "BYTECODE_CORRUPT",
+    "error": {
+      "code": "BYTECODE_CORRUPT",
+      "message": "BYTECODE_CORRUPT: Invalid collection size",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "bytecode_operand_stack_underflow",
+    "family": "adversarial",
+    "expected_error": "BYTECODE_CORRUPT",
+    "error": {
+      "code": "BYTECODE_CORRUPT",
+      "message": "BYTECODE_CORRUPT: Operand stack underflow",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "ocir_canonical_json_roundtrip",
+    "family": "serialization",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "finite_float_bit_roundtrip",
+    "family": "serialization",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "forged_checkpoint_policy_not_authority",
+    "family": "adversarial",
+    "expected_error": "CHECKPOINT_CORRUPT",
+    "error": {
+      "code": "CHECKPOINT_CORRUPT",
+      "message": "CHECKPOINT_CORRUPT: Replay requires an independently supplied identical host policy",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "source_cannot_grant_external_effect",
+    "family": "authority",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "trace_hashes_nontrivial_state",
+    "family": "trace",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "trace_required_fields",
+    "family": "trace",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "ocir_serializer_roundtrip",
+    "family": "serialization",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "ocir_checksum_corruption",
+    "family": "adversarial",
+    "expected_error": "CHECKSUM",
+    "error": {
+      "code": "CHECKSUM",
+      "message": "CHECKSUM: OCIR integrity mismatch",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "ocir_incompatible_schema",
+    "family": "adversarial",
+    "expected_error": "SCHEMA_INCOMPATIBLE",
+    "error": {
+      "code": "SCHEMA_INCOMPATIBLE",
+      "message": "SCHEMA_INCOMPATIBLE: OCIR schema/hash differs",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "ocir_unknown_ast_opcode",
+    "family": "adversarial",
+    "expected_error": "UNSUPPORTED_OP",
+    "error": {
+      "code": "UNSUPPORTED_OP",
+      "message": "UNSUPPORTED_OP: unknown AST opcode",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "ocir_duplicate_json_key",
+    "family": "adversarial",
+    "expected_error": "OCIR_CORRUPT",
+    "error": {
+      "code": "OCIR_CORRUPT",
+      "message": "OCIR_CORRUPT: duplicate key",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "ocir_nonfinite_json_payload",
+    "family": "adversarial",
+    "expected_error": "NONFINITE",
+    "error": {
+      "code": "NONFINITE",
+      "message": "NONFINITE: JSON nonfinite",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "ocir_invalid_json",
+    "family": "adversarial",
+    "expected_error": "OCIR_CORRUPT",
+    "error": {
+      "code": "OCIR_CORRUPT",
+      "message": "OCIR_CORRUPT: invalid JSON",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "runtime_cannot_raise_compiled_budget",
+    "family": "adversarial",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "entry_type_rejects_bool_as_integer",
+    "family": "adversarial",
+    "expected_error": "TYPE",
+    "error": {
+      "code": "TYPE",
+      "message": "TYPE: input does not match Int64",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "entry_nominal_inner_type_validated",
+    "family": "adversarial",
+    "expected_error": "TYPE",
+    "error": {
+      "code": "TYPE",
+      "message": "TYPE: input does not match Representation[Int64]",
+      "span": null
+    },
+    "passed": true
+  },
+  {
+    "id": "recovery_side_information_bytes_accounted",
+    "family": "recovery",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "source_line_diagnostic",
+    "family": "diagnostics",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "record_effect_order_canonical_ocir_roundtrip",
+    "family": "serialization",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  },
+  {
+    "id": "record_effect_checkpoint_canonical_ocir_replay",
+    "family": "replay",
+    "expected_error": null,
+    "result": true,
+    "passed": true
+  }
+]

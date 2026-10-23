@@ -1,0 +1,76 @@
+{
+  "component": "ICL-Core",
+  "schema": "EXECUTED_ACCEPTANCE/1",
+  "status": "CONFORMANCE_PASSED",
+  "language_version": "0.1.0",
+  "source_commit": "400c91ac635c12f135d762dea6d6de16f3bd1291",
+  "gates": [
+    {
+      "id": "L01",
+      "requirement": "Formal grammar/type/effect/semantics",
+      "status": "PASS",
+      "actual": "NEW_IMPLEMENTATION documented; implemented and finite conformance tested",
+      "scope": "Finite engineering checks; no formal soundness or production security proof"
+    },
+    {
+      "id": "L02",
+      "requirement": ">=40 valid/invalid programs",
+      "status": "PASS",
+      "actual": "77 distinct handwritten; named sources and expected results",
+      "scope": "Finite engineering checks; no formal soundness or production security proof"
+    },
+    {
+      "id": "L03",
+      "requirement": ">=1000 seeded differential",
+      "status": "PASS",
+      "actual": "1008 unique source/argument cases over12 families, zero reported value/error/effect disagreements",
+      "scope": "Finite engineering checks; no formal soundness or production security proof"
+    },
+    {
+      "id": "L04",
+      "requirement": ">=30 adversarial",
+      "status": "PASS",
+      "actual": "39 adversarial programs plus structural contract/reviewer tests; no external adapter exists",
+      "scope": "Finite engineering checks; no formal soundness or production security proof"
+    },
+    {
+      "id": "L05",
+      "requirement": "OCIR roundtrip/version/corruption",
+      "status": "PASS",
+      "actual": "Canonical hash identity, typed recheck, duplicate/NaN/schema/opcode rejection; record order fixed and regression tested",
+      "scope": "Finite engineering checks; no formal soundness or production security proof"
+    },
+    {
+      "id": "L06",
+      "requirement": "Checkpoint/recovery",
+      "status": "PASS",
+      "actual": "All tested finite VM instruction boundaries preserve PRNG/state/events; explicit collision/sideinfo/rank/wrong pairing counterexamples",
+      "scope": "Finite engineering checks; no formal soundness or production security proof"
+    },
+    {
+      "id": "L07",
+      "requirement": ">=8 numeric graphs",
+      "status": "PASS",
+      "actual": "8 independent NumPy forward graphs; preregistered atol=rtol=1e-10, stronger than gate limits",
+      "scope": "Finite engineering checks; no formal soundness or production security proof"
+    },
+    {
+      "id": "L08",
+      "requirement": "Clean offline install/CLI",
+      "status": "PASS",
+      "actual": "20 root clean-installed offline process checks;19 source CLI checks; wheel-source parity12 files",
+      "scope": "Finite engineering checks; no formal soundness or production security proof"
+    }
+  ],
+  "remaining_not_run": [
+    "General formal progress/preservation proof",
+    "Production OS/process sandbox isolation",
+    "LLVM/WASM native code generation",
+    "ISC16 generation0 compatibility",
+    "General observer inversion/identifiability solver",
+    "GPNT/DCT/SFT operational arithmetic modules",
+    "External effect adapters and rollback",
+    "Historical frozen research reproductions"
+  ],
+  "delivery_integrity": "Root executor will separately verify uploaded artifacts by readback SHA256"
+}

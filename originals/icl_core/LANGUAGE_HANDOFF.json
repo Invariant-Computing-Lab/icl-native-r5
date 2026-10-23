@@ -1,0 +1,231 @@
+{
+  "schema": "ICL_LANGUAGE_HANDOFF/1",
+  "status": "CONFORMANCE_PASSED",
+  "frozen_utc": "2026-10-10T19:26:01.592153+00:00",
+  "language_version": "0.1.0",
+  "origin": "NEW_IMPLEMENTATION_WITH_BOUNDED_LEGACY_AFC_REUSE",
+  "schema_version": "0.1.0",
+  "schema_sha256": "69bc2772fe80df1aafdd98f2c2095b3232c5257aa727041a40ba24a0838d06b1",
+  "vocab_sha256": "35a3758ec22558f32d87a1370eb655eb1f2ed49c7f9fe3fc8163a4a191fefe87",
+  "feature_set": [
+    "functions",
+    "modules",
+    "lexical_scope",
+    "checked_int64",
+    "finite_float64",
+    "bounded_loop",
+    "list",
+    "record",
+    "tuple",
+    "option",
+    "result",
+    "tensor",
+    "observer",
+    "recovery",
+    "policy_effect",
+    "checkpoint"
+  ],
+  "opcode_versions": {
+    "bytecode": "icl-bytecode/1",
+    "graph_registry": "0.1.0"
+  },
+  "evaluator_version": "0.1.0",
+  "compatible_model_contract_versions": [
+    "IOS_ICL_NATIVE_0.1"
+  ],
+  "source_hashes": {
+    "icl/__init__.py": "eeb342c6178134a008ffdab3e8c35ca467d697d4aeff154605e3e3283e623ddf",
+    "icl/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "icl/api.py": "cab492d3cdd669416e08989a46c84f0715018726ac686645b619d4217318c05c",
+    "icl/checker.py": "261c89340a21f40bfd67ee3f19fc204357abdeb5ec74e1376e5e839cdbce4a41",
+    "icl/cli.py": "2384aea45b82c887d4e46cab69421d41cb6d60c690b75685ab263d57b1c7a848",
+    "icl/frontend.py": "fba8625012e328fb7c620ceccd1b096d4897f6ac457717f45a31fa5ae9d267b1",
+    "icl/interpreter.py": "6a03904e82bcfaff33e44c658de84e1b34445d7b7f567244cd4388391ea34a34",
+    "icl/legacy_afc.py": "20abd74e06a61d96c829446d1faf584418affc9a4e098d405a54c87ecdf99742",
+    "icl/runtime.py": "23b3bcfc7264e1ba24111d067a35676cf7171d72891522253475c9d78dd97ded",
+    "icl/vm.py": "9fa1f8a257a5cb4873cb3689bbf81886456074d3ad1b8c1e7a8db7938ba462b8"
+  },
+  "acceptance_evidence": {
+    "report": "evidence/TEST_RESULTS.json",
+    "sha256": "8b9e397e54330bcbcbb2a9f14affa67e563e4308103d44c5991a2b5834086d97",
+    "handwritten": {
+      "total": 77,
+      "passed": 77,
+      "failed": 0,
+      "families": {
+        "scalar": 1,
+        "arithmetic": 3,
+        "boolean": 6,
+        "float": 2,
+        "string": 2,
+        "scope": 5,
+        "branch": 4,
+        "loop": 3,
+        "function": 4,
+        "list": 2,
+        "tuple": 1,
+        "record": 3,
+        "name": 2,
+        "type": 7,
+        "numeric": 3,
+        "bounds": 1,
+        "parse": 1,
+        "lex": 1,
+        "module": 1,
+        "option": 2,
+        "result": 2,
+        "observer": 7,
+        "recovery": 4,
+        "effect": 3,
+        "tensor": 4,
+        "approx": 1,
+        "identifiability": 2
+      },
+      "failures": []
+    },
+    "generated": {
+      "total": 1008,
+      "passed": 1008,
+      "failed": 0,
+      "families": {
+        "integer_expression": 85,
+        "conditional_parameter": 85,
+        "bounded_loop": 85,
+        "function_composition": 85,
+        "list_index_length": 85,
+        "record_projection": 85,
+        "tuple_projection": 85,
+        "boolean_precedence": 85,
+        "float_division": 85,
+        "branch_mutation": 85,
+        "recursive_function": 73,
+        "mixed_record_call": 85
+      },
+      "failures": []
+    },
+    "adversarial": {
+      "total": 39,
+      "passed": 39,
+      "failed": 0,
+      "families": {
+        "type": 4,
+        "authority": 3,
+        "provenance": 1,
+        "observer": 4,
+        "recovery": 3,
+        "domain": 2,
+        "numeric": 3,
+        "bounds": 2,
+        "resource": 7,
+        "shape": 2,
+        "lexer": 2,
+        "parser": 1,
+        "isolation": 2,
+        "import": 3
+      },
+      "failures": []
+    },
+    "numpy_graphs": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "families": {
+        "numpy_forward": 8
+      },
+      "failures": []
+    },
+    "contracts": {
+      "total": 30,
+      "passed": 30,
+      "failed": 0,
+      "families": {
+        "replay": 4,
+        "adversarial": 17,
+        "serialization": 4,
+        "authority": 1,
+        "trace": 2,
+        "recovery": 1,
+        "diagnostics": 1
+      },
+      "failures": []
+    },
+    "cli": {
+      "total": 19,
+      "passed": 19,
+      "failed": 0,
+      "families": {
+        "cli": 19
+      },
+      "failures": []
+    },
+    "root_installed_offline_e2e": {
+      "passed": 20,
+      "sha256": "9eee6ee1685e71837c5956804ce937de9f3179ab23cffee2ed3fa52a3fd03fa1"
+    },
+    "independent_review": {
+      "passed": 54,
+      "sha256": "5d75ee843cc581fcce4a2c6dc3e8cadbddab618fc739dc7fddac78b3ef085dfd"
+    }
+  },
+  "model_abi": {
+    "python_import": "icl.api",
+    "compile": "compile_source(source,module_map=None,limits=None,entry=\"main\") -> typed OCIR dictionary",
+    "execute": "run_source(source,args=None,engine=\"vm\"|\"tree\",entry=\"main\",module_map=None,limits=None,policy=None,checkpoint=None,stop_after=None)",
+    "ocir_layout": "typed_blocks is function list; each body is statement list; calls name/args and inferred_type; vars name and inferred_type",
+    "tensor_value": {
+      "shape": [
+        1,
+        2
+      ],
+      "data": [
+        1.0,
+        2.0
+      ]
+    },
+    "graph_ops": [
+      "matmul",
+      "add",
+      "sub",
+      "mul",
+      "relu",
+      "tanh",
+      "reshape",
+      "normalize",
+      "softmax",
+      "sum"
+    ],
+    "host_boundary": "Autograd/optimizer external NumPy permitted only consuming frozen typed graph; interpreter numerical registry is pure Python reference",
+    "canonicalizer": "icl.api.canonicalize_source returns source-span-free AST dictionary",
+    "state_schema": {
+      "value": "finite typed JSON value",
+      "trace": "logical runtime events",
+      "effects": "trusted policy decisions",
+      "steps": "bounded step count"
+    },
+    "checkpoint_api": "run_ocir(..., stop_after=N) -> checkpoint; run_ocir(..., checkpoint=state) resumes with independently supplied host policy",
+    "allowed_actions": "only local journal can be approved; no network/filesystem/shell adapters installed",
+    "training_sample_required_fields": [
+      "program",
+      "input_state",
+      "observer_context",
+      "output_state",
+      "effects",
+      "trace",
+      "expected_error",
+      "recovery_witness",
+      "source_lineage"
+    ]
+  },
+  "scope": "Finite engineering conformance, no general language soundness proof or model/research superiority claim. Hashes establish integrity not scientific truth or authority.",
+  "code_commit": "400c91ac635c12f135d762dea6d6de16f3bd1291",
+  "contract_file_hashes": {
+    "OCIR_SCHEMA.json": "69bc2772fe80df1aafdd98f2c2095b3232c5257aa727041a40ba24a0838d06b1",
+    "TOKEN_VOCAB.json": "35a3758ec22558f32d87a1370eb655eb1f2ed49c7f9fe3fc8163a4a191fefe87",
+    "grammar.ebnf": "bcbbc255e438539f6b9e71f0fc1c559f9112f5c69ba1100e10231b860d308f68",
+    "LANGUAGE_SPEC.md": "307e0587c4845a0bee963832e48459e6bda0f06402c3b5923b6965103fb28dec",
+    "SEMANTICS.md": "b4e1cfc565a70be6079fc29fe3373855074b44d742a8bc5b1730bf6c5cb3adca",
+    "SECURITY_BOUNDARY.md": "c9fca7dba9b3c826b6bf7affe16e9054d756223eea7618e00dcae00fefe4b458"
+  },
+  "record_evaluation_order": "lexicographic_by_field_name",
+  "local_commit_only": true
+}

@@ -1,0 +1,305 @@
+{
+  "schema": "ICL_SCIENCE_TO_CODE_TRACE/1",
+  "implementation_origin": "NEW_IMPLEMENTATION_WITH_ATTRIBUTED_LEGACY_AFC_REUSE",
+  "source_audit_sha256": "aa8d5fea1ccdce2b61442ab6ef5fc337014b53ec41149aad4b53036cd267f649",
+  "all_candidate_dispositions_sha256": "aa35484fe1e0939a94a69be38bc0dfef08fc4306960dc44b032acafd6a3c04fd",
+  "items": [
+    {
+      "family": "OCIL_OCIR",
+      "source": {
+        "path": "inputs/sources/legacy_selected/ocil-ocir.js",
+        "sha256": "729ee5c8f9d1cf5a3f73bf53fb59d0d23852a7399cf2a89bd8053e03766ce4ee",
+        "read_status": "READ_OR_VERIFIED_SOURCE_AUDIT"
+      },
+      "source_member": "reconstruct",
+      "decision": "Explicit observer/frame/unit metadata and finite rank-deficient counterexample; new language design",
+      "code": [
+        "icl.runtime.builtin:represent/repr_add",
+        "icl.checker.check"
+      ],
+      "tests": [
+        "tests/programs/valid/rank_deficient_collision.icl",
+        "examples/07_rank_deficient.icl",
+        "evidence/DEMO_RESULTS.json"
+      ],
+      "claim": "Metadata mismatch fails closed; rank-one measurement cannot distinguish two explicit sources",
+      "scientific_status": "SOURCE_CONCEPT_TRANSFER_NOT_THEORY_VALIDATION",
+      "code_files": [
+        {
+          "path": "icl/checker.py",
+          "sha256": "261c89340a21f40bfd67ee3f19fc204357abdeb5ec74e1376e5e839cdbce4a41"
+        },
+        {
+          "path": "icl/runtime.py",
+          "sha256": "23b3bcfc7264e1ba24111d067a35676cf7171d72891522253475c9d78dd97ded"
+        }
+      ]
+    },
+    {
+      "family": "AFC",
+      "source": {
+        "path": "inputs/sources/v404/01_Invariant_OS/02_ENGINEERING/source/invariant_os/finite_recovery.py",
+        "sha256": "20abd74e06a61d96c829446d1faf584418affc9a4e098d405a54c87ecdf99742",
+        "read_status": "READ_OR_VERIFIED_SOURCE_AUDIT"
+      },
+      "source_member": "quotient/recover_from_quotient/finite_report",
+      "decision": "Exact unchanged source reuse plus explicit integer witness protocol",
+      "code": [
+        "icl.legacy_afc",
+        "icl.runtime.builtin:observe_mod/make_witness/recover"
+      ],
+      "tests": [
+        "tests/legacy_afc_comparison.py",
+        "evidence/LEGACY_AFC_COMPARISON.json"
+      ],
+      "claim": "2044 integer states across bits2..10 compare exactly with legacy quotient+side information; no recovery without witness",
+      "scientific_status": "NEW_BOUNDED_ENGINEERING_COMPARISON",
+      "code_files": [
+        {
+          "path": "icl/legacy_afc.py",
+          "sha256": "20abd74e06a61d96c829446d1faf584418affc9a4e098d405a54c87ecdf99742"
+        },
+        {
+          "path": "icl/runtime.py",
+          "sha256": "23b3bcfc7264e1ba24111d067a35676cf7171d72891522253475c9d78dd97ded"
+        }
+      ]
+    },
+    {
+      "family": "Invariant_OS",
+      "source": {
+        "path": "inputs/sources/legacy_selected/invariant-os.js",
+        "sha256": "4aa1445fb596349fb8cb99abbd90bcd71a6917edff22687dc8dbd274b2e42960",
+        "read_status": "READ_OR_VERIFIED_SOURCE_AUDIT"
+      },
+      "source_member": "compile/runProgram",
+      "decision": "Preserve limited old Trace Kernel; new full frontend/Int64/checkpoint implementation",
+      "code": [
+        "icl.frontend.Parser",
+        "icl.vm.compile_bytecode",
+        "icl.vm.execute_bytecode"
+      ],
+      "tests": [
+        "tests/test_vm_replay.py",
+        "evidence/CONTRACT_RESULTS.json"
+      ],
+      "claim": "Finite deterministic VM replay only; no ISC16/Float64 compatibility claim",
+      "scientific_status": "NEW_IMPLEMENTATION",
+      "code_files": [
+        {
+          "path": "icl/vm.py",
+          "sha256": "9fa1f8a257a5cb4873cb3689bbf81886456074d3ad1b8c1e7a8db7938ba462b8"
+        },
+        {
+          "path": "icl/frontend.py",
+          "sha256": "fba8625012e328fb7c620ceccd1b096d4897f6ac457717f45a31fa5ae9d267b1"
+        }
+      ]
+    },
+    {
+      "family": "RARI",
+      "source": {
+        "path": "inputs/commands/OCIL_ICL_ASTRA_20261010/01_OCIL/ASTRA_01_OCIL_PROGRAMLAMA_DILI.md",
+        "sha256": "7ebe1ed668572d13d68c48c5cd659dffe8a822ad33c4486061318f0a7ed35e89",
+        "read_status": "READ_OR_VERIFIED_SOURCE_AUDIT"
+      },
+      "source_member": "sections2/5 with original OCIL draft provenance in external SOURCE_AUDIT",
+      "decision": "Use explicit wrong-pair, nullspace and nonlinear protocol negative cases, not frozen experimental data",
+      "code": [
+        "icl.runtime.builtin:convert_frame/recover/repr_add"
+      ],
+      "tests": [
+        "evidence/ADVERSARIAL_RESULTS.json",
+        "evidence/HANDWRITTEN_RESULTS.json"
+      ],
+      "claim": "Incorrect witness pair and unregistered nonlinear conversion rejected in declared finite protocol",
+      "scientific_status": "CONCEPTUAL_TEST_DESIGN_NOT_REPRODUCTION",
+      "code_files": [
+        {
+          "path": "icl/runtime.py",
+          "sha256": "23b3bcfc7264e1ba24111d067a35676cf7171d72891522253475c9d78dd97ded"
+        }
+      ]
+    },
+    {
+      "family": "SACRA",
+      "source": {
+        "path": "inputs/commands/OCIL_ICL_ASTRA_20261010/01_OCIL/ICL_CORE_TEKNIK_SOZLESME.md",
+        "sha256": "1c53be0bcee9f1e3ab585d8e35c190c330fba631cc04d1f26fe65cb5a6c383c6",
+        "read_status": "READ_OR_VERIFIED_SOURCE_AUDIT"
+      },
+      "source_member": "separate contracts4 Authority",
+      "decision": "Capability is a distinct unconstructible authority type; only independent trusted host policy may approve local journal",
+      "code": [
+        "icl.runtime.builtin:request_effect",
+        "icl.vm._execute_bytecode",
+        "icl.checker.validate_value"
+      ],
+      "tests": [
+        "tests/test_vm_replay.py",
+        "evidence/CONTRACT_RESULTS.json",
+        "examples/04_authority_conflict.icl"
+      ],
+      "claim": "No model/source-declared Boolean or checkpoint policy grants execution; no external adapter exists",
+      "scientific_status": "NEW_ENGINEERING_POLICY",
+      "code_files": [
+        {
+          "path": "icl/vm.py",
+          "sha256": "9fa1f8a257a5cb4873cb3689bbf81886456074d3ad1b8c1e7a8db7938ba462b8"
+        },
+        {
+          "path": "icl/checker.py",
+          "sha256": "261c89340a21f40bfd67ee3f19fc204357abdeb5ec74e1376e5e839cdbce4a41"
+        },
+        {
+          "path": "icl/runtime.py",
+          "sha256": "23b3bcfc7264e1ba24111d067a35676cf7171d72891522253475c9d78dd97ded"
+        }
+      ]
+    },
+    {
+      "family": "IEVF",
+      "source": {
+        "path": "inputs/commands/OCIL_ICL_ASTRA_20261010/01_OCIL/ICL_CORE_TEKNIK_SOZLESME.md",
+        "sha256": "1c53be0bcee9f1e3ab585d8e35c190c330fba631cc04d1f26fe65cb5a6c383c6",
+        "read_status": "READ_OR_VERIFIED_SOURCE_AUDIT"
+      },
+      "source_member": "OCIR fields/runtime event contract",
+      "decision": "Hash program/module graph/OCIR and actual pre/post execution state; record source\u2192code\u2192test trace",
+      "code": [
+        "icl.api.compile_source",
+        "icl.runtime.RuntimeContext.step",
+        "icl.vm._execute_bytecode",
+        "icl.interpreter.execute_tree"
+      ],
+      "tests": [
+        "evidence/CONTRACT_RESULTS.json"
+      ],
+      "claim": "Hashes provide identity/integrity; not theorem, authorization, or scientific correctness",
+      "scientific_status": "NEW_ENGINEERING_EVIDENCE_FORMAT",
+      "code_files": [
+        {
+          "path": "icl/interpreter.py",
+          "sha256": "6a03904e82bcfaff33e44c658de84e1b34445d7b7f567244cd4388391ea34a34"
+        },
+        {
+          "path": "icl/vm.py",
+          "sha256": "9fa1f8a257a5cb4873cb3689bbf81886456074d3ad1b8c1e7a8db7938ba462b8"
+        },
+        {
+          "path": "icl/api.py",
+          "sha256": "cab492d3cdd669416e08989a46c84f0715018726ac686645b619d4217318c05c"
+        },
+        {
+          "path": "icl/runtime.py",
+          "sha256": "23b3bcfc7264e1ba24111d067a35676cf7171d72891522253475c9d78dd97ded"
+        }
+      ]
+    },
+    {
+      "family": "MLGT",
+      "source": {
+        "path": "inputs/sources/mathematical_language_grammar_theory_mlgt_2026.pdf",
+        "sha256": "4dcb1c8ae9b6d3218ebe26bf855a63e7890558b0b8e2cf0e4f95e46e65938550",
+        "read_status": "READ_OR_VERIFIED_SOURCE_AUDIT"
+      },
+      "source_member": "composition/context conceptual text; visual glyph caveat in audit",
+      "decision": "Explicit lexical composition and representation metadata; all operational grammar newly defined",
+      "code": [
+        "icl.frontend",
+        "icl.checker",
+        "icl.api"
+      ],
+      "tests": [
+        "evidence/DIFFERENTIAL_CASES.jsonl"
+      ],
+      "claim": "Tested finite compositional programs; universal grammar/completeness/cognitive claims not established",
+      "scientific_status": "CONCEPTUAL_INPUT",
+      "code_files": [
+        {
+          "path": "icl/frontend.py",
+          "sha256": "fba8625012e328fb7c620ceccd1b096d4897f6ac457717f45a31fa5ae9d267b1"
+        },
+        {
+          "path": "icl/checker.py",
+          "sha256": "261c89340a21f40bfd67ee3f19fc204357abdeb5ec74e1376e5e839cdbce4a41"
+        },
+        {
+          "path": "icl/api.py",
+          "sha256": "cab492d3cdd669416e08989a46c84f0715018726ac686645b619d4217318c05c"
+        }
+      ]
+    },
+    {
+      "family": "GOP",
+      "source": {
+        "path": "inputs/commands/OCIL_ICL_ASTRA_20261010/01_OCIL/ASTRA_01_OCIL_PROGRAMLAMA_DILI.md",
+        "sha256": "7ebe1ed668572d13d68c48c5cd659dffe8a822ad33c4486061318f0a7ed35e89",
+        "read_status": "READ_OR_VERIFIED_SOURCE_AUDIT"
+      },
+      "source_member": "sections2/7; actual G6 source audit external",
+      "decision": "No universal physics inference; wrong frame/tolerance boundaries applied to finite tensor operations",
+      "code": [
+        "icl.runtime.builtin:repr_add/convert_frame",
+        "icl.api.NUMERIC"
+      ],
+      "tests": [
+        "evidence/NUMPY_GRAPH_PARITY.json",
+        "evidence/ADVERSARIAL_RESULTS.json"
+      ],
+      "claim": "Declared finite Float64 registry parity only",
+      "scientific_status": "CONCEPTUAL_NEGATIVE_CONTROLS",
+      "code_files": [
+        {
+          "path": "icl/api.py",
+          "sha256": "cab492d3cdd669416e08989a46c84f0715018726ac686645b619d4217318c05c"
+        },
+        {
+          "path": "icl/runtime.py",
+          "sha256": "23b3bcfc7264e1ba24111d067a35676cf7171d72891522253475c9d78dd97ded"
+        }
+      ]
+    },
+    {
+      "family": "GPNT",
+      "source": {
+        "path": "inputs/sources/gpnt_mathematical_proofs_2026.pdf",
+        "sha256": "973a76aecae6f4bc0332e95fcd9e7697b104dbd2a776917c868f004de35f7fa0"
+      },
+      "decision": "Optional experimental mapping deferred; unresolved glyphs and unverified arithmetic/cognitive claims cannot replace exact numeric semantics",
+      "code": [],
+      "tests": [],
+      "claim": "No executable transfer or reproduction claimed",
+      "scientific_status": "NOT_RUN",
+      "code_files": []
+    },
+    {
+      "family": "DCT",
+      "source": {
+        "path": "inputs/sources/Decimal_Coordinate_Theory_DCT_Publication_Ready.pdf",
+        "sha256": "9592474436331e25f6e7e57fae1854e40b2edfa317d5a6ac3698855ab9ee0e23"
+      },
+      "decision": "Optional experimental mapping deferred; unresolved glyphs and unverified arithmetic/cognitive claims cannot replace exact numeric semantics",
+      "code": [],
+      "tests": [],
+      "claim": "No executable transfer or reproduction claimed",
+      "scientific_status": "NOT_RUN",
+      "code_files": []
+    },
+    {
+      "family": "SFT",
+      "source": {
+        "path": "inputs/sources/comprehensive_sft_proof_document.pdf",
+        "sha256": "92043104a038466fc5d8f207638ea39344df6936a16c4e4d4019c5e7e9b8b7a9"
+      },
+      "decision": "Optional experimental mapping deferred; unresolved glyphs and unverified arithmetic/cognitive claims cannot replace exact numeric semantics",
+      "code": [],
+      "tests": [],
+      "claim": "No executable transfer or reproduction claimed",
+      "scientific_status": "NOT_RUN",
+      "code_files": []
+    }
+  ],
+  "negative_historical_results": "Preserved unchanged; not transformed into new positive evidence",
+  "new_result_boundary": "Engineering conformance only; original research programmes NOT_REPRODUCED"
+}

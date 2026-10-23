@@ -1,0 +1,434 @@
+{
+  "schema": "ICL_R5_PRODUCT_RESULT/1",
+  "model_seed": 17,
+  "proposal": {
+    "actions": [
+      "MEMORY_MISSING"
+    ],
+    "confidence": 0.991995464717644,
+    "composed_result": {
+      "tag": "Err",
+      "error": "MEMORY_MISSING"
+    },
+    "guard_rejection": null,
+    "journal_attempts": 0,
+    "journal_allow_decisions": 0,
+    "execution_scope": "host simulation until vm_verify executes the candidate"
+  },
+  "verification": {
+    "executed": true,
+    "source_program": "module native_plan;\ntype Pair = Record{delta:Int64,value:Int64};\nfn record_sum(p:Pair)->Int64 {return p.value+p.delta;}\nfn main(initial:Int64, initial_memory:Int64)->Result[Int64] {\nvar x = initial; var memo = initial_memory;\n\nreturn err_int(\"MEMORY_MISSING\");\nreturn ok(x); }\n",
+    "ocir": {
+      "schema_version": "0.2.1",
+      "schema_sha256": "0dd381cb61f65f3346c07918aae587c42c583f8b4449583fdd4dca1afdcee60c",
+      "feature_set": [
+        "functions",
+        "modules",
+        "lexical_scope",
+        "checked_int64",
+        "finite_float64",
+        "bounded_loop",
+        "list",
+        "record",
+        "tuple",
+        "option",
+        "result",
+        "tensor",
+        "observer",
+        "recovery",
+        "policy_effect",
+        "checkpoint",
+        "record_annotations",
+        "type_aliases",
+        "contextual_empty_lists"
+      ],
+      "program_id": "2f8d8b3052be77f2613c3a3d8deac3077bb7906184afdc1851ca1a1604f2b5e5",
+      "source_sha256": "1468881a93e6238b4b0bbbbf888c1187ab5360033006406b999e1562bcd911c5",
+      "module_graph": [
+        {
+          "module": "native_plan",
+          "imports": [],
+          "source_sha256": "1468881a93e6238b4b0bbbbf888c1187ab5360033006406b999e1562bcd911c5"
+        }
+      ],
+      "typed_blocks": [
+        {
+          "name": "record_sum",
+          "params": [
+            [
+              "p",
+              "Record{delta:Int64,value:Int64}"
+            ]
+          ],
+          "return_type": "Int64",
+          "body": [
+            {
+              "kind": "return",
+              "expr": {
+                "kind": "binary",
+                "op": "+",
+                "left": {
+                  "kind": "field",
+                  "target": {
+                    "kind": "var",
+                    "name": "p",
+                    "span": {
+                      "line": 3,
+                      "column": 38,
+                      "offset": 102
+                    },
+                    "inferred_type": "Record{delta:Int64,value:Int64}"
+                  },
+                  "name": "value",
+                  "span": {
+                    "line": 3,
+                    "column": 38,
+                    "offset": 102
+                  },
+                  "inferred_type": "Int64"
+                },
+                "right": {
+                  "kind": "field",
+                  "target": {
+                    "kind": "var",
+                    "name": "p",
+                    "span": {
+                      "line": 3,
+                      "column": 46,
+                      "offset": 110
+                    },
+                    "inferred_type": "Record{delta:Int64,value:Int64}"
+                  },
+                  "name": "delta",
+                  "span": {
+                    "line": 3,
+                    "column": 46,
+                    "offset": 110
+                  },
+                  "inferred_type": "Int64"
+                },
+                "span": {
+                  "line": 3,
+                  "column": 38,
+                  "offset": 102
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 3,
+                "column": 31,
+                "offset": 95
+              }
+            }
+          ],
+          "span": {
+            "line": 3,
+            "column": 1,
+            "offset": 65
+          }
+        },
+        {
+          "name": "main",
+          "params": [
+            [
+              "initial",
+              "Int64"
+            ],
+            [
+              "initial_memory",
+              "Int64"
+            ]
+          ],
+          "return_type": "Result[Int64]",
+          "body": [
+            {
+              "kind": "let",
+              "name": "x",
+              "type": null,
+              "mutable": true,
+              "expr": {
+                "kind": "var",
+                "name": "initial",
+                "span": {
+                  "line": 5,
+                  "column": 9,
+                  "offset": 190
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 5,
+                "column": 1,
+                "offset": 182
+              },
+              "inferred_type": "Int64"
+            },
+            {
+              "kind": "let",
+              "name": "memo",
+              "type": null,
+              "mutable": true,
+              "expr": {
+                "kind": "var",
+                "name": "initial_memory",
+                "span": {
+                  "line": 5,
+                  "column": 29,
+                  "offset": 210
+                },
+                "inferred_type": "Int64"
+              },
+              "span": {
+                "line": 5,
+                "column": 18,
+                "offset": 199
+              },
+              "inferred_type": "Int64"
+            },
+            {
+              "kind": "return",
+              "expr": {
+                "kind": "call",
+                "name": "err_int",
+                "args": [
+                  {
+                    "kind": "literal",
+                    "value": "MEMORY_MISSING",
+                    "span": {
+                      "line": 7,
+                      "column": 16,
+                      "offset": 242
+                    },
+                    "inferred_type": "String"
+                  }
+                ],
+                "span": {
+                  "line": 7,
+                  "column": 8,
+                  "offset": 234
+                },
+                "inferred_type": "Result[Int64]"
+              },
+              "span": {
+                "line": 7,
+                "column": 1,
+                "offset": 227
+              }
+            },
+            {
+              "kind": "return",
+              "expr": {
+                "kind": "call",
+                "name": "ok",
+                "args": [
+                  {
+                    "kind": "var",
+                    "name": "x",
+                    "span": {
+                      "line": 8,
+                      "column": 11,
+                      "offset": 271
+                    },
+                    "inferred_type": "Int64"
+                  }
+                ],
+                "span": {
+                  "line": 8,
+                  "column": 8,
+                  "offset": 268
+                },
+                "inferred_type": "Result[Int64]"
+              },
+              "span": {
+                "line": 8,
+                "column": 1,
+                "offset": 261
+              }
+            }
+          ],
+          "span": {
+            "line": 4,
+            "column": 1,
+            "offset": 120
+          }
+        }
+      ],
+      "ops": [
+        {
+          "name": "err_int",
+          "operand_types": [
+            "String"
+          ],
+          "result_type": "Result[Int64]"
+        },
+        {
+          "name": "ok",
+          "operand_types": [
+            "Int64"
+          ],
+          "result_type": "Result[Int64]"
+        }
+      ],
+      "operand_types": [
+        [
+          "String"
+        ],
+        [
+          "Int64"
+        ]
+      ],
+      "shape_constraints": [],
+      "observer_context": {
+        "mode": "explicit_metadata",
+        "implicit_conversion": false
+      },
+      "provenance_refs": [
+        {
+          "source_sha256": "1468881a93e6238b4b0bbbbf888c1187ab5360033006406b999e1562bcd911c5",
+          "module": "native_plan",
+          "status": "COMPILED_LOCAL_SOURCE"
+        }
+      ],
+      "required_effects": [],
+      "limits": {
+        "max_steps": 100000,
+        "max_stack": 128,
+        "max_items": 100000,
+        "max_output": 1000000,
+        "max_tensor": 4096
+      },
+      "numeric_policy": {
+        "int64": "checked_signed",
+        "integer_division": "truncate_toward_zero",
+        "float64": "finite_only",
+        "atol": 1e-06,
+        "rtol": 1e-05,
+        "normalize_epsilon": 1e-05
+      },
+      "entrypoint": "main",
+      "integrity_sha256": "b9b9db15c160105333d9ac518f5d78d73374ab9e8576ec133e35060b329fe484"
+    },
+    "result": {
+      "value": {
+        "tag": "Err",
+        "error": "MEMORY_MISSING"
+      },
+      "trace": [
+        {
+          "run_id": "deterministic",
+          "step": 1,
+          "op_id": "BC:ENTER_SCOPE",
+          "input_hash": "165d6c49cb11b4a4bd4ffdf872bdae8ca1eab08ba478ef2f8356b60f440f43d1",
+          "output_hash": "d5f68f2893ab889afffb88052ff5a359c577bc48d76cdb82bf5bcca61faa2652",
+          "state_ref": "d5f68f2893ab889afffb88052ff5a359c577bc48d76cdb82bf5bcca61faa2652",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 2,
+          "op_id": "BC:LOAD",
+          "input_hash": "d5f68f2893ab889afffb88052ff5a359c577bc48d76cdb82bf5bcca61faa2652",
+          "output_hash": "63386403efdfe10726af76c9efb39073ce16ac2d16c173f692ed2a937e2a85b7",
+          "state_ref": "63386403efdfe10726af76c9efb39073ce16ac2d16c173f692ed2a937e2a85b7",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 3,
+          "op_id": "BC:LET",
+          "input_hash": "63386403efdfe10726af76c9efb39073ce16ac2d16c173f692ed2a937e2a85b7",
+          "output_hash": "f34c0a1fe709a89044b068b73a78e7572fac844b9fc38b8bb540232135d1b2ad",
+          "state_ref": "f34c0a1fe709a89044b068b73a78e7572fac844b9fc38b8bb540232135d1b2ad",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 4,
+          "op_id": "BC:LOAD",
+          "input_hash": "f34c0a1fe709a89044b068b73a78e7572fac844b9fc38b8bb540232135d1b2ad",
+          "output_hash": "f0a745683692c70c22d4c4809c0e7c8bd11b5bfc5f9d5dcd097e1928ddea2203",
+          "state_ref": "f0a745683692c70c22d4c4809c0e7c8bd11b5bfc5f9d5dcd097e1928ddea2203",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 5,
+          "op_id": "BC:LET",
+          "input_hash": "f0a745683692c70c22d4c4809c0e7c8bd11b5bfc5f9d5dcd097e1928ddea2203",
+          "output_hash": "133db1530008e1aeff3ac002934e02a2aba50ad6b37cad9fd4ceed50a2a71ec5",
+          "state_ref": "133db1530008e1aeff3ac002934e02a2aba50ad6b37cad9fd4ceed50a2a71ec5",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 6,
+          "op_id": "BC:PUSH",
+          "input_hash": "133db1530008e1aeff3ac002934e02a2aba50ad6b37cad9fd4ceed50a2a71ec5",
+          "output_hash": "9ef878fa1c72afc0a21441140be60bc44ae251371d6a997d87369ce6a1afb929",
+          "state_ref": "9ef878fa1c72afc0a21441140be60bc44ae251371d6a997d87369ce6a1afb929",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 7,
+          "op_id": "BC:CALL",
+          "input_hash": "9ef878fa1c72afc0a21441140be60bc44ae251371d6a997d87369ce6a1afb929",
+          "output_hash": "a4f9d6bbecf858f0315d92d9c5662c24bf3f943086264d4e679ae7d6adbe6d59",
+          "state_ref": "a4f9d6bbecf858f0315d92d9c5662c24bf3f943086264d4e679ae7d6adbe6d59",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        },
+        {
+          "run_id": "deterministic",
+          "step": 8,
+          "op_id": "BC:RETURN",
+          "input_hash": "a4f9d6bbecf858f0315d92d9c5662c24bf3f943086264d4e679ae7d6adbe6d59",
+          "output_hash": "61068bb5e1e66f906e0a649837c945760d016d0815b0078b4a9f82e212ae56b3",
+          "state_ref": "61068bb5e1e66f906e0a649837c945760d016d0815b0078b4a9f82e212ae56b3",
+          "effect_request": null,
+          "effect_decision": null,
+          "recovery_ref": null,
+          "error_code": null,
+          "clock_mode": "logical"
+        }
+      ],
+      "effects": [],
+      "steps": 8,
+      "halted": true
+    },
+    "runtime_consistency": true
+  },
+  "scope": "finite structured intent -> learned opcode -> deterministic ICL code and VM",
+  "learned": "opcode and finite error-class decision",
+  "not_learned": "source syntax, composition control, exact arithmetic, authoritative permission, persistent memory",
+  "confidence_is_uncalibrated": true,
+  "tensor_backend": "ICL VM pure Python float64",
+  "third_party_weights_used": false
+}

@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Private research preparation; obtain author and rights approval before public citation."
+title: "icl-native-r5"
+type: software
+authors:
+  - family-names: "Yıldırım"
+    given-names: "Emirhan"
+version: "2026.10.13-CP03R2"
+abstract: "Source-derived research preparation. Date identifies this private package version, not a verified public release."

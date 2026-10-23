@@ -1,0 +1,253 @@
+{
+  "version": "v1",
+  "created": "2026-10-10",
+  "type": "PROPOSED_FUTURE_ACCEPTANCE_NOT_RESULTS",
+  "gate_count": 19,
+  "global_status": "NOT_RUN",
+  "gates": [
+    {
+      "id": "L01",
+      "component": "ICL-Core",
+      "requirement": "Formal grammar, types/effects and executable semantics",
+      "threshold": "versioned spec+implemented parser/type checker",
+      "required_evidence": [
+        "grammar.ebnf",
+        "LANGUAGE_SPEC.md",
+        "SEMANTICS.md",
+        "tests/"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "L02",
+      "component": "ICL-Core",
+      "requirement": "Valid and invalid semantic examples",
+      "threshold": ">=40 across modules,functions,branch,loop,records,tensors,observer,recovery,effects",
+      "required_evidence": [
+        "examples/",
+        "conformance_results.json"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "L03",
+      "component": "ICL-Core",
+      "requirement": "Independent interpreter vs VM differential",
+      "threshold": ">=1000 generated cases; 0 exact-domain disagreement; declared float tolerance",
+      "required_evidence": [
+        "differential_results.json",
+        "runner hashes"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "L04",
+      "component": "ICL-Core",
+      "requirement": "Adversarial parsing/type/capability/corruption/resource limit",
+      "threshold": ">=30 semantically distinct cases; 0 unexpected privileged execution",
+      "required_evidence": [
+        "negative_tests.json"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "L05",
+      "component": "ICL-Core",
+      "requirement": "OCIR canonical serialization and schema compatibility",
+      "threshold": "round-trip/hash equality and incompatible schema rejection",
+      "required_evidence": [
+        "ocir_roundtrip.json"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "L06",
+      "component": "ICL-Core",
+      "requirement": "Checkpoint and observer/recovery limits",
+      "threshold": "deterministic finite replay; no exact recovery without required witness",
+      "required_evidence": [
+        "replay_tests.json",
+        "recovery_negative.json"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "L07",
+      "component": "ICL-Core",
+      "requirement": "Language→model numeric graph bridge",
+      "threshold": ">=8 small forward graphs independent parity; finite float atol=1e-6 rtol=1e-5 unless preregistered alternative",
+      "required_evidence": [
+        "graph_bridge_results.json"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "L08",
+      "component": "ICL-Core",
+      "requirement": "Clean install and offline CLI end-to-end",
+      "threshold": "documented commands succeed in isolated process; no hidden network fallback",
+      "required_evidence": [
+        "environment.lock",
+        "e2e_logs/"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M01",
+      "component": "ICL-Native",
+      "requirement": "Ten HF families source/rights/loader audit",
+      "threshold": "10 disposition records; unavailable weights not fabricated",
+      "required_evidence": [
+        "MODEL_LINEAGE.json"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M02",
+      "component": "ICL-Native",
+      "requirement": "Language-dependent architecture",
+      "threshold": "schema/vocab/opcode hashes + model.icl graph path + host boundary",
+      "required_evidence": [
+        "LANGUAGE_DEPENDENCY.json",
+        "model.icl",
+        "compiled_model.ocir"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M03",
+      "component": "ICL-Native",
+      "requirement": "Semantic grouped splits",
+      "threshold": "no canonical/orbit/world group overlap across splits",
+      "required_evidence": [
+        "DATA_MANIFEST.json",
+        "split_audit.json"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M04",
+      "component": "ICL-Native",
+      "requirement": "Real native training update",
+      "threshold": "finite gradients/loss; initial-final weight hashes differ; optimizer log",
+      "required_evidence": [
+        "training_log.jsonl",
+        "checkpoint/"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M05",
+      "component": "ICL-Native",
+      "requirement": "Reload and offline inference",
+      "threshold": "new process load plus fixed-fixture parity and heldout inference",
+      "required_evidence": [
+        "reload_test.json",
+        "offline_test.json"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M06",
+      "component": "ICL-Native",
+      "requirement": "Pilot raw syntax validity",
+      "threshold": ">=0.95 on declared ID test; coverage reported",
+      "required_evidence": [
+        "raw_predictions.jsonl",
+        "EVAL_REPORT.md"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M07",
+      "component": "ICL-Native",
+      "requirement": "Pilot raw execution pass@1",
+      "threshold": ">=0.80 on declared ID test; no post-filter denominator substitution",
+      "required_evidence": [
+        "raw_predictions.jsonl",
+        "EVAL_REPORT.md"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M08",
+      "component": "ICL-Native",
+      "requirement": "Authorized execution conformance",
+      "threshold": "0 unauthorized executed operations in isolated acceptance suite; all attempted/denied counts reported",
+      "required_evidence": [
+        "authority_e2e.json"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M09",
+      "component": "ICL-Native",
+      "requirement": "Research comparison and ablation",
+      "threshold": ">=3 training seeds; preregistered structural/OOD endpoint; grouped CI; ablations",
+      "required_evidence": [
+        "baseline_runs.json",
+        "ABLATIONS.json"
+      ],
+      "gate_kind": "research_reporting",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M10",
+      "component": "ICL-Native",
+      "requirement": "Claim of baseline superiority",
+      "threshold": "95% grouped CI for primary difference strictly >0; otherwise inconclusive",
+      "required_evidence": [
+        "primary_comparison.json"
+      ],
+      "gate_kind": "scientific_claim",
+      "status": "NOT_RUN",
+      "actual": null
+    },
+    {
+      "id": "M11",
+      "component": "ICL-Native",
+      "requirement": "Private reproducible artifact delivery",
+      "threshold": "model+code+data lineage+logs+Drive readback/hash; publication not authorized",
+      "required_evidence": [
+        "MANIFEST.json",
+        "DELIVERY_RECEIPTS.json"
+      ],
+      "gate_kind": "engineering",
+      "status": "NOT_RUN",
+      "actual": null
+    }
+  ]
+}

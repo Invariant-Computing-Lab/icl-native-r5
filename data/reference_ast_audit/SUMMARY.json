@@ -1,0 +1,86 @@
+{
+  "audit": "ICL_R5_GENERIC_RUNTIME_CONTEXT_REFERENCE/1",
+  "status": "PASS",
+  "input_task_ast_intersections": {
+    "train|validation": 0,
+    "train|id": 0,
+    "train|long": 0,
+    "train|counterfactual": 0,
+    "validation|id": 0,
+    "validation|long": 0,
+    "validation|counterfactual": 0,
+    "id|long": 0,
+    "id|counterfactual": 0,
+    "long|counterfactual": 0
+  },
+  "specialized_target_source_intersections": {
+    "train|validation": 102,
+    "train|id": 101,
+    "train|long": 111,
+    "train|counterfactual": 219,
+    "validation|id": 33,
+    "validation|long": 32,
+    "validation|counterfactual": 68,
+    "id|long": 39,
+    "id|counterfactual": 63,
+    "long|counterfactual": 64
+  },
+  "counts": {
+    "train": {
+      "programs_reexecuted": 20000,
+      "distinct_task_ast_groups": 20000,
+      "declared_intent_plan_groups": 20000,
+      "distinct_specialized_candidate_target_texts": 17317
+    },
+    "validation": {
+      "programs_reexecuted": 2000,
+      "distinct_task_ast_groups": 2000,
+      "declared_intent_plan_groups": 2000,
+      "distinct_specialized_candidate_target_texts": 1797
+    },
+    "id": {
+      "programs_reexecuted": 2000,
+      "distinct_task_ast_groups": 2000,
+      "declared_intent_plan_groups": 2000,
+      "distinct_specialized_candidate_target_texts": 1815
+    },
+    "long": {
+      "programs_reexecuted": 2000,
+      "distinct_task_ast_groups": 2000,
+      "declared_intent_plan_groups": 2000,
+      "distinct_specialized_candidate_target_texts": 1822
+    },
+    "counterfactual": {
+      "programs_reexecuted": 4000,
+      "distinct_task_ast_groups": 2000,
+      "declared_intent_plan_groups": 2000,
+      "distinct_specialized_candidate_target_texts": 2812
+    }
+  },
+  "scope": "Input-program AST grouping, literal-erased; not all mathematical program equivalences. Identical specialized error outputs can occur across splits and are disclosed; they are not novel source-generation evidence. Training consumed local feature/action supervision, not source strings.",
+  "post_training_audit_not_new_model_selection": true,
+  "new_generic_reference_uses_runtime_context": true,
+  "elapsed_seconds": 244.99140453338623,
+  "files": {
+    "long_reference_programs.jsonl.gz": {
+      "bytes": 626967,
+      "sha256": "469e1ec4dbae05bbfae0622d90926ac33814ec984a9d008ee57d301152381c0b"
+    },
+    "train_reference_programs.jsonl.gz": {
+      "bytes": 4020307,
+      "sha256": "29613758c05d235cc217b3a483231d1b4ddd90d61e62d6f13008f496cfe66aab"
+    },
+    "id_reference_programs.jsonl.gz": {
+      "bytes": 403379,
+      "sha256": "5e9f32a9df7760628b8547d9449172695ccee68e98e2014a50fd9400df8f5681"
+    },
+    "validation_reference_programs.jsonl.gz": {
+      "bytes": 403173,
+      "sha256": "1c7f13ab8f34d42bf0e73f872778d3fb3ec5eae236fdfb205f43a83e24bb63b7"
+    },
+    "counterfactual_reference_programs.jsonl.gz": {
+      "bytes": 518606,
+      "sha256": "78c4c523a3db30ecca3788851001b02f4cd513f051da9463e30246468a7af8c2"
+    }
+  }
+}

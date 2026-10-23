@@ -1,0 +1,58 @@
+{
+  "n": 2000,
+  "raw_semantic_prefix_match": 0.4985,
+  "composed_output_match": 0.9155,
+  "positive_n": 1086,
+  "positive_raw_match": 0.6104972375690608,
+  "negative_raw_match": 0.36542669584245074,
+  "guard_reasons": {
+    "none": 1468,
+    "FRAME_MISMATCH": 107,
+    "OBSERVER_MISMATCH": 184,
+    "EFFECT_DENIED": 204,
+    "UNIT_MISMATCH": 37
+  },
+  "per_first_intent": {
+    "increase": 0.5714285714285714,
+    "decrease": 0.5378151260504201,
+    "scale": 0.4411764705882353,
+    "floor": 0.5338983050847458,
+    "ceiling": 0.4392523364485981,
+    "magnitude": 0.5158730158730159,
+    "repeat": 0.5294117647058824,
+    "translate": 0.3492063492063492,
+    "restore": 0.7258064516129032,
+    "remember": 0.5275590551181102,
+    "recall": 0.628099173553719,
+    "journal": 0.3821138211382114,
+    "conditional": 0.20161290322580644,
+    "record_add": 0.6048387096774194,
+    "list_add": 0.5161290322580645,
+    "axis_reverse": 0.4728682170542636
+  },
+  "uncalibrated_selective_risk": {
+    "0": {
+      "coverage": 1.0,
+      "raw_accuracy": 0.4985
+    },
+    "0.5": {
+      "coverage": 0.8775,
+      "raw_accuracy": 0.5236467236467236
+    },
+    "0.8": {
+      "coverage": 0.1595,
+      "raw_accuracy": 1.0
+    },
+    "0.95": {
+      "coverage": 0.1595,
+      "raw_accuracy": 1.0
+    },
+    "0.99": {
+      "coverage": 0.1545,
+      "raw_accuracy": 1.0
+    }
+  },
+  "original_general_M06_M07_closed": false,
+  "candidate_icl_vm_parity_checks": 0,
+  "candidate_icl_vm_parity_pass": true
+}

@@ -1,0 +1,156 @@
+{
+  "initial": 5,
+  "memory": null,
+  "steps": [
+    {
+      "intent": "increase",
+      "arg": 3,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    },
+    {
+      "intent": "repeat",
+      "arg": -1,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    },
+    {
+      "intent": "translate",
+      "arg": 2,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    },
+    {
+      "intent": "remember",
+      "arg": 0,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    },
+    {
+      "intent": "scale",
+      "arg": 3,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    },
+    {
+      "intent": "recall",
+      "arg": 0,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    },
+    {
+      "intent": "restore",
+      "arg": 0,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    },
+    {
+      "intent": "record_add",
+      "arg": -2,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    },
+    {
+      "intent": "axis_reverse",
+      "arg": 0,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    },
+    {
+      "intent": "list_add",
+      "arg": 1,
+      "modulus": 7,
+      "flags": {
+        "observer_match": true,
+        "frame_match": true,
+        "unit_match": true,
+        "witness_present": true,
+        "witness_valid": true,
+        "memory_present": true,
+        "journal_allowed": true,
+        "condition": true
+      }
+    }
+  ]
+}

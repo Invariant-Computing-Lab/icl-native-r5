@@ -1,0 +1,55 @@
+{
+  "n": 2000,
+  "raw_semantic_prefix_match": 0.9395,
+  "composed_output_match": 1.0,
+  "positive_n": 1086,
+  "positive_raw_match": 1.0,
+  "negative_raw_match": 0.8676148796498906,
+  "guard_reasons": {
+    "none": 1879,
+    "MEMORY_MISSING": 121
+  },
+  "per_first_intent": {
+    "increase": 0.8991596638655462,
+    "decrease": 0.9495798319327731,
+    "scale": 0.9779411764705882,
+    "floor": 0.9576271186440678,
+    "ceiling": 0.897196261682243,
+    "magnitude": 0.9285714285714286,
+    "repeat": 0.9084967320261438,
+    "translate": 0.9920634920634921,
+    "restore": 0.9919354838709677,
+    "remember": 1.0,
+    "recall": 0.743801652892562,
+    "journal": 0.983739837398374,
+    "conditional": 0.9758064516129032,
+    "record_add": 0.9112903225806451,
+    "list_add": 0.9354838709677419,
+    "axis_reverse": 0.9689922480620154
+  },
+  "uncalibrated_selective_risk": {
+    "0": {
+      "coverage": 1.0,
+      "raw_accuracy": 0.9395
+    },
+    "0.5": {
+      "coverage": 1.0,
+      "raw_accuracy": 0.9395
+    },
+    "0.8": {
+      "coverage": 0.519,
+      "raw_accuracy": 1.0
+    },
+    "0.95": {
+      "coverage": 0.5175,
+      "raw_accuracy": 1.0
+    },
+    "0.99": {
+      "coverage": 0.399,
+      "raw_accuracy": 1.0
+    }
+  },
+  "original_general_M06_M07_closed": false,
+  "candidate_icl_vm_parity_checks": 0,
+  "candidate_icl_vm_parity_pass": true
+}

@@ -1,0 +1,25 @@
+{
+  "primary": "long split raw semantic opcode prefix match",
+  "n_groups": 2000,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "paired_mean_difference": 0.003999999999999999,
+  "group_bootstrap_95_ci": [
+    0.002333333333333333,
+    0.005833333333333332
+  ],
+  "bootstrap_seed": 740013,
+  "draws": 1999,
+  "conditional_on_these_three_training_seeds": true,
+  "native_over_flat_training_wall_time_ratio": 0.4488063085811356,
+  "compute_within_10_percent": false,
+  "parameter_counts": {
+    "native": 2774,
+    "flat": 2758
+  },
+  "claim": "BENCHMARK_INCONCLUSIVE_OR_BUDGET_UNMATCHED",
+  "not_a_general_language_model_benchmark": true
+}

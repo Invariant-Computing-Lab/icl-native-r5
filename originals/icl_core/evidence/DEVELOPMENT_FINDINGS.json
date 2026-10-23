@@ -1,0 +1,60 @@
+{
+  "note": "Development observations from executed tool output; initial full reports were overwritten during development. These are issue notes, not reconstructed raw test logs. Final raw logs are separately preserved.",
+  "observations": [
+    {
+      "issue": "Generated recursion used reserved tensor builtin sum as a function name",
+      "observed": "84 generated cases rejected with NAME duplicate/reserved function sum",
+      "resolution": "Generator renamed user function recsum; implementation unchanged for this harness error."
+    },
+    {
+      "issue": "Tree/VM out-of-bounds diagnostic mismatch",
+      "observed": "Tree INDEX versus VM BOUNDS on negative and excessive list indices",
+      "resolution": "Parent aligned tree to BOUNDS."
+    },
+    {
+      "issue": "Minimum Int64 rejected during intermediate magnitude handling",
+      "observed": "Both engines returned OVERFLOW for -9223372036854775808",
+      "resolution": "Parent parser canonicalizes signed minimum as negative literal; VM also handles min unary lowering."
+    },
+    {
+      "issue": "Checkpoint unkeyed integrity could be confused with trusted grant",
+      "observed": "Code inspection found checkpoint policy could be adopted with no caller policy; regression tests added",
+      "resolution": "VM now resolves replay authority from separate caller policy/default empty policy; forged rehashed grant rejected."
+    },
+    {
+      "issue": "Runtime trace hashed null inputs/outputs",
+      "observed": "Initial ctx.step calls provided no state values",
+      "resolution": "Tree/VM state hashes added; nontrivial-hash conformance test passes."
+    },
+    {
+      "issue": "Contract runner typo",
+      "observed": "Unmatched parenthesis produced SyntaxError before contract execution",
+      "resolution": "Test code syntax corrected; no contract tests reported passed from interrupted invocation."
+    },
+    {
+      "issue": "Budget escalation test assumed exception",
+      "observed": "Runtime safely clamps requested budget to compiled cap instead of error",
+      "resolution": "Test now asserts effective paused checkpoint cap remains 20 when 21 requested."
+    },
+    {
+      "issue": "Repeated sources within seeded generator",
+      "observed": "Initial 1008 invocations contained 996 distinct source/argument identities",
+      "resolution": "Generator now deduplicates seeded stream until 1008 distinct source/argument cases; implementation unchanged."
+    },
+    {
+      "issue": "Canonical record serialization reordered effectful field evaluation",
+      "observed": "Independent review found source versus canonical serialized OCIR mismatch and checkpoint identity mismatch",
+      "resolution": "Parent chose fixed lexicographic record-key evaluation; fixtures now enforce PRNG [75,90] and exact serialized replay."
+    },
+    {
+      "issue": "Host approval flag string truthiness",
+      "observed": "Independent review found human_approved string false treated as truthy",
+      "resolution": "Runtime validates exact bool policy fields and rejects malformed trusted policy with RESOURCE_POLICY; dedicated adversarial regression added."
+    },
+    {
+      "issue": "Concurrent implementation edit during final candidate run",
+      "observed": "All assertion groups passed but source snapshot detected runtime.py changed during execution",
+      "resolution": "Candidate honestly marked FAIL and raw log/summary/environment preserved under candidate_concurrent_edit; final stable rerun required."
+    }
+  ]
+}

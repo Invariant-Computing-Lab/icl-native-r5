@@ -1,0 +1,71 @@
+[
+  {
+    "programme": "OCIL/OCIR",
+    "mode": "ADAPTED_DESIGN_AND_REUSED_CORE",
+    "source": "originals/icl_core/",
+    "implementation": [
+      "source/icl_core/icl/frontend.py",
+      "source/icl_core/icl/checker.py",
+      "source/icl_native/graph.py"
+    ],
+    "evidence": [
+      "reports/final_core_acceptance.log",
+      "reports/GRADIENT_PARITY.json"
+    ],
+    "limit": "Finite language/representation contracts, no general type-soundness or cognitive claim"
+  },
+  {
+    "programme": "AFC",
+    "mode": "DIRECT_REUSE_BOUNDED",
+    "source": "originals/icl_core/icl/legacy_afc.py",
+    "implementation": [
+      "source/icl_core/icl/legacy_afc.py"
+    ],
+    "evidence": [
+      "reports/afc_final.log"
+    ],
+    "limit": "2044 finite states; simulated modulo recovery requires side information; R5 restore creates its witness from known x"
+  },
+  {
+    "programme": "RARI",
+    "mode": "CONCEPT_ONLY_TEST_DESIGN",
+    "source": "originals/source_contracts/SOURCE_MAP.json",
+    "implementation": [
+      "source/icl_native/dataset.py"
+    ],
+    "evidence": [
+      "data/split_audit.json",
+      "reports/BOOLEAN_CONTEXT_GRID.json"
+    ],
+    "limit": "Observer/wrong-pair checks, not independent replay of RARI experiments"
+  },
+  {
+    "programme": "SACRA",
+    "mode": "CONCEPT_ONLY_LOCAL_POLICY_DESIGN",
+    "source": "originals/source_contracts/SOURCE_MAP.json",
+    "implementation": [
+      "source/icl_native/execution.py",
+      "source/icl_native/console.py"
+    ],
+    "evidence": [
+      "reports/console_e2e/SUMMARY.json"
+    ],
+    "limit": "Independent host gate for local journal, not external identity/permission certification"
+  },
+  {
+    "programme": "IEVF",
+    "mode": "CONCEPT_ONLY_EVIDENCE_ACCOUNTING",
+    "source": "originals/source_contracts/SOURCE_MAP.json",
+    "implementation": [
+      "delivery/verify_archive.py",
+      "TASK_LEDGER.json"
+    ],
+    "limit": "Hashes and traces establish recorded provenance/integrity, not scientific truth"
+  },
+  {
+    "programme": "GOP; MLGT/GPNT/DCT/SFT and other historical studies",
+    "mode": "NOT_REPRODUCED_IN_R5",
+    "source": "originals/source_contracts/SOURCE_MAP.json",
+    "limit": "No new validation or universal claim; additional content review remains open"
+  }
+]

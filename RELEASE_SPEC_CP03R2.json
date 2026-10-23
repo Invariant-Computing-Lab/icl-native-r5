@@ -1,0 +1,15 @@
+{
+  "source_release": "ICL_R5_20261013",
+  "source_library_file": "file_00000000169c8246bc002dfbc2e2cbe8",
+  "language_version": "0.2.1",
+  "runtime_command": [
+    "python",
+    "-I",
+    "run_local.py",
+    "--request",
+    "examples/demo.json"
+  ],
+  "full_training_repeated_here": false,
+  "published": false,
+  "license_approval": false
+}

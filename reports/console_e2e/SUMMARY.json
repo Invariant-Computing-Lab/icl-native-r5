@@ -1,0 +1,55 @@
+{
+  "passed": 10,
+  "checks": [
+    {
+      "case": "token_required",
+      "status": "PASS",
+      "http_status": 403
+    },
+    {
+      "case": "cross_origin_rejected",
+      "status": "PASS",
+      "http_status": 403
+    },
+    {
+      "case": "duplicate_json_rejected",
+      "status": "PASS",
+      "http_status": 422
+    },
+    {
+      "case": "large_body_rejected",
+      "status": "PASS",
+      "http_status": 413
+    },
+    {
+      "case": "journal_string_not_approval",
+      "status": "PASS",
+      "http_status": 422
+    },
+    {
+      "case": "real_model_demo",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "case": "caller_cannot_override_host_journal",
+      "status": "PASS",
+      "http_status": 200
+    },
+    {
+      "case": "replay_path_traversal_rejected",
+      "status": "PASS"
+    },
+    {
+      "case": "persistent_checkpoint_replay",
+      "status": "PASS"
+    },
+    {
+      "case": "restart_then_replay_existing_record",
+      "status": "PASS"
+    }
+  ],
+  "model_backend": "actual offline trained model; ICL VM",
+  "browser_visual_test": "NOT_RUN; HTTP and request/control flow tested",
+  "network_scope": "localhost binding; not public deployment or OS sandbox certification"
+}

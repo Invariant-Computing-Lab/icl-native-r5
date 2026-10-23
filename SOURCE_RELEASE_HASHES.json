@@ -1,0 +1,20 @@
+{
+  "files": {
+    "source/icl_native/execution.py": "e42517a23b1339075756080d30c6c86ae21ef90e3822b9c98f7306c65d106c1b",
+    "source/icl_native/offline_infer.py": "98d0ca6076c83daec1fb20110ea99ae41ed0bc109f007f2fd7c1c11ffb1086ea",
+    "source/icl_native/checkpoint.py": "942ab9f7d9155d663957f339d467370587181a2d6b16ab77017dee369a3b6326",
+    "source/icl_native/common.py": "1c801ff306842a3a04405d8243a5423822467c6fc9f080af50ef93ac931481f4",
+    "source/icl_native/emitter.py": "9ae3d2a2f6068787adb2107c4e72077d02bb307971fe4ac7fd7ccd465dc0d551",
+    "source/icl_native/reference_program.py": "024bafa7fef702777f3bac6b2853acaf8bf1446857e8e2b375dd694cbf61a62b",
+    "source/icl_native/dataset.py": "1102a7d5265b23e26eefc2855394a3bc985c555b57237b585e93378bff1dbefc",
+    "source/icl_native/train.py": "3d8b068a8615a99e02bde58b958f94148fea15c9888de0c57215fede31f06bc6",
+    "source/icl_native/product.py": "5f05149012347345d481c8fb5d00d96c89299401a3a445b360fca633f1a5a1d2",
+    "source/icl_native/__init__.py": "a19b62d88904dbba347c03c66708942f7c6fa2c11f0fdd33135dc3a9bae4baa3",
+    "source/icl_native/graph.py": "0e110f2721c0112adab8429a58630f8a0f71c8943603bb87d5660e3d5d2d487e",
+    "source/icl_native/console.py": "2d29ea961614fa6c4ecf2daf4b709554b43a62561b75b8cc89d369fdc9b7dcd6",
+    "source/icl_native/evaluate.py": "7b4e1a359a706cf5cc4ed6044fd030316f99615ad8219e4fad7a27700d079431"
+  },
+  "training_main_hash_recorded_in_runs": "3d8b068a8615a99e02bde58b958f94148fea15c9888de0c57215fede31f06bc6",
+  "training_main_unchanged": true,
+  "post_training_changes": "strict loaders, decision/execution labels, console, independent generic reference and packaging; features/weights/training algorithm unchanged."
+}

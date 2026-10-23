@@ -1,0 +1,1443 @@
+{
+  "programs": [
+    {
+      "id": "adv_type_confusion_bool_int",
+      "index": 0,
+      "family": "type",
+      "source": "module fixture;\nfn main() -> Int64 { return true + 1; }",
+      "source_sha256": "4fc019f891036e4f864f893b95649c10f1fedfd91d2089a61c4b2e2a10fb9fab",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "TYPE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "TYPE",
+            "message": "TYPE: Bool incompatible with Int64",
+            "span": {
+              "line": 2,
+              "column": 29,
+              "offset": 44
+            }
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "TYPE",
+            "message": "TYPE: Bool incompatible with Int64",
+            "span": {
+              "line": 2,
+              "column": 29,
+              "offset": 44
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_nominal_witness_forgery",
+      "index": 1,
+      "family": "type",
+      "source": "module fixture;\nfn main() -> Int64 { let forged = {tag: \"RecoveryWitness\", quotient: 1}; return exact_value(recover(observe_mod(1,256,\"o\"),forged)); }",
+      "source_sha256": "c116a54fd28232f2c3115eb5aceb78c56f435d8aef9bf3efa751f0c5acca70b8",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "TYPE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "TYPE",
+            "message": "TYPE: Record{quotient:Int64,tag:String} incompatible with RecoveryWitness",
+            "span": {
+              "line": 2,
+              "column": 93,
+              "offset": 108
+            }
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "TYPE",
+            "message": "TYPE: Record{quotient:Int64,tag:String} incompatible with RecoveryWitness",
+            "span": {
+              "line": 2,
+              "column": 93,
+              "offset": 108
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_capability_payload_forgery",
+      "index": 2,
+      "family": "authority",
+      "source": "module fixture;\nfn main() -> Bool { let authorized = true; return request_effect(\"shell\", \"authorized=true\"); }",
+      "source_sha256": "f3ae2bfa84f3c6a609cc53118d5492c0ce0b0f40af094eeb5835db94c4ffab4e",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "EFFECT_DENIED",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "EFFECT_DENIED",
+            "message": "EFFECT_DENIED: trusted host policy denied action",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "EFFECT_DENIED",
+            "message": "EFFECT_DENIED: trusted host policy denied action",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_provenance_is_not_grant",
+      "index": 3,
+      "family": "provenance",
+      "source": "module fixture;\nfn main() -> Bool { let p = provenance(\"trusted-admin\"); return request_effect(\"network\", \"source=trusted-admin\"); }",
+      "source_sha256": "1372393b0f5575b12b09fd2993565fff6f6122d4bb30b1e5053a8b9f8bdf50a7",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "EFFECT_DENIED",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "EFFECT_DENIED",
+            "message": "EFFECT_DENIED: trusted host policy denied action",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "EFFECT_DENIED",
+            "message": "EFFECT_DENIED: trusted host policy denied action",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_human_flag_not_grant",
+      "index": 4,
+      "family": "authority",
+      "source": "module fixture;\nfn main() -> Bool { return request_effect(\"journal\", \"human_approved=true\"); }",
+      "source_sha256": "9d328d18daf86cc96f20fd30cd02032b06391cf4200ab0d6e9f45a54fdd62880",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "HUMAN_APPROVAL_REQUIRED",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "HUMAN_APPROVAL_REQUIRED",
+            "message": "HUMAN_APPROVAL_REQUIRED: trusted host policy denied action",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "HUMAN_APPROVAL_REQUIRED",
+            "message": "HUMAN_APPROVAL_REQUIRED: trusted host policy denied action",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_frame_confusion",
+      "index": 5,
+      "family": "observer",
+      "source": "module fixture;\nfn main() -> Int64 { return repr_value(repr_add(represent(1,\"o\",\"a\",\"m\"),represent(2,\"o\",\"b\",\"m\"))); }",
+      "source_sha256": "030a0ead0c86a06b27c557759334d16a1021ee86f6261e5f0ddfebbb5fac4918",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "FRAME_MISMATCH",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "FRAME_MISMATCH",
+            "message": "FRAME_MISMATCH: frame mismatch; explicit conversion required",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "FRAME_MISMATCH",
+            "message": "FRAME_MISMATCH: frame mismatch; explicit conversion required",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_observer_confusion",
+      "index": 6,
+      "family": "observer",
+      "source": "module fixture;\nfn main() -> Int64 { return repr_value(repr_add(represent(1,\"a\",\"f\",\"m\"),represent(2,\"b\",\"f\",\"m\"))); }",
+      "source_sha256": "11e051aa9f437ef1b9bfe50b5bf7ea3aafa293e04d5d7ccd6a69edd341a7eef6",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "OBSERVER_MISMATCH",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "OBSERVER_MISMATCH",
+            "message": "OBSERVER_MISMATCH: observer mismatch; explicit conversion required",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "OBSERVER_MISMATCH",
+            "message": "OBSERVER_MISMATCH: observer mismatch; explicit conversion required",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_unit_confusion",
+      "index": 7,
+      "family": "observer",
+      "source": "module fixture;\nfn main() -> Int64 { return repr_value(repr_add(represent(1,\"o\",\"f\",\"m\"),represent(2,\"o\",\"f\",\"s\"))); }",
+      "source_sha256": "9b03899c6e68a6cf93a8050e87ab77397662dbfcefbbd4dd8fbbe509871cc4de",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "UNIT_MISMATCH",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "UNIT_MISMATCH",
+            "message": "UNIT_MISMATCH: unit mismatch; explicit conversion required",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "UNIT_MISMATCH",
+            "message": "UNIT_MISMATCH: unit mismatch; explicit conversion required",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_unproved_nonlinear_transform",
+      "index": 8,
+      "family": "observer",
+      "source": "module fixture;\nfn main() -> Int64 { return repr_value(convert_frame(represent(1,\"o\",\"f\",\"m\"),\"g\",3,\"square\")); }",
+      "source_sha256": "eb17f6aea526f53f1d03905bbe104d4a659ee42cd6bb29f4781cfa08ac2ced55",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "NEEDS_EVIDENCE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "NEEDS_EVIDENCE",
+            "message": "NEEDS_EVIDENCE: unregistered transform protocol",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "NEEDS_EVIDENCE",
+            "message": "NEEDS_EVIDENCE: unregistered transform protocol",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_missing_sideinfo",
+      "index": 9,
+      "family": "recovery",
+      "source": "module fixture;\nfn main() -> Int64 { return exact_value(recover_without_witness(observe_mod(257,256,\"o\"))); }",
+      "source_sha256": "24fe0f41bd2d55abd3696ddfd523dd2467cc3de46cf3613307e9ff93b5f26e7d",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "NON_IDENTIFIABLE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "NON_IDENTIFIABLE",
+            "message": "NON_IDENTIFIABLE: measurement has multiple compatible sources",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "NON_IDENTIFIABLE",
+            "message": "NON_IDENTIFIABLE: measurement has multiple compatible sources",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_wrong_recovery_pair",
+      "index": 10,
+      "family": "recovery",
+      "source": "module fixture;\nfn main() -> Int64 { return exact_value(recover(observe_mod(257,256,\"o\"),make_witness(258,256))); }",
+      "source_sha256": "b9d6c31c21e1304ae9734c7618fdaf88f1a9f656a40597951d149646b81cb891",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "WITNESS_CORRUPT",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "WITNESS_CORRUPT",
+            "message": "WITNESS_CORRUPT: witness measurement mismatch",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "WITNESS_CORRUPT",
+            "message": "WITNESS_CORRUPT: witness measurement mismatch",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_witness_modulus_mismatch",
+      "index": 11,
+      "family": "recovery",
+      "source": "module fixture;\nfn main() -> Int64 { return exact_value(recover(observe_mod(257,256,\"o\"),make_witness(257,128))); }",
+      "source_sha256": "7e63f3894410fb146411c25bfc64cefcbd7cfe7e8b5cff8e8f38e6b8e9c2c48b",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "WITNESS_CORRUPT",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "WITNESS_CORRUPT",
+            "message": "WITNESS_CORRUPT: witness measurement mismatch",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "WITNESS_CORRUPT",
+            "message": "WITNESS_CORRUPT: witness measurement mismatch",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_nonpositive_modulus",
+      "index": 12,
+      "family": "domain",
+      "source": "module fixture;\nfn main() -> Int64 { return repr_value(observe_mod(1,0,\"o\")); }",
+      "source_sha256": "f8cdb50a788a8c304c612fdb643c96419ee3bf5ed901bb18d3fb44d69283aba2",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "DOMAIN",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "DOMAIN",
+            "message": "DOMAIN: positive modulus required",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "DOMAIN",
+            "message": "DOMAIN: positive modulus required",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_negative_error_bound",
+      "index": 13,
+      "family": "domain",
+      "source": "module fixture;\nfn main() -> Float64 { return approx_value(approx(1.0,-0.1)); }",
+      "source_sha256": "e95ba0bd9fa6847048e68e4620ba8e384a05a621e5e77d305b927dfa45664a4c",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "DOMAIN",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "DOMAIN",
+            "message": "DOMAIN: nonnegative error bound required",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "DOMAIN",
+            "message": "DOMAIN: nonnegative error bound required",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_int64_overflow",
+      "index": 14,
+      "family": "numeric",
+      "source": "module fixture;\nfn main() -> Int64 { return 9223372036854775807 + 1; }",
+      "source_sha256": "7812c71164f9f8854d9320b349d1f19e378f0b237cfe72a741cc691729d8ccd5",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "OVERFLOW",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "OVERFLOW",
+            "message": "OVERFLOW: Int64 overflow",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "OVERFLOW",
+            "message": "OVERFLOW: Int64 overflow",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_division_zero",
+      "index": 15,
+      "family": "numeric",
+      "source": "module fixture;\nfn main() -> Int64 { return 1 / 0; }",
+      "source_sha256": "ad01fe25a2f28f9616a72ded22b33cb38d2a63a7b26d36b3cd94466280dc57cd",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "DIVISION_BY_ZERO",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "DIVISION_BY_ZERO",
+            "message": "DIVISION_BY_ZERO: zero divisor",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "DIVISION_BY_ZERO",
+            "message": "DIVISION_BY_ZERO: zero divisor",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_nonfinite_literal",
+      "index": 16,
+      "family": "numeric",
+      "source": "module fixture;\nfn main() -> Float64 { return 1e999; }",
+      "source_sha256": "86d0efabe6ac2a7015e7459d8c493b7ecab2aa7661923eacecd661f8d37af132",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "NONFINITE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "NONFINITE",
+            "message": "NONFINITE: nonfinite literal",
+            "span": {
+              "line": 2,
+              "column": 31,
+              "offset": 46
+            }
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "NONFINITE",
+            "message": "NONFINITE: nonfinite literal",
+            "span": {
+              "line": 2,
+              "column": 31,
+              "offset": 46
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": false
+    },
+    {
+      "id": "adv_negative_list_index",
+      "index": 17,
+      "family": "bounds",
+      "source": "module fixture;\nfn main() -> Int64 { return [1,2][-1]; }",
+      "source_sha256": "4d820287b19226c260d011e786fe5b8e798a841a8c2eaac9c43aec688b9a88ad",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "BOUNDS",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "BOUNDS",
+            "message": "BOUNDS: index out of bounds",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "BOUNDS",
+            "message": "BOUNDS: Invalid or out-of-range index",
+            "span": {
+              "line": 2,
+              "column": 29,
+              "offset": 44
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_list_index_overrun",
+      "index": 18,
+      "family": "bounds",
+      "source": "module fixture;\nfn main() -> Int64 { return [1,2][2]; }",
+      "source_sha256": "5a7b2b92f224e1c0548d042b11bd343a64acf1356907ff37904b954040686a03",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "BOUNDS",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "BOUNDS",
+            "message": "BOUNDS: index out of bounds",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "BOUNDS",
+            "message": "BOUNDS: Invalid or out-of-range index",
+            "span": {
+              "line": 2,
+              "column": 29,
+              "offset": 44
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_float_list_index",
+      "index": 19,
+      "family": "type",
+      "source": "module fixture;\nfn main() -> Int64 { return [1,2][0.5]; }",
+      "source_sha256": "22c59dfecc91248906678d093659a3ad8c253f87f6ad666f8de62b6bc6a5bebb",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "TYPE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "TYPE",
+            "message": "TYPE: Float64 incompatible with Int64",
+            "span": {
+              "line": 2,
+              "column": 29,
+              "offset": 44
+            }
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "TYPE",
+            "message": "TYPE: Float64 incompatible with Int64",
+            "span": {
+              "line": 2,
+              "column": 29,
+              "offset": 44
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_loop_bound_exhaustion",
+      "index": 20,
+      "family": "resource",
+      "source": "module fixture;\nfn main() -> Int64 { var i: Int64 = 0; while i < 5 limit 2 { i = i + 1; } return i; }",
+      "source_sha256": "62440e3511d7003e02434e03c77ec3ba523baadab7e1bfd4c9a16f3fa4ea230c",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "LOOP_LIMIT",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "LOOP_LIMIT",
+            "message": "LOOP_LIMIT: declared iteration bound exceeded",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "LOOP_LIMIT",
+            "message": "LOOP_LIMIT: Bounded loop limit exceeded",
+            "span": {
+              "line": 2,
+              "column": 40,
+              "offset": 55
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_instruction_budget",
+      "index": 21,
+      "family": "resource",
+      "source": "module fixture;\nfn main() -> Int64 { var i: Int64 = 0; while i < 50 limit 100 { i = i + 1; } return i; }",
+      "source_sha256": "d18f9140c3132affa394fa907f88ad13cca3e7955bb4735c12570a3544d1ae39",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "FUEL_EXHAUSTED",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "FUEL_EXHAUSTED",
+            "message": "FUEL_EXHAUSTED: step budget exceeded",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "FUEL_EXHAUSTED",
+            "message": "FUEL_EXHAUSTED: step budget exceeded",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_call_stack_exhaustion",
+      "index": 22,
+      "family": "resource",
+      "source": "module fixture;\nfn recurse(n: Int64) -> Int64 { return recurse(n + 1); } fn main() -> Int64 { return recurse(0); }",
+      "source_sha256": "5acb2884e9b34735ba8839e8686b5acef4262535ee8cfa61d25398a74a536fbf",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "STACK_LIMIT",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "STACK_LIMIT",
+            "message": "STACK_LIMIT: call stack budget",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "STACK_LIMIT",
+            "message": "STACK_LIMIT: VM call stack limit exceeded",
+            "span": {
+              "line": 2,
+              "column": 40,
+              "offset": 55
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_output_budget",
+      "index": 23,
+      "family": "resource",
+      "source": "module fixture;\nfn main() -> String { return \"abcdefghijklmnopqrstuvwxyz\"; }",
+      "source_sha256": "bb365fd7f2c6f0a31ccc17ec6b68e9499c6c1575a4e4c81dbb55d20a71c1d4f0",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "OUTPUT_LIMIT",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "OUTPUT_LIMIT",
+            "message": "OUTPUT_LIMIT: string too large",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "OUTPUT_LIMIT",
+            "message": "OUTPUT_LIMIT: string too large",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_value_memory_budget",
+      "index": 24,
+      "family": "resource",
+      "source": "module fixture;\nfn main() -> List[Int64] { return [1,2,3,4,5,6,7,8,9]; }",
+      "source_sha256": "a7781a120246f9f87b8f131f266ca33a508e2b52883199d39a863fefbba0fecc",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "MEMORY_LIMIT",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "MEMORY_LIMIT",
+            "message": "MEMORY_LIMIT: value size/depth limit",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "MEMORY_LIMIT",
+            "message": "MEMORY_LIMIT: value size/depth limit",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_tensor_budget",
+      "index": 25,
+      "family": "resource",
+      "source": "module fixture;\nfn main() -> Tensor[4] { return tensor([1.0,2.0,3.0,4.0],[4]); }",
+      "source_sha256": "78a761b1b6c3a76f4eb2281cdd930a7b1181473b2b83f30dabf217a102f2e160",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "TENSOR_LIMIT",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "TENSOR_LIMIT",
+            "message": "TENSOR_LIMIT: tensor element limit",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "TENSOR_LIMIT",
+            "message": "TENSOR_LIMIT: tensor element limit",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_tensor_shape_mismatch",
+      "index": 26,
+      "family": "shape",
+      "source": "module fixture;\nfn main() -> Tensor[1,1] { return matmul(tensor([1.0,2.0],[1,2]),tensor([1.0,2.0,3.0],[3,1])); }",
+      "source_sha256": "7a65f18a38c6c95b38a05db9f193d0293b926639936a1e8775da38373013c310",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "SHAPE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "SHAPE",
+            "message": "SHAPE: matmul dimensions",
+            "span": {
+              "line": 2,
+              "column": 35,
+              "offset": 50
+            }
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "SHAPE",
+            "message": "SHAPE: matmul dimensions",
+            "span": {
+              "line": 2,
+              "column": 35,
+              "offset": 50
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_zero_width_tensor",
+      "index": 27,
+      "family": "shape",
+      "source": "module fixture;\nfn main() -> Tensor[1] { return tensor([1.0],[0]); }",
+      "source_sha256": "fa5977006e32523b0c24fa6e6b32b474503eb49205ff42aab5c0cb0200a8efa2",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "SHAPE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "SHAPE",
+            "message": "SHAPE: invalid tensor shape",
+            "span": {
+              "line": 2,
+              "column": 33,
+              "offset": 48
+            }
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "SHAPE",
+            "message": "SHAPE: invalid tensor shape",
+            "span": {
+              "line": 2,
+              "column": 33,
+              "offset": 48
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_mixed_tensor_dtype",
+      "index": 28,
+      "family": "type",
+      "source": "module fixture;\nfn main() -> Tensor[2] { return tensor([1,2],[2]); }",
+      "source_sha256": "97186c5e3ed2e89eadf446401e514a0d80fad53ee1107ec4a79b7ad34b06aec5",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "TYPE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "TYPE",
+            "message": "TYPE: List[Int64] incompatible with List[Float64]",
+            "span": {
+              "line": 2,
+              "column": 33,
+              "offset": 48
+            }
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "TYPE",
+            "message": "TYPE: List[Int64] incompatible with List[Float64]",
+            "span": {
+              "line": 2,
+              "column": 33,
+              "offset": 48
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_invisible_unicode",
+      "index": 29,
+      "family": "lexer",
+      "source": "module fixture;\nfn main() -> Int64 { let x\u200b = 1; return x; }",
+      "source_sha256": "6bbbcbc6ff0a88030453fcd056521820a4aa7d4e433cb83f0ee99c955b6b93d7",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "LEX",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "LEX",
+            "message": "LEX: invisible/control character forbidden",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "LEX",
+            "message": "LEX: invisible/control character forbidden",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip_error": {
+        "code": "LEX",
+        "message": "LEX: invisible/control character forbidden",
+        "span": null
+      }
+    },
+    {
+      "id": "adv_bidi_override",
+      "index": 30,
+      "family": "lexer",
+      "source": "module fixture;\nfn main() -> String { return \"\u202esecret\"; }",
+      "source_sha256": "d13f2537c6aeafa615b39624a8dc37c35ac30533180f4719452540b9fc82e9d1",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "LEX",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "LEX",
+            "message": "LEX: invisible/control character forbidden",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "LEX",
+            "message": "LEX: invisible/control character forbidden",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip_error": {
+        "code": "LEX",
+        "message": "LEX: invisible/control character forbidden",
+        "span": null
+      }
+    },
+    {
+      "id": "adv_duplicate_record_field",
+      "index": 31,
+      "family": "parser",
+      "source": "module fixture;\nfn main() -> Int64 { let r = {x:1,x:2}; return r.x; }",
+      "source_sha256": "be4f069d5c9e2eb56f6913e6b0f95abb88239f6b9199edfefaeb1b8bab047a9e",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "PARSE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "PARSE",
+            "message": "PARSE: duplicate field",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "PARSE",
+            "message": "PARSE: duplicate field",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip_error": {
+        "code": "PARSE",
+        "message": "PARSE: duplicate field",
+        "span": null
+      }
+    },
+    {
+      "id": "adv_host_eval_injection",
+      "index": 32,
+      "family": "isolation",
+      "source": "module fixture;\nfn main() -> Int64 { return eval(\"__import__(os).system(id)\"); }",
+      "source_sha256": "a6d29b8a2e2cb1b863de99363719260eeb9f3314d2939ac169e6256ef043b8f9",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "NAME",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "NAME",
+            "message": "NAME: unknown function eval",
+            "span": {
+              "line": 2,
+              "column": 29,
+              "offset": 44
+            }
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "NAME",
+            "message": "NAME: unknown function eval",
+            "span": {
+              "line": 2,
+              "column": 29,
+              "offset": 44
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_host_exec_injection",
+      "index": 33,
+      "family": "isolation",
+      "source": "module fixture;\nfn main() -> Int64 { return exec(\"print(1)\"); }",
+      "source_sha256": "12b682c2e918b1f9756ca59f06b9fdf861f8d56f2d09cd052605aa56cb4a8d46",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "NAME",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "NAME",
+            "message": "NAME: unknown function exec",
+            "span": {
+              "line": 2,
+              "column": 29,
+              "offset": 44
+            }
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "NAME",
+            "message": "NAME: unknown function exec",
+            "span": {
+              "line": 2,
+              "column": 29,
+              "offset": 44
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_path_traversal_import",
+      "index": 34,
+      "family": "import",
+      "source": "module main; import ../../secret; fn main() -> Int64 { return 0; }",
+      "source_sha256": "377302b04361c3eeff2250fdbb62804606c926fad40aad7206c5ee874b5fbda0",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "PARSE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "PARSE",
+            "message": "PARSE: identifier expected",
+            "span": {
+              "line": 1,
+              "column": 21,
+              "offset": 20
+            }
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "PARSE",
+            "message": "PARSE: identifier expected",
+            "span": {
+              "line": 1,
+              "column": 21,
+              "offset": 20
+            }
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip_error": {
+        "code": "PARSE",
+        "message": "PARSE: identifier expected",
+        "span": {
+          "line": 1,
+          "column": 21,
+          "offset": 20
+        }
+      }
+    },
+    {
+      "id": "adv_unmapped_import",
+      "index": 35,
+      "family": "import",
+      "source": "module main; import missing; fn main() -> Int64 { return 0; }",
+      "source_sha256": "aafdf62ed7c5959744aff07643d173b5f27ac6a74916cb8fbf07376bb396d9ca",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "IMPORT",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "IMPORT",
+            "message": "IMPORT: missing explicit module missing",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "IMPORT",
+            "message": "IMPORT: missing explicit module missing",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_cycle_import",
+      "index": 36,
+      "family": "import",
+      "source": "module main; import other; fn main() -> Int64 { return 0; }",
+      "source_sha256": "2a19820765725868563dfc670b4dc1ae69f247aa088b9de63db047aaf8b3e7dd",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "IMPORT_CYCLE",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "IMPORT_CYCLE",
+            "message": "IMPORT_CYCLE: cyclic module import",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "IMPORT_CYCLE",
+            "message": "IMPORT_CYCLE: cyclic module import",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_policy_budget_escalation",
+      "index": 37,
+      "family": "resource",
+      "source": "module fixture;\nfn main() -> Int64 { return 0; }",
+      "source_sha256": "2056f173ec58d408612be5906b1fe65b33bb95401339fa8ad4d434541ba907a6",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "RESOURCE_POLICY",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "RESOURCE_POLICY",
+            "message": "RESOURCE_POLICY: limits may only reduce defaults",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "RESOURCE_POLICY",
+            "message": "RESOURCE_POLICY: limits may only reduce defaults",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    },
+    {
+      "id": "adv_string_human_approval_not_boolean",
+      "index": 38,
+      "family": "authority",
+      "source": "module fixture;\nfn main() -> Bool { return request_effect(\"journal\", \"entry\"); }",
+      "source_sha256": "431116c1b7142fbf235e0c1692369c0ad1838f2817adc2a93640196f10d94637",
+      "arguments": [],
+      "expected": null,
+      "expected_error": "RESOURCE_POLICY",
+      "seed": null,
+      "engines": {
+        "tree": {
+          "error": {
+            "code": "RESOURCE_POLICY",
+            "message": "RESOURCE_POLICY: policy flags require strict booleans",
+            "span": null
+          }
+        },
+        "vm": {
+          "error": {
+            "code": "RESOURCE_POLICY",
+            "message": "RESOURCE_POLICY: policy flags require strict booleans",
+            "span": null
+          }
+        }
+      },
+      "passed": true,
+      "ast_roundtrip": true
+    }
+  ],
+  "additional_contracts": [
+    {
+      "id": "checkpoint_checksum_corruption",
+      "family": "adversarial",
+      "expected_error": "CHECKPOINT_CORRUPT",
+      "error": {
+        "code": "CHECKPOINT_CORRUPT",
+        "message": "CHECKPOINT_CORRUPT: Checkpoint integrity or bytecode identity mismatch",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "checkpoint_wrong_program",
+      "family": "adversarial",
+      "expected_error": "CHECKPOINT_CORRUPT",
+      "error": {
+        "code": "CHECKPOINT_CORRUPT",
+        "message": "CHECKPOINT_CORRUPT: Checkpoint integrity or bytecode identity mismatch",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "bytecode_future_schema",
+      "family": "adversarial",
+      "expected_error": "BYTECODE_CORRUPT",
+      "error": {
+        "code": "BYTECODE_CORRUPT",
+        "message": "BYTECODE_CORRUPT: Unsupported bytecode schema",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "unknown_bytecode_opcode",
+      "family": "adversarial",
+      "expected_error": "BYTECODE_CORRUPT",
+      "error": {
+        "code": "BYTECODE_CORRUPT",
+        "message": "BYTECODE_CORRUPT: Unknown or malformed opcode",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "bytecode_jump_outside_stream",
+      "family": "adversarial",
+      "expected_error": "BYTECODE_CORRUPT",
+      "error": {
+        "code": "BYTECODE_CORRUPT",
+        "message": "BYTECODE_CORRUPT: Jump target outside instruction stream",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "bytecode_negative_allocation",
+      "family": "adversarial",
+      "expected_error": "BYTECODE_CORRUPT",
+      "error": {
+        "code": "BYTECODE_CORRUPT",
+        "message": "BYTECODE_CORRUPT: Invalid collection size",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "bytecode_operand_stack_underflow",
+      "family": "adversarial",
+      "expected_error": "BYTECODE_CORRUPT",
+      "error": {
+        "code": "BYTECODE_CORRUPT",
+        "message": "BYTECODE_CORRUPT: Operand stack underflow",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "forged_checkpoint_policy_not_authority",
+      "family": "adversarial",
+      "expected_error": "CHECKPOINT_CORRUPT",
+      "error": {
+        "code": "CHECKPOINT_CORRUPT",
+        "message": "CHECKPOINT_CORRUPT: Replay requires an independently supplied identical host policy",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "source_cannot_grant_external_effect",
+      "family": "authority",
+      "expected_error": null,
+      "result": true,
+      "passed": true
+    },
+    {
+      "id": "ocir_checksum_corruption",
+      "family": "adversarial",
+      "expected_error": "CHECKSUM",
+      "error": {
+        "code": "CHECKSUM",
+        "message": "CHECKSUM: OCIR integrity mismatch",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "ocir_incompatible_schema",
+      "family": "adversarial",
+      "expected_error": "SCHEMA_INCOMPATIBLE",
+      "error": {
+        "code": "SCHEMA_INCOMPATIBLE",
+        "message": "SCHEMA_INCOMPATIBLE: OCIR schema/hash differs",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "ocir_unknown_ast_opcode",
+      "family": "adversarial",
+      "expected_error": "UNSUPPORTED_OP",
+      "error": {
+        "code": "UNSUPPORTED_OP",
+        "message": "UNSUPPORTED_OP: unknown AST opcode",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "ocir_duplicate_json_key",
+      "family": "adversarial",
+      "expected_error": "OCIR_CORRUPT",
+      "error": {
+        "code": "OCIR_CORRUPT",
+        "message": "OCIR_CORRUPT: duplicate key",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "ocir_nonfinite_json_payload",
+      "family": "adversarial",
+      "expected_error": "NONFINITE",
+      "error": {
+        "code": "NONFINITE",
+        "message": "NONFINITE: JSON nonfinite",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "ocir_invalid_json",
+      "family": "adversarial",
+      "expected_error": "OCIR_CORRUPT",
+      "error": {
+        "code": "OCIR_CORRUPT",
+        "message": "OCIR_CORRUPT: invalid JSON",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "runtime_cannot_raise_compiled_budget",
+      "family": "adversarial",
+      "expected_error": null,
+      "result": true,
+      "passed": true
+    },
+    {
+      "id": "entry_type_rejects_bool_as_integer",
+      "family": "adversarial",
+      "expected_error": "TYPE",
+      "error": {
+        "code": "TYPE",
+        "message": "TYPE: input does not match Int64",
+        "span": null
+      },
+      "passed": true
+    },
+    {
+      "id": "entry_nominal_inner_type_validated",
+      "family": "adversarial",
+      "expected_error": "TYPE",
+      "error": {
+        "code": "TYPE",
+        "message": "TYPE: input does not match Representation[Int64]",
+        "span": null
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-10-10T19:24:44.227488+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "numpy": "2.3.5",
+  "test_run": "acceptance_stdout.log",
+  "implementation_and_test_sha256": {
+    "icl/__init__.py": "eeb342c6178134a008ffdab3e8c35ca467d697d4aeff154605e3e3283e623ddf",
+    "icl/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "icl/api.py": "cab492d3cdd669416e08989a46c84f0715018726ac686645b619d4217318c05c",
+    "icl/checker.py": "261c89340a21f40bfd67ee3f19fc204357abdeb5ec74e1376e5e839cdbce4a41",
+    "icl/cli.py": "2384aea45b82c887d4e46cab69421d41cb6d60c690b75685ab263d57b1c7a848",
+    "icl/frontend.py": "fba8625012e328fb7c620ceccd1b096d4897f6ac457717f45a31fa5ae9d267b1",
+    "icl/interpreter.py": "6a03904e82bcfaff33e44c658de84e1b34445d7b7f567244cd4388391ea34a34",
+    "icl/legacy_afc.py": "20abd74e06a61d96c829446d1faf584418affc9a4e098d405a54c87ecdf99742",
+    "icl/runtime.py": "30ac556bf90134505cd01704e44e260edfc46853145c351fa6f5015fd15e0608",
+    "icl/vm.py": "9fa1f8a257a5cb4873cb3689bbf81886456074d3ad1b8c1e7a8db7938ba462b8",
+    "tests/adversarial_cases.py": "14566b782ba6ca98b1642933b26cfeb98a8e60aa5190c99c3afbd66c3a7834d6",
+    "tests/build_science_trace.py": "8f3d6a1a97b721af8154abbe7d99763e5950455a1fd4a794175d4be355df4ca8",
+    "tests/cases.py": "a97e3766c9c094cc9d3845063887f7d950d2e143a840d61fc31eaa5adef82fd8",
+    "tests/cli_cases.py": "633209c1df917f251ca02ec648808c744db580613cb8297114f98c1c0db8a13c",
+    "tests/contract_cases.py": "a82f4b8795904cb15d1a34b35d1ec4c86c39c87e6498415e4860d3d5e663d677",
+    "tests/generated_cases.py": "e0503df0d80960c2539873e0bf68e4e13dbe496b94fedf22b3043f5daa7f4cbd",
+    "tests/graph_cases.py": "aac653860d17e9c552920fd85aae9334efb7d3a274501af65e2d8a5dabd6a1e1",
+    "tests/legacy_afc_comparison.py": "e8614c785fb3effe104a62935bf4e1664e53234258b5565dcc21730cc3423942",
+    "tests/run_acceptance.py": "fe94f42ff47c9e89638b92e40df1022e51bdab0ee4ac38e24ef195c3fe7cc40b",
+    "tests/run_demos.py": "a9538e27bad91c745c324fd12bb38ab94e0612435898afc9f75f0dac9a577979",
+    "tests/test_vm_replay.py": "22e6765c42aa751fb11ccd76be7d01fa977399b53143d9a9bb4411e1b0988df9"
+  },
+  "source_stable": false
+}

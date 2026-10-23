@@ -1,0 +1,9 @@
+{
+  "version": "0.2.1",
+  "release": "R5",
+  "current_handoff": "LANGUAGE_HANDOFF.json",
+  "status": "BOUNDED_CONFORMANCE_REVERIFIED",
+  "old_code_archive": "originals/ICL_CORE_v0.1.0_20261010.zip at release root",
+  "model_status": "CURRENT_STATUS.json at release root",
+  "do_not_promote_legacy_tests_or_gates": true
+}

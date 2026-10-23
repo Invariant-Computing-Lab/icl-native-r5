@@ -1,0 +1,11 @@
+{
+  "authority": "current independent server configuration, never checkpoint grant",
+  "effect_events": [],
+  "replay_value": {
+    "tag": "Ok",
+    "value": -4
+  },
+  "run_id": "622499bcb1694ec383e0d2a5d37f7c16",
+  "trace_equal": true,
+  "value_equal": true
+}
